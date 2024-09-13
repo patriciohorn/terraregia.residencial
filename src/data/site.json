@@ -1,0 +1,42 @@
+{
+  "pages": [
+    {
+      "title": "Terrenos en venta",
+      "href": ""
+    },
+    {
+      "title": "Casas en venta",
+      "href": ""
+    },
+    {
+      "title": "Contacto",
+      "href": ""
+    },
+    {
+      "title": "¿Ya eres cliente?",
+      "href": ""
+    }
+  ],
+  "about": {
+    "title": "Acerca de Terra Regia ",
+    "description": [
+      "En",
+      "Terra Regia",
+      ", construimos ciudad a través de macroproyectos integrales que incluyen espacios habitacionales diseñados para elevar la calidad de vida. Con más de 30 años de experiencia en Nuevo León y más de 50 proyectos desarrollados, nos destacamos por nuestras ubicaciones estratégicas y nuestro profundo conocimiento del mercado."
+    ]
+  },
+  "stats": [
+    {
+      "title": "+8K",
+      "description": "Hectáreas en desarrollo"
+    },
+    {
+      "title": "+15K",
+      "description": "Habitantes en nuestros proyectos"
+    },
+    {
+      "title": "+50",
+      "description": "Proyectos desarrollados"
+    }
+  ]
+}

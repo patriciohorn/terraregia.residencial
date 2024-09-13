@@ -1,0 +1,24 @@
+---
+import data from '@/data/site.json'
+---
+
+<section class="py-16">
+  <div class="container">
+    <div class="grid md:grid-cols-2 gap-20">
+      <div class="">
+        <h2 class="text-[40px] leading-[1.1] tracking-[.01em] font-heading ">
+          {data.about.title}
+        </h2>
+        <p class="mt-[38px] text-[#7f7f7f] max-w-lg">{data.about.description[0]}<strong> {data.about.description[1]}</strong>{data.about.description[2]}</p>
+      </div>
+      <ul class="flex flex-wrap items-center gap-10">
+        {data.stats.map((stat) => (
+          <li class="flex flex-col text-center gap-2">
+            <span class="text-7xl font-heading">{stat.title}</span>
+            <span class="font-medium text-sm text-[#7F7F7F] ">{stat.description}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

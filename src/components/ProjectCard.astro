@@ -1,0 +1,20 @@
+---
+import alink from '../assets/alinka.jpg'
+import { type CollectionEntry } from 'astro:content'
+interface Props {
+	project: CollectionEntry<'destacados'>
+}
+
+const {project} = Astro.props
+console.log(project.data.image)
+---
+
+<article>
+	<div class="aspect-[3/2] rounded-md overflow-hidden">
+		<img src={alink.src} alt={`Imagen de proyecto ${project.data.title}`} class="w-full h-full object-cover" />
+	</div>
+	<div class="mt-4 space-y-2">
+		<h3 class="text-2xl font-semibold tracking-[0.01em]">{project.data.title}</h3>
+		<p class="text-sm text-[#7f7f7f]">{project.data.location}</p>
+	</div>
+</article>

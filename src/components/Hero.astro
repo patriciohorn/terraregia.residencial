@@ -1,0 +1,26 @@
+---
+import {Image} from 'astro:assets'
+import heroImg from '@/assets/tr-hero.jpg'
+---
+
+<section>
+  <div class="container pt-16">
+    <div class="">
+      <h1 class="font-heading text-[82px] leading-[1.2em] tracking-[.01em] text-black text-balance">
+        Encuentra tu espacio ideal para vivir
+      </h1>
+      <p class="mt-8 text-3xl font-medium text-[#7f7f7f] ">
+        En ubicaciones con plusvalía en Nuevo León
+      </p>
+      <div class="relative mt-12 rounded-lg overflow-hidden shadow-sm aspect-video">
+        <Image src={heroImg} alt="Imagen de familia" format='webp' width="1300" height="629" class="w-full h-full object-cover" loading='eager'/>
+        <div class="absolute top-10 right-[58px] flex items-center justify-center">
+          <!-- <FilterComponent
+            onLocationChange={onLocationChange}
+            selectedLocation={selectedLocation}
+          /> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
