@@ -17,10 +17,7 @@ const menuitems = [
     title: 'Inversión', 
     path: ''
   }, 
-  {
-    title: 'Portal de clientes', 
-    path: ''
-  }
+ 
 ]
 ---
 
@@ -29,16 +26,15 @@ const menuitems = [
     <div class="flex lg:flex-1">
       <a href="/">
         <span class="sr-only">Terra Regia</span>
-        <Image src={logo} alt="logo terra regia" class="h-8 md:h-10 w-full"/>
+        <Image src={logo} alt="logo terra regia" class="h-8 md:h-10 w-full" loading="eager"/>
       </a>
     </div>
     <div class="hidden lg:flex lg:gap-x-10">
       {menuitems.map((item) => (
-        <a href={item.path} class="text-gray-900 hover:text-gray-500 font-medium">{item.title}</a>
+        <a href={item.path} class=" hover:text-neutral-600  font-medium ">{item.title}</a>
       ))}
     </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">
-      <Button className="text-base w-[120px]" size="sm">Login</Button>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">      
       <Button className="text-base w-[120px] bg-[#25D366] hover:bg-[hsl(142,66%,48%)]" size="sm">
         <Icon name="whatsapp" class="mr-1"/>
         Contacto

@@ -34,7 +34,7 @@
 @layer base {
   /* Regular (likely weight 400) */
   @font-face {
-    font-family: 'Helvetica Now Regular';
+    font-family: 'Helvetica Now';
     src:
       url('/fonts/helveticanowdisplay-regular-webfont.woff2') format('woff2'),
       url('/fonts/helveticanowdisplay-regular-webfont.woff') format('woff');
@@ -44,11 +44,11 @@
   }
 
   @font-face {
-    font-family: 'Helvetica Now Medium';
+    font-family: 'Helvetica Now';
     src:
       url('/fonts/helveticanowdisplay-medium-webfont.woff2') format('woff2'),
       url('/fonts/helveticanowdisplay-medium-webfont.woff') format('woff');
-    font-weight: 500; /* Set to the correct weight */
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
@@ -78,7 +78,16 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .transform-preserve-3d {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+      skew(0deg, 0deg);
+    transform-style: preserve-3d;
   }
 }

@@ -1,11 +1,17 @@
 ---
+import {Image} from 'astro:assets'
+import { getCollection } from 'astro:content';
 
 import Layout from '../layouts/Layout.astro';
 import Hero from '@/components/Hero.astro'
 import InfoSection from '@/components/InfoSection.astro'
 import LogoCloud from '@/components/LogoCloud.astro';
-import Card from '../components/ProjectCard.astro';
 import ProyectosDestacados from '@/components/ProyectosDestacados.astro';
+import ProyectosPreventa from '@/components/ProyectosPreventa.astro';
+
+const allProjectPosts = await getCollection("project");
+const postOrder = ['pietralta', 'alinka', 'montessa'];
+const sortedPosts = allProjectPosts.sort((a, b) => postOrder.indexOf(a.slug) - postOrder.indexOf(b.slug))
 ---
 
 <Layout title="Terra Regia | Residencial">
@@ -13,6 +19,7 @@ import ProyectosDestacados from '@/components/ProyectosDestacados.astro';
 	<Hero/>
 	<InfoSection/>
 	<LogoCloud/>
-	<ProyectosDestacados/>
+	<ProyectosDestacados projects={sortedPosts}/>
+	<ProyectosPreventa/>
 	</main>
 </Layout>

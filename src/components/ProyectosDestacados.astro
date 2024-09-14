@@ -1,18 +1,16 @@
 ---
 import LeftHeading from "./LeftHeading.astro"
-import { getCollection, type CollectionEntry } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
-
-const proyectosDestacados: CollectionEntry<'destacados'>[] = await getCollection('destacados')
-
+const {projects} = Astro.props
 ---
 
-<section class="py-28">
+<section class="py-16">
   <div class="container">
     <LeftHeading title="Proyectos Destacados"/>
-    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
-      {proyectosDestacados.map((project) => (
-        <ProjectCard project={project}/>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+      {projects.map((project:any) => (
+        <ProjectCard project={project}/>        
+        
       ))}      
     </div>
   </div>

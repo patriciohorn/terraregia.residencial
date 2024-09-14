@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Helvetica Now Regular'],
-        heading: ['Helvetica Now Bold']
+        sans: ['Helvetica Now', 'sans-serif'],
+        heading: ['Helvetica Now Bold', 'sans-serif']
       },
       borderRadius: {
         xl: 'calc(var(--radius) + 20px)',
