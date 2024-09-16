@@ -1,0 +1,39 @@
+---
+import {Badge} from '@/components/ui/badge'
+
+import { Image } from 'astro:assets';
+import { MapPin } from 'lucide-react';
+const {project, description2} = Astro.props
+console.log(project)
+---
+
+
+<article class="flex flex-col relative p-9 space-y-6 bg-card-foreground rounded-md h-[448px]">
+  <div class="flex flex-col space-y-1 min-h-[100px]">   
+    <div class="bg-[#827D7D] px-5 py-2.5 rounded-sm">    
+      <p class="text-xl text-white font-medium text-balance">{project.description}</p>
+    </div>
+    {description2 && (
+    <p class="text-sm absolute top-2">Elige desde:</p>
+    <div class="bg-black px-5 py-2.5 rounded-sm">    
+    <p class="text-xl text-white font-medium text-balance">{project.description2}</p>
+    </div>
+  ) }
+
+  </div>
+  <div class="flex gap-5">
+    {project.images && project.images.map((img, idx) => (
+      <div class="overflow-hidden rounded-sm">
+      <Image src={img} alt={`Foto de proyecto ${project.title} ${idx}`} class="w-full h-full object-cover"/>
+    </div>
+    ))}
+    
+  </div>
+  <div class="flex flex-col">
+    <h3 class="text-xl font-heading tracking-[0.01em]">{project.title}</h3>
+    <div class="flex gap-1 items-center text-[#827D7D]">
+      <MapPin className="h-4 w-auto" />
+      <p class="text-sm font-medium">{project.location}</p>
+    </div>
+    <Badge variant="outline" className="absolute bottom-4 right-9">Casas</Badge>
+</article>

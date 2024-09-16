@@ -8,10 +8,15 @@ import InfoSection from '@/components/InfoSection.astro'
 import LogoCloud from '@/components/LogoCloud.astro';
 import ProyectosDestacados from '@/components/ProyectosDestacados.astro';
 import ProyectosPreventa from '@/components/ProyectosPreventa.astro';
+import Promociones from '@/components/Promociones.astro'
 
 const allProjectPosts = await getCollection("project");
-const postOrder = ['pietralta', 'alinka', 'montessa'];
-const sortedPosts = allProjectPosts.sort((a, b) => postOrder.indexOf(a.slug) - postOrder.indexOf(b.slug))
+const destacadosOrder = ['pietralta', 'alinka', 'montessa'];
+const preventaOrder = ['reserva-mezquital', 'montserrat', 'montessa-residencial', 'miria-residencial']
+
+const destacadosProjects = allProjectPosts.filter((project) => project.data.category === 'destacados').sort((a, b) => destacadosOrder.indexOf(a.slug) - destacadosOrder.indexOf(b.slug))
+const preventaProjects = allProjectPosts.filter((project) => project.data.category === 'preventa').sort((a, b) => preventaOrder.indexOf(a.slug) - preventaOrder.indexOf(b.slug))
+
 ---
 
 <Layout title="Terra Regia | Residencial">
@@ -19,7 +24,8 @@ const sortedPosts = allProjectPosts.sort((a, b) => postOrder.indexOf(a.slug) - p
 	<Hero/>
 	<InfoSection/>
 	<LogoCloud/>
-	<ProyectosDestacados projects={sortedPosts}/>
-	<ProyectosPreventa/>
+	<ProyectosDestacados projects={destacadosProjects}/>
+	<ProyectosPreventa projects={preventaProjects}/>
+	<Promociones/>
 	</main>
 </Layout>

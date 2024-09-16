@@ -1,0 +1,45 @@
+---
+import LeftHeading from "./LeftHeading.astro";
+import {Badge} from '@/components/ui/badge'
+
+import { Image } from 'astro:assets';
+import { MapPin } from 'lucide-react';
+
+import promocion1 from '@/assets/images/promocion-1-1.jpg'
+import promocion2 from '@/assets/images/promocion-1-2.jpg'
+import promocion3 from '@/assets/images/promocion-2-2.jpg'
+import PromocionCard from "./PromocionCard.astro";
+
+const promotionProjects = [
+{
+  description: 'Bono de $60,000 + Cocina con granito',
+  title: 'Rincón de la Sierra', 
+  location: 'Dominio Cumbres', 
+  images: [promocion1, promocion2]
+}, 
+{
+  description: 'Bono de $50,000', 
+  description2: 'Paneles solares + Minisplit', 
+  title: 'Toscana Residencial', 
+  location: 'Dominio Cumbres', 
+  images: [promocion1, promocion3]
+}, 
+{
+  description: 'Financiamiento directo + bono de $50,000',
+  title: 'Rincón de la Sierra', 
+  location: 'Dominio Cumbres', 
+  images: [promocion1, promocion2]
+}
+]
+---
+
+<section class="py-16">
+  <div class="container">
+    <LeftHeading title="Promociones del mes"/>
+    <div class="mt-12 grid sm:grid-cols-3 gap-x-3 ">
+      {promotionProjects.map((project) => (
+        <PromocionCard project={project} description2={project.description2} />
+      ))}
+    </div>
+  </div>
+</section>
