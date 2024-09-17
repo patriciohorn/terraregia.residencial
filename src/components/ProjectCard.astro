@@ -2,13 +2,21 @@
 import { Image } from 'astro:assets';
 import { MapPin } from 'lucide-react';
 import {Button} from '@/components/ui/button'
+import { Badge } from './ui/badge';
 
-const {project, button} = Astro.props
+const {project, button, badge} = Astro.props
 ---
 
-<article id={project.slug}>
-	<div class="aspect-[3/2] rounded-md overflow-hidden shadow-sm  ">
+<article id={project.slug} class="">
+	
+	<div class="aspect-[3/2] rounded-md overflow-hidden shadow-sm relative group">
 		<Image src={project.data.cover} alt={project.data.title} inferSize={true} class="w-full h-full object-cover  transition-all hover:scale-110 duration-500 ease-in"/> 
+		{badge && (
+			<Badge className="absolute top-7 right-4 lg:w-52 h-8 justify-center font-medium z-10 tracking-[0.01em] text-sm lg:text-base">desde $5,850,000</Badge>			
+			<Badge variant="invertedOutline" className="absolute top-7 left-4 h-8 justify-center font-medium z-10 tracking-[0.01em] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 text-sm">Precio de Preventa</Badge>
+			<Badge variant="invertedOutline" className="absolute top-7 left-48 h-8 justify-center font-medium z-10 tracking-[0.01em] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 text-sm">Casas</Badge>
+	
+		)}
 	</div>
 	<div class="mt-4 flex flex-row justify-between items-center">
 		<div class="flex flex-col gap-y-1">
