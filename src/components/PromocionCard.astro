@@ -22,7 +22,7 @@ console.log(project)
 
   </div>
   <div class="flex gap-5">
-    {project.images && project.images.map((img, idx) => (
+    {project.images && project.images.map((img: any, idx:number) => (
       <div class="overflow-hidden rounded-sm">
       <Image src={img} alt={`Foto de proyecto ${project.title} ${idx}`} class="w-full h-full object-cover"/>
     </div>
