@@ -1,0 +1,17 @@
+---
+import {getTipos} from '@/lib/utils'
+import Category from '@/components/Category.astro'
+
+const tipos = await getTipos()
+
+const {activeCategory} = Astro.props
+---
+
+<div class="flex flex-wrap gap-5">
+  <Category/>
+  {
+    tipos.map((tipo) => (
+      <Category name={tipo} activeCategory={activeCategory}/>
+    ))
+  }
+</div>

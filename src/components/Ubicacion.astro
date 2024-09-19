@@ -1,0 +1,12 @@
+---
+import {Link} from '@/components/link'
+import {cn, sluglify} from '@/lib/utils'
+const {name = "Todos",  activeCategory} = Astro.props
+const currentPath = Astro.url.pathname
+const unsluglifyNameCategory = sluglify(name.toLowerCase())
+const isActive = activeCategory?.toLowerCase() === unsluglifyNameCategory || (currentPath === '/ubicacion' && name === 'Todos')
+
+---
+
+
+<Link href={name === 'Todos' ? '/ubicacion' : sluglify(`/ubicacion/${unsluglifyNameCategory}`)} variant="invertedOutline" className={cn(`w-44 border border-white bg-transparent text-white`, isActive && `bg-white text-black border border-white`)}>{name}</Link>

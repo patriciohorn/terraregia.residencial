@@ -1,6 +1,7 @@
 ---
 import {Image} from 'astro:assets'
 import heroImg from '@/assets/tr-hero.jpg'
+import { DropdownNav } from './dropdown-nav'
 
 ---
 
@@ -16,10 +17,7 @@ import heroImg from '@/assets/tr-hero.jpg'
       <div class="relative mt-12 rounded-lg overflow-hidden shadow-sm aspect-video">
         <Image src={heroImg} alt="Imagen de familia" format='webp' width="1300" height="629" class="w-full h-full object-cover" loading='eager'/>
         <div class="absolute top-10 right-[58px] flex items-center justify-center">
-          <!-- <FilterComponent
-            onLocationChange={onLocationChange}
-            selectedLocation={selectedLocation}
-          /> -->
+          <DropdownNav client:load/>
         </div>
       </div>
     </div>

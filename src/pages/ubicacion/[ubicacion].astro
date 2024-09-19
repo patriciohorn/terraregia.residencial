@@ -1,0 +1,53 @@
+  ---
+  import Layout from "@/layouts/Layout.astro";
+  import { getProjects, getUbicaciones, sluglify, unslugify } from '@/lib/utils';
+  import ListUbicaciones from '@/components/ListUbicaciones.astro'
+  import ListProjects from "@/components/ListProjects.astro";
+  import MoreInfo from "@/components/MoreInfo.astro";
+
+
+
+  export async function getStaticPaths() {
+    const ubicaciones = await getUbicaciones()
+    const allProjects = await getProjects()
+
+
+    return ubicaciones.flatMap((ubicacion: any) => {
+      const unsluglifyNameCategory = unslugify(ubicacion!.toLowerCase())
+      const filteredProjects = allProjects.filter(
+        (project: any) => project.data.location.toLowerCase() === unsluglifyNameCategory
+      )
+
+      return [{
+        params: {
+          ubicacion: sluglify(ubicacion.toLowerCase()), 
+          
+        }, 
+        props: {
+          filteredProjects, 
+          locationTitle: ubicacion
+        }
+      }] 
+    })
+  }
+
+  const params = Astro.params
+  const {filteredProjects, locationTitle} = Astro.props
+
+  ---
+
+
+  <Layout title="Ubicaciones">
+    <section>
+      <div class="container">
+        <div class="mt-10 bg-black/95 py-28 flex flex-col gap-10 items-center justify-center rounded-md">
+          <h1 class="text-white font-heading text-7xl">{locationTitle}</h1>
+          <ListUbicaciones activeCategory={params.ubicacion}/>
+        </div>
+        <div class="pt-10 pb-28">
+          <ListProjects projects={filteredProjects}/>    
+        </div>
+      </div>
+    </section> 
+    <MoreInfo/>
+  </Layout>

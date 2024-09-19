@@ -1,0 +1,16 @@
+---
+import { getUbicaciones } from "@/lib/utils";
+import Ubicacion from '@/components/Ubicacion.astro'
+const ubicaciones = await getUbicaciones()
+const {activeCategory} = Astro.props
+
+---
+
+<div class="flex flex-wrap gap-5">
+  <Ubicacion/>
+  {
+    ubicaciones.map((ubicacion) => (
+      <Ubicacion name={ubicacion} activeCategory={activeCategory}/>
+    ))
+  }
+</div>

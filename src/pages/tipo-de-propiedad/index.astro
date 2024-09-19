@@ -1,0 +1,23 @@
+---
+import ListCategories from "@/components/ListCategories.astro";
+import ListProjects from "@/components/ListProjects.astro"
+import MoreInfo from "@/components/MoreInfo.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getProjects } from '@/lib/utils';
+
+const projects = await getProjects(); 
+---
+<Layout title="Tipos de Propiedad">
+  <section>
+    <div class="container">
+      <div class="mt-10 bg-black/95 py-28 flex flex-col gap-10 items-center justify-center rounded-md">
+        <h1 class="text-white font-heading text-7xl">Tipo de Propiedad</h1>
+        <ListCategories/>
+      </div>
+      <div class="pt-10 pb-28">
+        <ListProjects projects={projects}/> 
+      </div>
+    </div>
+  </section>
+  <MoreInfo/>
+</Layout>

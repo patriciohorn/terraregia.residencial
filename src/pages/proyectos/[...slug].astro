@@ -1,0 +1,27 @@
+---
+import LeftHeading from "@/components/LeftHeading.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getProjects } from "@/lib/utils";
+import { type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const projects = await getProjects();
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: project,
+	}));
+}
+type Props = CollectionEntry<'project'>;
+
+const project = Astro.props;
+
+---
+
+
+<Layout title={project.data.title}>
+  <section>
+    <div class="container">
+      <h1 class="text-[82px] text-black mt-16 font-heading">{project.data.title}</h1>
+    </div>
+  </section>
+</Layout>

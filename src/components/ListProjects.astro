@@ -1,0 +1,12 @@
+---
+import ProjectCard from "./ProjectCard.astro"
+const {projects} = Astro.props
+---
+
+<section>
+  <div class=" grid md:grid-cols-2 gap-x-12 gap-y-12">
+    {projects.map(async (project : any, idx: string) => (
+      <ProjectCard project={project} badge={true} button={true} />
+    ))}
+  </div>
+</section>

@@ -14,11 +14,11 @@ import MoreInfo from '@/components/MoreInfo.astro'
 
 
 const allProjectPosts = await getCollection("project");
-const destacadosOrder = ['pietralta', 'alinka', 'montessa'];
+const destacadosOrder = ['pietralta', 'alinka', 'montessa-residencial'];
 const preventaOrder = ['reserva-mezquital', 'montserrat', 'montessa-residencial', 'miria-residencial']
 
-const destacadosProjects = allProjectPosts.filter((project) => project.data.category === 'destacados').sort((a, b) => destacadosOrder.indexOf(a.slug) - destacadosOrder.indexOf(b.slug))
-const preventaProjects = allProjectPosts.filter((project) => project.data.category === 'preventa').sort((a, b) => preventaOrder.indexOf(a.slug) - preventaOrder.indexOf(b.slug))
+const destacadosProjects = allProjectPosts.filter((project) => project.data.category === 'destacados' || project.data.category === 'ambos').sort((a, b) => destacadosOrder.indexOf(a.slug) - destacadosOrder.indexOf(b.slug))
+const preventaProjects = allProjectPosts.filter((project) => project.data.category === 'preventa'  || project.data.category === 'ambos').sort((a, b) => preventaOrder.indexOf(a.slug) - preventaOrder.indexOf(b.slug))
 
 ---
 
