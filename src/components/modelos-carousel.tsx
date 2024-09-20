@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/carousel';
 import { Dot } from 'lucide-react';
 
-export function ModelosCarousel({ images }) {
+export function ModelosCarousel({ images }: any) {
   const plantas = ['Planta Baja', 'Planta Alta'];
   const plantaBaja = ['Cochera dos autos', 'Sala', 'Cocina', 'Medio Baño', 'Comedor', 'Lavandería'];
   const plantaAlta = [
@@ -19,7 +19,7 @@ export function ModelosCarousel({ images }) {
   return (
     <Carousel className="relative">
       <CarouselContent>
-        {images.map((img, idx) => (
+        {images.map((img: any, idx: number) => (
           <CarouselItem key={idx} className="flex flex-col items-center justify-center">
             <div className="flex items-center justify-center w-full h-full">
               <img src={img.src} alt="Foto de tipologia" className="w-full h-full object-contain" />

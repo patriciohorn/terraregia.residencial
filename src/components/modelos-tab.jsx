@@ -10,7 +10,7 @@ export function ModelosTabs({ data }) {
     <Tabs defaultValue={activeTab} className="w-full" onValueChange={setActiveTab}>
       <TabsList className="bg-white">
         <div className="flex justify-between gap-5 flex-wrap">
-          {data.modelos.map((item, idx) => (
+          {data.modelos.map((item) => (
             <TabsTrigger
               value={item}
               key={item}
