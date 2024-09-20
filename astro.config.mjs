@@ -14,5 +14,6 @@ export default defineConfig({
       applyBaseStyles: false
     }),
     icon()
-  ]
+  ],
+  output: 'hybrid'
 });

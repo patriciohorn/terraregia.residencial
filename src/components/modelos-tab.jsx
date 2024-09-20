@@ -31,6 +31,7 @@ export function ModelosTabs({ data }) {
         <TabsContent value={data.modelos[idx]}>
           <div className="rounded-md overflow-hidden h-56 mt-14">
             <img
+              key={idx}
               src={item.src}
               alt={data.modelos[idx]}
               className="w-full h-full object-cover animate-fadeIn"

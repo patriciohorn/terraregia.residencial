@@ -1,5 +1,4 @@
 ---
-import LeftHeading from "@/components/LeftHeading.astro";
 import ProjectInfo from "@/components/ProjectInfo.astro";
 import Layout from "@/layouts/Layout.astro";
 import Amenities from "@/components/Amenities.astro";
@@ -16,7 +15,7 @@ import VariantFooter from "@/components/VariantFooter.astro";
 
 export async function getStaticPaths() {
 	const projects = await getProjects();
-	return projects.map((project) => ({
+	return projects.map((project:any) => ({
 		params: { slug: project.slug },
 		props: project,
 	}));
