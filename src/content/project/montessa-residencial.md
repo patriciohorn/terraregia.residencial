@@ -31,7 +31,7 @@ amenities:
 variant: 'Lotificación'
 variantImages:
   - '../../assets/montessa/tipologia.jpg'
-  - '../../assets/montessa/terreno.jpg'
+
 variantDescription: 'Vive en familia entre parques, áreas recreativas, avenidas y seguridad, Invierte en una de las zonas de alta plusvalía en Dominio Cumbres, ideal para residencias de alto nivel.'
 variantFooter:
   - 'Área: 127.5m2'
