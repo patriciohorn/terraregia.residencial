@@ -15,6 +15,7 @@ export function ModelosCarousel({ images }) {
     'Dos recámaras con baño compartido.',
     'Estancia familiar.'
   ];
+
   return (
     <Carousel className="relative">
       <CarouselContent>
