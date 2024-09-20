@@ -1,8 +1,18 @@
 ---
 import LeftHeading from "@/components/LeftHeading.astro";
+import ProjectInfo from "@/components/ProjectInfo.astro";
 import Layout from "@/layouts/Layout.astro";
+import Amenities from "@/components/Amenities.astro";
+import SecondaryImages from "@/components/SecondaryImages.astro"
+import {TipologiaCarousel} from '@/components/tipologia-carousel'
+import {ModelosTabs} from '@/components/modelos-tab'
+import {ModelosCarousel} from '@/components/modelos-carousel'
+
 import { getProjects } from "@/lib/utils";
+import { Image } from "astro:assets";
 import { type CollectionEntry } from 'astro:content';
+import MoreInfo from "@/components/MoreInfo.astro";
+import VariantFooter from "@/components/VariantFooter.astro";
 
 export async function getStaticPaths() {
 	const projects = await getProjects();
@@ -19,9 +29,53 @@ const project = Astro.props;
 
 
 <Layout title={project.data.title}>
-  <section>
+  <section class="py-16">
     <div class="container">
-      <h1 class="text-[82px] text-black mt-16 font-heading">{project.data.title}</h1>
+      <!-- Header -->
+      <h1 class="text-[82px] text-black font-heading">{project.data.title}</h1>
+      <div class="mt-12 grid sm:grid-cols-[2fr_1.7fr] gap-x-8">
+        <div class="overflow-hidden rounded-md shadow-sm min-h-96">
+          <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager"/>
+        </div>
+        <div class="flex flex-col gap-y-8">
+          <ProjectInfo project={project}/>
+          <Amenities amenities={project.data.amenities}/>
+        </div>       
+      </div>
+      <div class="grid grid-cols-4 mt-8 gap-x-7">
+        <SecondaryImages images={project.data.images}/>
+      </div>
+
+      <!-- Tipologia  -->
+      <div class="grid grid-cols-2 mt-[72px] gap-x-20 bg-white px-12 py-16 rounded-md">
+        {project.data.variant === 'Tipología' || project.data.variant === 'Lotificación' && (
+          <div>
+            <h2 class="text-[40px] text-black font-heading">{project.data.variant}</h2>            
+            <TipologiaCarousel images={project.data.variantImages} client:load/>
+            <VariantFooter items={project.data.variantFooter}/>
+          </div>
+          <div class="flex flex-col justify-end px-12 pb-9 bg-[#E6E9E9] rounded-md min-h-[468px]">
+            <p class="text-2xl font-medium">{project.data.variantDescription}</p>
+          </div>          
+        )}
+
+        <!-- Modelos -->
+        {project.data.variant === 'Modelos' && (
+          <div>
+            <h2 class="text-[40px] text-black font-heading mb-8">{project.data.variant}</h2>
+            <ModelosTabs data={project.data} client:visible/>
+            <div class="mt-11">
+              <VariantFooter items={project.data.variantFooter}/>                
+            </div>
+          </div>
+          <div class="flex flex-col justify-center items-center px-12 pb-9 bg-[#E6E9E9] rounded-md">
+            <ModelosCarousel images={project.data.isometricosSiena} client:visible/>          
+          </div> 
+        )}
+
+      
+      </div>    
     </div>
   </section>
+  <MoreInfo/>
 </Layout>

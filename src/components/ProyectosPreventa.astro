@@ -13,12 +13,12 @@ const {projects} = Astro.props
             Nuevos Proyectos en preventa
           </h2>
         </div>
-        <div class="flex gap-5">
+        <!-- <div class="flex gap-5">
           <Button variant="invertedOutline" size="sm" className="border border-white text-white w-[112px] h-8 tracking-wide text-base">Todos</Button>
           <Button variant="invertedOutline" size="sm" className="border border-white text-white w-[112px] h-8 tracking-wide text-base">Casas</Button>
           <Button variant="invertedOutline" size="sm" className="border border-white text-white w-[112px] h-8 tracking-wide text-base">Terrenos</Button>
-        </div>      
+        </div>       -->
       </div> 
-      <ProjectList projects={projects}/>
+      <ProjectList projects={projects.slice(0, 4)}/>
     </div>  
 </section>
