@@ -18,7 +18,6 @@ const projects = [
 ];
 
 export function PresupuestoCarousel() {
-  function onNext() {}
   return (
     <div className="relative">
       <Carousel
