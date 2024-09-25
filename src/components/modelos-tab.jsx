@@ -34,7 +34,8 @@ export function ModelosTabs({ data }) {
               key={idx}
               src={item.src}
               alt={data.modelos[idx]}
-              className="w-full h-full object-cover animate-fadeIn"
+              className="w-full h-full object-cover animate-fade-right
+"
             />
           </div>
         </TabsContent>
