@@ -1,6 +1,6 @@
 ---
 import {Link} from '@/components/link'
-import {cn, formatCurrency, sluglify} from '@/lib/utils'
+import {cn, formatCurrency, sluglify} from '@/pages/lib/utils'
 const {name = "Infonavit",  activeCategory} = Astro.props
 const currentPath = Astro.url.pathname
 const unsluglifyNameCategory = formatCurrency(name)
