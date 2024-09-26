@@ -7,7 +7,20 @@ import {
 } from '@/components/ui/carousel';
 import { Dot } from 'lucide-react';
 
-export function ModelosCarousel({ images }: any) {
+interface Image {
+  src: string;
+  width: number;
+  height: number;
+  fsPath: string;
+}
+
+interface CarouselProps {
+  images: Image[];
+  // floorTitles: string[]; // Dynamic floor titles like 'Planta Baja', 'Planta Alta'
+  // descriptions: { [key: string]: string[] }; // Descriptions for each floor
+}
+
+export function ModelosCarousel({ images }: CarouselProps) {
   const plantas = ['Planta Baja', 'Planta Alta'];
   const plantaBaja = ['Cochera dos autos', 'Sala', 'Cocina', 'Medio Baño', 'Comedor', 'Lavandería'];
   const plantaAlta = [
@@ -15,11 +28,11 @@ export function ModelosCarousel({ images }: any) {
     'Dos recámaras con baño compartido.',
     'Estancia familiar.'
   ];
-
+  console.log(images);
   return (
     <Carousel className="relative">
       <CarouselContent>
-        {images.map((img: any, idx: number) => (
+        {images.map((img: Image, idx: number) => (
           <CarouselItem key={idx} className="flex flex-col items-center justify-center">
             <div className="flex items-center justify-center w-full h-full">
               <img src={img.src} alt="Foto de tipologia" className="w-full h-full object-contain" />

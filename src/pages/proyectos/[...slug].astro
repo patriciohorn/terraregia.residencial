@@ -6,6 +6,7 @@ import SecondaryImages from "@/components/SecondaryImages.astro"
 import {TipologiaCarousel} from '@/components/tipologia-carousel'
 import {ModelosTabs} from '@/components/modelos-tab'
 import {ModelosCarousel} from '@/components/modelos-carousel'
+import {ModelosSection} from '@/components/Modelos'
 
 import { getProjects } from "@/lib/utils";
 import { Image } from "astro:assets";
@@ -44,9 +45,8 @@ const project = Astro.props;
       <div class="grid grid-cols-4 mt-8 gap-x-7">
         <SecondaryImages images={project.data.images}/>
       </div>
-
-      <!-- Tipologia  -->
       <div class="grid grid-cols-2 mt-[72px] gap-x-20 bg-white px-12 py-16 rounded-md">
+        <!-- Tipologia  -->
         {project.data.variant === 'Tipología' || project.data.variant === 'Lotificación' && (
           <div>
             <h2 class="text-[40px] text-black font-heading">{project.data.variant}</h2>            
@@ -57,24 +57,17 @@ const project = Astro.props;
             <p class="text-2xl font-medium">{project.data.variantDescription}</p>
           </div>          
         )}
-
+      
         <!-- Modelos -->
         {project.data.variant === 'Modelos' && (
-          <div>
-            <h2 class="text-[40px] text-black font-heading mb-8">{project.data.variant}</h2>
-            <ModelosTabs data={project.data} client:load/>
-            <div class="mt-11">
-              <VariantFooter items={project.data.variantFooter}/>                
-            </div>
-          </div>
-          <div class="flex flex-col justify-center items-center px-12 pb-9 bg-[#E6E9E9] rounded-md">
-            <ModelosCarousel images={project.data.isometricosSiena} client:load/>          
-          </div> 
-        )}
-
-      
+          <ModelosSection project={project.data} client:visible/>
+        
+        )}      
       </div>    
     </div>
   </section>
   <MoreInfo/>
 </Layout>
+
+
+

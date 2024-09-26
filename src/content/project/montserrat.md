@@ -30,10 +30,26 @@ amenities:
     label: 'Ácceso Controlado'
 variant: 'Modelos'
 modelos:
-  - 'Liria'
-  - 'Moraira'
-  - 'Benialí'
-  - 'Eliana'
+  - model: Liria
+    isometricoImage:
+      - '../../assets/montserrat/isometrico-liria-pb.webp'
+      - '../../assets/montserrat/isometrico-liria-pa.webp'
+      - '../../assets/montserrat/isometrico-liria-tercer.webp'
+  - model: Moraira
+    isometricoImage:
+      - '../../assets/montserrat/isometrico-moraira-pb.webp'
+      - '../../assets/montserrat/isometrico-moraira-pa.webp'
+      - '../../assets/montserrat/isometrico-moraira-tercer.webp'
+  - model: Benialí
+    isometricoImage:
+      - '../../assets/montserrat/isometrico-beniali-pa.webp'
+      - '../../assets/montserrat/isometrico-beniali-tercer.webp'
+      - '../../assets/montserrat/isometrico-beniali-pb.webp'
+  - model: Eliana
+    isometricoImage:
+      - '../../assets/montserrat/isometrico-beniali-pa.webp'
+      - '../../assets/montserrat/isometrico-beniali-tercer.webp'
+      - '../../assets/montserrat/isometrico-beniali-pb.webp'
 variantFooter:
   - 'Lote: 9.5x17m'
   - 'Terreno: 161.5m2'
@@ -43,7 +59,6 @@ modelosImages:
   - '../../assets/montserrat/moraira.webp'
   - '../../assets/montserrat/beniali.webp'
   - '../../assets/montserrat/eliana.webp'
-isometricosSiena:
-  - '../../assets/toscana/planta1.png'
-  - '../../assets/toscana/planta2.png'
+
+isometricoImage: ''
 ---

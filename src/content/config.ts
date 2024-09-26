@@ -3,6 +3,11 @@ const AmenitySchema = z.object({
   icon: z.string(),
   label: z.string()
 });
+
+// const ModelosSchema = z.object({
+//   model: z.string(),
+//   isometricoImage: z.array(image())
+// });
 const projectCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
@@ -21,7 +26,14 @@ const projectCollection = defineCollection({
       variantImages: z.array(image()).optional(),
       variantDescription: z.string().optional(),
       variantFooter: z.array(z.string()).optional(),
-      modelos: z.array(z.string()).optional(),
+      modelos: z
+        .array(
+          z.object({
+            model: z.string(),
+            isometricoImage: z.array(image())
+          })
+        )
+        .optional(),
       modelosImages: z.array(image()).optional(),
       isometricosSiena: z.array(image()).optional()
     })

@@ -26,10 +26,22 @@ amenities:
     label: 'Ácceso Controlado'
 variant: 'Modelos'
 modelos:
-  - 'Siena'
-  - 'Siena Plus'
-  - 'Firenze'
-  - 'Firenze Plus'
+  - model: Siena
+    isometricoImage:
+      - '../../assets/toscana/isometrico-siena-pb.png'
+      - '../../assets/toscana/isometrico-siena-pa.png'
+  - model: Siena Plus
+    isometricoImage:
+      - '../../assets/toscana/isometrico-sienaplus-pb.png'
+      - '../../assets/toscana/isometrico-sienaplus-pa.png'
+  - model: Firenze
+    isometricoImage:
+      - '../../assets/toscana/isometrico-firenze-pb.png'
+      - '../../assets/toscana/isometrico-firenze-pa.png'
+  - model: Firenze Plus
+    isometricoImage:
+      - '../../assets/toscana/isometrico-firenzeplus-pb.png'
+      - '../../assets/toscana/isometrico-firenzeplus-pa.png'
 variantFooter:
   - 'Lote: 7.5x16m'
   - 'Terreno: 120m2'

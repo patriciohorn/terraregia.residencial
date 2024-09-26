@@ -28,8 +28,13 @@ variant: 'Modelos'
 variantFooter:
   - 'Terreno: 66.24m2'
 modelos:
-  - 'España'
-  - 'Madrid'
+  - model: España
+    isometricoImage:
+      - '../../assets/castilla/isometrico-espana-pb.webp'
+      - '../../assets/castilla/isometrico-espana-pa.webp'
+  - model: Madrid
+    isometricoImage:
+      - '../../assets/castilla/isometrico-madrid-pb.webp'
 modelosImages:
   - '../../assets/castilla/espana.webp'
   - '../../assets/castilla/madrid.webp'

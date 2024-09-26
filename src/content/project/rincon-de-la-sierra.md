@@ -30,11 +30,31 @@ amenities:
     label: 'Casa Club'
 variant: 'Modelos'
 modelos:
-  - 'Ankara'
-  - 'Viena'
-  - 'Venecia'
-  - 'Atenas'
-  - 'Lugano'
+  - model: Ankara
+    isometricoImage:
+      - '../../assets/rincon/isometrico-ankara-pb.png'
+      - '../../assets/rincon/isometrico-ankara-pa.png'
+      - '../../assets/rincon/isometrico-ankara-tercer.png'
+  - model: Viena
+    isometricoImage:
+      - '../../assets/rincon/isometrico-viena-pb.png'
+      - '../../assets/rincon/isometrico-viena-pa.png'
+      - '../../assets/rincon/isometrico-viena-tercer.png'
+  - model: Venecia
+    isometricoImage:
+      - '../../assets/rincon/isometrico-venecia-pb.png'
+      - '../../assets/rincon/isometrico-venecia-pa.png'
+      - '../../assets/rincon/isometrico-venecia-tercer.png'
+  - model: Atenas
+    isometricoImage:
+      - '../../assets/rincon/isometrico-atenas-pb.png'
+      - '../../assets/rincon/isometrico-atenas-pa.png'
+      - '../../assets/rincon/isometrico-atenas-tercer.png'
+  - model: Lugano
+    isometricoImage:
+      - '../../assets/rincon/isometrico-lugano-pb.png'
+      - '../../assets/rincon/isometrico-lugano-pa.png'
+      - '../../assets/rincon/isometrico-lugano-tercer.png'
 variantFooter:
   - 'Lote: 7.5x17m'
   - 'Terreno: 127m2'
