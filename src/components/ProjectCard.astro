@@ -1,17 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import { MapPin } from 'lucide-react';
-import {Button} from '@/components/ui/button'
 import { Badge } from './ui/badge';
 import { cn } from '@/lib/utils';
 import { Link } from './link';
 
-const {project, button, badge, showPreventaBadge} = Astro.props
-console.log('showPreventaBadge', badge)
+const {project, badge, showPreventaBadge, small} = Astro.props
 
 ---
 
-<article id={project.slug} class="">
+<article id={project.slug}>
 	
 	<div class="aspect-[3/2] rounded-md overflow-hidden shadow-sm relative group">
 		<Image src={project.data.cover} alt={project.data.title} inferSize={true} class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:transform group-hover:translate3d(0, 0, 0) group-hover:scale-105 group-hover:rotateX(0deg) group-hover:rotateY(0deg)"
@@ -53,6 +51,6 @@ console.log('showPreventaBadge', badge)
 
 		
 		
-		{button && <Link href={`/proyectos/${project.slug}`} variant="outline" className="w-[140px] cursor-pointer">Ver más</Link>}
+		{small ? <Link href={`/proyectos/${project.slug}`} variant="outline" size="sm" className="cursor-pointer">Ver más</Link> : <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer w-[140px]">Ver más</Link>}
 	</div>
 </article>

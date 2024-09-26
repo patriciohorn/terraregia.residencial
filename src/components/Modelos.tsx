@@ -33,7 +33,6 @@ interface Project {
 
 interface ProjectProps {
   project: Project;
-  selectedModel: Model;
 }
 export function ModelosSection({ project }: ProjectProps) {
   const [selectedModel, setSelectedModel] = useState(project.modelos[0]);

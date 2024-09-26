@@ -7,7 +7,7 @@ const {projects} = Astro.props
   <div class="container">
     <div class="grid grid-cols-2 gap-x-16 gap-y-12">
       {projects.map((project:any) => (
-        <ProjectCard project={project} button={true} badge={true} showPreventaBadge={true}/>
+        <ProjectCard project={project} badge={true} showPreventaBadge={true}/>
       ))}
     </div>
   </div>
