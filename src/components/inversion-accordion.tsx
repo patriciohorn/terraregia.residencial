@@ -43,7 +43,8 @@ export function InversionAccordion() {
       {accordionItems.map((item, idx) => (
         <AccordionItem
           value={`item-${idx}`}
-          className={cn('border-neutral-400', idx === 0 ? 'border-t' : '')}>
+          className={cn('border-neutral-400', idx === 0 ? 'border-t' : '')}
+          key={`${item}-${idx}`}>
           <AccordionTrigger className="text-[28px]">{item.title}</AccordionTrigger>
           <AccordionContent className="text-[#827D7D] text-base pt-4 pb-8">
             <div className="grid grid-cols-[2fr_1.5fr] gap-12">
