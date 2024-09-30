@@ -3,12 +3,10 @@ import ProjectCard from "./ProjectCard.astro";
 const {projects} = Astro.props
 ---
 
-<section class="mt-12">
-  <div class="container">
+<section class="mt-6 sm:mt-12"> 
     <div class="grid sm:grid-cols-2 gap-x-16 gap-y-12">
       {projects.map((project:any) => (
         <ProjectCard project={project} badge={true} showPreventaBadge={true}/>
       ))}
-    </div>
-  </div>
+    </div>  
 </section>

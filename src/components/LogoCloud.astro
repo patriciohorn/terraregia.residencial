@@ -8,17 +8,16 @@ import { motion } from "framer-motion"
 const logoCloudImages = [logoCloud1, logoCloud2, logoCloud4, logoCloud3];
 ---
 
-
-<div class="container ">
-  <div class="bg-[#252323] py-5 sm:py-[72px] rounded-sm sm:rounded-lg">    
-    <div class="flex items-center gap-6 justify-around px-8 sm:px-24">      
-      {logoCloudImages.map((logo, idx) => (
-       <div class="">
-        <Image src={logo} alt={`logo ${idx}`} class="w-full h-full object-cover "/>
-       </div>
-      ))}
+<section>
+  <div class="container ">
+    <div class="bg-[#252323] py-5 sm:py-[72px] rounded-sm sm:rounded-lg">    
+      <div class="flex items-center gap-6 justify-around px-8 sm:px-24">      
+        {logoCloudImages.map((logo, idx) => (
+         <div class="">
+          <Image src={logo} alt={`logo ${idx}`} class="w-full h-full object-cover "/>
+         </div>
+        ))}
+      </div>    
     </div>
-    </motion.div>
   </div>
-</div>
 </section>

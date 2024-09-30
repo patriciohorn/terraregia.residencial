@@ -7,7 +7,7 @@ const {projects} = Astro.props
 <section class="py-16">
   <div class="container">
     <LeftHeading title="Proyectos Destacados"/>
-    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+    <div class="mt-6 sm:mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
       {projects.map((project:any) => (
         <ProjectCard project={project} small={true}/>        
       ))}      

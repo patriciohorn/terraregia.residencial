@@ -7,17 +7,12 @@ const {projects} = Astro.props
 
 <section class=""> 
     <div class="container">
-      <div class="bg-[#252323] rounded-lg py-16 px-[60px] grid sm:grid-cols-[2fr_1fr] items-center">
+      <div class="bg-[#252323] rounded-md sm:rounded-lg p-8 sm:py-16 sm:px-[60px] grid sm:grid-cols-[2fr_1fr] items-center">
         <div class="">
-          <h2 class="font-medium text-5xl text-white">
+          <h2 class="font-medium text-3xl sm:text-5xl text-white">
             Nuevos Proyectos en preventa
           </h2>
-        </div>
-        <!-- <div class="flex gap-5">
-          <Button variant="invertedOutline" size="sm" className="border border-white text-white w-[112px] h-8 tracking-wide text-base">Todos</Button>
-          <Button variant="invertedOutline" size="sm" className="border border-white text-white w-[112px] h-8 tracking-wide text-base">Casas</Button>
-          <Button variant="invertedOutline" size="sm" className="border border-white text-white w-[112px] h-8 tracking-wide text-base">Terrenos</Button>
-        </div>       -->
+        </div>        
       </div> 
       <ProjectList projects={projects.slice(0, 4)}/>
     </div>  

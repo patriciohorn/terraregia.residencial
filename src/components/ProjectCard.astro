@@ -26,8 +26,8 @@ const {project, badge, showPreventaBadge, small} = Astro.props
 					<Badge 
 							variant="invertedOutline" 
 							className={cn(
-									'absolute top-7 h-8 justify-center font-medium z-10 tracking-[0.01em] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 text-sm',
-									showPreventaBadge ? 'left-48' : 'left-4'
+									'absolute top-16 sm:top-7 h-8 justify-center font-medium z-10 tracking-[0.01em] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 text-sm',
+									showPreventaBadge ? 'left-4 sm:left-48' : 'left-4'
 							)}
 					>
 							{project.data.tipo}
@@ -51,6 +51,6 @@ const {project, badge, showPreventaBadge, small} = Astro.props
 
 		
 		
-		{small ? <Link href={`/proyectos/${project.slug}`} variant="outline" size="sm" className="cursor-pointer">Ver más</Link> : <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer w-[140px]">Ver más</Link>}
+		{small ? <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer">Ver más</Link> : <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer sm:w-[140px]">Ver más</Link>}
 	</div>
 </article>
