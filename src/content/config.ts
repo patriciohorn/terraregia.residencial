@@ -28,10 +28,18 @@ const projectCollection = defineCollection({
       variantFooter: z.array(z.string()).optional(),
       modelos: z
         .array(
-          z.object({
-            model: z.string(),
-            isometricoImage: z.array(image())
-          })
+          z
+            .object({
+              model: z.string(),
+              isometricoImage: z.array(image()),
+              floorTitles: z.array(z.string()),
+              descriptions: z.object({
+                'Primer nivel': z.array(z.string()),
+                'Segundo nivel': z.array(z.string()).optional(),
+                'Tercer nivel': z.array(z.string()).optional()
+              })
+            })
+            .optional()
         )
         .optional(),
       modelosImages: z.array(image()).optional(),

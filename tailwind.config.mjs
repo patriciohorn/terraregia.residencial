@@ -5,7 +5,7 @@ export default {
   theme: {
     container: {
       center: 'true',
-      padding: '1rem',
+      padding: '1.5rem',
       screens: {
         '2xl': '1260px'
       }
@@ -63,6 +63,11 @@ export default {
           5: 'hsl(var(--chart-5))'
         }
       },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'loop-scroll': 'loop-scroll 10s linear infinte'
+      },
       keyframes: {
         'accordion-down': {
           from: {
@@ -79,11 +84,11 @@ export default {
           to: {
             height: '0'
           }
+        },
+        'loop-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' }
         }
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
       }
     }
   },

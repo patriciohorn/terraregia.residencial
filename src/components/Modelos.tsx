@@ -9,9 +9,17 @@ interface Image {
   height: number;
   fsPath: string;
 }
+
+interface Description {
+  'Primer nivel': string[];
+  'Segundo nivel'?: string[];
+  'Tercer nivel'?: string[];
+}
 interface Model {
   model: string;
   isometricoImage: Image[];
+  floorTitles: string[];
+  descriptions: Description;
 }
 
 interface Project {
@@ -36,7 +44,7 @@ interface ProjectProps {
 }
 export function ModelosSection({ project }: ProjectProps) {
   const [selectedModel, setSelectedModel] = useState(project.modelos[0]);
-
+  console.log('Selected Model', selectedModel);
   const handleModelChange = (model: any) => {
     setSelectedModel(model);
   };
@@ -48,8 +56,12 @@ export function ModelosSection({ project }: ProjectProps) {
         <ModelosTabs data={project} onModelChange={handleModelChange} />
         <ModelFooter items={project.variantFooter} />
       </div>
-      <div className="flex flex-col justify-center items-center px-12 pb-9 bg-[#E6E9E9] rounded-md">
-        <ModelosCarousel images={selectedModel.isometricoImage} />
+      <div className="flex flex-col justify-center items-stretch px-12 py-8 bg-[#E6E9E9] rounded-md min-h-[504px]">
+        <ModelosCarousel
+          images={selectedModel.isometricoImage}
+          floorTitles={selectedModel.floorTitles}
+          descriptions={selectedModel.descriptions}
+        />
       </div>
     </>
   );

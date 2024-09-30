@@ -30,22 +30,85 @@ modelos:
     isometricoImage:
       - '../../assets/toscana/isometrico-siena-pb.png'
       - '../../assets/toscana/isometrico-siena-pa.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+    descriptions:
+      Primer nivel:
+        - Cochera dos autos
+        - Comedor
+        - Lavandería
+        - Sala
+        - Medio Baño
+        - Cocina
+        - Patio de Servicio
+        - Sala
+      Segundo nivel:
+        - Recámara principal con terraza y baño/vestidor
+        - Dos recámaras con baño compartido.
+        - Estancia familiar
   - model: Siena Plus
     isometricoImage:
       - '../../assets/toscana/isometrico-sienaplus-pb.png'
       - '../../assets/toscana/isometrico-sienaplus-pa.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+    descriptions:
+      Primer nivel:
+        - Cochera dos autos
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería
+      Segundo nivel:
+        - Recámara principal con baño vestidor
+        - Dos recámaras y un baño completo
   - model: Firenze
     isometricoImage:
       - '../../assets/toscana/isometrico-firenze-pb.png'
       - '../../assets/toscana/isometrico-firenze-pa.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+    descriptions:
+      Primer nivel:
+        - Cochera dos autos
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería
+        - Patio de servicio
+      Segundo nivel:
+        - Recámara principal con terraza y baño/vestidor
+        - Dos recámaras con baño compartido
+        - Estancia familiar
   - model: Firenze Plus
     isometricoImage:
       - '../../assets/toscana/isometrico-firenzeplus-pb.png'
       - '../../assets/toscana/isometrico-firenzeplus-pa.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+    descriptions:
+      Primer nivel:
+        - Cochera dos autos
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería
+        - Patio de servicio
+      Segundo nivel:
+        - Recámara principal con terraza y baño/vestidor
+        - Dos recámaras con baño compartido
+        - Estancia familiar
 variantFooter:
   - 'Lote: 7.5x16m'
-  - 'Terreno: 120m2'
-  - 'Construcción: 136m2'
+  - 'Terreno: 120m²'
+  - 'Construcción: 136m²'
 modelosImages:
   - '../../assets/toscana/siena.webp'
   - '../../assets/toscana/sienaplus.webp'

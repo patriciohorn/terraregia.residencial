@@ -35,30 +35,145 @@ modelos:
       - '../../assets/rincon/isometrico-ankara-pb.png'
       - '../../assets/rincon/isometrico-ankara-pa.png'
       - '../../assets/rincon/isometrico-ankara-tercer.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+      - 'Tercer nivel'
+    descriptions:
+      Primer nivel:
+        - Puerta principal de seguridad
+        - Cochera doble techada
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería cerrada
+      Segundo nivel:
+        - Estancia
+        - Balcón en la recámara principal
+        - Sink
+        - 3 baños
+      Tercer nivel:
+        - Sala de tv
+        - 1 baño
+        - Terraza
+        - Bodega
   - model: Viena
     isometricoImage:
       - '../../assets/rincon/isometrico-viena-pb.png'
       - '../../assets/rincon/isometrico-viena-pa.png'
       - '../../assets/rincon/isometrico-viena-tercer.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+      - 'Tercer nivel'
+    descriptions:
+      Primer nivel:
+        - Puerta principal de seguridad
+        - Cochera doble techada
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería cerrada
+      Segundo nivel:
+        - Estancia
+        - Balcón en la recámara principal
+        - Sink
+        - 3 baños
+      Tercer nivel:
+        - Sala de tv
+        - 1 baño
+        - Terraza
+        - Bodega
   - model: Venecia
     isometricoImage:
       - '../../assets/rincon/isometrico-venecia-pb.png'
       - '../../assets/rincon/isometrico-venecia-pa.png'
       - '../../assets/rincon/isometrico-venecia-tercer.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+      - 'Tercer nivel'
+    descriptions:
+      Primer nivel:
+        - Puerta principal de seguridad
+        - Cochera doble techada
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería cerrada
+      Segundo nivel:
+        - Estancia
+        - Balcón en la recámara principal
+        - Sink
+        - 3 baños
+      Tercer nivel:
+        - Sala de tv
+        - 1 baño
+        - Terraza
+        - Bodega
   - model: Atenas
     isometricoImage:
       - '../../assets/rincon/isometrico-atenas-pb.png'
       - '../../assets/rincon/isometrico-atenas-pa.png'
       - '../../assets/rincon/isometrico-atenas-tercer.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+      - 'Tercer nivel'
+    descriptions:
+      Primer nivel:
+        - Puerta principal de seguridad
+        - Cochera doble techada
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería cerrada
+      Segundo nivel:
+        - Estancia
+        - Balcón en la recámara principal
+        - Sink
+        - 3 baños
+      Tercer nivel:
+        - Sala de tv
+        - 1 baño
+        - Terraza
+        - Bodega
   - model: Lugano
     isometricoImage:
       - '../../assets/rincon/isometrico-lugano-pb.png'
       - '../../assets/rincon/isometrico-lugano-pa.png'
       - '../../assets/rincon/isometrico-lugano-tercer.png'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+      - 'Tercer nivel'
+    descriptions:
+      Primer nivel:
+        - Puerta principal de seguridad
+        - Cochera doble techada
+        - Sala
+        - Cocina
+        - Medio Baño
+        - Comedor
+        - Lavandería cerrada
+      Segundo nivel:
+        - Estancia
+        - Balcón en la recámara principal
+        - Sink
+        - 3 baños
+      Tercer nivel:
+        - Sala de tv
+        - 1 baño
+        - Terraza
+        - Bodega
 variantFooter:
   - 'Lote: 7.5x17m'
-  - 'Terreno: 127m2'
-  - 'Construcción: 187m2'
+  - 'Terreno: 127m²'
+  - 'Construcción: 187m²'
 modelosImages:
   - '../../assets/rincon/ankara.jpg'
   - '../../assets/rincon/viena.jpg'

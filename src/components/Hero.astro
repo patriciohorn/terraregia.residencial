@@ -2,23 +2,28 @@
 import {Image} from 'astro:assets'
 import heroImg from '@/assets/tr-hero.jpg'
 import { DropdownNav } from './dropdown-nav'
+import { DropdownNavMobile } from './dropdown-nav-mobile'
 
 ---
 
 <section>
-  <div class="container pt-16">
+  <div class="container pt-10 sm:pt-16">
     <div class="">
-      <h1 class="font-heading text-[82px] leading-[1.2em] tracking-[.01em] text-black text-balance">
+      <h1 class="font-heading text-4xl sm:text-[82px] tracking-[.01em] leading-[1.025em] text-black text-balance">
         Encuentra tu espacio ideal para vivir
       </h1>
-      <p class="mt-8 text-3xl font-medium text-neutral-700">
+      <p class="mt-6 sm:mt-10 text-[22px] leading-[1.2] sm:text-3xl max-w-72 sm:max-w-full font-medium ">
         En ubicaciones con plusvalía en Nuevo León
       </p>
-      <div class="relative mt-12 rounded-lg overflow-hidden shadow-sm aspect-video">
+      <div class="relative mt-4 sm:mt-12 rounded-[15px] sm:rounded-lg overflow-hidden shadow-sm sm:aspect-video">
         <Image src={heroImg} alt="Imagen de familia" format='webp' width="1300" height="629" class="w-full h-full object-cover" loading='eager'/>
-        <div class="absolute top-10 right-[58px] flex items-center justify-center">
-          <DropdownNav client:load/>
-        </div>
+        <div class="hidden sm:absolute sm:top-10 sm:right-[58px] sm:flex sm:items-center sm:justify-center">
+        <DropdownNav client:load/>
+        </div>        
+      </div>
+
+      <div class="sm:hidden py-4">
+        <DropdownNavMobile client:load/>
       </div>
     </div>
   </div>

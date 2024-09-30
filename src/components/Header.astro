@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import logo from '../assets/logo-terra-regia.svg'
 import { Button } from "./ui/button";
 import { Icon } from 'astro-icon/components'
+import { cn } from "@/lib/utils";
 
 const menuitems = [
   {
@@ -19,6 +20,9 @@ const menuitems = [
   }, 
  
 ]
+
+const currentPath = Astro.url.pathname; 
+console.log('CurrentPath', currentPath)
 ---
 
 <header class="py-[30px]">
@@ -30,8 +34,9 @@ const menuitems = [
       </a>
     </div>
     <div class="hidden lg:flex lg:gap-x-10">
-      {menuitems.map((item) => (
-        <a href={item.path} class=" hover:text-neutral-600  font-medium ">{item.title}</a>
+      {menuitems.map((item) => (      
+          
+        <a href={item.path} class={cn(`font-medium relative`, currentPath === item.path ? 'before:content-[""] before:absolute before:h-[1.6px] before:w-full before:-bottom-[2.6px] before:left-0 before:bg-black' : '')}>{item.title}</a>
       ))}
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-3">      

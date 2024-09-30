@@ -46,9 +46,9 @@ const navItems: NavItem[] = [
   }
 ];
 
-export function DropdownNav() {
+export function DropdownNavMobile() {
   return (
-    <nav className="flex items-center justify-between gap-x-5 w-full rounded-full shadow-md p-3 text-black bg-white">
+    <nav className="flex flex-col items-start gap-4 w-full rounded-md shadow-sm px-4 py-4 text-black bg-white border border-black">
       {navItems.map((item) => (
         <DropdownMenu key={item.label}>
           <DropdownMenuTrigger>
@@ -61,8 +61,8 @@ export function DropdownNav() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            align="center"
-            className="w-42 mt-3 border border-black p-3 rounded-sm">
+            align="start"
+            className="w-full min-w-80 mt-1 border border-black p-3 rounded-sm">
             {item.items.map((subItem) => (
               <DropdownMenuItem key={subItem.href}>
                 <a href={subItem.href} className="w-full font-medium text-sm">

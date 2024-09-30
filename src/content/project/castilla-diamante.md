@@ -26,15 +26,41 @@ amenities:
     label: 'Alumbrado Público'
 variant: 'Modelos'
 variantFooter:
-  - 'Terreno: 66.24m2'
+  - 'Terreno: 66.24m²'
 modelos:
   - model: España
     isometricoImage:
       - '../../assets/castilla/isometrico-espana-pb.webp'
       - '../../assets/castilla/isometrico-espana-pa.webp'
+    floorTitles:
+      - 'Primer nivel'
+      - 'Segundo nivel'
+    descriptions:
+      Primer nivel:
+        - Cocina
+        - Sala
+        - Comedor
+        - Vestíbulo
+        - 1 baño completo
+        - Acceso
+        - Lavandería
+      Segundo nivel:
+        - 1 baño completo
+        - 2 recámaras
   - model: Madrid
     isometricoImage:
       - '../../assets/castilla/isometrico-madrid-pb.webp'
+    floorTitles:
+      - 'Primer nivel'
+    descriptions:
+      Primer nivel:
+        - Sala
+        - Comedor
+        - Cocina
+        - 1 baño completo
+        - 2 recámaras
+        - Lavandería
+        - Acceso
 modelosImages:
   - '../../assets/castilla/espana.webp'
   - '../../assets/castilla/madrid.webp'

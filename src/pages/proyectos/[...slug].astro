@@ -4,9 +4,9 @@ import Layout from "@/layouts/Layout.astro";
 import Amenities from "@/components/Amenities.astro";
 import SecondaryImages from "@/components/SecondaryImages.astro"
 import {TipologiaCarousel} from '@/components/tipologia-carousel'
-import {ModelosTabs} from '@/components/modelos-tab'
-import {ModelosCarousel} from '@/components/modelos-carousel'
 import {ModelosSection} from '@/components/Modelos'
+ 
+
 
 import { getProjects } from "@/lib/utils";
 import { Image } from "astro:assets";
@@ -25,6 +25,7 @@ export async function getStaticPaths() {
 
 const project = Astro.props;
 
+
 ---
 
 
@@ -32,19 +33,22 @@ const project = Astro.props;
   <section class="py-16">
     <div class="container">
       <!-- Header -->
-      <h1 class="text-[82px] text-black font-heading">{project.data.title}</h1>
-      <div class="mt-12 grid sm:grid-cols-[2fr_1.7fr] gap-x-8">
-        <div class="overflow-hidden rounded-md shadow-sm min-h-96">
-          <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager"/>
+      <h1 class="text-[82px] text-black font-heading">{project.data.title}</h1>      
+        <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8">        
+          <div class="overflow-hidden rounded-md shadow-sm min-h-96">         
+            <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager"/>
+          </div>
+          <div class="flex flex-col gap-y-8">
+            <ProjectInfo project={project}/>
+            <Amenities amenities={project.data.amenities}/>
+          </div>
         </div>
-        <div class="flex flex-col gap-y-8">
-          <ProjectInfo project={project}/>
-          <Amenities amenities={project.data.amenities}/>
-        </div>       
-      </div>
+      
       <div class="grid grid-cols-4 mt-8 gap-x-7">
         <SecondaryImages images={project.data.images}/>
       </div>
+
+     
       <div class="grid grid-cols-2 mt-[72px] gap-x-20 bg-white px-12 py-16 rounded-md">
         <!-- Tipologia  -->
         {project.data.variant === 'Tipología' || project.data.variant === 'Lotificación' && (
