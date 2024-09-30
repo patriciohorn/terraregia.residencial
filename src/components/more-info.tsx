@@ -11,7 +11,7 @@ import { Button } from './ui/button';
 
 export function MoreInfoForm() {
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
       <Input type="text" placeholder="Nombre" />
       <Input type="text" placeholder="Apellidos" />
       <Input type="email" placeholder="Email" />
@@ -25,7 +25,9 @@ export function MoreInfoForm() {
           <SelectItem value="Apodaca">Apodaca</SelectItem>
         </SelectContent>
       </Select>
-      <Button size="lg">Enviar</Button>
+      <Button size="lg" className="h-12 sm:h-16 text-base">
+        Enviar
+      </Button>
     </div>
   );
 }
