@@ -51,6 +51,6 @@ const {project, badge, showPreventaBadge, small} = Astro.props
 
 		
 		
-		{small ? <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer">Ver más</Link> : <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer sm:w-[140px]">Ver más</Link>}
+		{small ? <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer h-10 sm:h-10">Ver más</Link> : <Link href={`/proyectos/${project.slug}`} variant="outline" className="cursor-pointer h-10 sm:h-12 sm:w-[140px]">Ver más</Link>}
 	</div>
 </article>

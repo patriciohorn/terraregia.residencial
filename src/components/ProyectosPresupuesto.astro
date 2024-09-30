@@ -3,12 +3,12 @@ import LeftHeading from "./LeftHeading.astro";
 import {PresupuestoCarousel} from "@/components/PresupuestoCarousel"
 ---
 
-<section class="py-16">
+<section class="pt-8 pb-16 sm:py-16">
   <div class="w-full max-w-none overflow-hidden">
     <div class="container">
       <LeftHeading title="Proyectos para cada presupuesto"/>
     </div>
-    <div class="mt-12">
+    <div class="mt-6 sm:mt-12">
       <PresupuestoCarousel client:load/>
     </div>
     
