@@ -8,10 +8,10 @@ import { motion } from "framer-motion"
 const logoCloudImages = [logoCloud1, logoCloud2, logoCloud4, logoCloud3];
 ---
 
-<section>
+<section class="py-4 sm:py-0">
   <div class="container ">
-    <div class="bg-[#252323] py-5 sm:py-[72px] rounded-sm sm:rounded-lg">    
-      <div class="flex items-center gap-6 justify-around px-8 sm:px-24">      
+    <div class="bg-[#252323] py-6 sm:py-[72px] rounded-sm sm:rounded-lg">    
+      <div class="flex items-center gap-6 justify-around px-6 sm:px-24">      
         {logoCloudImages.map((logo, idx) => (
          <div class="">
           <Image src={logo} alt={`logo ${idx}`} class="w-full h-full object-cover "/>
