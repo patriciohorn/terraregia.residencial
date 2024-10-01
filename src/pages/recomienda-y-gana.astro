@@ -3,39 +3,84 @@ import Layout from "@/layouts/Layout.astro";
 import { UserRound } from 'lucide-react';
 import { MapPin } from 'lucide-react';
 import { NotebookPen } from 'lucide-react';
+import * as LucideIcons from 'lucide-react'
 
 import {RecomiendaForm} from '@/components/recomiendaform'
+
+const iconMap = {
+  UserRound: UserRound, 
+  MapPin: MapPin, 
+  NotebookPen: NotebookPen
+} as const
+
+
+const cards = [
+  {
+  title: 'Comparte Información', 
+  description: 'Comparte con tus amigos o familiares los detalles del fraccionamiento residencial que más les interese.', 
+  icon: 'UserRound'},
+  {
+  title: 'Visiten la caseta', 
+  description: 'Lleva a tu recomendado a la caseta de ventas para que le den más información.', 
+  icon: 'MapPin'},
+  {
+  title: 'Firma el contrato', 
+  description: 'Si tu recomendado firma el contrato con nosotros recibirás tu recompensa.', 
+  icon: 'NotebookPen'}
+  ]
+
 
 ---
 
 <Layout title="Recomienda y gana">
 <section class="py-10">
   <div class="container">
-    <div class="flex flex-col gap-4">
-      <h1 class="text-[82px] text-black font-heading leading-[1.1]">Recomienda y gana</h1>
-      <p class="text-3xl max-w-4xl text-neutral-700">Recomiéndanos con un familiar o amigo y recibirás una tarjeta de regalo de Liverpool con valor de $5,000*</p>
-    </div>
-
-    <div class="mt-12 grid sm:grid-cols-3 gap-x-8 gap-y-12">
-      <div class="bg-black text-white rounded-md flex flex-col items-center justify-center text-center px-8 py-14 shadow-sm">
-        <UserRound size="64"/>
-        <h3 class="text-2xl font-medium mt-6">Comparte Información</h3>
-        <p class="mt-4 text-neutral-300 sm:min-h-[72px]">Comparte con tus amigos o familiares los detalles del fraccionamiento residencial que más les interese.</p>            
+    <!-- Header -->
+    <section class="flex flex-col gap-4">
+      <h1 class="text-4xl sm:text-[82px] text-black font-heading leading-[1.1]">Recomienda y gana</h1>
+      <p class="text-lg sm:text-3xl max-w-4xl text-neutral-700">Recomiéndanos con un familiar o amigo y recibirás una tarjeta de regalo de Liverpool con valor de $5,000*</p>
+    </section>
+    
+    <section class="mt-16 sm:mt-12 grid sm:grid-cols-3 gap-x-8 gap-y-4">
+      {cards.map((card, idx) => { 
+        const IconComponent = iconMap[card.icon as keyof typeof iconMap]       
+        return (
+          <div class="bg-black text-white rounded-md flex sm:flex-col gap-x-8 sm:items-center justify-center sm:text-center p-8 sm:py-14 shadow-sm">
+            <IconComponent size="64" className="shrink-0 w-7 h-7 sm:w-16 sm:h-16 "/>
+            <div>
+              <h3 class="text-base sm:text-2xl font-medium sm:mt-6">{card.title}</h3>
+              <p class="text-sm sm:text-base mt-4 text-neutral-300 sm:min-h-[72px]">{card.description}</p>     
+            </div>               
+          </div>
+        )
+      })}
+      
+      <!-- <div class="bg-black text-white rounded-md flex sm:flex-col gap-x-8 sm:items-center justify-center sm:text-center p-8 sm:py-14 shadow-sm">
+        <UserRound size="64" className="shrink-0 w-7 h-7 sm:w-16 sm:h-16 "/>
+        <div>
+          <h3 class="text-base sm:text-2xl font-medium sm:mt-6">Comparte Información</h3>
+        <p class="text-sm sm:text-base mt-4 text-neutral-300 sm:min-h-[72px]">Comparte con tus amigos o familiares los detalles del fraccionamiento residencial que más les interese.</p>     
+        </div>               
       </div>
 
       <div class="bg-black text-white rounded-md flex flex-col items-center justify-center text-center px-8 py-14 shadow-sm">
         <MapPin size="64"/>
-        <h3 class="text-2xl font-medium mt-6">Visiten la caseta</h3>
-        <p class="mt-4 text-neutral-300 sm:min-h-[72px]">Lleva a tu recomendado a la caseta de ventas para que le den más información.</p>            
+        <div>
+          <h3 class="text-2xl font-medium mt-6">Visiten la caseta</h3>
+        <p class="mt-4 text-neutral-300 sm:min-h-[72px]">Lleva a tu recomendado a la caseta de ventas para que le den más información.</p> 
+        </div>                   
       </div>
 
       <div class="bg-black text-white rounded-md flex flex-col items-center justify-center text-center px-8 py-14 shadow-sm">
         <NotebookPen size="64"/>
-        <h3 class="text-2xl font-medium mt-6">Comparte Información</h3>
-        <p class="mt-4 text-neutral-300 sm:min-h-[72px]">Si tu recomendado firma el contrato con nosotros recibirás tu recompensa.</p>            
-      </div>   
+        <div>
+          <h3 class="text-2xl font-medium mt-6">Comparte Información</h3>
+          <p class="mt-4 text-neutral-300 sm:min-h-[72px]">Si tu recomendado firma el contrato con nosotros recibirás tu recompensa.</p>          
+        </div>        
+                    
+      </div>    -->
 
-    </div>
+    </section>
     <div class="mt-16 bg-white rounded-md px-14 py-16 shadow-sm border border-neutral-100">
       <RecomiendaForm client:visible/>
     </div>
