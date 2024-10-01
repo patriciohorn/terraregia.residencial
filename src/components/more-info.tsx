@@ -11,7 +11,7 @@ import { Button } from './ui/button';
 
 export function MoreInfoForm() {
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-4">
       <Input type="text" placeholder="Nombre" />
       <Input type="text" placeholder="Apellidos" />
       <Input type="email" placeholder="Email" />
