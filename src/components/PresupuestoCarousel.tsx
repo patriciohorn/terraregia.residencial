@@ -26,9 +26,9 @@ export function PresupuestoCarousel() {
           loop: true
         }}
         className="pl-[max(16px,calc((100%-1260px)/2+16px))] ml-auto">
-        <CarouselContent className="flex gap-8">
+        <CarouselContent className="gap-10">
           {projects.map((project, idx) => (
-            <CarouselItem key={idx} className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/5">
+            <CarouselItem key={idx} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
               <Card className="group bg-card-foreground border-none rounded-md w-56 sm:w-72 h-[192px] hover:bg-[#BFDEE3] cursor-pointer hover:duration-200 ease-in-out">
                 <CardContent className="flex flex-col justify-between p-4 h-full">
                   <div>
