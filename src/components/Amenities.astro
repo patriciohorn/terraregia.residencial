@@ -7,8 +7,8 @@ interface AmenityItem {
 const {amenities} = Astro.props
 ---
 
-<div class="bg-black rounded-md py-4 px-7">
-  <ul class="grid grid-cols-2 gap-x-14 gap-y-2">
+<div class="bg-black rounded-md p-4 sm:px-7">
+  <ul class="grid grid-cols-2 gap-x-6 gap-y-1 sm:gap-x-14 sm:gap-y-2">
     {amenities.map((amenity: AmenityItem) => (
       <Amenity name={amenity.icon} label={amenity.label}/>
     ))}

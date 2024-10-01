@@ -13,6 +13,7 @@ import { Image } from "astro:assets";
 // import { type CollectionEntry } from 'astro:content';
 import MoreInfo from "@/components/MoreInfo.astro";
 import VariantFooter from "@/components/VariantFooter.astro";
+import { SecondaryImagesCarousel } from "@/components/secondaryImages-carousel";
 
 export async function getStaticPaths() {
 	const projects = await getProjects();
@@ -30,45 +31,51 @@ const project = Astro.props;
 
 
 <Layout title={project.data.title}>
-  <section class="py-16">
+  <section class="py-8 sm:py-16">
     <div class="container">
       <!-- Header -->
-      <h1 class="text-[82px] text-black font-heading">{project.data.title}</h1>      
-        <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8">        
-          <div class="overflow-hidden rounded-md shadow-sm min-h-96">         
+      <h1 class="text-4xl sm:text-[82px] text-black font-heading">{project.data.title}</h1>
+
+      <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">      
+          <div class="overflow-hidden rounded-md shadow-sm min-h-[304px] sm:min-h-96">         
             <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager"/>
           </div>
-          <div class="flex flex-col gap-y-8">
+          <div class="flex flex-col gap-y-4 sm:gap-y-8">
             <ProjectInfo project={project}/>
             <Amenities amenities={project.data.amenities}/>
           </div>
-        </div>
+      </div>
       
-      <div class="grid grid-cols-4 mt-8 gap-x-7">
+      <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
         <SecondaryImages images={project.data.images}/>
       </div>
-
-     
-      <div class="grid grid-cols-2 mt-[72px] gap-x-20 bg-white px-12 py-16 rounded-md">
-        <!-- Tipologia  -->
-        {project.data.variant === 'Tipología' || project.data.variant === 'Lotificación' && (
-          <div>
-            <h2 class="text-[40px] text-black font-heading">{project.data.variant}</h2>            
-            <TipologiaCarousel images={project.data.variantImages} client:load/>
-            <VariantFooter items={project.data.variantFooter}/>
-          </div>
-          <div class="flex flex-col justify-end px-12 pb-9 bg-[#E6E9E9] rounded-md min-h-[468px]">
-            <p class="text-2xl font-medium">{project.data.variantDescription}</p>
-          </div>          
-        )}
-      
-        <!-- Modelos -->
-        {project.data.variant === 'Modelos' && (
-          <ModelosSection project={project.data} client:visible/>
-        
-        )}      
-      </div>    
     </div>
+
+    <div class="sm:hidden mt-4 pl-4 ml-auto">
+        <SecondaryImagesCarousel images={project.data.images} client:load/>
+    </div>
+
+     <div class="container">
+       <div class="grid sm:grid-cols-2 mt-[72px] gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md">
+         <!-- Tipologia  -->
+         {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (
+           <div>
+             <h2 class="text-2xl sm:text-[40px] text-black font-medium mb-8">{project.data.variant}</h2>            
+             <TipologiaCarousel images={project.data.variantImages} client:load/>
+             <VariantFooter items={project.data.variantFooter}/>
+           </div>
+           <div class="flex flex-col justify-end px-4 py-6 sm:px-12 sm:pb-9 bg-[#E6E9E9] rounded-sm sm:rounded-md sm:min-h-[468px]">
+             <p class="text-xl sm:text-2xl font-medium">{project.data.variantDescription}</p>
+           </div>          
+         )}
+       
+         <!-- Modelos -->
+         {project.data.variant === 'Modelos' && (
+           <ModelosSection project={project.data} client:visible/>
+         
+         )}      
+       </div>
+     </div>    
   </section>
   <MoreInfo/>
 </Layout>
