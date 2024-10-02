@@ -19,7 +19,7 @@ export function ModelosTabs({ data, onModelChange }) {
     <div className="mt-6">
       <Tabs
         defaultValue={activeTab.model}
-        className="flex flex-col items-center gap-4"
+        className="flex flex-col items-center gap-4 overflow-x-hidden"
         onValueChange={(value) => {
           const selectedModel = data.modelos.find((model) => model.model === value);
           if (selectedModel) {
@@ -27,16 +27,17 @@ export function ModelosTabs({ data, onModelChange }) {
           }
         }}>
         {/* Tabs Mobile */}
-        <TabsList className="sm:hidden bg-transparent">
+        <TabsList className="sm:hidden bg-transparent w-full">
           <Carousel
             opts={{
               loop: 'true',
               align: 'start'
-            }}>
-            <CarouselContent>
+            }}
+            className="max-w-full">
+            <CarouselContent className="">
               {modelosNames.map((item, idx) => (
                 <CarouselItem
-                  className="basis-1/4
+                  className="basis-1/1
               ">
                   <TabsTrigger
                     value={item}
@@ -70,9 +71,8 @@ export function ModelosTabs({ data, onModelChange }) {
         </TabsList>
         {data.modelosImages.map((item, idx) => (
           <TabsContent value={modelosNames[idx]}>
-            <div className="rounded-md max-w-fit h-72 overflow-hidden">
+            <div key={idx} className="rounded-md max-w-fit h-72 overflow-hidden">
               <img
-                key={idx}
                 src={item.src}
                 alt={data.modelos[idx]}
                 className="w-full h-full rounded-md object-cover animate-fade-right"

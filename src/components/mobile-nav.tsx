@@ -40,7 +40,7 @@ export function MobileNav({ items }: itemsProps) {
           </div>
           <div className="mt-8 flex flex-col items-start gap-2">
             {items.map((item, idx) => (
-              <Link variant={'link'} href={item.path} className="pl-0 text-lg">
+              <Link key={idx} variant={'link'} href={item.path} className="pl-0 text-lg">
                 {item.title}
               </Link>
             ))}
