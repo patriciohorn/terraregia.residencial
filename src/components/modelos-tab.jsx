@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Skeleton } from '@/components/ui/skeleton';
 
 import { cn } from '@/lib/utils';
 
 export function ModelosTabs({ data, onModelChange }) {
   const [activeTab, setActiveTab] = useState(data.modelos[0]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const modelosNames = data.modelos.map((item) => item.model);
 
   const handleTabChange = (model) => {
@@ -13,16 +16,17 @@ export function ModelosTabs({ data, onModelChange }) {
     onModelChange(model);
   };
   return (
-    <div className="w-full overflow-hidden">
+    <div className="mt-6">
       <Tabs
         defaultValue={activeTab.model}
-        className="w-full space-y-4"
+        className="flex flex-col items-center gap-4"
         onValueChange={(value) => {
           const selectedModel = data.modelos.find((model) => model.model === value);
           if (selectedModel) {
             handleTabChange(selectedModel);
           }
         }}>
+        {/* Tabs Mobile */}
         <TabsList className="sm:hidden bg-transparent">
           <Carousel
             opts={{
@@ -49,7 +53,8 @@ export function ModelosTabs({ data, onModelChange }) {
             </CarouselContent>
           </Carousel>
         </TabsList>
-        <TabsList className="hidden sm:flex sm:flex-wrap sm:justify-between sm:gap-4 sm:bg-white">
+        {/* Tabs Desktop */}
+        <TabsList className="hidden sm:flex sm:flex-wrap sm:justify-between sm:gap-4 sm:bg-white h-full">
           {modelosNames.map((item, idx) => (
             <TabsTrigger
               value={item}
@@ -65,7 +70,7 @@ export function ModelosTabs({ data, onModelChange }) {
         </TabsList>
         {data.modelosImages.map((item, idx) => (
           <TabsContent value={modelosNames[idx]}>
-            <div className="rounded-md mt-14 h-72 overflow-hidden">
+            <div className="rounded-md max-w-fit h-72 overflow-hidden">
               <img
                 key={idx}
                 src={item.src}

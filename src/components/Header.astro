@@ -4,6 +4,9 @@ import logo from '../assets/logo-terra-regia.svg'
 import { Button } from "./ui/button";
 import { Icon } from 'astro-icon/components'
 import { cn } from "@/lib/utils";
+import { Menu } from 'lucide-react';
+import {MobileNav} from '@/components/mobile-nav'
+
 
 const menuitems = [
   {
@@ -30,8 +33,12 @@ console.log('CurrentPath', currentPath)
     <div class="flex lg:flex-1">
       <a href="/">
         <span class="sr-only">Terra Regia</span>
-        <Image src={logo} alt="logo terra regia" class="h-8 md:h-10 w-full" loading="eager"/>
+        <Image src={logo} alt="logo terra regia" class="h-8 sm:h-10 w-full" loading="eager"/>
       </a>
+    </div>
+
+    <div class="sm:hidden flex">      
+      <MobileNav items={menuitems} client:load/>
     </div>
     <div class="hidden lg:flex lg:gap-x-10">
       {menuitems.map((item) => (      
