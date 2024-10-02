@@ -71,7 +71,7 @@ export function ModelosTabs({ data, onModelChange }) {
         </TabsList>
         {data.modelosImages.map((item, idx) => (
           <TabsContent value={modelosNames[idx]}>
-            <div key={idx} className="rounded-md max-w-fit h-full sm:h-72 overflow-hidden">
+            <div key={idx} className="rounded-md max-w-fit h-48 sm:h-72 overflow-hidden">
               <img
                 src={item.src}
                 alt={data.modelos[idx]}
