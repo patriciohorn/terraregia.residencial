@@ -18,7 +18,7 @@ export function SecondaryImagesCarousel({ images }: SecondaryImagesCarouselProps
       }}>
       <CarouselContent>
         {images.map((image, idx) => (
-          <CarouselItem className="basis-1/1">
+          <CarouselItem key={idx} className="basis-1/1">
             <div className="overflow-hidden shadow-sm rounded-md w-60 h-56">
               <img
                 src={image.src}

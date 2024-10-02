@@ -44,25 +44,24 @@ interface ProjectProps {
 }
 export function ModelosSection({ project }: ProjectProps) {
   const [selectedModel, setSelectedModel] = useState(project.modelos[0]);
-  console.log('Selected Model', selectedModel);
   const handleModelChange = (model: any) => {
     setSelectedModel(model);
   };
 
   return (
-    <>
+    <div className="flex flex-col sm:grid sm:grid-cols-2 gap-x-20 gap-y-12 mt-16 bg-white px-4 py-8 sm:px-12 sm:py-16 rounded-md">
       <div>
-        <h2 className="text-[40px] text-black font-heading mb-8">{project.variant}</h2>
+        <h2 className="text-2xl sm:text-[40px] text-black font-medium mb-8">{project.variant}</h2>
         <ModelosTabs data={project} onModelChange={handleModelChange} />
         <ModelFooter items={project.variantFooter} />
       </div>
-      <div className="flex flex-col justify-center items-stretch px-12 py-8 bg-[#E6E9E9] rounded-md min-h-[504px]">
+      <div className="flex flex-col justify-center sm:items-stretch px-4 sm:px-12 py-8 bg-[#E6E9E9] rounded-md">
         <ModelosCarousel
           images={selectedModel.isometricoImage}
           floorTitles={selectedModel.floorTitles}
           descriptions={selectedModel.descriptions}
         />
       </div>
-    </>
+    </div>
   );
 }

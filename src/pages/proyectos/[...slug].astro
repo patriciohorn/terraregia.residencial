@@ -54,11 +54,11 @@ const project = Astro.props;
     <div class="sm:hidden mt-4 pl-4 ml-auto">
         <SecondaryImagesCarousel images={project.data.images} client:load/>
     </div>
-
+    {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (  
      <div class="container">
-       <div class="grid sm:grid-cols-2 mt-[72px] gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md">
+       <div class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md">
          <!-- Tipologia  -->
-         {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (
+               
            <div>
              <h2 class="text-2xl sm:text-[40px] text-black font-medium mb-8">{project.data.variant}</h2>            
              <TipologiaCarousel images={project.data.variantImages} client:load/>
@@ -66,16 +66,18 @@ const project = Astro.props;
            </div>
            <div class="flex flex-col justify-end px-4 py-6 sm:px-12 sm:pb-9 bg-[#E6E9E9] rounded-sm sm:rounded-md sm:min-h-[468px]">
              <p class="text-xl sm:text-2xl font-medium">{project.data.variantDescription}</p>
-           </div>          
-         )}
+           </div>
+          </div>
+        </div>           
+    )}
        
-         <!-- Modelos -->
-         {project.data.variant === 'Modelos' && (
-           <ModelosSection project={project.data} client:visible/>
-         
-         )}      
-       </div>
-     </div>    
+    <!-- Modelos -->
+    {project.data.variant === 'Modelos' && (
+      <div class="container">
+        <ModelosSection project={project.data} client:visible/>
+      </div>
+    )}      
+          
   </section>
   <MoreInfo/>
 </Layout>
