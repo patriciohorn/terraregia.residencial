@@ -7,11 +7,9 @@ const validCostos = costos.filter((costo): costo is string => costo !== undefine
 
 const costosSorted = validCostos.sort((a, b) => (Number(formatCurrency(a))) - Number(formatCurrency(b)))
 const {activeCategory} = Astro.props
-
-console.log(costos)
 ---
 
-<div class="flex flex-wrap gap-5">
+<div class="flex flex-wrap gap-5">  
   <Costo/>
   {
     costosSorted.map((costo) => (  

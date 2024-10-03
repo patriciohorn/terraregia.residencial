@@ -1,16 +1,25 @@
 ---
 import { getUbicaciones } from "@/lib/utils";
 import Ubicacion from '@/components/Ubicacion.astro'
+import {OptionsCarousel} from '@/components/options-carousel'
 const ubicaciones = await getUbicaciones()
 const {activeCategory} = Astro.props
 
 ---
 
-<div class="flex flex-wrap gap-5">
-  <Ubicacion/>
-  {
-    ubicaciones.map((ubicacion) => (
-      <Ubicacion name={ubicacion} activeCategory={activeCategory}/>
-    ))
-  }
+<div class="w-full">
+  <div class="hidden sm:flex sm:flex-wrap sm:gap-5">
+    <Ubicacion/>
+    {
+      ubicaciones.map((ubicacion) => (
+        <Ubicacion name={ubicacion} activeCategory={activeCategory}/>
+      ))
+    }
+  </div>
+  <div class="sm:hidden ">
+    <OptionsCarousel items={ubicaciones} client:load/>
+
+  </div>
+
 </div>
+
