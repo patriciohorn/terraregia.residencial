@@ -24,7 +24,8 @@ const menuitems = [
  
 ]
 
-const currentPath = Astro.url.pathname; 
+// const currentPath = Astro.url.pathname; 
+const {currentPath} = Astro.props
 
 ---
 
@@ -37,7 +38,7 @@ const currentPath = Astro.url.pathname;
       </a>
     </div>
 
-    <div class="sm:hidden flex">      
+    <div class="sm:hidden flex">        
       <MobileNav items={menuitems} client:load/>
     </div>
     <div class="hidden lg:flex lg:gap-x-10">
