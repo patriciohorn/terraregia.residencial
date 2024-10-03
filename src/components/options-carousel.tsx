@@ -8,10 +8,13 @@ import {
   CarouselPrevious
 } from '@/components/ui/carousel';
 import { Link } from '@/components/link';
+import type Ubicacion from './Ubicacion.astro';
 
-export function OptionsCarousel({ items }) {
-  const [isActive, setIsActive] = useState(false);
-
+export function OptionsCarousel({ items, path }: any) {
+  console.log(path);
+  // const [activeTab, setActiveTab] = useState('Todos');
+  const currentPath = path.split('/').slice(-1).join('');
+  console.log(currentPath);
   return (
     <Carousel
       className="max-w-full"
@@ -20,22 +23,33 @@ export function OptionsCarousel({ items }) {
         align: 'start'
       }}>
       <CarouselContent>
-        {items.map((item, idx) => (
+        <CarouselItem className="basis-1/1">
+          <Link
+            href={'/ubicacion'}
+            variant="invertedOutline"
+            className={cn(
+              `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white`,
+              currentPath === 'ubicacion' && `bg-white text-black border border-white`
+            )}>
+            Todos
+          </Link>
+        </CarouselItem>
+        {items.map((item: string, idx: number) => (
           <CarouselItem className="basis-1/1">
             <Link
-              href={item === 'Todos' ? '/ubicacion' : `/ubicacion/${sluglify(item.toLowerCase())}`}
+              href={`/ubicacion/${sluglify(item.toLowerCase())}`}
               variant="invertedOutline"
               className={cn(
                 `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white`,
-                isActive && `bg-white text-black border border-white`
-              )}>
+                currentPath === sluglify(item.toLowerCase()) &&
+                  `bg-white text-black border border-white`
+              )}
+              onClick={() => setActiveTab(item)}>
               {item}
             </Link>
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
     </Carousel>
   );
 }

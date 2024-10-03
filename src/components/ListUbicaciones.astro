@@ -4,7 +4,7 @@ import Ubicacion from '@/components/Ubicacion.astro'
 import {OptionsCarousel} from '@/components/options-carousel'
 const ubicaciones = await getUbicaciones()
 const {activeCategory} = Astro.props
-
+const currentPath = Astro.url.pathname; 
 ---
 
 <div class="w-full">
@@ -17,7 +17,7 @@ const {activeCategory} = Astro.props
     }
   </div>
   <div class="sm:hidden ">
-    <OptionsCarousel items={ubicaciones} client:load/>
+    <OptionsCarousel items={ubicaciones} path={currentPath} client:load/>
 
   </div>
 
