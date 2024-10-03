@@ -5,10 +5,10 @@ const {name = "Todos",  activeCategory} = Astro.props
 const currentPath = Astro.url.pathname
 const unsluglifyNameCategory = sluglify(name.toLowerCase())
 console.log(unsluglifyNameCategory, activeCategory)
-const isActive = activeCategory?.toLowerCase() === unsluglifyNameCategory || (currentPath === '/tipo-de-propiedad' && name === 'Todos')
+const isActive = activeCategory?.toLowerCase() === unsluglifyNameCategory || (currentPath === '/tipo-de-propiedad/' && name === 'Todos')
 
 
 ---
 
 
-<Link href={name === 'Todos' ? '/tipo-de-propiedad' : sluglify(`/tipo-de-propiedad/${unsluglifyNameCategory}`)} variant="invertedOutline" className={cn(`h-8 px-4 py-2 text-sm s border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`, isActive && `bg-white text-black border border-white`)}>{name}</Link>
+<Link href={name === 'Todos' ? '/tipo-de-propiedad/' : sluglify(`/tipo-de-propiedad/${unsluglifyNameCategory}`)} variant="invertedOutline" className={cn(`h-8 px-4 py-2 text-sm s border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`, isActive && `bg-white text-black border border-white`)}>{name}</Link>
