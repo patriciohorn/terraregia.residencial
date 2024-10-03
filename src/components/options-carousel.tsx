@@ -28,7 +28,7 @@ export function OptionsCarousel({ items, path }: any) {
         {items.map((item: string, idx: number) => {
           if (item !== 'preventa') {
             return (
-              <CarouselItem className="basis-1/1">
+              <CarouselItem key={idx} className="basis-1/1">
                 <Link
                   href={`/${sectionPath === 'ubicacion' ? `/ubicacion/${sluglify(item.toLowerCase())}` : 'costo'}/${formatCurrency(item)}`}
                   variant="invertedOutline"
