@@ -33,13 +33,10 @@ const currentPath = Astro.url.pathname
 	</head>
 	<body class="overflow-x-hidden bg-[#F5F5F5]">
 		<Header currentPath={currentPath}/>
-		<main>
+		<main class="container">
+			<p>{currentPath}</p>
 			<slot />
 		</main>
 	</body>
 </html>
 
-<script>
-	const currentPath = Astro.url.pathname
-	console.log(currentPath)
-</script>
