@@ -26,11 +26,13 @@ export function OptionsCarousel({ items, path }: any) {
           </Link>
         </CarouselItem>
         {items.map((item: string, idx: number) => {
+          const ubicacionPath = `ubicacion/${sluglify(item.toLowerCase())}`;
+          const costoPath = `costo/${formatCurrency(item)}`;
           if (item !== 'preventa') {
             return (
               <CarouselItem key={idx} className="basis-1/1">
                 <Link
-                  href={`/${sectionPath === 'ubicacion' ? `/ubicacion/${sluglify(item.toLowerCase())}` : 'costo'}/${formatCurrency(item)}`}
+                  href={`/${sectionPath === 'ubicacion' ? ubicacionPath : costoPath}`}
                   variant="invertedOutline"
                   className={cn(
                     `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white`,
