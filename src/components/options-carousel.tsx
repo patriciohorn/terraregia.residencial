@@ -5,6 +5,7 @@ import { Link } from '@/components/link';
 export function OptionsCarousel({ items, path }: any) {
   const sectionPath = path.split('/')[1];
   const currentPath = path.split('/').slice(-1).join('');
+  console.log(currentPath);
   return (
     <Carousel
       className="max-w-full"
