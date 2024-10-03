@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils';
 
 export function ModelosTabs({ data, onModelChange }) {
   const [activeTab, setActiveTab] = useState(data.modelos[0]);
-  const [isLoading, setIsLoading] = useState(true);
 
   const modelosNames = data.modelos.map((item) => item.model);
 

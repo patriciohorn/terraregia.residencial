@@ -10,4 +10,4 @@ const unsluglifyNameCategory = formatCurrency(name)
 const isActive = activeCategory?.toLowerCase() === unsluglifyNameCategory || (currentPath === '/costo' && name === 'Infonavit')
 ---
 
-<Link href={name === 'Infonavit' ? '/costo' : sluglify(`/costo/${unsluglifyNameCategory}`)} variant="invertedOutline" className={cn(`h-8 px-4 py-2 text-sm s border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`, isActive && `bg-white text-black border border-white`)}>{name !== '$3,000,000' ? name : '$3,000,000 o más'}</Link>
+<Link href={name === 'Infonavit' ? '/costo' : sluglify(`/costo/${unsluglifyNameCategory}`)} variant="invertedOutline" className={cn(`h-8 px-4 py-2 text-sm border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`, isActive && `bg-white text-black border border-white`)}>{name !== '$3,000,000' ? name : '$3,000,000 o más'}</Link>

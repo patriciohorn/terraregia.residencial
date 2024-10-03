@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { cn, sluglify } from '@/lib/utils';
+import { cn, sluglify, formatCurrency } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Link } from '@/components/link';
 
 export function OptionsCarousel({ items, path }: any) {
   const sectionPath = path.split('/')[1];
-  console.log(sectionPath);
   const currentPath = path.split('/').slice(-1).join('');
   return (
     <Carousel
@@ -24,23 +22,28 @@ export function OptionsCarousel({ items, path }: any) {
               (currentPath === 'ubicacion' || currentPath === 'costo') &&
                 `bg-white text-black border border-white`
             )}>
-            Todos
+            {currentPath === 'ubicacion' ? 'Todos' : 'Infonavit'}
           </Link>
         </CarouselItem>
-        {items.map((item: string, idx: number) => (
-          <CarouselItem className="basis-1/1">
-            <Link
-              href={`/${sectionPath === 'ubicacion' ? 'ubicacion' : 'costo'}/${sluglify(item.toLowerCase())}`}
-              variant="invertedOutline"
-              className={cn(
-                `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white`,
-                currentPath === sluglify(item.toLowerCase()) &&
-                  `bg-white text-black border border-white`
-              )}>
-              {item}
-            </Link>
-          </CarouselItem>
-        ))}
+        {items.map((item: string, idx: number) => {
+          if (item !== 'preventa') {
+            return (
+              <CarouselItem className="basis-1/1">
+                <Link
+                  href={`/${sectionPath === 'ubicacion' ? `/ubicacion/${sluglify(item.toLowerCase())}` : 'costo'}/${formatCurrency(item)}`}
+                  variant="invertedOutline"
+                  className={cn(
+                    `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white`,
+                    (currentPath === sluglify(item.toLowerCase()) ||
+                      currentPath === formatCurrency(item)) &&
+                      `bg-white text-black border border-white`
+                  )}>
+                  {item !== '$3,000,000' ? item : '$3,000,000 o más'}
+                </Link>
+              </CarouselItem>
+            );
+          }
+        })}
       </CarouselContent>
     </Carousel>
   );
