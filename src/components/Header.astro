@@ -11,22 +11,19 @@ import {MobileNav} from '@/components/mobile-nav'
 const menuitems = [
   {
     title: 'Proyectos', 
-    path: '/tipo-de-propiedad'
+    path: '/tipo-de-propiedad/'
   }, 
   {
     title: 'Recomienda y gana', 
-    path: '/recomienda-y-gana'
+    path: '/recomienda-y-gana/'
   }, 
   {
     title: 'Inversión', 
-    path: '/inversion'
+    path: '/inversion/'
   }, 
  
 ]
-
-// const currentPath = Astro.url.pathname; 
-const {currentPath} = Astro.props
-
+const currentPath = Astro.url.pathname
 ---
 
 <header class="py-[30px]">
