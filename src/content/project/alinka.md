@@ -36,4 +36,5 @@ variantFooter:
   - 'Área: 136m2'
   - 'Frente: 8m'
   - 'Fondo: 17m'
+brochure: 'https://alinkaresidencial.mx/wp-content/uploads/2024/09/Alinka-Residencial-Brochure.pdf'
 ---

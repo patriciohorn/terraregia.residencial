@@ -33,6 +33,8 @@ modelos:
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
+    modeloImage:
+      - '../../assets/toscana/siena.webp'
     descriptions:
       Primer nivel:
         - Cochera dos autos
@@ -54,6 +56,8 @@ modelos:
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
+    modeloImage:
+      - '../../assets/toscana/sienaplus.webp'
     descriptions:
       Primer nivel:
         - Cochera dos autos
@@ -72,6 +76,8 @@ modelos:
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
+    modeloImage:
+      - '../../assets/toscana/firenze.webp'
     descriptions:
       Primer nivel:
         - Cochera dos autos
@@ -92,6 +98,8 @@ modelos:
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
+    modeloImage:
+      - '../../assets/toscana/firenze-plus.webp'
     descriptions:
       Primer nivel:
         - Cochera dos autos
@@ -117,4 +125,6 @@ modelosImages:
 isometricosSiena:
   - '../../assets/toscana/planta1.png'
   - '../../assets/toscana/planta2.png'
+virtualTour: 'https://kuula.co/share/5n8Cv/collection/7cv1M?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1'
+brochure: 'https://toscanaresidencial.mx/wp-content/uploads/2024/05/TOSCAN1.pdf'
 ---

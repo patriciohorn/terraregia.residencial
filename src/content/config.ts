@@ -33,6 +33,7 @@ const projectCollection = defineCollection({
               model: z.string(),
               isometricoImage: z.array(image()),
               floorTitles: z.array(z.string()),
+              modeloImage: z.array(image()).optional(),
               descriptions: z.object({
                 'Primer nivel': z.array(z.string()),
                 'Segundo nivel': z.array(z.string()).optional(),
@@ -43,7 +44,9 @@ const projectCollection = defineCollection({
         )
         .optional(),
       modelosImages: z.array(image()).optional(),
-      isometricosSiena: z.array(image()).optional()
+      isometricosSiena: z.array(image()).optional(),
+      virtualTour: z.string().optional(),
+      brochure: z.string().optional()
     })
 });
 

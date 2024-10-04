@@ -32,13 +32,16 @@ variant: 'Modelos'
 modelos:
   - model: Ankara
     isometricoImage:
-      - '../../assets/rincon/isometrico-ankara-pb.png'
-      - '../../assets/rincon/isometrico-ankara-pa.png'
-      - '../../assets/rincon/isometrico-ankara-tercer.png'
+      - '../../assets/rincon/isometrico-ankara-pb.webp'
+      - '../../assets/rincon/isometrico-ankara-pa.webp'
+      - '../../assets/rincon/isometrico-ankara-tercer.webp'
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/rincon/ankara.jpg'
+      - '../../assets/rincon/ankara-tercer.webp'
     descriptions:
       Primer nivel:
         - Puerta principal de seguridad
@@ -60,13 +63,16 @@ modelos:
         - Bodega
   - model: Viena
     isometricoImage:
-      - '../../assets/rincon/isometrico-viena-pb.png'
-      - '../../assets/rincon/isometrico-viena-pa.png'
-      - '../../assets/rincon/isometrico-viena-tercer.png'
+      - '../../assets/rincon/isometrico-ankara-pb.webp'
+      - '../../assets/rincon/isometrico-ankara-pa.webp'
+      - '../../assets/rincon/isometrico-ankara-tercer.webp'
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/rincon/viena.jpg'
+      - '../../assets/rincon/viena-tercer.webp'
     descriptions:
       Primer nivel:
         - Puerta principal de seguridad
@@ -88,13 +94,16 @@ modelos:
         - Bodega
   - model: Venecia
     isometricoImage:
-      - '../../assets/rincon/isometrico-venecia-pb.png'
-      - '../../assets/rincon/isometrico-venecia-pa.png'
-      - '../../assets/rincon/isometrico-venecia-tercer.png'
+      - '../../assets/rincon/isometrico-ankara-pb.webp'
+      - '../../assets/rincon/isometrico-ankara-pa.webp'
+      - '../../assets/rincon/isometrico-ankara-tercer.webp'
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/rincon/venecia.jpg'
+      - '../../assets/rincon/venecia-tercer.webp'
     descriptions:
       Primer nivel:
         - Puerta principal de seguridad
@@ -116,13 +125,16 @@ modelos:
         - Bodega
   - model: Atenas
     isometricoImage:
-      - '../../assets/rincon/isometrico-atenas-pb.png'
-      - '../../assets/rincon/isometrico-atenas-pa.png'
-      - '../../assets/rincon/isometrico-atenas-tercer.png'
+      - '../../assets/rincon/isometrico-ankara-pb.webp'
+      - '../../assets/rincon/isometrico-ankara-pa.webp'
+      - '../../assets/rincon/isometrico-ankara-tercer.webp'
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/rincon/atenas.jpg'
+      - '../../assets/rincon/atenas-tercer.webp'
     descriptions:
       Primer nivel:
         - Puerta principal de seguridad
@@ -144,13 +156,16 @@ modelos:
         - Bodega
   - model: Lugano
     isometricoImage:
-      - '../../assets/rincon/isometrico-lugano-pb.png'
-      - '../../assets/rincon/isometrico-lugano-pa.png'
-      - '../../assets/rincon/isometrico-lugano-tercer.png'
+      - '../../assets/rincon/isometrico-ankara-pb.webp'
+      - '../../assets/rincon/isometrico-ankara-pa.webp'
+      - '../../assets/rincon/isometrico-ankara-tercer.webp'
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/rincon/lugano.jpg'
+      - '../../assets/rincon/lugano-tercer.webp'
     descriptions:
       Primer nivel:
         - Puerta principal de seguridad
@@ -183,4 +198,6 @@ modelosImages:
 isometricosSiena:
   - '../../assets/toscana/planta1.png'
   - '../../assets/toscana/planta2.png'
+virtualTour: 'https://kuula.co/share/collection/7c9hM?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1'
+brochure: 'https://rincondelasierra.mx/wp-content/uploads/2024/05/Ppt-RDLS-2024.pdf'
 ---

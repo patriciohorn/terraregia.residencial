@@ -5,7 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import { Dot, CircleCheck } from 'lucide-react';
+import { CircleCheck } from 'lucide-react';
 
 interface Image {
   src: string;
@@ -23,10 +23,11 @@ interface Description {
 interface CarouselProps {
   images: Image[]; // Array of images, one for each floor level
   floorTitles: string[]; // Dynamic floor titles like 'Planta Baja', 'Planta Alta'
-  descriptions: Description; // Object containing descriptions per floor level
+  descriptions: Description;
+  plantas: string; // Object containing descriptions per floor level
 }
 
-export function ModelosCarousel({ images, floorTitles, descriptions }: CarouselProps) {
+export function ModelosCarousel({ images, floorTitles, descriptions, plantas }: CarouselProps) {
   return (
     <div className="w-full">
       <Carousel className="w-full">
@@ -36,7 +37,7 @@ export function ModelosCarousel({ images, floorTitles, descriptions }: CarouselP
 
             const floorDescriptions = descriptions[floorTitle as keyof Description] || []; // Get the description for the current floor
             return (
-              <CarouselItem key={idx} className="flex flex-col justify-between">
+              <CarouselItem key={idx} className="flex flex-col justify-center">
                 {/* Image section */}
                 <div className="rounded-md overflow-hidden">
                   <img
@@ -47,12 +48,12 @@ export function ModelosCarousel({ images, floorTitles, descriptions }: CarouselP
                 </div>
 
                 {/* Floor title and description section */}
-                <div className="bg-white rounded-md px-8 py-6 mt-4 ">
+                <div className="bg-white rounded-md py-6 px-10 mt-2 ">
                   <h3 className="text-2xl font-heading">{floorTitle}</h3>
-                  <ul className="grid sm:grid-cols-2 sm:gap-x-12 gap-y-2.5 text-[#827D7D] text-sm leading-4 mt-4">
+                  <ul className="grid sm:grid-cols-2 sm:gap-x-6 gap-y-1.5 text-[#827D7D] text-xs leading-4 mt-4">
                     {floorDescriptions.map((description: string, i: number) => (
                       <li key={i} className="flex items-center gap-1.5">
-                        <CircleCheck className="w-3.5 h-3.5 shrink-0" />
+                        <CircleCheck className="w-3 h-3 shrink-0" />
                         {description}
                       </li>
                     ))}
@@ -62,8 +63,8 @@ export function ModelosCarousel({ images, floorTitles, descriptions }: CarouselP
             );
           })}
         </CarouselContent>
-        <CarouselPrevious variant="default" className="-left-8 -translate-y-5 " />
-        <CarouselNext variant="default" className="-right-8 -translate-y-5 " />
+        <CarouselPrevious variant="default" className="-left-2 -translate-y-10 " />
+        <CarouselNext variant="default" className="-right-2 -translate-y-10  " />
       </Carousel>
     </div>
   );

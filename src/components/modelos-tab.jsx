@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
-import { Skeleton } from '@/components/ui/skeleton';
 
 import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
 
-export function ModelosTabs({ data, onModelChange }) {
+export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
   const [activeTab, setActiveTab] = useState(data.modelos[0]);
 
   const modelosNames = data.modelos.map((item) => item.model);
@@ -14,6 +14,7 @@ export function ModelosTabs({ data, onModelChange }) {
     setActiveTab(model);
     onModelChange(model);
   };
+
   return (
     <div className="mt-6">
       <Tabs
@@ -25,55 +26,57 @@ export function ModelosTabs({ data, onModelChange }) {
             handleTabChange(selectedModel);
           }
         }}>
-        {/* Tabs Mobile */}
-        <TabsList className="sm:hidden bg-transparent w-full">
-          <Carousel
-            opts={{
-              loop: 'true',
-              align: 'start'
-            }}
-            className="max-w-full">
-            <CarouselContent className="">
-              {modelosNames.map((item, idx) => (
-                <CarouselItem
-                  className="basis-1/1
-              ">
-                  <TabsTrigger
-                    value={item}
+        <TabsList className="bg-transparent w-full h-full flex flex-col space-y-4">
+          <div className="max-w-full">
+            <Carousel
+              opts={{
+                loop: 'true',
+                align: 'start'
+              }}
+              className="max-w-full">
+              <CarouselContent>
+                {modelosNames.map((item, idx) => (
+                  <CarouselItem
                     key={item}
-                    className={cn(
-                      'bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base font-medium w-32',
-                      activeTab.model === item &&
-                        'data-[state=active]:bg-black data-[state=active]:text-white'
-                    )}>
-                    {item}
-                  </TabsTrigger>
-                </CarouselItem>
+                    className="basis-1/1 sm:basis-1/4
+              ">
+                    <TabsTrigger
+                      value={item}
+                      className={cn(
+                        'bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base font-medium w-28',
+                        activeTab.model === item &&
+                          'data-[state=active]:bg-black data-[state=active]:text-white'
+                      )}>
+                      {item}
+                    </TabsTrigger>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+          <div className="flex gap-2 max-w-full">
+            {data.title === 'Rincón de la Sierra' &&
+              ['2 plantas', '3 plantas'].map((option) => (
+                <Button
+                  size="sm"
+                  key={option}
+                  onClick={() => onPlantasChange(option)}
+                  className={cn(
+                    'bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base min-w-24 font-medium w-28',
+                    plantas === option && 'bg-black text-white'
+                  )}>
+                  {option}
+                </Button>
               ))}
-            </CarouselContent>
-          </Carousel>
+          </div>
         </TabsList>
-        {/* Tabs Desktop */}
-        <TabsList className="hidden sm:flex sm:flex-wrap sm:justify-between sm:gap-4 sm:bg-white h-full">
-          {modelosNames.map((item, idx) => (
-            <TabsTrigger
-              value={item}
-              key={item}
-              className={cn(
-                'bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base min-w-24 font-medium w-28',
-                activeTab.model === item &&
-                  'data-[state=active]:bg-black data-[state=active]:text-white'
-              )}>
-              {item}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        {data.modelosImages.map((item, idx) => (
-          <TabsContent value={modelosNames[idx]}>
-            <div key={idx} className="rounded-md max-w-fit h-48 sm:h-72 overflow-hidden">
+
+        {data.modelos.map((model) => (
+          <TabsContent value={model.model} key={model.model}>
+            <div className="rounded-md max-w-fit h-48 sm:h-72 overflow-hidden">
               <img
-                src={item.src}
-                alt={data.modelos[idx]}
+                src={plantas === '2 plantas' ? model.modeloImage[0].src : model.modeloImage[1].src}
+                alt={model.model}
                 className="w-full h-full rounded-md object-contain animate-fade-right"
               />
             </div>

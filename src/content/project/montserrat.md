@@ -39,6 +39,8 @@ modelos:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/montserrat/liria.webp'
     descriptions:
       Primer nivel:
         - Cochera techada dos autos
@@ -68,6 +70,8 @@ modelos:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/montserrat/moraira.webp'
     descriptions:
       Primer nivel:
         - Cochera techada dos autos
@@ -97,6 +101,8 @@ modelos:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/montserrat/beniali.webp'
     descriptions:
       Primer nivel:
         - Cochera techada dos autos
@@ -122,6 +128,8 @@ modelos:
       - 'Primer nivel'
       - 'Segundo nivel'
       - 'Tercer nivel'
+    modeloImage:
+      - '../../assets/montserrat/eliana.webp'
     descriptions:
       Primer nivel:
         - Cochera techada dos autos
@@ -147,5 +155,5 @@ modelosImages:
   - '../../assets/montserrat/moraira.webp'
   - '../../assets/montserrat/beniali.webp'
   - '../../assets/montserrat/eliana.webp'
-isometricoImage: ''
+brochure: 'https://montserratresidencial.mx/wp-content/uploads/2024/06/Montserrat-Residencial-Brochure.pdf'
 ---

@@ -38,4 +38,5 @@ variantFooter:
   - 'Área: 200m2'
   - 'Frente: 10m'
   - 'Fondo: 20m'
+brochure: 'https://alboradasresidencial.mx/wp-content/uploads/2024/07/Alboradas-Residencial-Brochure-Alborada.pdf'
 ---

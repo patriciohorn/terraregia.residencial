@@ -37,4 +37,5 @@ variantFooter:
   - 'Área: 127.5m2'
   - 'Frente: 7.5m'
   - 'Fondo: 17m'
+brochure: 'https://montessaresidencial.mx/wp-content/uploads/2024/06/Montessa-Residencial-Brochure.pdf'
 ---
