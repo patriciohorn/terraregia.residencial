@@ -1,15 +1,32 @@
+import { Link } from './link';
+import { CloudDownload } from 'lucide-react';
+
 interface ModelFooterProps {
   items: string[];
+  brochure: string;
 }
 
-export function ModelFooter({ items }: ModelFooterProps) {
+export function ModelFooter({ items, brochure }: ModelFooterProps) {
   return (
-    <div className="mt-8 flex flex-wrap  sm:flex-rowgap-x-0 gap-y-1 sm:gap-4 justify-between sm:justify-center items-center">
-      {items.map((item: string) => (
-        <p className="text-xs text-center sm:text-base border border-black px-1 sm:px-4 py-2 rounded-full font-medium w-36 sm:w-auto">
-          {item}
-        </p>
-      ))}
+    <div className="mt-8 flex items-center justify-between max-w-md mx-auto">
+      <div className="flex items-center gap-x-8 justify-between">
+        {items.map((item: string) => (
+          <div className="flex flex-col gap-2 items-center">
+            <h3 className="text-xs text-center sm:text-base font-medium">{item.split(':')[0]}</h3>
+            <p className="text-base text-neutral-600">{item.split(':')[1]}</p>
+          </div>
+        ))}
+      </div>
+      {brochure && (
+        <Link
+          href={brochure}
+          target="_blank"
+          variant="default"
+          className="flex items-center gap-2 text-sm w-fit ">
+          <CloudDownload className="w-4 h-4" />
+          <span>Brochure</span>
+        </Link>
+      )}
     </div>
   );
 }

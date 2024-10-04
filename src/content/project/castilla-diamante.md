@@ -35,6 +35,8 @@ modelos:
     floorTitles:
       - 'Primer nivel'
       - 'Segundo nivel'
+    modeloImage:
+      - '../../assets/castilla/espana.webp'
     descriptions:
       Primer nivel:
         - Cocina
@@ -52,6 +54,8 @@ modelos:
       - '../../assets/castilla/isometrico-madrid-pb.webp'
     floorTitles:
       - 'Primer nivel'
+    modeloImage:
+      - '../../assets/castilla/madrid.webp'
     descriptions:
       Primer nivel:
         - Sala

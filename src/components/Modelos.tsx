@@ -37,6 +37,7 @@ interface Project {
   variantFooter: string[];
   modelosImages: string[];
   isometricosSiena: string[];
+  brochure: string;
 }
 
 interface ProjectProps {
@@ -65,7 +66,7 @@ export function ModelosSection({ project }: ProjectProps) {
           plantas={plantas}
           onPlantasChange={handlePlantasChange}
         />
-        <ModelFooter items={project.variantFooter} />
+        <ModelFooter items={project.variantFooter} brochure={project.brochure} />
       </div>
       <div className="flex flex-col justify-center sm:items-stretch px-4 sm:px-8 py-8 bg-[#E6E9E9] rounded-md">
         <ModelosCarousel
