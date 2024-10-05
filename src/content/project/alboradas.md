@@ -9,7 +9,7 @@ images:
   - '../../assets/alboradas/imagen5.webp'
 category: ''
 tipo: 'Terrenos'
-costo: 'desde $2,800,000'
+costo: 'desde $2,800,000*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
@@ -39,4 +39,22 @@ variantFooter:
   - 'Frente: 10m'
   - 'Fondo: 20m'
 brochure: 'https://alboradasresidencial.mx/wp-content/uploads/2024/07/Alboradas-Residencial-Brochure-Alborada.pdf'
+services:
+  - title: 'Colegios'
+    items:
+      - 'Cambridge de Monterrey'
+      - 'Instituto Edinburgh'
+      - 'Instituto Anglo Británico'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Plaza Domena'
+      - 'HEB Bosques de las Lomas'
+      - 'HEB Puerta de Hierro'
+      - 'Vía Puerta de Hierro'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Christus Muguerza Cumbres'
+    icon: 'hospitals'
 ---

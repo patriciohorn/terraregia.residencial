@@ -9,7 +9,7 @@ images:
   - '../../assets/alinka/imagen5.webp'
 category: 'destacados'
 tipo: 'Terrenos'
-costo: 'desde $1,600,000'
+costo: 'desde $1,600,000*'
 presupuesto: '$1,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
@@ -37,4 +37,22 @@ variantFooter:
   - 'Frente: 8m'
   - 'Fondo: 17m'
 brochure: 'https://alinkaresidencial.mx/wp-content/uploads/2024/09/Alinka-Residencial-Brochure.pdf'
+services:
+  - title: 'Colegios'
+    items:
+      - 'Cambridge de Monterrey'
+      - 'Instituto Edinburgh'
+      - 'Instituto Anglo Británico'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Plaza Domena'
+      - 'HEB Bosques de las Lomas'
+      - 'HEB Puerta de Hierro'
+      - 'Vía Puerta de Hierro'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Christus Muguerza Cumbres'
+    icon: 'hospitals'
 ---

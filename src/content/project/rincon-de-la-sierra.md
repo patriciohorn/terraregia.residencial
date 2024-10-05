@@ -9,7 +9,7 @@ images:
   - '../../assets/rincon/imagen5.webp'
 category: ''
 tipo: 'Casas'
-costo: 'desde $3,000,000'
+costo: 'desde $3,100,000*'
 presupuesto: '$3,000,000'
 amenities:
   - icon: 'Terraza'
@@ -200,4 +200,22 @@ isometricosSiena:
   - '../../assets/toscana/planta2.png'
 virtualTour: 'https://kuula.co/share/collection/7c9hM?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1'
 brochure: 'https://rincondelasierra.mx/wp-content/uploads/2024/05/Ppt-RDLS-2024.pdf'
+services:
+  - title: 'Colegios'
+    items:
+      - 'Cambridge de Monterrey'
+      - 'Instituto Edinburgh'
+      - 'Instituto Anglo Británico'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Plaza Domena'
+      - 'HEB Bosques de las Lomas'
+      - 'HEB Puerta de Hierro'
+      - 'Vía Puerta de Hierro'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Christus Muguerza Cumbres'
+    icon: 'hospitals'
 ---

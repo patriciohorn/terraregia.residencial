@@ -9,7 +9,7 @@ images:
   - '../../assets/toscana/imagen5.webp'
 category: ''
 tipo: 'Casas'
-costo: 'desde $2,700,000'
+costo: 'desde $2,750,000*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
@@ -127,4 +127,22 @@ isometricosSiena:
   - '../../assets/toscana/planta2.png'
 virtualTour: 'https://kuula.co/share/5n8Cv/collection/7cv1M?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1'
 brochure: 'https://toscanaresidencial.mx/wp-content/uploads/2024/05/TOSCAN1.pdf'
+services:
+  - title: 'Colegios'
+    items:
+      - 'Cambridge de Monterrey'
+      - 'Instituto Edinburgh'
+      - 'Instituto Anglo Británico'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Plaza Domena'
+      - 'HEB Bosques de las Lomas'
+      - 'HEB Puerta de Hierro'
+      - 'Vía Puerta de Hierro'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Christus Muguerza Cumbres'
+    icon: 'hospitals'
 ---

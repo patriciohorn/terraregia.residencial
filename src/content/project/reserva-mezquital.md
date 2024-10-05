@@ -1,7 +1,7 @@
 ---
 title: 'Reserva del Mezquital'
 location: 'Apodaca'
-cover: '../../assets/images/reserva-mezquital.jpg'
+cover: '../../assets/images/reserva-cover.webp'
 images:
   - '../../assets/reserva/imagen2.jpg'
   - '../../assets/reserva/imagen3.jpg'

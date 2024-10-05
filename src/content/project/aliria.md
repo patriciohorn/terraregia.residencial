@@ -9,7 +9,7 @@ images:
   - '../../assets/aliria/imagen5.webp'
 category: 'preventa'
 tipo: 'Terrenos'
-costo: 'desde $520,000'
+costo: 'desde $520,000*'
 presupuesto: '$400,000'
 amenities:
   - icon: 'Terraza'
@@ -33,4 +33,20 @@ variantFooter:
   - 'Área: 112m2'
   - 'Frente: 7m'
   - 'Fondo: 16m'
+services:
+  - title: 'Educación'
+    items:
+      - 'Unidad Academica UANL Campus Juárez'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Sun Mall'
+      - 'Plaza Sendero San Roque'
+      - 'Paseo Juárez'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Hospital General de Juárez'
+      - 'Hospital Central'
+    icon: 'hospitals'
 ---

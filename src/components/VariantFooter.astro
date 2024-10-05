@@ -2,10 +2,10 @@
 import { Link } from './link';
 import { CloudDownload } from 'lucide-react';
 const {items, brochure} = Astro.props
-console.log(brochure)
+
 ---
 
-<div class="flex items-center justify-between max-w-sm mx-auto">
+<div class="flex items-center justify-center max-w-sm mx-auto">
   <div class="flex items-center gap-x-8 justify-between">
     {items.map((item: string) => (
       <div class="flex flex-col gap-2 items-center">
@@ -24,3 +24,4 @@ console.log(brochure)
     <span>Brochure</span>
   </Link>
   )}
+</div>

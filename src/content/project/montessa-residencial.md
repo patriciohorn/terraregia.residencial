@@ -38,4 +38,22 @@ variantFooter:
   - 'Frente: 7.5m'
   - 'Fondo: 17m'
 brochure: 'https://montessaresidencial.mx/wp-content/uploads/2024/06/Montessa-Residencial-Brochure.pdf'
+services:
+  - title: 'Colegios'
+    items:
+      - 'Cambridge de Monterrey'
+      - 'Instituto Edinburgh'
+      - 'Instituto Anglo Británico'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Plaza Domena'
+      - 'HEB Bosques de las Lomas'
+      - 'HEB Puerta de Hierro'
+      - 'Vía Puerta de Hierro'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Christus Muguerza Cumbres'
+    icon: 'hospitals'
 ---

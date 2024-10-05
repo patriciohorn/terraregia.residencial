@@ -56,7 +56,7 @@ export function ModelosSection({ project }: ProjectProps) {
   };
 
   return (
-    <div className="flex flex-col sm:grid sm:grid-cols-2 gap-x-14 gap-y-12 mt-16 bg-white px-4 py-8 sm:px-12 sm:py-16 rounded-md">
+    <div className="flex flex-col sm:grid sm:grid-cols-2 gap-x-14 gap-y-12 mt-16 bg-white border border-neutral-200 px-4 py-8 sm:px-12 sm:py-16 rounded-md">
       <div>
         <h2 className="text-2xl sm:text-[40px] text-black font-medium">{project.variant}</h2>
 

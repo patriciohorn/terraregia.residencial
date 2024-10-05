@@ -9,7 +9,7 @@ images:
   - '../../assets/pietralta/imagen5.webp'
 category: 'destacados'
 tipo: 'Casas'
-costo: 'desde $2,300,000'
+costo: 'desde $2,300,000*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
@@ -33,4 +33,22 @@ variantFooter:
   - 'Área: 202m2'
   - 'Frente: 10.5m'
   - 'Fondo: 19m'
+services:
+  - title: 'Colegios'
+    items:
+      - 'Cambridge de Monterrey'
+      - 'Instituto Edinburgh'
+      - 'Instituto Anglo Británico'
+    icon: 'school'
+  - title: 'Plazas Comerciales'
+    items:
+      - 'Plaza Domena'
+      - 'HEB Bosques de las Lomas'
+      - 'HEB Puerta de Hierro'
+      - 'Vía Puerta de Hierro'
+    icon: 'shopping'
+  - title: 'Centros médicos'
+    items:
+      - 'Christus Muguerza Cumbres'
+    icon: 'hospitals'
 ---

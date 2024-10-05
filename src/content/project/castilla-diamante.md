@@ -9,7 +9,7 @@ images:
   - '../../assets/castilla/imagen5.webp'
 category: ''
 tipo: 'Casas'
-costo: 'desde $720,000'
+costo: 'desde $720,000*'
 presupuesto: '$400,000'
 amenities:
   - icon: 'Canchas'

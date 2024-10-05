@@ -3,10 +3,14 @@ const {project} = Astro.props
 const formatedCosto = project.data.costo.split(' ')
 
 ---
+
 <div class="flex flex-col bg-[#D9D9D9] rounded-md p-4 sm:px-7 shadow-sm">
   <div class=" flex flex-col ">
-    <p class="text-sm sm:text-lg font-medium text-[#5B5959]">{formatedCosto[0]}</p>
-    <p class="text-4xl sm:text-5xl font-heading mt-1 sm:mt-1">{formatedCosto[1]}</p>
+    {project.data.title !== 'Reserva del Mezquital' ?  (
+      <p class="text-sm sm:text-lg font-medium text-[#5B5959]">{formatedCosto[0]}</p>
+      <p class="text-4xl sm:text-5xl font-heading mt-1 sm:mt-1">{formatedCosto[1]}</p>
+      <p class="mt-2 text-xs font-medium text-[hsl(0,1%,55%)]">* Precios sujetos a cambio sin previo aviso. Sujetos a disponibilidad</p>
+    ) : <p class="text-4xl sm:text-5xl font-heading mt-1 sm:mt-1">Próximamente</p>}      
     <p class="text-sm sm:text-lg font-medium mt-2 sm:mt-6 text-[#5B5959] tracking-[0.01em]">{`${project.data.tipo} en ${project.data.location}` }</p>
   </div>  
 </div>

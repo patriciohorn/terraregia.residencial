@@ -4,10 +4,11 @@ const AmenitySchema = z.object({
   label: z.string()
 });
 
-// const ModelosSchema = z.object({
-//   model: z.string(),
-//   isometricoImage: z.array(image())
-// });
+const serviceSchema = z.object({
+  title: z.string(), // The title of the service (e.g., "Schools", "Hospitals", etc.)
+  items: z.array(z.string()), // List of items (strings) under each service (e.g., list of schools)
+  icon: z.string() // The icon name for the service (e.g., "school-icon")
+});
 const projectCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
@@ -46,7 +47,8 @@ const projectCollection = defineCollection({
       modelosImages: z.array(image()).optional(),
       isometricosSiena: z.array(image()).optional(),
       virtualTour: z.string().optional(),
-      brochure: z.string().optional()
+      brochure: z.string().optional(),
+      services: z.array(serviceSchema).optional()
     })
 });
 
