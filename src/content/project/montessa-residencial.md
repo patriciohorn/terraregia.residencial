@@ -1,6 +1,7 @@
 ---
 title: 'Montessa Residencial'
 location: 'Dominio Cumbres'
+whatsapp: '8119771583'
 cover: '../../assets/images/montessa-residencial.png'
 images:
   - '../../assets/montessa/imagen2.webp'

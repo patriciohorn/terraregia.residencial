@@ -1,11 +1,12 @@
 ---
 title: 'Montserrat'
 location: 'Dominio Cumbres'
+whatsapp: '8119753584'
 cover: '../../assets/images/montserrat.jpg'
 images:
   - '../../assets/montserrat/imagen2.webp'
   - '../../assets/montserrat/imagen3.webp'
-  - '../../assets/montserrat/imagen4.webp'
+  - '../../assets/montserrat/amenidades-montserrat.webp'
   - '../../assets/montserrat/imagen5.webp'
 category: 'preventa'
 tipo: 'Casas'

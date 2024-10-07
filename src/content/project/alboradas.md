@@ -1,6 +1,7 @@
 ---
 title: 'Alboradas'
 location: 'Dominio Cumbres'
+whatsapp: '8110226121'
 cover: '../../assets/images/alboradas-cover.webp'
 images:
   - '../../assets/alboradas/imagen2.webp'

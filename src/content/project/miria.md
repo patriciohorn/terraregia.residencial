@@ -1,6 +1,7 @@
 ---
 title: 'Miria'
 location: 'Valle Condesa'
+whatsapp: '8115314694'
 cover: '../../assets/images/miria-cover.webp'
 images:
   - '../../assets/miria/imagen2.webp'

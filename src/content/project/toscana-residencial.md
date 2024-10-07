@@ -1,6 +1,7 @@
 ---
 title: 'Toscana Residencial'
 location: 'Dominio Cumbres'
+whatsapp: '8117459708'
 cover: '../../assets/images/toscana-cover.webp'
 images:
   - '../../assets/toscana/imagen2.webp'

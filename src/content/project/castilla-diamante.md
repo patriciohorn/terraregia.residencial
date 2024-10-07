@@ -1,6 +1,7 @@
 ---
 title: 'Castilla Diamante'
 location: 'Salinas Victoria'
+whatsapp: '8112884805'
 cover: '../../assets/images/castilla-cover.webp'
 images:
   - '../../assets/castilla/imagen2.webp'

@@ -6,6 +6,8 @@ import { Icon } from 'astro-icon/components'
 import { cn } from "@/lib/utils";
 import {MobileNav} from '@/components/mobile-nav'
 import {Link} from '@/components/link'
+import ProjectCard from "./ProjectCard.astro";
+import ProjectInfo from "./ProjectInfo.astro";
 
 
 
@@ -25,6 +27,8 @@ const menuItems = [
  
 ]
 const currentPath = Astro.url.pathname
+
+const {whatsapp = '8131418886'} = Astro.props
 ---
 
 <header class="py-[30px]">
@@ -55,7 +59,7 @@ const currentPath = Astro.url.pathname
           <Icon name="instagram" class="w-4 h-4"/>
         </Link>
       </div>
-      <Link href="https://api.whatsapp.com/send/?phone=8131418886" size="sm" className="group text-base bg-[hsl(142,70%,49%)] group-hover:bg-[#1c1e21] text-[hsl(142,71%,23%)]  hover:text-white shadow-sm" target="_blank">
+      <Link href={`https://api.whatsapp.com/send/?phone=${whatsapp}`} size="sm" className="group text-base bg-[hsl(142,70%,49%)] group-hover:bg-[#1c1e21] text-[hsl(142,71%,23%)]  hover:text-white shadow-sm" target="_blank">
         <Icon name="whatsapp" class="w-4 h-4 mr-2 text-[hsl(142,71%,23%)] group-hover:text-white"/>
         Contacto
       </Link>      

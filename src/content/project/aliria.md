@@ -1,6 +1,7 @@
 ---
 title: 'Aliria'
 location: 'Valle Condesa'
+whatsapp: '8115314694'
 cover: '../../assets/images/aliria-cover.webp'
 images:
   - '../../assets/aliria/imagen2.webp'

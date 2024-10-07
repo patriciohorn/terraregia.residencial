@@ -15,11 +15,11 @@ const {services} = Astro.props
 
 ---
 
-<div class="grid sm:grid-cols-3 gap-8">
+<div class="grid sm:grid-cols-3 gap-x-8 gap-y-4">
   {services.map((service : any, idx: number ) =>  (  
-    <div class="flex flex-col items-center justify-center space-y-6 p-8  bg-black text-white rounded-md shadow-sm ">      
-        <Icon name={service.icon} class="shrink-0 w-7 h-7 sm:w-16 sm:h-16 "/>
-        <div class="flex flex-col flex-1">  
+    <div class="flex flex-col items-center justify-center space-y-6 p-8  bg-black text-white rounded-md shadow-sm min-h-72">      
+        <Icon name={service.icon} class="shrink-0  w-12 h-12 sm:w-16 sm:h-16 "/>
+        <div class="flex flex-col sm:flex-1">  
           <h3 class="text-2xl font-medium text-center">{service.title}</h3>    
           <ul class="mt-4 text-center">
             {service.items.map((item: any) => (

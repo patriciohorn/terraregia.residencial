@@ -1,6 +1,7 @@
 ---
 title: 'Pietralta Castelo'
 location: 'Dominio Cumbres'
+whatsapp: '8119753584'
 cover: '../../assets/images/pietralta.jpg'
 images:
   - '../../assets/pietralta/imagen2.webp'

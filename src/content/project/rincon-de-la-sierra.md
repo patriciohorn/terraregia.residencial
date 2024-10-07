@@ -1,6 +1,7 @@
 ---
 title: 'Rincón de la Sierra'
 location: 'Dominio Cumbres'
+whatsapp: '8117460331'
 cover: '../../assets/images/rincon-cover.png'
 images:
   - '../../assets/rincon/imagen2.jpg'

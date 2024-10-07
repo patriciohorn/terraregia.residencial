@@ -14,6 +14,7 @@ const projectCollection = defineCollection({
     z.object({
       title: z.string(),
       location: z.string(),
+      whatsapp: z.string().optional(),
       cover: image().refine((img) => img.width >= 100, {
         message: 'Cover image must be at least 1080 pixels wide!'
       }),

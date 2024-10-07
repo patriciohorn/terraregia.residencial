@@ -11,7 +11,7 @@ import ServicesCard from '@/components/ServicesCards.astro'
 import { getProjects } from "@/lib/utils";
 import { Image } from "astro:assets";
 // import { type CollectionEntry } from 'astro:content';
-import MoreInfo from "@/components/MoreInfo.astro";
+import MoreInfo from "@/components/MoreInfoProjects.astro";
 import VariantFooter from "@/components/VariantFooter.astro";
 import { SecondaryImagesCarousel } from "@/components/secondaryImages-carousel";
 import ServicesCards from "@/components/ServicesCards.astro";
@@ -27,7 +27,7 @@ const project = Astro.props;
 
 ---
 
-<Layout title={project.data.title}>
+<Layout title={project.data.title} whatsapp={project.data.whatsapp}>
   <section class="py-8 sm:py-16">
     <!-- Hero -->
     <section class="container"> 

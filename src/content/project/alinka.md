@@ -1,6 +1,7 @@
 ---
 title: 'Alinka'
 location: 'Dominio Cumbres'
+whatsapp: '8131418886'
 cover: '../../assets/images/alinka-cover.webp'
 images:
   - '../../assets/alinka/imagen2.webp'
