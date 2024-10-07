@@ -30,8 +30,8 @@ export function PresupuestoCarousel() {
           {projects.map((project, idx) => (
             <CarouselItem
               key={idx}
-              className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 min-w-52">
-              <Card className="group bg-card-foreground border-none rounded-md sm:w-72 h-[192px] hover:bg-[#BFDEE3] cursor-pointer hover:duration-200 ease-in-out">
+              className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/4 min-w-52">
+              <Card className="group bg-card-foreground border-none rounded-md h-[192px] hover:bg-[#BFDEE3] cursor-pointer hover:duration-200 ease-in-out">
                 <CardContent className="flex flex-col justify-between p-4 h-full">
                   <div>
                     <h3 className="font-light text-2xl text-black">{project.title}</h3>
