@@ -7,7 +7,6 @@ import {
 } from '@/components/ui/carousel';
 
 export function TipologiaCarousel({ images }) {
-  console.log(images);
   return (
     <Carousel className="relative">
       <CarouselContent>

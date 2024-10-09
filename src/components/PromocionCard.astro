@@ -17,9 +17,9 @@ const {project, description2} = Astro.props
     <div class="bg-black px-5 py-2.5 rounded-sm">    
     <p class="text-xl text-white font-medium text-balance">{project.description2}</p>
     </div>
-  ) }
-
+    ) }
   </div>
+  
   <div class="flex gap-5">
     {project.images && project.images.map((img: any, idx:number) => (
       <div class="overflow-hidden rounded-sm">
