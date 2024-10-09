@@ -7,7 +7,7 @@ import {TipologiaCarousel} from '@/components/tipologia-carousel'
 import {ModelosSection} from '@/components/Modelos'
 import ServicesCard from '@/components/ServicesCards.astro'
 import Informes from '@/components/Informes.astro'
-
+import VideoCastilla from '@/components/VideoCastilla.astro'
 import { getProjects } from "@/lib/utils";
 import { Image } from "astro:assets";
 // import { type CollectionEntry } from 'astro:content';
@@ -23,6 +23,8 @@ export async function getStaticPaths() {
 		props: project,
 	}));
 }
+
+
 const project = Astro.props;
 
 ---
@@ -51,6 +53,12 @@ const project = Astro.props;
     <section class="sm:hidden mt-4 pl-4 ml-auto">
         <SecondaryImagesCarousel images={project.data.images} client:load/>
     </section>
+
+    
+    {project.data.title === 'Castilla Diamante' && (
+      <VideoCastilla/>
+    )}
+
     <!-- Lotification Section -->    
     {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (
       <section>  

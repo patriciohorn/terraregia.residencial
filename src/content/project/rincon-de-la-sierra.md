@@ -211,7 +211,7 @@ modelos:
       - 'Lote: 7.5x17m'
       - 'Construcción: 187m²'
 variantFooter:
-  - 'Terreno: 127m²'
+  - 'Terreno: 127.5m²'
   - 'Lote: 7.5x17m'
   - 'Construcción: 228m²'
 modelosImages:

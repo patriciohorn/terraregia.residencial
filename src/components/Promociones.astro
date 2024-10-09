@@ -9,6 +9,12 @@ import promocion1 from '@/assets/images/promocion-1-1.jpg'
 import promocion2 from '@/assets/images/promocion-1-2.jpg'
 import promocion3 from '@/assets/images/promocion-2-2.jpg'
 import PromocionCard from "./PromocionCard.astro";
+import PromotionCard from "./ui/PromotionCard.astro";
+
+
+import rinconCocina from '@/assets/images/cocinaRincon.webp'
+import aliriaImage from '@/assets/images/aliriaPromo.webp'
+import miriaImage from '@/assets//miria/imagen4.webp'
 
 const promotionProjects = [
 {
@@ -31,15 +37,48 @@ const promotionProjects = [
   images: [promocion1, promocion2]
 }
 ]
+
+
+const promotions = [
+{
+  title: 'Rincón de la Sierra', 
+  details: 'Casas desde $3.1 MDP*',
+  mainPromotion: 'Bono de $60mil + cocina con granito ', 
+  images: rinconCocina, 
+  color: '#395144',
+  bgColor: '#dee9e2'
+}, 
+{
+  title: 'Miria', 
+  details: 'Terrenos residenciales desde 98m2 a $475,000',
+  mainPromotion: 'Financiamiento directo de hasta 27 MSI * + enganche diferido', 
+  images: miriaImage, 
+  color: '#60254E',
+  bgColor: '#fcebfa'
+},
+{
+  title: 'Aliria', 
+  details: 'Terrenos residenciales desde 112m2',
+  mainPromotion: 'Financiamiento directo de hasta 33 MSI * + enganche diferido *', 
+  images: aliriaImage, 
+  color: '#ECC769', 
+  bgColor: '#fdf9ed'
+},
+]
 ---
 
 <section class="py-14 sm:py-16">
   <div class="container">
     <LeftHeading title="Promociones del mes"/>
     <div class="mt-6 sm:mt-12 grid sm:grid-cols-3 gap-x-6 gap-y-6">
-      {promotionProjects.map((project) => (
-        <PromocionCard project={project} description2={project.description2} />
+      {promotions.map((project) => (
+        <PromotionCard project={project} />
       ))}
     </div>
   </div>
 </section>
+
+
+      <!-- {promotionProjects.map((project) => (
+        <PromocionCard project={project} description2={project.description2} />
+      ))} -->

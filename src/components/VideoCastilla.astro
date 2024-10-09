@@ -1,0 +1,17 @@
+---
+import videoMp4 from '@/assets/video-castilla.mp4'
+import videowebM from '@/assets/video-castilla.webm'
+---
+
+
+<section class="mt-8 sm:mt-16">
+  <div class="container">
+    <div class="overflow-hidden rounded-md">
+      <video width="320" height="240" controls class="w-full h-full">
+        <source src={videoMp4} type="video/mp4" />
+        <source src={videowebM} type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    </div>          
+  </div>
+</section>
