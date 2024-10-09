@@ -17,7 +17,7 @@ export function PromocionesCarousel({ promotions }: any) {
       className="w-full">
       <CarouselContent className="-ml-8">
         {promotions.map((promotion: any) => (
-          <CarouselItem key={promotion.title} className="pl-8 basis-1/4">
+          <CarouselItem key={promotion.title} className="pl-8 basis-1/3 max-w-[400px]">
             <PromotionCardd project={promotion} />
           </CarouselItem>
         ))}
