@@ -6,7 +6,7 @@ import SecondaryImages from "@/components/SecondaryImages.astro"
 import {TipologiaCarousel} from '@/components/tipologia-carousel'
 import {ModelosSection} from '@/components/Modelos'
 import ServicesCard from '@/components/ServicesCards.astro'
-
+import Informes from '@/components/Informes.astro'
 
 import { getProjects } from "@/lib/utils";
 import { Image } from "astro:assets";
@@ -36,7 +36,7 @@ const project = Astro.props;
           <div class="overflow-hidden rounded-md shadow-sm min-h-[304px] sm:min-h-96 ">         
             <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager"/>
           </div>
-          <div class="flex flex-col gap-y-4 sm:gap-y-8">
+          <div class="flex flex-col gap-y-4">
             <ProjectInfo project={project}/>
             {project.data.title !== 'Reserva del Mezquital' && (
               <Amenities amenities={project.data.amenities}/>
@@ -90,14 +90,22 @@ const project = Astro.props;
     {project.data.virtualTour && (
         <section>
         <div class="container">
-          <div class="overflow-hidden rounded-md mt-16">
+          <div class="overflow-hidden rounded-md aspect-video">
             <iframe width="100%" height="600" allowfullscreen="true"
-              src={project.data.virtualTour}>
+              src={project.data.virtualTour} class="w-full h-full object-cover">
             </iframe>
           </div>
         </div>
       </section> 
     )}
+
+    {project.data.mapQuery && (
+      <section class="py-8">
+        <div class="container">
+          <Informes mapQuery={project.data.mapQuery} googleMaps={project.data.googleMaps} waze={project.data.waze} telefonoCaseta={project.data.telefonoCaseta} projectName={project.data.title}/>
+        </div>
+      </section>
+  )}
              
   </section>
   <MoreInfo/>

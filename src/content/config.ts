@@ -15,6 +15,10 @@ const projectCollection = defineCollection({
       title: z.string(),
       location: z.string(),
       whatsapp: z.string().optional(),
+      mapQuery: z.string().optional(),
+      googleMaps: z.string().optional(),
+      waze: z.string().optional(),
+      telefonoCaseta: z.string().optional(),
       cover: image().refine((img) => img.width >= 100, {
         message: 'Cover image must be at least 1080 pixels wide!'
       }),
@@ -40,7 +44,8 @@ const projectCollection = defineCollection({
                 'Primer nivel': z.array(z.string()),
                 'Segundo nivel': z.array(z.string()).optional(),
                 'Tercer nivel': z.array(z.string()).optional()
-              })
+              }),
+              specs: z.array(z.string()).optional()
             })
             .optional()
         )

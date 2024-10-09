@@ -28,7 +28,7 @@ amenities:
     label: 'Área de Asadores'
   - icon: 'Gym'
     label: 'Ejercitadores'
-variant: 'Lotificación'
+variant: ''
 variantImages:
   - '../../assets/reserva/tipologia.jpg'
 variantDescription: 'Reserva del Mezquital es un proyecto residencial diseñado para brindarte tranquilidad y confort en un entorno natural y privilegiado, ideal para invertir o construir la casa que deseas.'

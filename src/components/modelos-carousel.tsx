@@ -39,7 +39,7 @@ export function ModelosCarousel({ images, floorTitles, descriptions, plantas }: 
             return (
               <CarouselItem key={idx} className="flex flex-col justify-center">
                 {/* Image section */}
-                <div className="rounded-md overflow-hidden">
+                <div className="rounded-lg overflow-hidden">
                   <img
                     src={img.src}
                     alt={`Imagen de ${floorTitle}`}
@@ -50,7 +50,7 @@ export function ModelosCarousel({ images, floorTitles, descriptions, plantas }: 
                 {/* Floor title and description section */}
                 <div className="bg-white rounded-md py-6 px-10 mt-2 ">
                   <h3 className="text-2xl font-heading">{floorTitle}</h3>
-                  <ul className="grid sm:grid-cols-2 sm:gap-x-6 gap-y-1.5 text-[#827D7D] text-xs leading-4 mt-4">
+                  <ul className="grid sm:grid-cols-2 sm:gap-x-6 gap-y-1.5 text-neutral-600 text-xs leading-4 mt-4">
                     {floorDescriptions.map((description: string, i: number) => (
                       <li key={i} className="flex items-center gap-1.5">
                         <CircleCheck className="w-3 h-3 shrink-0" />

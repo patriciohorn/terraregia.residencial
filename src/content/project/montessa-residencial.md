@@ -2,7 +2,11 @@
 title: 'Montessa Residencial'
 location: 'Dominio Cumbres'
 whatsapp: '8119771583'
+mapQuery: 'pb=!1m17!1m12!1m3!1d2208.3871984902084!2d-100.46027780000001!3d25.7603889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDQ1JzM3LjQiTiAxMDDCsDI3JzM3LjAiVw!5e1!3m2!1sen!2sus!4v1728404054243!5m2!1sen!2sus'
+googleMaps: 'https://maps.app.goo.gl/aN1AzSzhyEWihPTc9'
+waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./monterrey/caseta-dominio-cumbres?place=ChIJp16IpB-aYoYRAHJZAh9-t2M'
 cover: '../../assets/images/montessa-residencial.png'
+telefonoCaseta: '8119771583'
 images:
   - '../../assets/montessa/imagen2.webp'
   - '../../assets/montessa/imagen3.webp'
@@ -35,9 +39,9 @@ variantImages:
   - '../../assets/montessa/montessaterreno.webp'
 variantDescription: 'Vive en familia entre parques, áreas recreativas, avenidas y seguridad, Invierte en una de las zonas de alta plusvalía en Dominio Cumbres, ideal para residencias de alto nivel.'
 variantFooter:
-  - 'Área: 127.5m2'
   - 'Frente: 7.5m'
   - 'Fondo: 17m'
+  - 'Área: 127.5m2'
 brochure: 'https://montessaresidencial.mx/wp-content/uploads/2024/06/Montessa-Residencial-Brochure.pdf'
 services:
   - title: 'Colegios'

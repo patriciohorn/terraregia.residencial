@@ -2,6 +2,10 @@
 title: 'Rincón de la Sierra'
 location: 'Dominio Cumbres'
 whatsapp: '8117460331'
+mapQuery: 'pb=!1m18!1m12!1m3!1d4416.772045956117!2d-100.4605313!3d25.7604521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629a1fa4885ea7%3A0x63b77e1f02597200!2sCaseta%20Dominio%20Cumbres!5e1!3m2!1sen!2sus!4v1728403661746!5m2!1sen!2sus'
+googleMaps: 'https://maps.app.goo.gl/TjM9Hc6Ev4YBg61YA'
+waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./monterrey/caseta-dominio-cumbres?place=ChIJp16IpB-aYoYRAHJZAh9-t2M'
+telefonoCaseta: '8114922940'
 cover: '../../assets/images/rincon-cover.png'
 images:
   - '../../assets/rincon/imagen2.jpg'
@@ -14,7 +18,7 @@ costo: 'desde $3,100,000*'
 presupuesto: '$3,000,000'
 amenities:
   - icon: 'Terraza'
-    label: 'Terraza Techadae'
+    label: 'Terraza Techada'
   - icon: 'PistaPatinaje'
     label: 'Pista de Patinaje'
   - icon: 'Canchas'
@@ -62,6 +66,10 @@ modelos:
         - 1 baño
         - Terraza
         - Bodega
+    specs:
+      - 'Terreno: 127.5m²'
+      - 'Lote: 7.5x17m'
+      - 'Construcción: 187m²'
   - model: Viena
     isometricoImage:
       - '../../assets/rincon/isometrico-ankara-pb.webp'
@@ -93,6 +101,10 @@ modelos:
         - 1 baño
         - Terraza
         - Bodega
+    specs:
+      - 'Terreno: 127.5m²'
+      - 'Lote: 7.5x17m'
+      - 'Construcción: 187m²'
   - model: Venecia
     isometricoImage:
       - '../../assets/rincon/isometrico-ankara-pb.webp'
@@ -124,6 +136,10 @@ modelos:
         - 1 baño
         - Terraza
         - Bodega
+    specs:
+      - 'Terreno: 127.5m²'
+      - 'Lote: 7.5x17m'
+      - 'Construcción: 187m²'
   - model: Atenas
     isometricoImage:
       - '../../assets/rincon/isometrico-ankara-pb.webp'
@@ -155,6 +171,10 @@ modelos:
         - 1 baño
         - Terraza
         - Bodega
+    specs:
+      - 'Terreno: 127.5m²'
+      - 'Lote: 7.5x17m'
+      - 'Construcción: 187m²'
   - model: Lugano
     isometricoImage:
       - '../../assets/rincon/isometrico-ankara-pb.webp'
@@ -186,10 +206,14 @@ modelos:
         - 1 baño
         - Terraza
         - Bodega
+    specs:
+      - 'Terreno: 127.5m²'
+      - 'Lote: 7.5x17m'
+      - 'Construcción: 187m²'
 variantFooter:
-  - 'Lote: 7.5x17m'
   - 'Terreno: 127m²'
-  - 'Construcción: 187m²'
+  - 'Lote: 7.5x17m'
+  - 'Construcción: 228m²'
 modelosImages:
   - '../../assets/rincon/ankara.jpg'
   - '../../assets/rincon/viena.jpg'

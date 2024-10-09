@@ -1,0 +1,45 @@
+---
+import { Link } from "./link"
+import { Clock8, PhoneCall } from 'lucide-react';
+import { Icon } from "astro-icon/components";
+
+const {mapQuery, googleMaps, waze, telefonoCaseta, projectName} = Astro.props
+console.log('TELEFONO CASETA', telefonoCaseta)
+---
+
+<div class="grid sm:grid-cols-[2fr_1fr] gap-y-4 gap-x-2">
+  <div class="overflow-hidden rounded-sm aspect-square sm:aspect-video shadow-sm">
+    <iframe src={`https://www.google.com/maps/embed?${mapQuery}`} width="600" height="460" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full object-cover"></iframe>
+  </div>
+  <div class="bg-[#E6E9E9] rounded-md px-6 py-8 flex flex-col justify-between gap-6 shadow-sm sm:ml-4">
+    <div>
+      <h3 class="text-2xl leading-6 font-heading text-balance">Agenda tu cita en menos de 2 minutos</h3>
+      <p class="mt-4">Para conocer tu nuevo hogar en {projectName} <span class="font-medium">es necesario programar una cita</span></p>
+      <div class="mt-4 flex gap-2 items-center">
+        <Clock8 className="w-4 h-4 -mt-4 "/>
+        <div class="flex flex-col">
+          <p class="font-medium">10am - 7pm</p>
+          <p class=" text-sm">Todos los días</p>
+        </div>
+      </div>
+      <Link href={`tel:${telefonoCaseta}`} className="mt-4 w-full inline-flex items-center">
+        <PhoneCall className="w-4 h-4 mr-2"/>
+        <span>Agenda tu visita</span>
+      </Link>
+    </div>
+    <div class="">
+      <p class="font-medium text-sm">¿Cómo llegar?</p>
+      <div class="mt-2 grid sm:grid-cols-2 gap-2">
+        <Link href={googleMaps} className="w-full bg-neutral-100 text-black hover:bg-black hover:text-white">
+          <Icon name="googleMaps" class="w-4 h-4 mr-1"/>
+          <span>Google Maps</span>
+        </Link>
+        <Link href={waze}  className="bg-[#33ccff] text-black w-full inline-flex items-center hover:bg-[#0092ce]">
+          <Icon name="waze" class="w-4 h-4 mr-1"/>
+          <span>waze</span>
+        </Link>      
+      </div>
+    </div>
+    
+  </div>
+</div>

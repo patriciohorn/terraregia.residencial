@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { ModelFooter } from './model-footer';
 
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
@@ -14,6 +15,8 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
     setActiveTab(model);
     onModelChange(model);
   };
+
+  console.log('Data:', data);
 
   return (
     <div className="mt-6">
@@ -72,14 +75,22 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
         </TabsList>
 
         {data.modelos.map((model) => (
-          <TabsContent value={model.model} key={model.model}>
-            <div className="rounded-md max-w-fit h-48 sm:h-72 overflow-hidden">
+          <TabsContent value={model.model}>
+            <div className="rounded-md h-48 sm:h-72 overflow-hidden aspect-video" key={model.model}>
               <img
                 src={plantas === '2 plantas' ? model.modeloImage[0].src : model.modeloImage[1].src}
                 alt={model.model}
-                className="w-full h-full rounded-md object-contain animate-fade-right"
+                className={cn(
+                  `rounded-sm w-full h-full`,
+                  data.title === 'Montserrat' ? `object-cover` : `object-contain`
+                )}
               />
             </div>
+            {plantas === '2 plantas' ? (
+              <ModelFooter items={model.specs} brochure={data.brochure} />
+            ) : (
+              <ModelFooter items={data.variantFooter} brochure={data.brochure} />
+            )}
           </TabsContent>
         ))}
       </Tabs>
