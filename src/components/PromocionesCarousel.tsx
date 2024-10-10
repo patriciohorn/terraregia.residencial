@@ -12,7 +12,8 @@ export function PromocionesCarousel({ promotions }: any) {
   return (
     <Carousel
       opts={{
-        loop: true
+        loop: true,
+        align: 'start'
       }}
       className="w-full">
       <CarouselContent className="-ml-8">

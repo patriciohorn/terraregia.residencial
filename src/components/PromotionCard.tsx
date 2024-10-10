@@ -7,8 +7,8 @@ export function PromotionCardd({ project }: any) {
       className="rounded-md overflow-hidden bg-card-foreground shadow-sm group hover:shadow-md transition-all hover:bg-[#dadddd] duration-200 ease-out cursor-pointer p-8 space-y-6"
       slot="slide">
       <div className="flex flex-col space-y-2">
-        <div className="bg-[#827d7d] p-5 rounded-[12px] h-16 flex flex-col justify-center text-center">
-          <p className="text-xl leading-6 tracking-[0.01em] text-[#f8f7f7] font-medium text-balance">
+        <div className="bg-[#827d7d] px-5 py-2.5 rounded-[12px]  flex flex-col justify-center text-center h-[68px]">
+          <p className="text-lg leading-6 tracking-[0.01em] text-[#f8f7f7] font-medium text-balance">
             {project.mainPromo}
           </p>
           {project.mainPromoSmall && (
@@ -22,8 +22,8 @@ export function PromotionCardd({ project }: any) {
         </div>
         {project.secondaryPromo && (
           // <p className="text-sm absolute top-2">Elige desde:</p>
-          <div className="bg-[#292828] p-5 rounded-[12px] h-16 flex flex-col justify-center text-center">
-            <p className="text-xl leading-6 tracking-[0.01em] text-[#f8f7f7] font-medium text-balance">
+          <div className="bg-[#292828] px-5 py-2.5 rounded-[12px] flex flex-col justify-center text-center h-[68px]">
+            <p className="text-lg leading-6 tracking-[0.01em] text-[#f8f7f7] font-medium text-balance">
               {project.secondaryPromo}
             </p>
             <p className="text-sm leading-6 tracking-[0.01em] text-[#f8f7f7] font-medium text-balance">
