@@ -19,37 +19,32 @@ const projects = [
 
 export function PresupuestoCarousel() {
   return (
-    <div className="relative">
-      <Carousel
-        opts={{
-          align: 'start',
-          loop: true
-        }}
-        className="pl-[max(16px,calc((100%-1260px)/2+16px))] ml-auto">
-        <CarouselContent className="">
-          {projects.map((project, idx) => (
-            <CarouselItem
-              key={idx}
-              className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/4 min-w-52">
-              <Card className="group bg-card-foreground border-none rounded-md h-[192px] hover:bg-[#BFDEE3] cursor-pointer hover:duration-200 ease-in-out">
-                <CardContent className="flex flex-col justify-between p-4 h-full">
-                  <div>
-                    <h3 className="font-light text-2xl text-black">{project.title}</h3>
-                    <p className="text-4xl font-heading text-black">{project.budget}</p>
-                  </div>
-                  <Button
-                    size="iconsm"
-                    className="self-end bg-transparent border border-black group-hover:bg-black ">
-                    <ChevronRight className=" text-black group-hover:text-white" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        {/* <CarouselPrevious />
-        <CarouselNext /> */}
-      </Carousel>
-    </div>
+    <Carousel
+      opts={{
+        loop: true,
+        align: 'start'
+      }}>
+      <CarouselContent className="-ml-8">
+        {projects.map((project, idx) => (
+          <CarouselItem key={idx} className="pl-8 md:basis-1/2 lg:basis-1/3 max-w-96">
+            <Card className="group bg-card-foreground shadow-sm border-none rounded-md h-[192px] hover:bg-[#BFDEE3] cursor-pointer hover:duration-200 ease-in-out">
+              <CardContent className="flex flex-col justify-between p-4 h-full">
+                <div>
+                  <h3 className="font-light text-2xl text-black">{project.title}</h3>
+                  <p className="text-4xl font-heading text-black">{project.budget}</p>
+                </div>
+                <Button
+                  size="iconsm"
+                  className="self-end bg-transparent border border-black group-hover:bg-black ">
+                  <ChevronRight className=" text-black group-hover:text-white" />
+                </Button>
+              </CardContent>
+            </Card>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="hidden sm:flex sm:left-3/4 sm:-top-14 -translate-x-3/4 " />
+      <CarouselNext className="hidden sm:flex sm:left-3/4 sm:-top-14 sm:translate-x-1/2" />
+    </Carousel>
   );
 }

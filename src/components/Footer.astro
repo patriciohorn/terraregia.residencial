@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+
+const allProjectPosts = await getCollection("project");
+
+const dominioCumbres = allProjectPosts.filter((project) => project.data.location === 'Dominio Cumbres').map((project) => project.data.title)
+const valleCondesa = allProjectPosts.filter((project) => project.data.location === 'Valle Condesa').map((project) => project.data.title)
+const apodaca = allProjectPosts.filter((project) => project.data.location === 'Apodaca').map((project) => project.data.title)
+const salinasVictoria = allProjectPosts.filter((project) => project.data.location === 'Salinas Victoria').map((project) => project.data.title)
+---
+
+<section class="py-16">
+  <div class="container grid grid-cols-1 lg:grid-cols-5 gap-6">
+    <!-- Developments Section -->
+    <div class="col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Column 1 - Dominio Cumbres -->
+      <div>
+        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Dominio Cumbres</h3>
+        <ul class="mt-4 space-y-2">
+          {dominioCumbres.map((project) => (
+            <li class="text-sm"><a href="#" class="text-sm hover:underline">{project}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 2 - Valle Condesa -->
+      <div>
+        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Valle Condesa</h3>
+        <ul class="mt-4 space-y-2">
+          {valleCondesa.map((project) => (
+            <li class="text-sm"><a href="#" class="text-sm hover:underline">{project}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3 - Apodaca -->
+      <div>
+        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Apodaca</h3>
+        <ul class="mt-4 space-y-2">
+          {apodaca.map((project) => (
+            <li class="text-sm"><a href="#" class="text-sm hover:underline">{project}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4 - Salinas Victoria -->
+      <div>
+        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Salinas Victoria</h3>
+        <ul class="mt-4 space-y-2">
+          {salinasVictoria.map((project) => (
+            <li class="text-sm"><a href="#" class="text-sm hover:underline">{project}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="flex flex-col items-center lg:items-end space-y-4">
+      <h3 class="text-lg leading-6 font-heading text-balance">Síguenos en redes</h3>
+      <!-- <div class="flex space-x-4">
+        <a href="#"><img src="/path/to/facebook-icon.svg" alt="Facebook" class="w-6 h-6" /></a>
+        <a href="#"><img src="/path/to/instagram-icon.svg" alt="Instagram" class="w-6 h-6" /></a>
+        <a href="#"><img src="/path/to/linkedin-icon.svg" alt="LinkedIn" class="w-6 h-6" /></a>
+        <a href="#"><img src="/path/to/youtube-icon.svg" alt="YouTube" class="w-6 h-6" /></a>
+      </div> -->
+    </div>
+  </div>
+</section>

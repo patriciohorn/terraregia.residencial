@@ -1,7 +1,7 @@
 ---
 import LeftHeading from "./LeftHeading.astro";
 import PromotionCard from "./ui/PromotionCard.astro";
-import { PromocionesCarousel } from "./PromocionesCarousel";
+import { PromocionesCarousel } from "./promo-carousel";
 
 import rinconCocina from '@/assets/images/cocinaRincon.webp'
 import aliriaImage from '@/assets/images/aliriaPromo.webp'
@@ -20,7 +20,9 @@ const promotions = [
   details: 'Casas desde $3.1 MDP',
   mainPromo: 'Bono de $60mil + Cocina con granito ',
   secondaryPromo: 'Casas desde $3.1 MDP',
-  images: rinconCocina.src,  
+  images: rinconCocina.src,
+  specs: ['Casas', 'desde $3.1 MDP'],
+  icons: ['House', 'CircleDollarSign']
 }, 
 {
   title: 'Miria', 
@@ -30,7 +32,9 @@ const promotions = [
   mainPromoSmall: 'de hasta 27 MSI + Enganche diferido',
   secondaryPromo: 'Terrenos residenciales',
   secondaryPromoSmall: 'desde 98m2 a $475,000',
-  images: miriaImage.src,  
+  images: miriaImage.src,
+  specs: ['Terrenos residenciales', 'desde 98m²', 'desde $3.1 MDP'],
+  icons: ['LandPlot', 'Grid', 'CircleDollarSign']  
 },
 {
   title: 'Aliria', 
@@ -40,7 +44,9 @@ const promotions = [
   mainPromoSmall: 'de hasta 33 MSI + Enganche diferido ',
   secondaryPromo: 'Terrenos residenciales',
   secondaryPromoSmall: 'desde 112m²',
-  images: aliriaImage.src,   
+  images: aliriaImage.src,
+  specs: ['Terrenos residenciales', 'desde 112m²'],
+  icons: ['LandPlot', 'Grid',]   
 },
 {
   title: 'Montessa', 
@@ -50,7 +56,9 @@ const promotions = [
   mainPromoSmall: 'Mensualidades desde $21,000',
   secondaryPromo: 'Terrenos residenciales',
   secondaryPromoSmall: 'desde 127m²',
-  images: montessaImage.src,   
+  images: montessaImage.src,
+  specs: ['Terrenos residenciales', 'desde 127.5m²', 'Mensualidades desde $21,000'],
+  icons: ['LandPlot', 'Grid', 'CircleDollarSign']   
 },
 {
   title: 'Toscana', 
@@ -60,7 +68,9 @@ const promotions = [
   mainPromoSmall: '',
   secondaryPromo: 'Casas desde $2.7 MDP',
   secondaryPromoSmall: '',
-  images: toscanaImage.src,   
+  images: toscanaImage.src,
+  specs: ['Casas', 'desde $2.7 MDP'],
+  icons: ['House', 'CircleDollarSign']   
 },
 {
   title: 'Pietralta Castelo', 
@@ -70,7 +80,9 @@ const promotions = [
   mainPromoSmall: '',
   secondaryPromo: 'Terrenos residenciales',
   secondaryPromoSmall: 'desde 202m²',
-  images: pietraltaImage.src,   
+  images: pietraltaImage.src,
+  specs: ['Terrenos residencialles', 'desde 202m²'],
+  icons: ['LandPlot', 'Grid',]   
 },
 {
   title: 'Alboradas', 
@@ -80,7 +92,9 @@ const promotions = [
   mainPromoSmall: 'Precios desde $2.8 MDP',
   secondaryPromo: 'Terrenos residenciales',
   secondaryPromoSmall: 'desde 212m²',
-  images: alboradasImage.src,   
+  images: alboradasImage.src,
+  specs: ['Terrenos residenciales', 'desde 212m²', 'desde $2.8 MDP'],
+  icons: ['LandPlot', 'Grid', 'CircleDollarSign']   
 },
 {
   title: 'Alinka', 
@@ -90,13 +104,15 @@ const promotions = [
   mainPromoSmall: 'Mensualidades desde $13,500',
   secondaryPromo: 'Terrenos desde $1,618,400',
   secondaryPromoSmall: 'desde 136m²',
-  images: alinkaImage.src,   
+  images: alinkaImage.src,
+  specs: ['Terrenos residenciales', 'desde 136m²', 'desde $1,618,400'],
+  icons: ['LandPlot', 'Grid', 'CircleDollarSign']   
 },
 
 ]
 ---
 
-<section class="py-14 sm:py-16">
+<section class="py-14 sm:py-28">
   <div class="container">
     <LeftHeading title="Promociones del mes"/>    
   </div>

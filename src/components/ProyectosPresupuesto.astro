@@ -3,12 +3,12 @@ import LeftHeading from "./LeftHeading.astro";
 import {PresupuestoCarousel} from "@/components/PresupuestoCarousel"
 ---
 
-<section class="pt-8 pb-16 sm:py-16">
+<section class="pt-8 pb-16 sm:py-24">
   <div class="w-full max-w-none overflow-hidden">
     <div class="container">
       <LeftHeading title="Proyectos para cada presupuesto"/>
     </div>
-    <div class="mt-6 sm:mt-12">
+    <div class="mt-6 sm:mt-12 pl-[max(16px,calc((100%-1260px)/2+16px))] ml-auto">
       <PresupuestoCarousel client:load/>
     </div>
     

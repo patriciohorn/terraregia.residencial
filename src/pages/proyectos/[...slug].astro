@@ -52,12 +52,7 @@ const project = Astro.props;
     <!-- Gallery -->
     <section class="sm:hidden mt-4 pl-4 ml-auto">
         <SecondaryImagesCarousel images={project.data.images} client:load/>
-    </section>
-
-    
-    {project.data.title === 'Castilla Diamante' && (
-      <VideoCastilla/>
-    )}
+    </section>   
 
     <!-- Lotification Section -->    
     {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (
@@ -107,13 +102,17 @@ const project = Astro.props;
       </section> 
     )}
 
+    {project.data.title === 'Castilla Diamante' && (
+    <VideoCastilla/>
+    )}
+
     {project.data.mapQuery && (
       <section class="py-8">
         <div class="container">
           <Informes mapQuery={project.data.mapQuery} googleMaps={project.data.googleMaps} waze={project.data.waze} telefonoCaseta={project.data.telefonoCaseta} projectName={project.data.title}/>
         </div>
       </section>
-  )}
+    )}
              
   </section>
   <MoreInfo/>
