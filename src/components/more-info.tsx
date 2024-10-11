@@ -12,7 +12,7 @@ export function MoreInfoForm({ webhook }: any) {
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault;
+    e.preventDefault();
     try {
       const response = await fetch('https://webhook.site/4e9d8eb0-9358-4723-8ff4-7890d08a2116', {
         method: 'POST',
@@ -38,7 +38,7 @@ export function MoreInfoForm({ webhook }: any) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} method="POST" className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
         <Input
           type="text"
