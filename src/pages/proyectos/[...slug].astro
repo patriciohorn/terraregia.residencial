@@ -44,15 +44,22 @@ const project = Astro.props;
               <Amenities amenities={project.data.amenities}/>
             )}
           </div>
-      </div>      
-      <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
-        <SecondaryImages images={project.data.images}/>
-      </div>
+      </div> 
+      
+      {project.data.title !== 'Reserva del Mezquital' && (
+        <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
+          <SecondaryImages images={project.data.images}/>
+        </div>
+      )}
     </section>
     <!-- Gallery -->
-    <section class="sm:hidden mt-4 pl-4 ml-auto">
+
+    {project.data.title !== 'Reserva del Mezquital' && (
+      <section class="sm:hidden mt-4 pl-4 ml-auto">     
         <SecondaryImagesCarousel images={project.data.images} client:load/>
-    </section>   
+      </section> 
+    )}
+      
 
     <!-- Lotification Section -->    
     {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (
