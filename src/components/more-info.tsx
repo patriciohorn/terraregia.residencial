@@ -4,12 +4,14 @@ import { Input } from '@/components/ui/input';
 import { Button } from './ui/button';
 
 export function MoreInfoForm({ webhook }: any) {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     nombre: '',
     apellidos: '',
     email: '',
     whatsapp: ''
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +26,8 @@ export function MoreInfoForm({ webhook }: any) {
       });
 
       if (response.ok) {
-        console.log('Data sent');
+        setFormData(initialFormData);
+        setSuccessMessage('Tus datos han sido enviados');
       } else {
         console.error('Error sending data');
       }
@@ -74,6 +77,8 @@ export function MoreInfoForm({ webhook }: any) {
           Enviar
         </Button>
       </div>
+
+      {successMessage && <p className="mt-4 text-green-600">{successMessage}</p>}
     </form>
   );
 }
