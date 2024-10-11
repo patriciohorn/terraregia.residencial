@@ -6,7 +6,7 @@ interface SpecProps {
 }
 export function PromoSpec({ icon, text }: SpecProps) {
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex items-center gap-2">
       {icon === 'House' && <House size={16} className="w-5 h-5 text-[#676262]" />}
       {icon === 'LandPlot' && <LandPlot size={16} className="w-5 h-5 text-[#676262]" />}
       {icon === 'CircleDollarSign' && (

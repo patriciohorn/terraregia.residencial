@@ -16,6 +16,7 @@ const projectCollection = defineCollection({
       location: z.string(),
       whatsapp: z.string().optional(),
       website: z.string().optional(),
+      webhook: z.string().optional(),
       mapQuery: z.string().optional(),
       googleMaps: z.string().optional(),
       waze: z.string().optional(),

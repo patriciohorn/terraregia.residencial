@@ -2,6 +2,7 @@
 title: 'Reserva del Mezquital'
 location: 'Apodaca'
 website: '/proyectos/reserva-mezquital'
+webhook: 'https://hooks.zapier.com/hooks/catch/11239048/2mr6vna/'
 cover: '../../assets/images/reserva-cover.webp'
 images:
   - '../../assets/reserva/imagen2.jpg'

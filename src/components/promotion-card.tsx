@@ -12,11 +12,13 @@ export function PromotionCardd({ project }: any) {
 
   return (
     <a href={`/proyectos/${path}`}>
-      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer h-[470px]">
-        <div className="bg-[#BFDEE3] px-6 h-20 rounded-[4px] flex flex-col justify-center">
-          <p className="text-lg leading-6 font-medium">{project.mainPromo}</p>
+      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer h-[472px] p-6">
+        <div className="bg-[#BFDEE3] group-hover:bg-black px-6 h-20 rounded-[4px] flex flex-col justify-center">
+          <p className="text-lg leading-6 font-medium group-hover:text-white">
+            {project.mainPromo}
+          </p>
           {project.mainPromoSmall && (
-            <p className="inline-flex items-center text-sm leading-6 tracking-[0.01em] text-neutral-700 font-medium">
+            <p className="inline-flex items-center text-sm leading-6 tracking-[0.01em] text-neutral-700 font-medium group-hover:text-white">
               {project.mainPromoSmall}
               <span className="-mt-2">
                 <Asterisk className="w-2 h-2" />
@@ -25,7 +27,7 @@ export function PromotionCardd({ project }: any) {
           )}
         </div>
         {/* Image Section  */}
-        <div className=" overflow-hidden aspect-[16/9]">
+        <div className="mt-2 overflow-hidden aspect-[16/9] rounded-[4px]">
           <img
             src={project.images}
             alt={`Imagen de proyecto ${project.title}`}
@@ -33,7 +35,7 @@ export function PromotionCardd({ project }: any) {
           />
         </div>
 
-        <div className="px-6 pb-6">
+        <div>
           {/* Header Section */}
           <div className="mt-4">
             <h3 className="text-xl text-[#292828] font-heading tracking-[0.01em]">
@@ -44,7 +46,7 @@ export function PromotionCardd({ project }: any) {
               {project.location}
             </span>
           </div>
-          <ul className="mt-6 space-y-2.5">
+          <ul className="mt-6 space-y-2">
             {project.specs.map((spec: string, idx: number) => (
               <PromoSpec key={idx} text={spec} icon={project.icons[idx]} />
             ))}
