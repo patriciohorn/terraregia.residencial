@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
-
+import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
-
+import { CircleCheck } from 'lucide-react';
 export function MoreInfoForm({ webhook }: any) {
   const initialFormData = {
     nombre: '',
@@ -17,7 +17,7 @@ export function MoreInfoForm({ webhook }: any) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://webhook.site/4e9d8eb0-9358-4723-8ff4-7890d08a2116', {
+      const response = await fetch(webhook, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -73,12 +73,23 @@ export function MoreInfoForm({ webhook }: any) {
           value={formData.whatsapp}
           onChange={handleInputChange}
         />
-        <Button size="lg" className="h-12 sm:h-16 text-base">
-          Enviar
+        <Button
+          size="lg"
+          className={cn(
+            `h-12 sm:h-16 text-base`,
+            successMessage ? 'bg-green-600 text-green-50' : ''
+          )}>
+          {successMessage ? (
+            <span className="inline-flex items-center">
+              <CircleCheck className="w-4 h-4 mr-1" /> Enviado
+            </span>
+          ) : (
+            'Enviar'
+          )}
         </Button>
       </div>
 
-      {successMessage && <p className="mt-4 text-green-600">{successMessage}</p>}
+      {/* {successMessage && <p className="mt-4 text-green-600 text-center">{successMessage}</p>} */}
     </form>
   );
 }
