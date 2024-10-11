@@ -16,6 +16,7 @@ export function MoreInfoForm({ webhook }: any) {
     try {
       const response = await fetch('https://webhook.site/4e9d8eb0-9358-4723-8ff4-7890d08a2116', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json'
         },
