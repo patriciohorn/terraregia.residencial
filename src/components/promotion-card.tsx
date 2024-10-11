@@ -10,6 +10,7 @@ export function PromotionCardd({ project }: any) {
       .replace(/[\u0300-\u036f]/g, '')
   );
 
+  console.log(path);
   return (
     <a href={`/proyectos/${path}`}>
       <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer h-[472px] p-6">
