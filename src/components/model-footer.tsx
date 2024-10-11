@@ -8,7 +8,7 @@ interface ModelFooterProps {
 
 export function ModelFooter({ items, brochure }: ModelFooterProps) {
   return (
-    <div className="mt-8 flex flex-wrap items-center w-full justify-center  sm:justify-between  gap-y-6 gap-x-8 sm:max-w-md sm:mx-auto">
+    <div className="mt-8 flex flex-wrap items-center w-full justify-center  sm:justify-center  gap-y-6 gap-x-8 sm:max-w-md sm:mx-auto">
       <div className="flex items-center gap-x-8 justify-between">
         {items.map((item: string) => (
           <div className="flex flex-col gap-1 items-center">

@@ -16,8 +16,6 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
     onModelChange(model);
   };
 
-  console.log('Data:', data);
-
   return (
     <div className="mt-6">
       <Tabs
@@ -36,13 +34,15 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
                 loop: 'true',
                 align: 'start'
               }}
-              className="max-w-full">
+              className="w-full">
               <CarouselContent>
                 {modelosNames.map((item, idx) => (
                   <CarouselItem
                     key={item}
-                    className="basis-1/1 sm:basis-1/4
-              ">
+                    className={cn(
+                      `basis-1/1 sm:basis-1/4`,
+                      data.title === 'Castilla Diamante' ? 'sm:basis-1/2' : ''
+                    )}>
                     <TabsTrigger
                       value={item}
                       className={cn(

@@ -34,7 +34,6 @@ export function ModelosCarousel({ images, floorTitles, descriptions, plantas }: 
         <CarouselContent className="">
           {images.map((img: Image, idx: number) => {
             const floorTitle: string = floorTitles[idx]; // Get the corresponding floor title for each image
-
             const floorDescriptions = descriptions[floorTitle as keyof Description] || []; // Get the description for the current floor
             return (
               <CarouselItem key={idx} className="flex flex-col justify-center">

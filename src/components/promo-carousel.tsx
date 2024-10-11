@@ -38,8 +38,8 @@ export function PromocionesCarousel({ promotions }: PromocionesCarouselProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-3/4 -top-14 -translate-x-3/4 " />
-      <CarouselNext className="left-3/4 -top-14 translate-x-1/2" />
+      <CarouselPrevious className="hidden sm:flex sm:left-3/4 sm:-top-16 sm:-translate-x-3/4" />
+      <CarouselNext className="hidden sm:flex sm:left-3/4 sm:-top-16 sm:translate-x-1/2" />
     </Carousel>
   );
 }

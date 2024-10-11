@@ -2,6 +2,7 @@
 title: 'Toscana Residencial'
 location: 'Dominio Cumbres'
 whatsapp: '8117459708'
+website: 'https://toscanaresidencial.mx/'
 mapQuery: 'pb=!1m14!1m8!1m3!1d64432.472899759305!2d-100.53691211562136!3d25.7667914419706!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629a22aa5aaba1%3A0x1bf3cf219d487287!2sToscana%20Residencial!5e1!3m2!1sen!2sus!4v1728403545639!5m2!1sen!2sus'
 googleMaps: 'https://maps.app.goo.gl/GzTn9b4HBr8UWwp57'
 waze: 'https://www.waze.com/en/live-map/directions/toscana-residencial-garcia?place=w.170066178.1700923921.25087187'
