@@ -1,23 +1,29 @@
 ---
-import data from '@/data/site.json'
+import data from '@/data/site.json';
 ---
 
 <section class="py-8 sm:py-16">
   <div class="container">
     <div class="grid sm:grid-cols-2 gap-y-4 gap-x-20">
       <div class="">
-        <h2 class=" text-3xl sm:text-[40px] leading-[1.1] tracking-[.01em] text-medium font-heading ">
+        <h2 class="text-3xl sm:text-[40px] leading-[1.1] tracking-[.01em] text-medium font-heading">
           {data.about.title}
         </h2>
-        <p class="mt-4 sm:mt-[38px] text-[#7f7f7f] max-w-lg">{data.about.description[0]}<span class="font-medium"> {data.about.description[1]}</span>{data.about.description[2]}</p>
+        <p class="mt-4 sm:mt-[38px] text-[#7f7f7f] max-w-lg">
+          {data.about.description[0]}<span class="font-medium"> {data.about.description[1]}</span>{
+            data.about.description[2]
+          }
+        </p>
       </div>
       <ul class="flex justify-between items-center gap-x-6 gap-y-6">
-        {data.stats.map((stat) => (
-          <li class="flex flex-col text-center gap-2">
-            <span class="text-5xl sm:text-7xl font-heading">{stat.title}</span>
-            <span class=" text-sm text-[#7F7F7F] font-medium ">{stat.description}</span>
-          </li>
-        ))}
+        {
+          data.stats.map((stat) => (
+            <li class="flex flex-col text-center gap-2">
+              <span class="text-5xl sm:text-7xl font-heading">{stat.title}</span>
+              <span class=" text-[#7F7F7F] ">{stat.description}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

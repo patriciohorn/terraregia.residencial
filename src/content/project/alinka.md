@@ -1,5 +1,5 @@
 ---
-title: 'Alinka'
+title: 'Alinka Residencial'
 location: 'Dominio Cumbres'
 whatsapp: '8131418886'
 website: 'https://alinkaresidencial.mx/'
