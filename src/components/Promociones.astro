@@ -113,8 +113,8 @@ const promotions = [
 <section class="py-14 sm:py-16">
   <div class="container">
     <LeftHeading title="Promociones del mes" />
-  </div>
-  <div class="mt-6 sm:mt-12 pl-[max(16px,calc((100%-1260px)/2+16px))] ml-auto">
-    <PromocionesCarousel promotions={promotions} client:load />
+    <div class="mt-6 sm:mt-8">
+      <PromocionesCarousel promotions={promotions} client:load />
+    </div>
   </div>
 </section>

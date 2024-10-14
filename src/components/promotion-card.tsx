@@ -13,7 +13,7 @@ export function PromotionCardd({ project }: any) {
   console.log(path);
   return (
     <a href={`/proyectos/${path}`}>
-      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer h-[472px] p-6">
+      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-[498px]">
         <div className="bg-[#BFDEE3] group-hover:bg-black px-6 h-20 rounded-[4px] flex flex-col justify-center">
           <p className="text-lg leading-6 font-medium group-hover:text-white">
             {project.mainPromo}

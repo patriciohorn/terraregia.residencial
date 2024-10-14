@@ -5,7 +5,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from '@/components/ui/carousel';
+} from '@/components/ui/carousel-top-btn';
 import { PromotionCardd } from '@/components/promotion-card';
 
 interface Promotion {
@@ -29,17 +29,16 @@ export function PromocionesCarousel({ promotions }: PromocionesCarouselProps) {
       opts={{
         loop: true,
         align: 'start'
-      }}
-      className="w-full">
-      <CarouselContent className="-ml-8">
+      }}>
+      <CarouselContent className="">
         {promotions.map((promotion: any) => (
-          <CarouselItem key={promotion.title} className="pl-8 md:basis-1/2 lg:basis-1/3 max-w-96">
+          <CarouselItem key={promotion.title} className="md:basis-1/2 lg:basis-1/3">
             <PromotionCardd project={promotion} />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:flex sm:left-3/4 sm:-top-16 sm:-translate-x-3/4" />
-      <CarouselNext className="hidden sm:flex sm:left-3/4 sm:-top-16 sm:translate-x-1/2" />
+      <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 }
