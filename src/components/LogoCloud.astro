@@ -1,23 +1,25 @@
 ---
-import {Image} from 'astro:assets'
+import { Image } from 'astro:assets';
 import logoCloud1 from '@/assets/tr-cloud-1.svg';
 import logoCloud2 from '@/assets/tr-cloud-2.svg';
 import logoCloud3 from '@/assets/tr-cloud-3.svg';
 import logoCloud4 from '@/assets/tr-cloud-4.svg';
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion';
 const logoCloudImages = [logoCloud1, logoCloud2, logoCloud4, logoCloud3];
 ---
 
-<section class="py-4 sm:py-0">
-  <div class="container ">
-    <div class="bg-[#252323] py-6 sm:py-[72px] rounded-sm sm:rounded-lg">    
-      <div class="flex items-center gap-6 justify-around px-6 sm:px-24">      
-        {logoCloudImages.map((logo, idx) => (
-         <div class="">
-          <Image src={logo} alt={`logo ${idx}`} class="w-full h-full object-cover "/>
-         </div>
-        ))}
-      </div>    
+<section class="">
+  <div class="container">
+    <div class="bg-[#252323] py-6 sm:py-[72px] rounded-sm sm:rounded-lg">
+      <div class="flex items-center gap-6 justify-around px-6 sm:px-24">
+        {
+          logoCloudImages.map((logo, idx) => (
+            <div class="">
+              <Image src={logo} alt={`logo ${idx}`} class="w-full h-full object-cover " />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

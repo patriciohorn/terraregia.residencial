@@ -14,6 +14,7 @@ images:
   - '../../assets/montserrat/imagen3.webp'
   - '../../assets/montserrat/amenidades-montserrat.webp'
   - '../../assets/montserrat/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: 'preventa'
 tipo: 'Casas'
 costo: 'desde $5,800,000*'
@@ -179,4 +180,5 @@ modelosImages:
   - '../../assets/montserrat/beniali.webp'
   - '../../assets/montserrat/eliana.webp'
 brochure: 'https://montserratresidencial.mx/wp-content/uploads/2024/06/Montserrat-Residencial-Brochure.pdf'
+promotion: 'Bono de hasta $150mil'
 ---

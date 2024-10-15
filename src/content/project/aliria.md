@@ -14,6 +14,7 @@ images:
   - '../../assets/aliria/imagen3.webp'
   - '../../assets/aliria/imagen4.webp'
   - '../../assets/aliria/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'desde $520,000*'
@@ -56,4 +57,5 @@ services:
       - 'Hospital General de Juárez'
       - 'Hospital Central'
     icon: 'hospitals'
+promotion: 'Financiamiento directo de hasta 33MSI'
 ---

@@ -53,7 +53,6 @@ const project = Astro.props;
       )}
     </section>
     <!-- Gallery -->
-
     {project.data.title !== 'Reserva del Mezquital' && (
       <section class="sm:hidden mt-4 pl-4 ml-auto">     
         <SecondaryImagesCarousel images={project.data.images} client:load/>
@@ -72,7 +71,8 @@ const project = Astro.props;
                 <TipologiaCarousel images={project.data.variantImages} client:load/>
                 <VariantFooter items={project.data.variantFooter} brochure={project.data.brochure}/>
               </div>
-              <div class="flex flex-col justify-end px-4 py-6 sm:px-12 sm:pb-9 bg-[#E6E9E9] rounded-sm sm:rounded-md sm:min-h-[468px]">
+              <div class="flex flex-col justify-between px-4 py-6 sm:px-12 sm:pb-12 bg-[#E6E9E9] rounded-sm sm:rounded-md sm:min-h-[468px]">
+                <Image src={project.data.logo} alt={`${project.data.title} logo`} class="mt-10 text-black"/>
                 <p class="text-xl sm:text-2xl font-medium">{project.data.variantDescription}</p>
               </div>
             </div>

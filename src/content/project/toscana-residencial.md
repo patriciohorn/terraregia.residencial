@@ -14,6 +14,7 @@ images:
   - '../../assets/toscana/imagen3.webp'
   - '../../assets/toscana/imagen4.webp'
   - '../../assets/toscana/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: ''
 tipo: 'Casas'
 costo: 'desde $2,750,000*'
@@ -168,4 +169,5 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
+promotion: 'Bono de hasta $50mil ó páneles solares + minisplit'
 ---

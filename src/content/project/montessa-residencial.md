@@ -10,10 +10,11 @@ waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./monterrey/caseta-domi
 cover: '../../assets/images/montessa-residencial.png'
 telefonoCaseta: '8119771583'
 images:
-  - '../../assets/montessa/imagen2.webp'
   - '../../assets/montessa/imagen3.webp'
   - '../../assets/montessa/imagen4.webp'
+  - '../../assets/montessa/imagen2.webp'
   - '../../assets/montessa/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: 'ambos'
 tipo: 'Terrenos'
 costo: 'Precio Preventa'
@@ -63,4 +64,5 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
+promotion: 'Mensualidades desde $21,000'
 ---

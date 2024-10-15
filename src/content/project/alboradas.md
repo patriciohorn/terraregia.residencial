@@ -10,10 +10,11 @@ waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./monterrey/caseta-domi
 telefonoCaseta: '8114922940'
 cover: '../../assets/images/alboradas-cover.webp'
 images:
-  - '../../assets/alboradas/imagen2.webp'
   - '../../assets/alboradas/imagen3.webp'
   - '../../assets/alboradas/imagen4.webp'
+  - '../../assets/alboradas/imagen2.webp'
   - '../../assets/alboradas/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: ''
 tipo: 'Terrenos'
 costo: 'desde $2,800,000*'
@@ -64,4 +65,5 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
+promotion: 'Mensualidades desde $30mil'
 ---

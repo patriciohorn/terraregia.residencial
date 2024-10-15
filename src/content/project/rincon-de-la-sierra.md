@@ -14,6 +14,7 @@ images:
   - '../../assets/rincon/imagen3.png'
   - '../../assets/rincon/imagen4.webp'
   - '../../assets/rincon/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: ''
 tipo: 'Casas'
 costo: 'desde $3,100,000*'
@@ -245,4 +246,5 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
+promotion: 'Bono de hasta $60mil + cocina con granito'
 ---

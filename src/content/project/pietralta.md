@@ -11,9 +11,10 @@ telefonoCaseta: '8114922940'
 cover: '../../assets/images/pietralta.jpg'
 images:
   - '../../assets/pietralta/imagen2.webp'
+  - '../../assets/pietralta/imagen5.webp'
   - '../../assets/pietralta/imagen3.webp'
   - '../../assets/pietralta/imagen4.webp'
-  - '../../assets/pietralta/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: 'destacados'
 tipo: 'Terrenos'
 costo: 'desde $2,300,000*'
@@ -22,7 +23,7 @@ amenities:
   - icon: 'JuegosInfantiles'
     label: 'Juegos Infantiles'
   - icon: 'Vigilancia'
-    label: 'Vigiancia'
+    label: 'Vigilancia'
   - icon: 'Canchas'
     label: 'Cancha Deportiva'
   - icon: 'CasaClub'
@@ -58,4 +59,5 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
+promotion: 'Financiamiento Directo'
 ---

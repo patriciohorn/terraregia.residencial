@@ -14,6 +14,7 @@ images:
   - '../../assets/miria/imagen3.webp'
   - '../../assets/miria/imagen4.webp'
   - '../../assets/miria/imagen5.webp'
+logo: '../../assets/tr-cloud-1.svg'
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'desde $535,500*'
@@ -44,4 +45,5 @@ variantFooter:
   - 'Frente: 7m'
   - 'Fondo: 14m'
   - 'Área: 98m2'
+promotion: 'Financiamiento directo de hasta 24 MSI'
 ---

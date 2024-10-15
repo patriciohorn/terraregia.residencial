@@ -25,6 +25,7 @@ const projectCollection = defineCollection({
         message: 'Cover image must be at least 1080 pixels wide!'
       }),
       images: z.array(image()),
+      logo: image(),
       category: z.string(),
       tipo: z.string(),
       costo: z.string(),
@@ -56,7 +57,8 @@ const projectCollection = defineCollection({
       isometricosSiena: z.array(image()).optional(),
       virtualTour: z.string().optional(),
       brochure: z.string().optional(),
-      services: z.array(serviceSchema).optional()
+      services: z.array(serviceSchema).optional(),
+      promotion: z.string().optional()
     })
 });
 
