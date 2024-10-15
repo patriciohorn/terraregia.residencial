@@ -30,15 +30,15 @@ export function PromocionesCarousel({ promotions }: PromocionesCarouselProps) {
         loop: true,
         align: 'start'
       }}>
-      <CarouselContent className="">
+      <CarouselContent className="-ml-8">
         {promotions.map((promotion: any) => (
-          <CarouselItem key={promotion.title} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={promotion.title} className="pl-8 md:basis-1/2 lg:basis-1/3">
             <PromotionCardd project={promotion} />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" />
     </Carousel>
   );
 }

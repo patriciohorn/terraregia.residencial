@@ -17,7 +17,7 @@ images:
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'desde $520,000*'
-presupuesto: '$400,000'
+presupuesto: '$500,000'
 amenities:
   - icon: 'Terraza'
     label: 'Terraza Techada'

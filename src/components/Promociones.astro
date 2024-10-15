@@ -96,7 +96,7 @@ const promotions = [
     icons: ['LandPlot', 'Grid', 'CircleDollarSign']
   },
   {
-    title: 'Alinka',
+    title: 'Alinka Residencial',
     location: 'Dominio Cumbres',
     details: 'Terrenos residenciales desde 127.5m²',
     mainPromo: 'Financiamiento Directo',
@@ -110,10 +110,10 @@ const promotions = [
 ];
 ---
 
-<section class="py-14 sm:py-16">
+<section class="py-16 sm:py-28">
   <div class="container">
     <LeftHeading title="Promociones del mes" />
-    <div class="mt-6 sm:mt-8">
+    <div class="mt-6 sm:mt-16">
       <PromocionesCarousel promotions={promotions} client:load />
     </div>
   </div>

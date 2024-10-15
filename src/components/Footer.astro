@@ -1,19 +1,23 @@
 ---
 import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
-const allProjectPosts = await getCollection("project");
+const allProjectPosts = await getCollection('project');
 
-const dominioCumbres = allProjectPosts.filter((project) => project.data.location === 'Dominio Cumbres')
-const valleCondesa = allProjectPosts.filter((project) => project.data.location === 'Valle Condesa')
-const apodaca = allProjectPosts.filter((project) => project.data.location === 'Apodaca')
-const salinasVictoria = allProjectPosts.filter((project) => project.data.location === 'Salinas Victoria')
+const dominioCumbres = allProjectPosts.filter(
+  (project) => project.data.location === 'Dominio Cumbres'
+);
+const valleCondesa = allProjectPosts.filter((project) => project.data.location === 'Valle Condesa');
+const apodaca = allProjectPosts.filter((project) => project.data.location === 'Apodaca');
+const salinasVictoria = allProjectPosts.filter(
+  (project) => project.data.location === 'Salinas Victoria'
+);
 
 const socialMediaIcons = [
-  { name: 'facebook', path: 'https://www.facebook.com/terraregiaresidencial'}, 
-  { name: 'instagram', path: 'https://www.instagram.com/terraregiaresidencial/'}, 
-  { name: 'linkedin', path: 'https://www.linkedin.com/company/terraregia/?originalSubdomain=mx'}, 
-  { name: 'youtube', path: 'https://www.youtube.com/@terraregiadesarrollosinmob3152'}, 
-]
+  { name: 'facebook', path: 'https://www.facebook.com/terraregiaresidencial' },
+  { name: 'instagram', path: 'https://www.instagram.com/terraregiaresidencial/' },
+  { name: 'linkedin', path: 'https://www.linkedin.com/company/terraregia/?originalSubdomain=mx' },
+  { name: 'youtube', path: 'https://www.youtube.com/@terraregiadesarrollosinmob3152' }
+];
 ---
 
 <section class="py-16">
@@ -22,58 +26,97 @@ const socialMediaIcons = [
     <div class="col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Column 1 - Dominio Cumbres -->
       <div>
-        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Dominio Cumbres</h3>
+        <h3 class="text-lg leading-6 font-heading text-balance">
+          Proyectos en venta en Dominio Cumbres
+        </h3>
         <ul class="mt-4 space-y-2">
-          {dominioCumbres.map((project) => (
-            <li class="text-sm"><a href={project.data.website} class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left  " target="_blank">{project.data.title}</a></li>
-          ))}
+          {
+            dominioCumbres.map((project) => (
+              <li class="text-sm">
+                <a
+                  href={project.data.website}
+                  class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left  "
+                  target="_blank">
+                  {project.data.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <!-- Column 2 - Valle Condesa -->
       <div>
-        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Valle Condesa</h3>
+        <h3 class="text-lg leading-6 font-heading text-balance">
+          Proyectos en venta en Valle Condesa
+        </h3>
         <ul class="mt-4 space-y-2">
-          {valleCondesa.map((project) => (
-            <li class="text-sm"><a href={project.data.website} class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left " target="_blank">{project.data.title}</a></li>
-          ))}
+          {
+            valleCondesa.map((project) => (
+              <li class="text-sm">
+                <a
+                  href={project.data.website}
+                  class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left "
+                  target="_blank">
+                  {project.data.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <!-- Column 3 - Apodaca -->
       <div>
-        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Apodaca</h3>
+        <h3 class="text-lg leading-6 font-heading text-balance">Proyectos en venta en Apodaca</h3>
         <ul class="mt-4 space-y-2">
-          {apodaca.map((project) => (
-            <li class="text-sm"><a href={project.data.website} class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left " target="_blank">{project.data.title}</a></li>
-          ))}
+          {
+            apodaca.map((project) => (
+              <li class="text-sm">
+                <a
+                  href={project.data.website}
+                  class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left "
+                  target="_blank">
+                  {project.data.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <!-- Column 4 - Salinas Victoria -->
       <div>
-        <h3 class="text-lg leading-6 font-heading text-balance">Desarrollo en venta en Salinas Victoria</h3>
+        <h3 class="text-lg leading-6 font-heading h-12 inline-flex items-end">¿Buscas invertir?</h3>
         <ul class="mt-4 space-y-2">
-          {salinasVictoria.map((project) => (
-            <li class="text-sm"><a href={project.data.website} class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left " target="_blank">{project.data.title}</a></li>
-          ))}
+          <li class="text-sm">
+            <a
+              href="/inversiones"
+              class="text-sm relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-right before:transition-transform before:duration-300 before:ease-in-out hover:before:scale-100 hover:before:origin-left"
+              target="_blank">
+              Inversiones
+            </a>
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- Social Media Section -->
-    <div class="flex flex-col items-center lg:items-start space-y-4">
-      <h3 class="text-lg leading-6 font-heading text-balance">Síguenos en redes</h3>
-      <ul class="flex gap-x-4">
-        {socialMediaIcons.map((plataform) => (
-          <li class="bg-[#E6E9E9] w-12 h-12 inline-flex items-center justify-center rounded-full group hover:bg-black transition-colors duration-200 ease-in-out cursor-pointer">
-            <a href={plataform.path} target="_blank">
-              <span class="sr-only">Facebook Terra Regia</span>
-              <Icon name={plataform.name} class="w-6 h-6 group-hover:text-[#E6E9E9]"/>
-            </a>
-          </li>
-
-        ))}
+    <div class="flex flex-col items-center lg:items-start">
+      <h3 class="text-lg leading-6 font-heading text-balance h-12 inline-flex items-end">
+        Síguenos en redes
+      </h3>
+      <ul class="mt-4 flex gap-x-4">
+        {
+          socialMediaIcons.map((plataform) => (
+            <li class="bg-[#E6E9E9] w-12 h-12 inline-flex items-center justify-center rounded-full group hover:bg-black transition-colors duration-200 ease-in-out cursor-pointer">
+              <a href={plataform.path} target="_blank">
+                <span class="sr-only">Facebook Terra Regia</span>
+                <Icon name={plataform.name} class="w-6 h-6 group-hover:text-[#E6E9E9]" />
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

@@ -17,7 +17,7 @@ images:
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'desde $535,500*'
-presupuesto: '$400,000'
+presupuesto: '$500,000'
 amenities:
   - icon: 'ClubHouse'
     label: 'Casa Club'

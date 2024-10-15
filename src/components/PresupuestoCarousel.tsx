@@ -7,11 +7,10 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from '@/components/ui/carousel';
+} from '@/components/ui/carousel-top-btn';
 
 const projects = [
   { title: 'Casas Infonavit', budget: '$3 MDP', path: '/costo' },
-  { title: 'Proyectos desde', budget: '$400,000', path: '/costo/400000' },
   { title: 'Proyectos desde', budget: '$1 MDP', path: '/costo/1000000' },
   { title: 'Proyectos desde', budget: '$2 MDP', path: '/costo/2000000' },
   { title: 'Proyectos desde', budget: '$3 MDP', path: '/costo/3000000' }
@@ -45,8 +44,8 @@ export function PresupuestoCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:flex sm:left-3/4 sm:-top-16 sm:-translate-x-3/4" />
-      <CarouselNext className="hidden sm:flex sm:left-3/4 sm:-top-16 sm:translate-x-1/2" />
+      {/* <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" /> */}
     </Carousel>
   );
 }
