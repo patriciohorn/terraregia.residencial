@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/carousel-top-btn';
 
 const projects = [
-  { title: 'Casas Infonavit', budget: '$3 MDP', path: '/costo' },
+  // { title: 'Casas Infonavit', budget: '$3 MDP', path: '/costo' },
   { title: 'Proyectos desde', budget: '$500,000', path: '/costo/500000' },
   { title: 'Proyectos desde', budget: '$1 MDP', path: '/costo/1000000' },
   { title: 'Proyectos desde', budget: '$2 MDP', path: '/costo/2000000' },

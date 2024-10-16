@@ -17,8 +17,8 @@ images:
 logo: '../../assets/logos/logo-montessa.png'
 category: 'ambos'
 tipo: 'Terrenos'
-costo: 'Precio Preventa'
-presupuesto: 'preventa'
+costo: 'desde $1,581,000*'
+presupuesto: '$1,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
     label: 'Juegos Infantiles'

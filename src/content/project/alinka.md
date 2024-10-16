@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-alinka.png'
 category: 'destacados'
 tipo: 'Terrenos'
-costo: 'desde $1,600,000*'
+costo: 'desde $ 1,618,400*'
 presupuesto: '$1,000,000'
 amenities:
   - icon: 'JuegosInfantiles'

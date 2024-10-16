@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-aliria.png'
 category: 'preventa'
 tipo: 'Terrenos'
-costo: 'desde $520,000*'
+costo: 'desde $571,200*'
 presupuesto: '$500,000'
 amenities:
   - icon: 'Terraza'

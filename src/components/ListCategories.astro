@@ -1,17 +1,14 @@
 ---
-import {getTipos} from '@/lib/utils'
-import Category from '@/components/Category.astro'
+import { getTipos, getUbicaciones, sluglify } from '@/lib/utils';
+import Category from '@/components/Category.astro';
 
-const tipos = await getTipos()
+const ubicaciones = await getUbicaciones();
+const tipos = await getTipos();
 
-const {activeCategory} = Astro.props
+const { activeCategory } = Astro.props;
 ---
 
 <div class="flex flex-wrap gap-4 sm:gap-5">
-  <Category/>
-  {
-    tipos.map((tipo) => (
-      <Category name={tipo} activeCategory={activeCategory}/>
-    ))
-  }
+  <Category />
+  {tipos.map((tipo) => <Category name={tipo} activeCategory={activeCategory} />)}
 </div>
