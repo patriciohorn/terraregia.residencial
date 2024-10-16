@@ -14,7 +14,7 @@ images:
   - '../../assets/toscana/imagen3.webp'
   - '../../assets/toscana/imagen4.webp'
   - '../../assets/toscana/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-toscana.png'
 category: ''
 tipo: 'Casas'
 costo: 'desde $2,750,000*'

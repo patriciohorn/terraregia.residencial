@@ -25,7 +25,7 @@ const projectCollection = defineCollection({
         message: 'Cover image must be at least 1080 pixels wide!'
       }),
       images: z.array(image()),
-      logo: image(),
+      logo: image().optional(),
       category: z.string(),
       tipo: z.string(),
       costo: z.string(),

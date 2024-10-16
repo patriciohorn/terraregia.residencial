@@ -14,7 +14,7 @@ images:
   - '../../assets/alboradas/imagen4.webp'
   - '../../assets/alboradas/imagen2.webp'
   - '../../assets/alboradas/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-alboradas.png'
 category: ''
 tipo: 'Terrenos'
 costo: 'desde $2,800,000*'

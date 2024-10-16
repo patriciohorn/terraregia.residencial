@@ -14,7 +14,7 @@ images:
   - '../../assets/montessa/imagen4.webp'
   - '../../assets/montessa/imagen2.webp'
   - '../../assets/montessa/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-montessa.png'
 category: 'ambos'
 tipo: 'Terrenos'
 costo: 'Precio Preventa'

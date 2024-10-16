@@ -14,7 +14,7 @@ images:
   - '../../assets/miria/imagen3.webp'
   - '../../assets/miria/imagen4.webp'
   - '../../assets/miria/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-miria.png'
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'desde $535,500*'

@@ -14,7 +14,7 @@ images:
   - '../../assets/pietralta/imagen5.webp'
   - '../../assets/pietralta/imagen3.webp'
   - '../../assets/pietralta/imagen4.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-pietralta.png'
 category: 'destacados'
 tipo: 'Terrenos'
 costo: 'desde $2,300,000*'

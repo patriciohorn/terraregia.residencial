@@ -1,13 +1,21 @@
 ---
-import {Link} from '@/components/link'
-import {cn, formatCurrency, sluglify} from '@/lib/utils'
+import { Link } from '@/components/link';
+import { cn, formatCurrency, sluglify } from '@/lib/utils';
 
+const { name = 'Todos', activeCategory } = Astro.props;
 
-const {name = "Infonavit",  activeCategory} = Astro.props
-
-const currentPath = Astro.url.pathname
-const unsluglifyNameCategory = formatCurrency(name)
-const isActive = activeCategory?.toLowerCase() === unsluglifyNameCategory || (currentPath === '/costo/' && name === 'Infonavit')
+const currentPath = Astro.url.pathname;
+const unsluglifyNameCategory = formatCurrency(name);
+const isActive =
+  activeCategory?.toLowerCase() === unsluglifyNameCategory ||
+  (currentPath === '/costo/' && name === 'Todos');
 ---
 
-<Link href={name === 'Infonavit' ? '/costo/' : sluglify(`/costo/${unsluglifyNameCategory}`)} variant="invertedOutline" className={cn(`h-8 px-4 py-2 text-sm border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`, isActive && `bg-white text-black border border-white`)}>{name !== '$3,000,000' ? name : '$3,000,000 o más'}</Link>
+<Link
+  href={name === 'Todos' ? '/costo/' : sluglify(`/costo/${unsluglifyNameCategory}`)}
+  variant="invertedOutline"
+  className={cn(
+    `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`,
+    isActive && `bg-white text-black border border-white`
+  )}>{name !== '$3,000,000' ? name : '$3,000,000 o más'}</Link
+>

@@ -1,0 +1,13 @@
+---
+import { getUbicaciones } from '@/lib/utils';
+import Ubicaciones from '@/components/Category.astro';
+
+const ubicaciones = await getUbicaciones();
+
+const { activeCategory } = Astro.props;
+---
+
+<!-- <div class="flex flex-wrap gap-4 sm:gap-5">
+  <Ubicacion />
+  {ubicacion.map((tipo) => <Ubicacion name={tipo} activeCategory={activeCategory} />)}
+</div> -->

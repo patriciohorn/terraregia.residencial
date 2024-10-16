@@ -14,7 +14,7 @@ images:
   - '../../assets/alinka/imagen3.webp'
   - '../../assets/alinka/imagen4.webp'
   - '../../assets/alinka/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-alinka.png'
 category: 'destacados'
 tipo: 'Terrenos'
 costo: 'desde $1,600,000*'

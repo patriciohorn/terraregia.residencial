@@ -14,7 +14,7 @@ images:
   - '../../assets/montserrat/imagen3.webp'
   - '../../assets/montserrat/amenidades-montserrat.webp'
   - '../../assets/montserrat/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-montserrat.png'
 category: 'preventa'
 tipo: 'Casas'
 costo: 'desde $5,800,000*'

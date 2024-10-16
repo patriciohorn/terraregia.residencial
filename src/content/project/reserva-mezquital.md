@@ -9,7 +9,6 @@ images:
   - '../../assets/reserva/imagen3.jpg'
   - '../../assets/reserva/imagen4.jpg'
   - '../../assets/reserva/imagen5.jpg'
-logo: '../../assets/tr-cloud-1.svg'
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'Precio de Preventa'

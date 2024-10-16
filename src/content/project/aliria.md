@@ -14,7 +14,7 @@ images:
   - '../../assets/aliria/imagen3.webp'
   - '../../assets/aliria/imagen4.webp'
   - '../../assets/aliria/imagen5.webp'
-logo: '../../assets/tr-cloud-1.svg'
+logo: '../../assets/logos/logo-aliria.png'
 category: 'preventa'
 tipo: 'Terrenos'
 costo: 'desde $520,000*'
