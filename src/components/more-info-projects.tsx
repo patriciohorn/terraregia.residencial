@@ -62,12 +62,11 @@ export function MoreInfoForm() {
       />
       <Select onValueChange={handleSelectChange}>
         <SelectTrigger className="w-full">
-          <SelectValue placeholder="¿Opción de compra? Vivir o invertir" />
+          <SelectValue placeholder="¿Opción de compra?" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="Dominio Cumbres">Dominio Cumbres</SelectItem>
-          <SelectItem value="Valle Condesa">Valle Condesa</SelectItem>
-          <SelectItem value="Apodaca">Apodaca</SelectItem>
+          <SelectItem value="vivir">Para vivir</SelectItem>
+          <SelectItem value="invertir">Para invertir</SelectItem>
         </SelectContent>
       </Select>
       <Button size="lg">Enviar</Button>
