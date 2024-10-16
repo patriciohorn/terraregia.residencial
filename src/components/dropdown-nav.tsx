@@ -41,7 +41,8 @@ const navItems: NavItem[] = [
       { label: 'Desde $500,000', href: 'costo/500000' },
       { label: 'Desde 1MDP', href: 'costo/1000000' },
       { label: 'Desde 2MDP', href: 'costo/2000000' },
-      { label: 'Desde 3MDP', href: 'costo/3000000' }
+      { label: 'Desde 3MDP', href: 'costo/3000000' },
+      { label: 'Desde 5MDP', href: 'costo/5000000' }
     ]
   }
 ];

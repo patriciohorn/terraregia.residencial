@@ -1,6 +1,8 @@
 ---
 import ProjectCard from './ProjectCard.astro';
-const { projects } = Astro.props;
+const { projects = 'Todos', activeLocation } = Astro.props;
+const locations = projects.map((project: any) => project.data.location);
+console.log('Locations:', activeLocation);
 ---
 
 <section>

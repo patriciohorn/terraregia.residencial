@@ -1,5 +1,5 @@
 ---
-title: 'Aliria'
+title: 'Aliria Residencial'
 location: 'Valle Condesa'
 whatsapp: '8115314694'
 website: 'https://aliriaresidencial.mx/'

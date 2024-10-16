@@ -15,7 +15,7 @@ const isActive =
   href={name === 'Todos' ? '/costo/' : sluglify(`/costo/${unsluglifyNameCategory}`)}
   variant="invertedOutline"
   className={cn(
-    `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-44 sm:text-base`,
+    `h-8 px-4 py-2 text-sm border border-white bg-transparent text-white sm:h-12 sm:px-6 sm:py-3 sm:w-36  sm:text-base`,
     isActive && `bg-white text-black border border-white`
-  )}>{name !== '$3,000,000' ? name : '$3,000,000 o más'}</Link
+  )}>{name}</Link
 >

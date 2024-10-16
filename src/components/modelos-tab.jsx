@@ -81,8 +81,8 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
                 src={plantas === '2 plantas' ? model.modeloImage[0].src : model.modeloImage[1].src}
                 alt={model.model}
                 className={cn(
-                  `rounded-sm w-full h-full`,
-                  data.title === 'Montserrat' ? `object-cover` : `object-contain`
+                  `rounded-sm w-full h-full animate-fade-right`,
+                  data.title === 'Montserrat Residencial' ? `object-cover` : `object-contain`
                 )}
               />
             </div>

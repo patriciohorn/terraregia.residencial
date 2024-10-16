@@ -1,5 +1,5 @@
 ---
-title: 'Miria'
+title: 'Miria Residencial'
 location: 'Valle Condesa'
 whatsapp: '8115314694'
 website: 'https://miriaresidencial.mx/'

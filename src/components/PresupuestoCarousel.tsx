@@ -14,7 +14,8 @@ const projects = [
   { title: 'Proyectos desde', budget: '$500,000', path: '/costo/500000' },
   { title: 'Proyectos desde', budget: '$1 MDP', path: '/costo/1000000' },
   { title: 'Proyectos desde', budget: '$2 MDP', path: '/costo/2000000' },
-  { title: 'Proyectos desde', budget: '$3 MDP', path: '/costo/3000000' }
+  { title: 'Proyectos desde', budget: '$3 MDP', path: '/costo/3000000' },
+  { title: 'Proyectos desde', budget: '$5 MDP', path: '/costo/5000000' }
 ];
 
 export function PresupuestoCarousel() {
@@ -45,8 +46,8 @@ export function PresupuestoCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <CarouselPrevious className="hidden sm:flex" />
-      <CarouselNext className="hidden sm:flex" /> */}
+      <CarouselPrevious className="hidden sm:flex" />
+      <CarouselNext className="hidden sm:flex" />
     </Carousel>
   );
 }

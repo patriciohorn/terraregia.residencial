@@ -1,5 +1,5 @@
 ---
-title: 'Alboradas'
+title: 'Alboradas Residencial'
 location: 'Dominio Cumbres'
 whatsapp: '8110226121'
 website: 'https://alboradasresidencial.mx/'
