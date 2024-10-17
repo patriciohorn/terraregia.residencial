@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-montessa.png'
 category: 'ambos'
 tipo: 'Terrenos'
-costo: 'desde $1,581,000*'
+costo: 'Desde $1,581,000*'
 presupuesto: '$1,000,000'
 amenities:
   - icon: 'JuegosInfantiles'

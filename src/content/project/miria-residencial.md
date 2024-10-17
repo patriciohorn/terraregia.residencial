@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-miria.png'
 category: 'preventa'
 tipo: 'Terrenos'
-costo: 'desde $535,500*'
+costo: 'Desde $535,500*'
 presupuesto: '$500,000'
 amenities:
   - icon: 'ClubHouse'

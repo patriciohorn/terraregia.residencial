@@ -46,7 +46,7 @@ export function PromotionCardd({ project }: any) {
               {project.location}
             </span>
           </div>
-          <ul className="mt-6 space-y-2">
+          <ul className="mt-6 space-y-2.5">
             {project.specs.map((spec: string, idx: number) => (
               <PromoSpec key={idx} text={spec} icon={project.icons[idx]} />
             ))}

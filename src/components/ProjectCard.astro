@@ -16,7 +16,7 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
       src={project.data.cover}
       alt={project.data.title}
       inferSize={true}
-      class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:transform group-hover:translate3d(0, 0, 0) group-hover:scale-105 group-hover:rotateX(0deg) group-hover:rotateY(0deg)"
+      class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:transform group-hover:translate3d(0, 0, 0) group-hover:scale-105 group-hover:rotateX(0deg) group-hover:rotateY(0deg)"
       style={{ transformStyle: 'preserve-3d' }}
     />
 
@@ -65,13 +65,13 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
       small ? (
         <Button
           variant="outline"
-          className="cursor-pointer h-10 sm:h-10 group-hover:bg-black group-hover:text-white">
+          className="cursor-pointer h-10 sm:h-10 group-hover:bg-black group-hover:text-white transition-colors duration-300 ease-in-out ">
           Ver más
         </Button>
       ) : (
         <Button
           variant="outline"
-          className="cursor-pointer h-10 sm:h-12 sm:w-[140px] group-hover:bg-black group-hover:text-white">
+          className="cursor-pointer h-10 sm:h-12 sm:w-[140px] group-hover:bg-black group-hover:text-white transition-colors duration-300 ease-in-out ">
           Ver más
         </Button>
       )

@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-rds.png'
 category: ''
 tipo: 'Casas'
-costo: 'desde $3,100,000*'
+costo: 'Desde $3,100,000*'
 presupuesto: '$3,000,000'
 amenities:
   - icon: 'Terraza'
