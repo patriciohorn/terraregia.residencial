@@ -1,5 +1,8 @@
 ---
 import data from '@/data/site.json';
+import { Button } from './ui/button';
+import { ArrowUpRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 ---
 
 <section class="py-8 sm:py-24">
@@ -14,6 +17,15 @@ import data from '@/data/site.json';
             data.about.description[2]
           }
         </p>
+        <a class="flex group mt-8" href="https://terraregia.com/" target="_blank">
+          <Button
+            className="bg-[#D9D9D9] text-black group-hover:text-white group-hover:bg-black text-base font-medium">
+            Conoce más de Terra Regia
+          </Button>
+          <Button size={'icon'} className="bg-[#D9D9D9]  group-hover:bg-black">
+            <ArrowUpRight className="text-black group-hover:text-white " />
+          </Button>
+        </a>
       </div>
       <ul class="flex justify-between items-center gap-x-6 gap-y-6">
         {
