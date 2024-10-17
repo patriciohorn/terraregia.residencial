@@ -22,8 +22,7 @@ const navItems: NavItem[] = [
       { label: 'Todos', href: '/ubicacion' },
       { label: 'Dominio Cumbres', href: '/ubicacion/dominio-cumbres' },
       { label: 'Valle Condesa', href: '/ubicacion/valle-condesa' },
-      { label: 'Apodaca', href: '/ubicacion/apodaca' },
-      { label: 'Salinas Victoria', href: '/ubicacion/salinas-victoria' }
+      { label: 'Apodaca', href: '/ubicacion/apodaca' }
     ]
   },
   {
