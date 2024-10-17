@@ -1,0 +1,76 @@
+---
+import { cn, getProjects } from '@/lib/utils';
+import { Image } from 'astro:assets';
+
+const projects = await getProjects();
+---
+
+<section>
+  <div class="container">
+    <div
+      class="py-12 group overflow-hidden relative before:content-[''] before:absolute before:top-0 before:-left-20 before:w-[250px] before:h-full before:bg-gradient-to-r before:from-[#F5F5F5] before:to-[rgba(245,245,245,0)] before:z-[2] after:content-[''] after:absolute after:top-0 after:-right-20 after:w-[250px] after:h-full after:bg-gradient-to-r after:from-[rgba(245,245,245,0)] after:to-[rgb(245,245,245)] after:z-[2]">
+      <div class="slide flex items-center">
+        {
+          projects.map((project, idx) => (
+            <a
+              href={`/proyectos/${project.slug}`}
+              class={cn(
+                `shrink-0 cursor-pointer`,
+                project.data.title === 'Alboradas Residencial'
+                  ? 'h-20'
+                  : project.data.title === 'Rincón de la Sierra'
+                    ? 'h-16'
+                    : 'h-12'
+              )}>
+              {project.data.logo && (
+                <Image
+                  src={project.data.logo}
+                  alt={`${project.data.title} logo`}
+                  class="w-full h-full object-contain mr-20"
+                />
+              )}
+            </a>
+          ))
+        }
+        {
+          projects.map((project, idx) => (
+            <a
+              href={`/proyectos/${project.slug}`}
+              class={cn(
+                `shrink-0 cursor-pointer`,
+                project.data.title === 'Alboradas Residencial'
+                  ? 'h-20'
+                  : project.data.title === 'Rincón de la Sierra'
+                    ? 'h-16'
+                    : 'h-12'
+              )}>
+              {project.data.logo && (
+                <Image
+                  src={project.data.logo}
+                  alt={`${project.data.title} logo`}
+                  class="w-full h-full object-contain mr-20"
+                />
+              )}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slide {
+    from {
+      transfrom: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .slide {
+    animation: 40s slide infinite linear;
+  }
+</style>
