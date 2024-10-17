@@ -9,7 +9,6 @@ interface SecondaryImagesCarouselProps {
 }
 
 export function SecondaryImagesCarousel({ images }: SecondaryImagesCarouselProps) {
-  console.log(images);
   return (
     <Carousel
       opts={{

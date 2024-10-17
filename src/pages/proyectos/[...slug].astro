@@ -11,10 +11,10 @@ import VideoCastilla from '@/components/VideoCastilla.astro'
 import { getProjects } from "@/lib/utils";
 import { Image } from "astro:assets";
 // import { type CollectionEntry } from 'astro:content';
-import MoreInfo from "@/components/MoreInfoProjects.astro";
 import VariantFooter from "@/components/VariantFooter.astro";
 import { SecondaryImagesCarousel } from "@/components/secondaryImages-carousel";
 import ServicesCards from "@/components/ServicesCards.astro";
+import MoreInfoProjects from "@/components/MoreInfoProjects.astro";
 
 export async function getStaticPaths() {
 	const projects = await getProjects();
@@ -124,7 +124,9 @@ const project = Astro.props;
     )}
              
   </section>
-  <MoreInfo webhook={project.webhook}/>
+
+  <MoreInfoProjects webhook={project.data.webhook} proyecto={project.data.title} />
+
 </Layout>
 
 

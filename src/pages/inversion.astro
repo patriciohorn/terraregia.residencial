@@ -1,23 +1,34 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import InversionCover from '@/assets/inversion-cover.png'
-import InversionSecondary from '@/assets/inversion-secondary.png'
-import {InversionAccordion} from '@/components/inversion-accordion'
-import MoreInfo from "@/components/MoreInfo.astro";
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import InversionCover from '@/assets/inversion-cover.png';
+import InversionSecondary from '@/assets/inversion-secondary.png';
+import { InversionAccordion } from '@/components/inversion-accordion';
+import MoreInfo from '@/components/MoreInfo.astro';
+import { MoreInfoForm } from '@/components/formGeneral';
 ---
 
 <Layout title="Inversión">
-  <section class="pt-10 pb-16 flex flex-col ">
+  <section class="pt-10 pb-16 flex flex-col">
     <div class="container">
       <!-- Hero -->
-      <section>         
+      <section>
         <div class="flex flex-col gap-9">
-          <h1 class="text-3xl sm:text-6xl leding-[1.1] text-black font-heading">Invierte en propiedades de Alta Plusvalía en Dominio Cumbres y Valle Condesa</h1>
-          <p class="text-lg sm:text-[28px] sm:leading-9 text-neutral-700">Invierte hoy en casas y terrenos residenciales, asegura tu patrimonio y haz crecer tu futuro en las mejores ubicaciones. ¡Tu mejor decisión empieza aquí! </p>
+          <h1 class="text-3xl sm:text-6xl leding-[1.1] text-black font-heading">
+            Invierte en propiedades de Alta Plusvalía en Dominio Cumbres y Valle Condesa
+          </h1>
+          <p class="text-lg sm:text-[28px] sm:leading-9 text-neutral-700">
+            Invierte hoy en casas y terrenos residenciales, asegura tu patrimonio y haz crecer tu
+            futuro en las mejores ubicaciones. ¡Tu mejor decisión empieza aquí!
+          </p>
         </div>
         <div class="mt-8 overflow-hidden rounded-[15px] sm:rounded-md shadow-sm aspect-video">
-          <Image src={InversionCover} alt="Proyecto Inversiones" format="webp" class="w-full h-full object-cover"/>
+          <Image
+            src={InversionCover}
+            alt="Proyecto Inversiones"
+            format="webp"
+            class="w-full h-full object-cover"
+          />
         </div>
       </section>
 
@@ -25,17 +36,26 @@ import MoreInfo from "@/components/MoreInfo.astro";
       <section class="mt-16">
         <div class="grid sm:grid-cols-[2fr_3fr] sm:gap-20">
           <div>
-            <h2 class="font-heading text-3xl sm:text-[44px] leading-[1.1]">Selecciona la mejor opción para ti.</h2>
+            <h2 class="font-heading text-3xl sm:text-[44px] leading-[1.1]">
+              Selecciona la mejor opción para ti.
+            </h2>
             <div class="hidden sm:flex sm:mt-6 sm:rounded-md sm:overflow-hidden sm:shadow-sm">
-              <Image src={InversionSecondary} alt="Proyecto Terra Regia" format="webp" class="w-full h-full object-cover"/>
-            </div>            
+              <Image
+                src={InversionSecondary}
+                alt="Proyecto Terra Regia"
+                format="webp"
+                class="w-full h-full object-cover"
+              />
+            </div>
           </div>
           <div class="mt-6 sm:mt-16">
-            <InversionAccordion client:load/>            
+            <InversionAccordion client:load />
           </div>
         </div>
-      </section>        
-    </div>      
+      </section>
+    </div>
   </section>
-  <MoreInfo/> 
+  <MoreInfo>
+    <MoreInfoForm client:visible />
+  </MoreInfo>
 </Layout>

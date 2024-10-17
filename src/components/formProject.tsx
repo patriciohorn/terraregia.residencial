@@ -3,16 +3,21 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { CircleCheck } from 'lucide-react';
-export function MoreInfoForm({ webhook }: any) {
+interface FormProps {
+  webhook: string;
+  proyecto: string;
+}
+export function ProjectForm({ webhook, proyecto }: FormProps) {
   const initialFormData = {
     nombre: '',
     apellidos: '',
     email: '',
-    whatsapp: ''
+    whatsapp: '',
+    proyecto: proyecto
   };
+
   const [formData, setFormData] = useState(initialFormData);
   const [successMessage, setSuccessMessage] = useState('');
-  console.log(successMessage);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,6 +33,7 @@ export function MoreInfoForm({ webhook }: any) {
       if (response.ok) {
         setFormData(initialFormData);
         setSuccessMessage('Tus datos han sido enviados');
+        console.log(formData);
       } else {
         console.error('Error sending data');
       }

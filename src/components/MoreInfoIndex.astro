@@ -1,5 +1,6 @@
 ---
 import { MoreInfoForm } from '@/components/formGeneral';
+const { webhook, proyecto } = Astro.props;
 ---
 
 <section class="bg-card-foreground py-8 sm:py-28">
@@ -11,7 +12,7 @@ import { MoreInfoForm } from '@/components/formGeneral';
       <p class="text-3xl sm:text-[40px] sm:leading-6">Envíanos tus datos para más información</p>
     </div>
     <div class="mt-6 sm:mt-[52px]">
-      <MoreInfoForm client:visible />
+      <MoreInfoForm client:load />
     </div>
   </div>
 </section>
