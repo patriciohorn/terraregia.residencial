@@ -54,9 +54,15 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
   </div>
   <div class="mt-4 flex flex-row justify-between items-center">
     <div class="flex flex-col gap-y-1">
-      <h3 class="text-xl sm:text-2xl font-heading tracking-[0.01em]">{project.data.title}</h3>
+      <h3
+        class={cn(
+          `text-xl sm:text-2xl font-heading tracking-[0.01em]`,
+          small ? 'sm:text-xl' : 'sm:text-2xl'
+        )}>
+        {project.data.title}
+      </h3>
       <div class="flex gap-1 items-center text-[#827D7D]">
-        <MapPin className="h-4 w-auto" />
+        <MapPin className={cn(`w-auto`, small ? 'h-3' : 'h-4')} />
         <p class="text-sm font-medium">{project.data.location}</p>
       </div>
     </div>
@@ -65,7 +71,7 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
       small ? (
         <Button
           variant="outline"
-          className="cursor-pointer h-10 sm:h-10 group-hover:bg-black group-hover:text-white transition-colors duration-300 ease-in-out ">
+          className="cursor-pointer text-sm h-10 sm:h-10 group-hover:bg-black group-hover:text-white transition-colors duration-300 ease-in-out ">
           Ver más
         </Button>
       ) : (
