@@ -2,7 +2,11 @@
 import data from '@/data/site.json';
 import { Button } from './ui/button';
 import { ArrowUpRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+
+const title = data.about.title.split(' ');
+const unstyledTitle = [title[0], title[1]].join(' ');
+const styledTitle = [title[2], title[3]].join(' ');
+console.log(unstyledTitle, styledTitle);
 ---
 
 <section class="py-8 sm:py-24">
@@ -10,13 +14,13 @@ import { cn } from '@/lib/utils';
     <div class="grid sm:grid-cols-2 gap-y-4 gap-x-20">
       <div>
         <div>
-          <h2 class="text-3xl sm:text-5xl font-heading">
-            {data.about.title}
+          <h2 class="relative text-3xl sm:text-5xl font-heading">
+            {unstyledTitle}
+            <span class="">{styledTitle}</span>
           </h2>
-          <p class="mt-4 text-lg sm:mt-6 text-[#7f7f7f] max-w-prose">
-            {data.about.description[0]}<span class="font-medium">
-              {data.about.description[1]}</span
-            >{data.about.description[2]}
+
+          <p class="mt-6 text-lg leading-6 sm:mt-6 text-[#666666] max-w-prose">
+            {data.about.description}
           </p>
         </div>
         <a class="flex group mt-6 sm:hidden" href="https://terraregia.com/" target="_blank">
