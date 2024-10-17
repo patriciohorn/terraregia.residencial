@@ -10,14 +10,13 @@ import {
 import { Button } from './ui/button';
 
 const proyectos = [
-  'Allboradas',
-  'Aliria',
-  'Alinka',
-  'Castilla',
-  'Miria',
+  'Allboradas Residencial',
+  'Aliria Residencial',
+  'Alinka Residencial',
+  'Miria Residencial',
   'Montessa Residencial',
-  'Montserrat',
-  'Pietralta',
+  'Montserrat Residencial',
+  'Pietralta Castelo',
   'Rincón de la Sierra',
   'Toscana Residencial'
 ];
