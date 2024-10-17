@@ -19,7 +19,7 @@ console.log(unstyledTitle, styledTitle);
             <span class="">{styledTitle}</span>
           </h2>
 
-          <p class="mt-6 text-lg leading-6 sm:mt-6 text-[#666666] max-w-prose">
+          <p class="mt-6 text-lg leading-6 sm:mt-6 text-neutral-500 max-w-prose">
             {data.about.description}
           </p>
         </div>
@@ -38,7 +38,7 @@ console.log(unstyledTitle, styledTitle);
           data.stats.map((stat) => (
             <li class="flex flex-col text-center gap-2">
               <span class="text-5xl sm:text-7xl font-heading">{stat.title}</span>
-              <span class=" text-[#7F7F7F] ">{stat.description}</span>
+              <span class=" text-neutral-500 ">{stat.description}</span>
             </li>
           ))
         }
