@@ -53,12 +53,9 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
     }
   </div>
   <div class="mt-4 flex flex-row justify-between items-center">
-    <div class="flex flex-col gap-y-1">
+    <div class={cn(small ? '' : 'flex flex-col gap-y-1')}>
       <h3
-        class={cn(
-          `text-xl sm:text-2xl font-heading tracking-[0.01em]`,
-          small ? 'sm:text-xl' : 'sm:text-2xl'
-        )}>
+        class={cn(`text-xl font-heading tracking-[0.01em]`, small ? 'sm:text-xl' : 'sm:text-2xl')}>
         {project.data.title}
       </h3>
       <div class="flex gap-1 items-center text-[#827D7D]">
