@@ -17,6 +17,10 @@ export function formatCurrency(text: string) {
   return text.replace(/[$,]/g, '');
 }
 
+export function removeAccents(str: string) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 export const getTipos = async () => {
   const projects = await getCollection('project');
   const tipos = new Set(projects.map((project: any) => project.data.tipo));
