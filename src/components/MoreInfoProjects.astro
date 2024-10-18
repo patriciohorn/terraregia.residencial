@@ -80,7 +80,7 @@ const { formName } = Astro.props;
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as unknown as Record<string, string>).toString()
     })
-      .then(() => navigate('/proyectos/mensaje-recibido'))
+      .then(() => navigate('/proyectos/mensaje-recibido/'))
       .catch((error) => alert(error));
   };
 
