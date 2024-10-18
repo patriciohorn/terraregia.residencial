@@ -67,7 +67,9 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'loop-scroll': 'loop-scroll 10s linear infinte'
+        'loop-scroll': 'loop-scroll 10s linear infinte',
+        slideSlow: 'slide 40s linear infinite',
+        slideFast: 'slide 16s linear infinite'
       },
       keyframes: {
         'accordion-down': {
@@ -89,6 +91,10 @@ export default {
         'loop-scroll': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' }
+        },
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
         }
       },
       backgroundImage: {
