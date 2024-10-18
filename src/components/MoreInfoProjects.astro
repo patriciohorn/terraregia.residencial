@@ -67,6 +67,8 @@ const { formName } = Astro.props;
 </section>
 
 <script>
+  import { navigate } from 'astro:transitions/client';
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
@@ -78,7 +80,7 @@ const { formName } = Astro.props;
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as unknown as Record<string, string>).toString()
     })
-      .then(() => console.log('Form successfully submitted'))
+      .then(() => navigate('/proyectos/recibido'))
       .catch((error) => alert(error));
   };
 
