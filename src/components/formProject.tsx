@@ -17,11 +17,11 @@ export function ProjectForm({ webhook, project }: any) {
       method="POST"
       className="space-y-4"
       data-netlify="true"
-      name={project}
+      name="contacto"
       netlify-honeypot="bot-field">
       {/* Hidden input for Netlify's bot field */}
       <input type="hidden" name="bot-field" />
-      <input type="hidden" name={project} value={project} />
+      <input type="hidden" name="contacto" value="contacto" />
 
       <div className="grid sm:grid-cols-2 gap-4">
         <Input type="text" placeholder="Nombre" name="nombre" required />
