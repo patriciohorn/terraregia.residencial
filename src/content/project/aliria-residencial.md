@@ -10,7 +10,7 @@ waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./caseta-de-ventas-vall
 telefonoCaseta: '8131423000'
 cover: '../../assets/images/aliria-cover.webp'
 images:
-  - '../../assets/aliria/imagen2.webp'
+  - '../../assets/aliria/imagen2.png'
   - '../../assets/aliria/imagen3.webp'
   - '../../assets/aliria/imagen4.webp'
   - '../../assets/aliria/imagen5.webp'
