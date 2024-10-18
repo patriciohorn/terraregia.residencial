@@ -28,12 +28,29 @@ export function MoreInfoForm() {
     setFormData((prev) => ({ ...prev, ubicacion: value }));
   };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  // };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      // Populate hidden form fields using optional chaining
+      document.querySelector('input[name="name"]')?.setAttribute('value', formData.nombre);
+      document.querySelector('input[name="apellidos"]')?.setAttribute('value', formData.apellidos);
+      document.querySelector('input[name="email"]')?.setAttribute('value', formData.email);
+      document.querySelector('input[name="whatsapp"]')?.setAttribute('value', formData.whatsapp);
+      document.querySelector('select[name="compra"]')?.setAttribute('value', formData.ubicacion);
+
+      // Submit the hidden form if it exists
+      const hiddenForm = (document.forms as unknown as { [key: string]: HTMLFormElement })[
+        'contacto'
+      ];
+
+      hiddenForm?.submit();
+    };
+  };
   return (
     <form
-      // onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       className="grid sm:grid-cols-2 md:grid-cols-3 gap-8"
       method="post"
       name="contacto">
