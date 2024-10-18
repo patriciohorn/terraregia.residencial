@@ -27,8 +27,8 @@ export async function getStaticPaths() {
 
 
 const project = Astro.props;
-const projectName = sluglify(removeAccents(project.data.title.toLowerCase()))
-console.log(projectName)
+const projectName = removeAccents(project.data.title.toLowerCase().split(' ').join(''))
+
 ---
 
 <Layout title={project.data.title} whatsapp={project.data.whatsapp}>

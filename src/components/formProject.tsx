@@ -7,14 +7,13 @@ import { CircleCheck } from 'lucide-react';
 export function ProjectForm({ webhook, project }: any) {
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSuccessMessage('Tus datos han sido enviados');
-  };
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setSuccessMessage('Tus datos han sido enviados');
+  // };
 
   return (
     <form
-      onSubmit={handleSubmit}
       method="POST"
       className="space-y-4"
       data-netlify="true"
