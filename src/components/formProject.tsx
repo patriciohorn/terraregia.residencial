@@ -31,7 +31,7 @@ export function ProjectForm({ webhook, project }: any) {
       <div className="grid sm:grid-cols-3 gap-4">
         <Input type="email" placeholder="Email" name="email" required />
         <Input type="tel" placeholder="Whatsapp" name="whatsapp" required />
-        <Button
+        {/* <Button
           size="lg"
           type="submit"
           className={cn(
@@ -45,7 +45,8 @@ export function ProjectForm({ webhook, project }: any) {
           ) : (
             'Enviar'
           )}
-        </Button>
+        </Button> */}
+        <button type="submit">Send</button>
       </div>
 
       {successMessage && <p className="mt-4 text-green-600 text-center">{successMessage}</p>}
