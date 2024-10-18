@@ -127,6 +127,12 @@ const projectName = removeAccents(project.data.title.toLowerCase().split(' ').jo
              
   </section>
 
+  <form name={projectName} data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nombre" />
+    <input type="text" name="apellidos" />
+    <input type="email" name="email" />
+    <input type="tel" name="whatsapp" /> 
+  </form>
   <MoreInfoProjects webhook={project.data.webhook} project={projectName} />
 
 </Layout>
