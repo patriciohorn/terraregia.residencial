@@ -83,4 +83,10 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }
