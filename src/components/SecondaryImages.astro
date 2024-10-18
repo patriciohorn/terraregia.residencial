@@ -1,12 +1,20 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from 'astro:assets';
 
-const {images} = Astro.props
+const { images } = Astro.props;
 ---
 
-
-{images && images.map((image: any, idx: any) => (
-  <div class="overflow-hidden shadow-sm rounded-md aspect-square">
-    <Image src={image} alt="Foto de proyecto" class="w-full h-full object-cover" loading="eager"/>
-  </div>
-))}
+{
+  images &&
+    images.map((image: any, idx: any) => (
+      <div class="overflow-hidden shadow-sm rounded-md aspect-square">
+        <Image
+          src={image}
+          alt="Foto de proyecto"
+          class="w-full h-full object-cover"
+          loading="eager"
+          format="webp"
+        />
+      </div>
+    ))
+}
