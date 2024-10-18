@@ -28,18 +28,15 @@ export function MoreInfoForm() {
     setFormData((prev) => ({ ...prev, ubicacion: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  // };
   return (
     <form
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
       className="grid sm:grid-cols-2 md:grid-cols-3 gap-8"
-      name="contacto"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      hidden>
-      <input type="hidden" name="bot-field" />
+      method="post"
+      name="contacto">
       <input type="hidden" name="form-name" value="contacto" />
       <Input
         type="text"
@@ -69,7 +66,7 @@ export function MoreInfoForm() {
         value={formData.whatsapp}
         onChange={handleInputChange}
       />
-      <Select onValueChange={handleSelectChange}>
+      <Select onValueChange={handleSelectChange} name="compra">
         <SelectTrigger className="w-full">
           <SelectValue placeholder="¿Opción de compra?" />
         </SelectTrigger>
