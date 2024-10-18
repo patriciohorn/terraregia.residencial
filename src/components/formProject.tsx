@@ -15,7 +15,6 @@ export function ProjectForm({ webhook, project }: any) {
   return (
     <form
       onSubmit={handleSubmit}
-      action={webhook} // Form submission URL to Zapier webhook
       method="POST"
       className="space-y-4"
       data-netlify="true"
