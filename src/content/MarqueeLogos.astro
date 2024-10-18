@@ -32,6 +32,52 @@ const projects = await getProjects();
             </a>
           ))
         }
+
+        {
+          projects.map((project, idx) => (
+            <a
+              href={`/proyectos/${project.slug}`}
+              class={cn(
+                `shrink-0 cursor-pointer`,
+                project.data.title === 'Alboradas Residencial'
+                  ? 'h-16 sm:h-20'
+                  : project.data.title === 'Rincón de la Sierra'
+                    ? 'h-12 sm:h-16'
+                    : 'h-8 sm:h-12'
+              )}>
+              {project.data.logo && (
+                <Image
+                  src={project.data.logo}
+                  alt={`${project.data.title} logo`}
+                  class="w-full h-full object-contain mr-12 sm:mr-20"
+                />
+              )}
+            </a>
+          ))
+        }
+
+{
+  projects.map((project, idx) => (
+    <a
+      href={`/proyectos/${project.slug}`}
+      class={cn(
+        `shrink-0 cursor-pointer`,
+        project.data.title === 'Alboradas Residencial'
+          ? 'h-16 sm:h-20'
+          : project.data.title === 'Rincón de la Sierra'
+            ? 'h-12 sm:h-16'
+            : 'h-8 sm:h-12'
+      )}>
+      {project.data.logo && (
+        <Image
+          src={project.data.logo}
+          alt={`${project.data.title} logo`}
+          class="w-full h-full object-contain mr-12 sm:mr-20"
+        />
+      )}
+    </a>
+  ))
+}
       </div>
     </div>
   </div>
