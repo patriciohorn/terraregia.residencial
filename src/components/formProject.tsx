@@ -3,84 +3,43 @@ import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { CircleCheck } from 'lucide-react';
+
 interface FormProps {
-  webhook: string;
+  webhook: string; // The webhook URL for Zapier
   proyecto: string;
 }
-export function ProjectForm({ webhook, proyecto }: FormProps) {
-  const initialFormData = {
-    nombre: '',
-    apellidos: '',
-    email: '',
-    whatsapp: '',
-    proyecto: proyecto
-  };
 
-  const [formData, setFormData] = useState(initialFormData);
+export function ProjectForm({ webhook, proyecto }: FormProps) {
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const response = await fetch(webhook, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setFormData(initialFormData);
-        setSuccessMessage('Tus datos han sido enviados');
-        console.log(formData);
-      } else {
-        console.error('Error sending data');
-      }
-    } catch (error) {
-      console.error('Request failed', error);
-    }
+    setSuccessMessage('Tus datos han sido enviados');
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
   return (
-    <form onSubmit={handleSubmit} method="POST" className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      action={webhook} // Form submission URL to Zapier webhook
+      method="POST"
+      className="space-y-4"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+      {/* Hidden input for Netlify's bot field */}
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="proyecto" value={proyecto} />
+
       <div className="grid sm:grid-cols-2 gap-4">
-        <Input
-          type="text"
-          placeholder="Nombre"
-          name="nombre"
-          value={formData.nombre}
-          onChange={handleInputChange}
-        />
-        <Input
-          type="text"
-          placeholder="Apellidos"
-          name="apellidos"
-          value={formData.apellidos}
-          onChange={handleInputChange}
-        />
+        <Input type="text" placeholder="Nombre" name="nombre" required />
+        <Input type="text" placeholder="Apellidos" name="apellidos" required />
       </div>
+
       <div className="grid sm:grid-cols-3 gap-4">
-        <Input
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-        <Input
-          type="phone"
-          placeholder="Whatsapp"
-          name="whatsapp"
-          value={formData.whatsapp}
-          onChange={handleInputChange}
-        />
+        <Input type="email" placeholder="Email" name="email" required />
+        <Input type="tel" placeholder="Whatsapp" name="whatsapp" required />
         <Button
           size="lg"
+          type="submit"
           className={cn(
             `h-12 sm:h-16 text-base`,
             successMessage ? 'bg-green-600 text-green-50' : ''
@@ -95,7 +54,7 @@ export function ProjectForm({ webhook, proyecto }: FormProps) {
         </Button>
       </div>
 
-      {/* {successMessage && <p className="mt-4 text-green-600 text-center">{successMessage}</p>} */}
+      {successMessage && <p className="mt-4 text-green-600 text-center">{successMessage}</p>}
     </form>
   );
 }
