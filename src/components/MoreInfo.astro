@@ -11,6 +11,16 @@ import { MoreInfoForm } from '@/components/formGeneral';
       <p class="text-3xl sm:text-[40px] sm:leading-6">Envíanos tus datos para más información</p>
     </div>
     <div class="mt-6 sm:mt-[52px]">
+      <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="text" name="apellidos" />
+        <input type="email" name="email" />
+        <input type="tel" name="whatsapp" />
+        <select name="ubicacion">
+          <option value="vivir">Para vivir</option>
+          <option value="invertir">Para invertir</option>
+        </select>
+      </form>
       <MoreInfoForm client:visible />
     </div>
   </div>

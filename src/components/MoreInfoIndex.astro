@@ -1,5 +1,6 @@
 ---
 import { MoreInfoForm } from '@/components/formGeneral';
+import MoreInfo from './MoreInfoIndex.astro';
 const { webhook, proyecto } = Astro.props;
 ---
 
@@ -12,7 +13,60 @@ const { webhook, proyecto } = Astro.props;
       <p class="text-3xl sm:text-[40px] sm:leading-6">Envíanos tus datos para más información</p>
     </div>
     <div class="mt-6 sm:mt-[52px]">
-      <MoreInfoForm client:load />
+      <!-- <form method="POST" class="" data-netlify="true" name="contacto" netlify-honeypot="bot-field">
+
+        {/* Hidden input for Netlify's bot field */}
+        <input type="hidden" name="bot-field" class="" />
+        <input type="hidden" name="form-name" value="contacto" />
+        <div class="grid sm:grid-cols-3 gap-x-4 gap-y-2">
+          <input
+            type="text"
+            placeholder="Nombre"
+            name="nombre"
+            class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Apellidos"
+            name="apellidos"
+            class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+            required
+          />
+        </div>
+        <div class="mt-2 sm:mt-4 grid sm:grid-cols-3 gap-x-4 gap-y-2">
+          <input
+            type="tel"
+            placeholder="Whatsapp"
+            name="whatsapp"
+            class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+            required
+          />
+          <Select>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="¿Opción de compra?" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="vivir">Para vivir</SelectItem>
+              <SelectItem value="invertir">Para invertir</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-full font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors duration-300 ease-in-out bg-primary text-white shadow hover:bg-primary/90 h-16 px-6 py-4 text-base sm:text-xl"
+            >Enviar</button
+          >
+        </div>
+      </form> -->
+      <MoreInfo />
     </div>
   </div>
 </section>

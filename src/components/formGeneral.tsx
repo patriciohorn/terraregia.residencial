@@ -32,7 +32,15 @@ export function MoreInfoForm() {
     e.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <form
+      onSubmit={handleSubmit}
+      className="grid sm:grid-cols-2 md:grid-cols-3 gap-8"
+      name="contacto"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden>
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contacto" />
       <Input
         type="text"
         placeholder="Nombre"
@@ -70,7 +78,9 @@ export function MoreInfoForm() {
           <SelectItem value="invertir">Para invertir</SelectItem>
         </SelectContent>
       </Select>
-      <Button size="lg">Enviar</Button>
+      <Button type="submit" size="lg">
+        Enviar
+      </Button>
     </form>
   );
 }
