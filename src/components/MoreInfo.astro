@@ -11,7 +11,15 @@ import { MoreInfoForm } from '@/components/formGeneral';
       <p class="text-3xl sm:text-[40px] sm:leading-6">Envíanos tus datos para más información</p>
     </div>
     <div class="mt-6 sm:mt-[52px]">
-      <div class="grid sm:grid-cols-3 gap-x-6 gap-y-2 sm:gap-y-6">
+      <form
+        id="contact-form"
+        method="POST"
+        data-netlify="true"
+        name="contacto"
+        netlify-honeypot="bot-field"
+        class="grid sm:grid-cols-3 gap-x-6 gap-y-2 sm:gap-y-6">
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contacto" />
         <input
           type="text"
           placeholder="Nombre"
@@ -64,7 +72,7 @@ import { MoreInfoForm } from '@/components/formGeneral';
           class="inline-flex items-center justify-center whitespace-nowrap rounded-full font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors duration-300 ease-in-out bg-primary text-white shadow hover:bg-primary/90 h-16 px-6 py-4 text-base sm:text-xl"
           >Enviar</button
         >
-      </div>
+      </form>
       <!-- <MoreInfoForm client:visible /> -->
     </div>
   </div>
@@ -86,5 +94,5 @@ import { MoreInfoForm } from '@/components/formGeneral';
       .catch((error) => alert(error));
   };
 
-  document.querySelector('form')?.addEventListener('submit', handleSubmit);
+  document.querySelector('#contact-form')?.addEventListener('submit', handleSubmit);
 </script>
