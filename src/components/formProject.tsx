@@ -4,12 +4,7 @@ import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { CircleCheck } from 'lucide-react';
 
-interface FormProps {
-  webhook: string; // The webhook URL for Zapier
-  proyecto: string;
-}
-
-export function ProjectForm({ webhook, proyecto }: FormProps) {
+export function ProjectForm({ webhook, project }: any) {
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -24,10 +19,11 @@ export function ProjectForm({ webhook, proyecto }: FormProps) {
       method="POST"
       className="space-y-4"
       data-netlify="true"
+      name={project.slug}
       netlify-honeypot="bot-field">
       {/* Hidden input for Netlify's bot field */}
       <input type="hidden" name="bot-field" />
-      <input type="hidden" name="proyecto" value={proyecto} />
+      <input type="hidden" name={project.slug} value={project.slug} />
 
       <div className="grid sm:grid-cols-2 gap-4">
         <Input type="text" placeholder="Nombre" name="nombre" required />
