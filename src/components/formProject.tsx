@@ -14,7 +14,7 @@ export function ProjectForm({ webhook, project }: any) {
 
   return (
     <form
-      method="POST"
+      method="post"
       className="space-y-4"
       data-netlify="true"
       name={project}
