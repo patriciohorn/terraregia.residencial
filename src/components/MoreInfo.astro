@@ -79,6 +79,8 @@ import { MoreInfoForm } from '@/components/formGeneral';
 </section>
 
 <script>
+  import { navigate } from 'astro:transitions/client';
+
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
@@ -90,7 +92,7 @@ import { MoreInfoForm } from '@/components/formGeneral';
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData as unknown as Record<string, string>).toString()
     })
-      .then(() => console.log('Form successfully submitted'))
+      .then(() => navigate('/mensaje-recibido'))
       .catch((error) => alert(error));
   };
 
