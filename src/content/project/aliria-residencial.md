@@ -14,8 +14,6 @@ images:
   - '../../assets/aliria/imagen3.png'
   - '../../assets/aliria/imagen4.png'
   - '../../assets/aliria/imagen5.png'
-  - '../../assets/aliria/imagen5.png'
-  - '../../assets/aliria/imagen5.png'
 logo: '../../assets/logos/logo-aliria.png'
 category: 'preventa'
 tipo: 'Terrenos'
