@@ -1,34 +1,31 @@
 ---
-import { Image } from "astro:assets";
-import logo from '../assets/logo-terra-regia.svg'
-import { Button } from "./ui/button";
-import { Icon } from 'astro-icon/components'
-import { cn } from "@/lib/utils";
-import {MobileNav} from '@/components/mobile-nav'
-import {Link} from '@/components/link'
-import ProjectCard from "./ProjectCard.astro";
-import ProjectInfo from "./ProjectInfo.astro";
-
-
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-terra-regia.svg';
+import { Button } from './ui/button';
+import { Icon } from 'astro-icon/components';
+import { cn } from '@/lib/utils';
+import { MobileNav } from '@/components/mobile-nav';
+import { Link } from '@/components/link';
+import ProjectCard from './ProjectCard.astro';
+import ProjectInfo from './ProjectInfo.astro';
 
 const menuItems = [
   {
-    title: 'Proyectos', 
+    title: 'Proyectos',
     path: '/tipo-de-propiedad/' // added "/" because when live the currentPath adds a '/' at the end
-  }, 
+  },
   {
-    title: 'Recomienda y gana', 
+    title: 'Recomienda y gana',
     path: '/recomienda-y-gana/'
-  }, 
+  },
   {
-    title: 'Inversión', 
+    title: 'Inversión',
     path: '/inversion/'
-  }, 
- 
-]
-const currentPath = Astro.url.pathname
+  }
+];
+const currentPath = Astro.url.pathname;
 
-const {whatsapp = '8131418886'} = Astro.props
+const { whatsapp = '8131418886' } = Astro.props;
 ---
 
 <header class="py-[30px]">
@@ -36,33 +33,56 @@ const {whatsapp = '8131418886'} = Astro.props
     <div class="flex lg:flex-1">
       <a href="/">
         <span class="sr-only">Terra Regia</span>
-        <Image src={logo} alt="logo terra regia" class="h-8 sm:h-10 w-full" loading="eager"/>
+        <Image src={logo} alt="logo terra regia" class="h-8 sm:h-10 w-full" loading="eager" />
       </a>
     </div>
 
-    <div class="lg:hidden flex">        
-      <MobileNav items={menuItems} client:load/>
+    <div class="lg:hidden flex">
+      <MobileNav items={menuItems} whatsapp={whatsapp} client:load />
     </div>
 
     <div class="hidden lg:flex lg:gap-x-10">
-      {menuItems.map((item) => (           
-        <a href={item.path} class={cn(`font-medium relative`, currentPath === item.path ? 'before:content-[""] before:absolute before:h-[1.6px] before:w-full before:-bottom-[2.6px] before:left-0 before:bg-black' : '')}>{item.title}</a>
-      ))}
+      {
+        menuItems.map((item) => (
+          <a
+            href={item.path}
+            class={cn(
+              `font-medium relative`,
+              currentPath === item.path
+                ? 'before:content-[""] before:absolute before:h-[1.6px] before:w-full before:-bottom-[2.6px] before:left-0 before:bg-black'
+                : ''
+            )}>
+            {item.title}
+          </a>
+        ))
+      }
     </div>
 
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4">
       <div class="hidden sm:flex sm:gap-2">
-        <Link href="https://www.facebook.com/terraregiaresidencial" size="icon" className="h-8 w-8 shadow-sm" target="_blank">
-          <Icon name="facebook" class="w-4 h-4"/> 
+        <Link
+          href="https://www.facebook.com/terraregiaresidencial"
+          size="icon"
+          className="h-8 w-8 shadow-sm"
+          target="_blank">
+          <Icon name="facebook" class="w-4 h-4" />
         </Link>
-        <Link href="https://www.instagram.com/terraregiaresidencial" size="icon" className="h-8 w-8 shadow-sm" target="_blank">
-          <Icon name="instagram" class="w-4 h-4"/>
+        <Link
+          href="https://www.instagram.com/terraregiaresidencial"
+          size="icon"
+          className="h-8 w-8 shadow-sm"
+          target="_blank">
+          <Icon name="instagram" class="w-4 h-4" />
         </Link>
       </div>
-      <Link href={`https://api.whatsapp.com/send/?phone=${whatsapp}`} size="sm" className="group text-base bg-[hsl(142,70%,49%)] group-hover:bg-[#1c1e21] text-[hsl(142,71%,23%)]  hover:text-white shadow-sm" target="_blank">
-        <Icon name="whatsapp" class="w-4 h-4 mr-2 text-[hsl(142,71%,23%)] group-hover:text-white"/>
+      <Link
+        href={`https://api.whatsapp.com/send/?phone=${whatsapp}`}
+        size="sm"
+        className="group text-base bg-[hsl(142,70%,49%)] group-hover:bg-[#1c1e21] text-[hsl(142,71%,23%)]  hover:text-white shadow-sm"
+        target="_blank">
+        <Icon name="whatsapp" class="w-4 h-4 mr-2 text-[hsl(142,71%,23%)] group-hover:text-white" />
         Contacto
-      </Link>      
+      </Link>
     </div>
   </nav>
 </header>

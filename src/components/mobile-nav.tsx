@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
-import whatsapp from '@/icons/whatsapp.svg';
+import whatsappIcon from '@/icons/whatsapp.svg';
 import logo from '@/assets/logo-terra-regia.svg';
 import { Link } from './link';
 
@@ -20,13 +20,17 @@ type MenuItem = {
 
 interface itemsProps {
   items: MenuItem[];
+  whatsapp: string;
 }
 
-export function MobileNav({ items }: itemsProps) {
+export function MobileNav({ items, whatsapp }: itemsProps) {
   return (
     <div className="flex gap-2">
-      <Link href="#" size="icon" className="bg-[#25D366]">
-        <img src={whatsapp.src} alt="Logo Whatsapp" className="w-7 h-7" />
+      <Link
+        href={`https://api.whatsapp.com/send/?phone=${whatsapp}`}
+        size="icon"
+        className="bg-[#25D366]">
+        <img src={whatsappIcon.src} alt="Logo Whatsapp" className="w-7 h-7" />
       </Link>
       <Sheet>
         <SheetTrigger asChild>
