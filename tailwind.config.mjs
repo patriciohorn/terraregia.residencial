@@ -68,8 +68,8 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'loop-scroll': 'loop-scroll 10s linear infinte',
-        slideSlow: 'slide 40s linear infinite',
-        slideFast: 'slide 16s linear infinite'
+        slideSlow: 'slide 60s linear infinite',
+        slideFast: 'slide 36s linear infinite'
       },
       keyframes: {
         'accordion-down': {
@@ -99,7 +99,7 @@ export default {
       },
       backgroundImage: {
         'custom-gradient':
-          'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)'
+          'linear-gradient( to right, rgba(245,245,245, 1) 0%, rgba(255, 253, 249, 0) 20%, rgba(255, 253, 249, 0) 80%, rgba(245,245,245) 100% )'
       }
     }
   },

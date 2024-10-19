@@ -6,79 +6,48 @@ const projects = await getProjects();
 ---
 
 <section>
-  <div class="container">
+  <div
+    class="max-w-7xl mx-auto py-8 sm:py-12 group overflow-hidden relative before:content-[''] before:w-full before:h-full before:absolute sm:before:bg-custom-gradient flex items-center bg-[#f5f5f5] before:z-[2]">
     <div
-      class="py-8 sm:py-12 group overflow-hidden relative before:content-[''] before:absolute before:top-0 before:-left-20 before:w-[250px] before:h-full before:bg-gradient-to-r before:from-[#F5F5F5] before:to-[rgba(245,245,245,0)] before:z-[2] after:content-[''] after:absolute after:top-0 after:-right-20 after:w-[250px] after:h-full after:bg-gradient-to-r after:from-[rgba(245,245,245,0)] after:to-[rgb(245,245,245)] after:z-[2]">
-      <div class="animate-slideFast sm:animate-slideSlow flex items-center">
-        {
-          projects.map((project, idx) => (
-            <a
-              href={`/proyectos/${project.slug}`}
-              class={cn(
-                `shrink-0 cursor-pointer`,
-                project.data.title === 'Alboradas Residencial'
-                  ? 'h-16 sm:h-20'
-                  : project.data.title === 'Rincón de la Sierra'
-                    ? 'h-12 sm:h-16'
-                    : 'h-8 sm:h-12'
-              )}>
-              {project.data.logo && (
-                <Image
-                  src={project.data.logo}
-                  alt={`${project.data.title} logo`}
-                  class="w-full h-full object-contain mr-12 sm:mr-20"
-                />
-              )}
-            </a>
-          ))
-        }
-
-        {
-          projects.map((project, idx) => (
-            <a
-              href={`/proyectos/${project.slug}`}
-              class={cn(
-                `shrink-0 cursor-pointer`,
-                project.data.title === 'Alboradas Residencial'
-                  ? 'h-16 sm:h-20'
-                  : project.data.title === 'Rincón de la Sierra'
-                    ? 'h-12 sm:h-16'
-                    : 'h-8 sm:h-12'
-              )}>
-              {project.data.logo && (
-                <Image
-                  src={project.data.logo}
-                  alt={`${project.data.title} logo`}
-                  class="w-full h-full object-contain mr-12 sm:mr-20"
-                />
-              )}
-            </a>
-          ))
-        }
-
-{
-  projects.map((project, idx) => (
-    <a
-      href={`/proyectos/${project.slug}`}
-      class={cn(
-        `shrink-0 cursor-pointer`,
-        project.data.title === 'Alboradas Residencial'
-          ? 'h-16 sm:h-20'
-          : project.data.title === 'Rincón de la Sierra'
-            ? 'h-12 sm:h-16'
-            : 'h-8 sm:h-12'
-      )}>
-      {project.data.logo && (
-        <Image
-          src={project.data.logo}
-          alt={`${project.data.title} logo`}
-          class="w-full h-full object-contain mr-12 sm:mr-20"
-        />
-      )}
-    </a>
-  ))
-}
-      </div>
+      class="animate-slideFast sm:animate-slideSlow flex items-center gap-12 md:gap-16 lg:gap-20">
+      {
+        projects.map(
+          (project, idx) =>
+            project.data.logo && (
+              <a
+                aria-hidden="false"
+                href={`/proyectos/${project.slug}`}
+                class="shrink-0 cursor-pointer inline-flex max-w-24">
+                {project.data.logo && (
+                  <Image
+                    src={project.data.logo}
+                    alt={`${project.data.title} logo`}
+                    class="w-full h-full object-contain"
+                  />
+                )}
+              </a>
+            )
+        )
+      }
+      {
+        projects.map(
+          (project, idx) =>
+            project.data.logo && (
+              <a
+                aria-hidden="true"
+                href={`/proyectos/${project.slug}`}
+                class="shrink-0 cursor-pointer inline-flex max-w-24">
+                {project.data.logo && (
+                  <Image
+                    src={project.data.logo}
+                    alt={`${project.data.title} logo`}
+                    class="w-full h-full object-contain"
+                  />
+                )}
+              </a>
+            )
+        )
+      }
     </div>
   </div>
 </section>
