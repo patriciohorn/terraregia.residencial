@@ -69,7 +69,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'loop-scroll': 'loop-scroll 10s linear infinte',
         slideSlow: 'slide 45s linear infinite',
-        slideFast: 'slide 35s linear infinite'
+        slideFast: 'slide 25s linear infinite'
       },
       keyframes: {
         'accordion-down': {
