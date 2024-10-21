@@ -22,8 +22,7 @@ const navItems: NavItem[] = [
       { label: 'Todos', href: '/ubicacion' },
       { label: 'Dominio Cumbres', href: '/ubicacion/dominio-cumbres' },
       { label: 'Valle Condesa', href: '/ubicacion/valle-condesa' },
-      { label: 'Apodaca', href: '/ubicacion/apodaca' },
-      { label: 'Salinas Victoria', href: '/ubicacion/salinas-victoria' }
+      { label: 'Apodaca', href: '/ubicacion/apodaca' }
     ]
   },
   {
@@ -38,10 +37,11 @@ const navItems: NavItem[] = [
     label: 'Costo',
     items: [
       // { label: 'Infonavit', href: '/costo' },
-      { label: 'Desde $400,000', href: 'costo/400000' },
+      { label: 'Desde $500,000', href: 'costo/500000' },
       { label: 'Desde 1MDP', href: 'costo/1000000' },
       { label: 'Desde 2MDP', href: 'costo/2000000' },
-      { label: 'Desde 3MDP', href: 'costo/3000000' }
+      { label: 'Desde 3MDP', href: 'costo/3000000' },
+      { label: 'Desde 5MDP', href: 'costo/5000000' }
     ]
   }
 ];
