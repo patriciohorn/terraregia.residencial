@@ -12,8 +12,8 @@ export function PromotionCardd({ project }: any) {
 
   return (
     <a href={`/proyectos/${path}`}>
-      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-[462px] sm:h-[498px]">
-        <div className="bg-[#BFDEE3] group-hover:bg-black px-6 h-20 rounded-[4px] flex flex-col justify-center">
+      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-full ">
+        <div className="bg-[#BFDEE3] lg:group-hover:bg-black px-6 h-20 rounded-[4px] flex flex-col justify-center">
           <p className="text-lg leading-6 font-medium group-hover:text-white">
             {project.mainPromo}
           </p>
