@@ -12,7 +12,7 @@ export function PromotionCardd({ project }: any) {
 
   return (
     <a href={`/proyectos/${path}`}>
-      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-[462px] sm:h-[498px]">
+      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-[462px] sm:h-[498px]">
         <div className="bg-[#BFDEE3] group-hover:bg-black px-6 h-20 rounded-[4px] flex flex-col justify-center">
           <p className="text-lg leading-6 font-medium group-hover:text-white">
             {project.mainPromo}
@@ -31,7 +31,7 @@ export function PromotionCardd({ project }: any) {
           <img
             src={project.images}
             alt={`Imagen de proyecto ${project.title}`}
-            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:transform group-hover:translate3d(0, 0, 0) group-hover:scale-105 group-hover:rotateX(0deg) group-hover:rotateY(0deg)"
+            className="w-full h-full object-cover transition-transform duration-500 ease-out lg:group-hover:transform lg:group-hover:translate3d(0, 0, 0) lg:group-hover:scale-105 lg:group-hover:rotateX(0deg) lg:group-hover:rotateY(0deg)"
           />
         </div>
 

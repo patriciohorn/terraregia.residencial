@@ -29,7 +29,7 @@ export function PresupuestoCarousel() {
         {projects.map((project, idx) => (
           <CarouselItem key={idx} className="pl-8 md:basis-1/2 lg:basis-1/4">
             <a href={project.path}>
-              <Card className="h-48 bg-card-foreground shadow-sm border-none rounded-md group hover:bg-[#BFDEE3] cursor-pointer hover:duration-200 ease-in-out">
+              <Card className="h-48 bg-card-foreground shadow-sm border-none rounded-md group lg:hover:bg-[#BFDEE3] cursor-pointer transition-colors duration-200 ease-in-out">
                 <CardContent className="flex flex-col justify-between px-6 py-4 h-full">
                   <div>
                     <h3 className="font-light text-2xl text-black">{project.title}</h3>
@@ -37,8 +37,8 @@ export function PresupuestoCarousel() {
                   </div>
                   <Button
                     size="iconsm"
-                    className="self-end bg-transparent border border-black group-hover:bg-black ">
-                    <ChevronRight className=" text-black group-hover:text-white" />
+                    className="self-end bg-transparent border border-black lg:group-hover:bg-black ">
+                    <ChevronRight className=" text-black lg:group-hover:text-white" />
                   </Button>
                 </CardContent>
               </Card>
