@@ -5,7 +5,7 @@ import { Link } from '@/components/link';
 export function OptionsCarousel({ items, path }: any) {
   const sectionPath = path.split('/')[1];
   const currentPath = path.split('/').slice(-1).join('');
-  console.log(currentPath);
+
   return (
     <Carousel
       className="max-w-full"
@@ -23,7 +23,7 @@ export function OptionsCarousel({ items, path }: any) {
               (currentPath === 'ubicacion' || currentPath === 'costo') &&
                 `bg-white text-black border border-white`
             )}>
-            {currentPath === 'ubicacion' ? 'Todos' : 'Infonavit'}
+            {currentPath === 'ubicacion' ? 'Todos' : 'Todos'}
           </Link>
         </CarouselItem>
         {items.map((item: string, idx: number) => {
@@ -41,7 +41,7 @@ export function OptionsCarousel({ items, path }: any) {
                       currentPath === formatCurrency(item)) &&
                       `bg-white text-black border border-white`
                   )}>
-                  {item !== '$3,000,000' ? item : '$3,000,000 o más'}
+                  {item}
                 </Link>
               </CarouselItem>
             );

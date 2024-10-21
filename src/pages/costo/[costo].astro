@@ -8,7 +8,6 @@ import MoreInfo from '@/components/MoreInfo.astro';
 export async function getStaticPaths() {
   const costos = await getCostos();
   const allProjects = await getProjects();
-  console.log(costos);
 
   return costos.flatMap((costo: any) => {
     const projects = allProjects.map((project) => project.data.presupuesto);
@@ -36,7 +35,7 @@ const params = Astro.params;
 const { filteredProjects, costoTitle } = Astro.props;
 ---
 
-<Layout title="Ubicaciones">
+<Layout title="Terra Regia Residencial | Costo">
   <section>
     <div class="container">
       <div

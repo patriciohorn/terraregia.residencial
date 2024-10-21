@@ -1,53 +1,50 @@
 ---
-  import Layout from "@/layouts/Layout.astro";
-  import { getProjects, getUbicaciones, sluglify, unslugify } from '@/lib/utils';
-  import ListUbicaciones from '@/components/ListUbicaciones.astro'
-  import ListProjects from "@/components/ListProjects.astro";
-  import MoreInfo from "@/components/MoreInfo.astro";
+import Layout from '@/layouts/Layout.astro';
+import { getProjects, getUbicaciones, sluglify, unslugify } from '@/lib/utils';
+import ListUbicaciones from '@/components/ListUbicaciones.astro';
+import ListProjects from '@/components/ListProjects.astro';
+import MoreInfo from '@/components/MoreInfo.astro';
 
+export async function getStaticPaths() {
+  const ubicaciones = await getUbicaciones();
+  const allProjects = await getProjects();
 
+  return ubicaciones.flatMap((ubicacion: any) => {
+    const unsluglifyNameCategory = unslugify(ubicacion!.toLowerCase());
+    const filteredProjects = allProjects.filter(
+      (project: any) => project.data.location.toLowerCase() === unsluglifyNameCategory
+    );
 
-  export async function getStaticPaths() {
-    const ubicaciones = await getUbicaciones()
-    const allProjects = await getProjects()
-
-
-    return ubicaciones.flatMap((ubicacion: any) => {
-      const unsluglifyNameCategory = unslugify(ubicacion!.toLowerCase())
-      const filteredProjects = allProjects.filter(
-        (project: any) => project.data.location.toLowerCase() === unsluglifyNameCategory
-      )
-
-      return [{
+    return [
+      {
         params: {
-          ubicacion: sluglify(ubicacion.toLowerCase()), 
-          
-        }, 
+          ubicacion: sluglify(ubicacion.toLowerCase())
+        },
         props: {
-          filteredProjects, 
+          filteredProjects,
           locationTitle: ubicacion
         }
-      }] 
-    })
-  }
+      }
+    ];
+  });
+}
 
-  const params = Astro.params
-  const {filteredProjects, locationTitle} = Astro.props
-
+const params = Astro.params;
+const { filteredProjects, locationTitle } = Astro.props;
 ---
 
-
-  <Layout title="Ubicaciones">
-    <section>
-      <div class="container">
-        <div class="mt-6 sm:mt-10 bg-black/95  py-8 sm:py-28 pl-6 flex flex-col gap-8 sm:gap-10 items-center justify-center rounded-md overflow-x-hidden">
-          <h1 class="text-white font-heading text-3xl sm:text-7xl px-6">{locationTitle}</h1>
-          <ListUbicaciones activeCategory={params.ubicacion}/>
-        </div>
-        <div class="pt-10 pb-28">
-          <ListProjects projects={filteredProjects}/>    
-        </div>
+<Layout title="Terra Regia Residencial | Ubicaciones">
+  <section>
+    <div class="container">
+      <div
+        class="mt-6 sm:mt-10 bg-black/95 py-8 sm:py-28 pl-6 flex flex-col gap-8 sm:gap-10 items-center justify-center rounded-md overflow-x-hidden">
+        <h1 class="text-white font-heading text-3xl sm:text-7xl px-6">{locationTitle}</h1>
+        <ListUbicaciones activeCategory={params.ubicacion} />
       </div>
-    </section> 
-    <MoreInfo/>
-  </Layout>
+      <div class="pt-10 pb-28">
+        <ListProjects projects={filteredProjects} />
+      </div>
+    </div>
+  </section>
+  <MoreInfo />
+</Layout>
