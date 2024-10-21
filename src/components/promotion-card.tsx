@@ -18,7 +18,7 @@ export function PromotionCardd({ project }: any) {
             {project.mainPromo}
           </p>
           {project.mainPromoSmall && (
-            <p className="inline-flex items-center text-sm leading-6 tracking-[0.01em] text-neutral-700 font-medium group-hover:text-white">
+            <p className="inline-flex items-center text-sm leading-6 tracking-[0.01em] text-neutral-700 font-medium lg:group-hover:text-white">
               {project.mainPromoSmall}
               <span className="-mt-2">
                 <Asterisk className="w-2 h-2" />
