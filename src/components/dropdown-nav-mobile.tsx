@@ -48,7 +48,7 @@ const navItems: NavItem[] = [
 
 export function DropdownNavMobile() {
   return (
-    <nav className="flex flex-col items-start gap-4 w-full rounded-md shadow-sm px-4 py-4 text-black bg-white border border-black">
+    <nav className="flex flex-col items-start gap-2 w-full rounded-md shadow-sm py-4 text-black bg-white border border-black">
       {navItems.map((item) => (
         <DropdownMenu key={item.label}>
           <DropdownMenuTrigger>
