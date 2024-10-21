@@ -10,7 +10,7 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
 
 <article
   id={project.slug}
-  class="group relative before:absolute before:-inset-4 before:-z-10 before:shadow-sm before:rounded-[36px] before:bg-card-foreground/45 before:opacity-0 hover:before:opacity-100 transition-all duration-200 ease-in-out">
+  class="group relative sm:before:absolute sm:before:-inset-4 sm:before:-z-10 sm:before:shadow-sm sm:before:rounded-[36px] sm:before:bg-card-foreground/45 sm:before:opacity-0 sm:hover:before:opacity-100 transition-all duration-200 ease-in-out">
   <div class="aspect-[3/2] rounded-md overflow-hidden shadow-sm relative group">
     <Image
       src={project.data.cover}
