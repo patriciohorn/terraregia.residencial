@@ -14,17 +14,22 @@ const twoLevelProjects = ['Toscana Residencial', 'Rincón de la Sierra']
         <p class="text-sm font-medium">{project.data.promotion}</p>      
       </div>
     )}
+
+    <div class="relative mt-6 sm:mt-0">
+      {project.data.title !== 'Reserva del Mezquital' ?   (    
+      <span class="absolute -top-2.5 left-0 text-sm sm:text-base font-medium text-[#545454]">{formatedCosto[0]}</span>
+      <p class="mt-4 text-4xl sm:text-5xl font-heading">{formatedCosto[1]}</p>
+     
+    ) : <p class="text-4xl sm:text-5xl font-heading">Próximamente</p>}   
+      
+    {twoLevelProjects.includes(project.data.title) ? <p class="text-xl font-medium mt-2 sm:mt-6 text-[#363636] tracking-[0.01em] text-balance">Casas de 2 y 3 niveles con 3 recámaras
+      </p> : project.data.tipo === 'Terrenos' ? <p class="text-xl leading-6 font-medium mt-4 text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} Residenciales en ${project.data.location}` }</p> : <p class="text-xl leading-6 font-medium mt-4 text-[#363636] tracking-[0.01em]">{ `${project.data.tipo} en ${project.data.location}` }</p>}
+
+    </div>
     
 
-    {project.data.title !== 'Reserva del Mezquital' ?   (    
-      <p class="text-sm sm:text-base font-medium mt-4 text-[#545454]">{formatedCosto[0]}</p>
-      <p class="text-4xl sm:text-5xl font-heading mt-1 sm:mt-1">{formatedCosto[1]}</p>
-     
-    ) : <p class="text-4xl sm:text-5xl font-heading mt-1 sm:mt-1">Próximamente</p>}   
-    
-    {twoLevelProjects.includes(project.data.title) ? <p class="text-xl font-medium mt-2 sm:mt-6 text-[#363636] tracking-[0.01em]">Casas de 2 y 3 niveles con 3 recámaras
-      </p> : project.data.tipo === 'Terrenos' ? <p class="text-sm sm:text-xl font-medium mt-2 sm:mt-6 text-[#363636] tracking-[0.01em]">{ `${project.data.tipo} Residenciales en ${project.data.location}` }</p> : <p class="text-sm sm:text-xl font-medium mt-2 sm:mt-6 text-[#363636] tracking-[0.01em]">{ `${project.data.tipo} en ${project.data.location}` }</p>}
-     <p class="mt-2 text-xs font-medium text-[#7b7b7b]">* Precios sujetos a cambio sin previo aviso. Sujetos a disponibilidad</p>
+  
+     <p class="mt-4 text-xs font-medium text-[#7b7b7b]">* Precios sujetos a cambio sin previo aviso. Sujetos a disponibilidad</p>
   </div>
   
 </div>
