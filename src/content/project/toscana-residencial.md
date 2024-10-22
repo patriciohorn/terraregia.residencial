@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-toscana.png'
 category: ''
 tipo: 'Casas'
-costo: 'Desde $2,750,000*'
+costo: 'Desde $2.75 MDP*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'

@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-pietralta.png'
 category: 'destacados'
 tipo: 'Terrenos'
-costo: 'Desde $2,740,916.80*'
+costo: 'Desde $2.79 MDP*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'

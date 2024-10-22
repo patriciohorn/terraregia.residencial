@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-montserrat.png'
 category: 'preventa'
 tipo: 'Casas'
-costo: 'Desde $5,850,000*'
+costo: 'Desde $5.85 MDP*'
 presupuesto: '$5,000,000'
 amenities:
   - icon: 'AreasVerdes'

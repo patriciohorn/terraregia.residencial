@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-alboradas.png'
 category: ''
 tipo: 'Terrenos'
-costo: 'Desde $2,776,148.90*'
+costo: 'Desde $2.78 MDP*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
