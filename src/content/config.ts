@@ -58,7 +58,8 @@ const projectCollection = defineCollection({
       virtualTour: z.string().optional(),
       brochure: z.string().optional(),
       services: z.array(serviceSchema).optional(),
-      promotion: z.string().optional()
+      promotion: z.string().optional(),
+      amenidadesGallery: z.array(z.string()).optional()
     })
 });
 

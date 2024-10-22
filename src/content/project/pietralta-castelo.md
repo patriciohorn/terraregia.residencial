@@ -60,4 +60,10 @@ services:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
 promotion: 'Financiamiento Directo'
+amenidadesGallery:
+  - Acceso Controlado
+  - Área de columpios
+  - Juegos Infantiles
+  - Casa Club
+  - Playground
 ---

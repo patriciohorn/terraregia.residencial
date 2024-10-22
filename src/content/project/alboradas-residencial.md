@@ -66,4 +66,10 @@ services:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
 promotion: 'Mensualidades desde $30mil'
+amenidadesGallery:
+  - Acceso Controlado
+  - Casa Club
+  - Área de Picnic
+  - Juegos Infantiles
+  - Parque
 ---

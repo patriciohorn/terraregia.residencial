@@ -46,4 +46,10 @@ variantFooter:
   - 'Fondo: 14m'
   - 'Área: 98m2'
 promotion: 'Financiamiento directo de hasta 24 MSI'
+amenidadesGallery:
+  - Acceso Controlado
+  - Juegos Infantiles
+  - Casa Club
+  - Cancha Deportiva
+  - Hito
 ---

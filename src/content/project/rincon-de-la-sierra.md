@@ -11,7 +11,7 @@ telefonoCaseta: '8114922940'
 cover: '../../assets/images/rincon-cover.png'
 images:
   - '../../assets/rincon/imagen2.jpg'
-  - '../../assets/rincon/imagen3.png'
+  - '../../assets/rincon/imagen3.webp'
   - '../../assets/rincon/imagen4.webp'
   - '../../assets/rincon/imagen5.webp'
 logo: '../../assets/logos/logo-rds.png'
@@ -247,4 +247,10 @@ services:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
 promotion: 'Bono de hasta $60mil + cocina con granito'
+amenidadesGallery:
+  - Modelo 3 niveles
+  - Alberca | Casa Club
+  - Acceso Controlado
+  - Juegos Infantiles
+  - Cancha Deportiva
 ---

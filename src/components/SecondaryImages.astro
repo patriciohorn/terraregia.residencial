@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
+import { Badge } from '@/components/ui/badge';
 
-const { images } = Astro.props;
+const { images, amenidades } = Astro.props;
 ---
 
 {
   images &&
     images.map((image: any, idx: any) => (
-      <div class="overflow-hidden shadow-sm rounded-md aspect-square">
+      <div class="overflow-hidden shadow-sm rounded-md aspect-square relative">
         <Image
           src={image}
           alt="Foto de proyecto"
@@ -15,6 +16,9 @@ const { images } = Astro.props;
           loading="eager"
           format="webp"
         />
+        <Badge className="absolute bottom-2.5 left-2.5" client:visible>
+          {amenidades[idx]}
+        </Badge>
       </div>
     ))
 }

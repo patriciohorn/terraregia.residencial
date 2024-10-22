@@ -170,4 +170,10 @@ services:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
 promotion: 'Bono de hasta $50mil ó páneles solares + minisplit'
+amenidadesGallery:
+  - Modelo Firenze Plus
+  - Acceso Controlado
+  - Juegos Infantiles
+  - Cancha Deportiva
+  - Cancha Basquetbol
 ---

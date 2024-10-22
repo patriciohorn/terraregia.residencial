@@ -10,10 +10,10 @@ waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./caseta-de-ventas-vall
 telefonoCaseta: '8131423000'
 cover: '../../assets/images/aliria-cover.png'
 images:
-  - '../../assets/aliria/imagen2.png'
+  - '../../assets/aliria/imagen5.png'
   - '../../assets/aliria/imagen3.png'
   - '../../assets/aliria/imagen4.png'
-  - '../../assets/aliria/imagen5.png'
+  - '../../assets/aliria/imagen2.png'
 logo: '../../assets/logos/logo-aliria.png'
 category: 'preventa'
 tipo: 'Terrenos'
@@ -58,4 +58,10 @@ services:
       - 'Hospital Central'
     icon: 'hospitals'
 promotion: 'Financiamiento directo de hasta 33MSI'
+amenidadesGallery:
+  - Acceso Controlado
+  - Casa Club
+  - Juegos Infantiles
+  - Pet Park
+  - Acceso Controlado
 ---

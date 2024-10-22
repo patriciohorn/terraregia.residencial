@@ -10,10 +10,10 @@ waze: 'https://www.waze.com/en/live-map/directions/mx/n.l./monterrey/caseta-domi
 cover: '../../assets/montserrat/cover.webp'
 telefonoCaseta: '8114922940'
 images:
-  - '../../assets/montserrat/imagen2.webp'
-  - '../../assets/montserrat/imagen3.webp'
+  - '../../assets/montserrat/cancha.webp'
+  - '../../assets/montserrat/casa-club.webp'
   - '../../assets/montserrat/amenidades-montserrat.webp'
-  - '../../assets/montserrat/imagen5.webp'
+  - '../../assets/montserrat/pet-park.webp'
 logo: '../../assets/logos/logo-montserrat.png'
 category: 'preventa'
 tipo: 'Casas'
@@ -181,4 +181,10 @@ modelosImages:
   - '../../assets/montserrat/eliana.webp'
 brochure: 'https://montserratresidencial.mx/wp-content/uploads/2024/06/Montserrat-Residencial-Brochure.pdf'
 promotion: 'Bono de hasta $150mil'
+amenidadesGallery:
+  - Modelo Liria
+  - Canchas Deportivas
+  - Casa Club
+  - Juegos Infantiles
+  - Pet Park
 ---

@@ -16,6 +16,8 @@ import VariantFooter from "@/components/VariantFooter.astro";
 import { SecondaryImagesCarousel } from "@/components/secondaryImages-carousel";
 import ServicesCards from "@/components/ServicesCards.astro";
 import MoreInfoProjects from "@/components/MoreInfoProjects.astro";
+import { Badge } from '@/components/ui/badge';
+
 
 export async function getStaticPaths() {
 	const projects = await getProjects();
@@ -29,6 +31,12 @@ export async function getStaticPaths() {
 const project = Astro.props;
 const projectName = removeAccents(project.data.title.toLowerCase().split(' ').join(''))
 
+let amenidadCover, amenidadesSecondary = null
+if(project.data.amenidadesGallery){
+  amenidadCover = project.data.amenidadesGallery[0];
+  amenidadesSecondary = project.data.amenidadesGallery?.slice(1)
+}
+
 ---
 
 <Layout title={project.data.title} whatsapp={project.data.whatsapp}>
@@ -37,8 +45,11 @@ const projectName = removeAccents(project.data.title.toLowerCase().split(' ').jo
     <section class="container"> 
       <h1 class="text-4xl sm:text-7xl text-black font-heading">{project.data.title}</h1>
       <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">      
-          <div class="overflow-hidden rounded-md shadow-sm ">         
+          <div class="overflow-hidden rounded-md shadow-sm relative ">         
             <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager" format="webp"/>
+            <Badge className="absolute bottom-3 left-2.5 text-sm sm:text-base" client:visible>
+              {amenidadCover}
+            </Badge>
           </div>
           <div class="flex flex-col gap-y-4">
             <ProjectInfo project={project}/>
@@ -50,14 +61,14 @@ const projectName = removeAccents(project.data.title.toLowerCase().split(' ').jo
       
       {project.data.title !== 'Reserva del Mezquital' && (
         <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
-          <SecondaryImages images={project.data.images}/>
+          <SecondaryImages images={project.data.images} amenidades={amenidadesSecondary}/>
         </div>
       )}
     </section>
     <!-- Gallery -->
     {project.data.title !== 'Reserva del Mezquital' && (
       <section class="sm:hidden mt-4 pl-4 ml-auto">     
-        <SecondaryImagesCarousel images={project.data.images} client:visible/>
+        <SecondaryImagesCarousel images={project.data.images} amenidades={amenidadesSecondary} client:visible/>
       </section> 
     )}
       
