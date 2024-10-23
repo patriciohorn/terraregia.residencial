@@ -66,8 +66,8 @@ services:
 promotion: 'Mensualidades desde $13,500'
 amenidadesGallery:
   - Acceso controlado
-  - Rotonda
+  - Área de columpio o de juegos
   - Cancha Deportiva
-  - Casa Club
-  - Parque
+  - Hito
+  - Casa Club
 ---

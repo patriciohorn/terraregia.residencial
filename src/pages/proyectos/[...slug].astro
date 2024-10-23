@@ -45,7 +45,7 @@ if(project.data.amenidadesGallery){
     <section class="container"> 
       <h1 class="text-4xl sm:text-7xl text-black font-heading">{project.data.title}</h1>
       <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">      
-          <div class="overflow-hidden rounded-md shadow-sm relative ">         
+          <div class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">         
             <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager" format="webp"/>
             <Badge className="absolute bottom-3 left-2.5 text-sm sm:text-base" client:visible>
               {amenidadCover}
@@ -146,7 +146,7 @@ if(project.data.amenidadesGallery){
   </form> -->
 
  
-  <MoreInfoProjects formName={projectName} />
+  <MoreInfoProjects formName={projectName} projectTitle={project.data.title} />
 
 </Layout>
 
