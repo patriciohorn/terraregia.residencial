@@ -1,0 +1,31 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+import { InversionAccordion } from '@/components/inversion-accordion';
+const { blok } = Astro.props;
+console.log(blok);
+const accordionItems = blok.accordion;
+---
+
+<section {...storyblokEditable(blok)}>
+  <div class="py-16 container grid sm:grid-cols-[2fr_3fr] sm:gap-20">
+    <div>
+      <h2 class="font-heading text-3xl sm:text-[44px] leading-[1.1]">
+        {blok.headline}
+      </h2>
+      <div class="hidden sm:flex sm:mt-6 sm:rounded-md sm:overflow-hidden sm:shadow-sm">
+        <Image
+          src={blok.image.filename}
+          alt={blok.image.alt}
+          format="webp"
+          width="1228"
+          height="691"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="mt-6 sm:mt-16">
+      <InversionAccordion accordionItems={accordionItems} client:load />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+
+const { blok } = Astro.props;
+---
+
+<div {...storyblokEditable(blok)}>
+  <div
+    class="bg-black text-white rounded-md flex sm:flex-col gap-x-8 sm:items-center justify-center sm:text-center p-8 sm:py-14 shadow-sm">
+    <Image
+      src={blok.icon.filename}
+      alt=""
+      class="shrink-0 w-7 h-7 sm:w-16 sm:h-16 brightness-0 invert"
+      inferSize
+      format="svg"
+    />
+    <div>
+      <h2 class="text-base sm:text-2xl font-medium sm:mt-6">{blok.headline}</h2>
+      <p class="text-sm sm:text-base mt-2 sm:mt-4 text-neutral-300 sm:min-h-[72px]">
+        {blok.description}
+      </p>
+    </div>
+  </div>
+</div>

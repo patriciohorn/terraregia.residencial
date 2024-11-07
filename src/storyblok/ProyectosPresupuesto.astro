@@ -1,0 +1,19 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { PresupuestoCarousel } from '@/components/PresupuestoCarousel';
+
+const { blok } = Astro.props;
+
+const presupuestoCards = blok.presupuesto_cards;
+---
+
+<section {...storyblokEditable(blok)} class="pt-8 pb-16 sm:py-16 sm:pb-24">
+  <div class="w-full max-w-none overflow-hidden">
+    <div class="container">
+      <h2 class="font-medium font-heading text-3xl sm:text-5xl leading-[1.1]">{blok.headline}</h2>
+      <div class="mt-6 sm:mt-16">
+        <PresupuestoCarousel cards={presupuestoCards} client:visible />
+      </div>
+    </div>
+  </div>
+</section>

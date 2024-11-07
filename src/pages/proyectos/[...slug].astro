@@ -2,7 +2,7 @@
 import { getProjects } from "@/lib/utils";
 import { removeAccents, sluglify } from "@/lib/utils";
 import ProjectInfo from "@/components/ProjectInfo.astro";
-import Layout from "@/layouts/Layout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import Amenities from "@/components/Amenities.astro";
 import SecondaryImages from "@/components/SecondaryImages.astro"
 import {TipologiaCarousel} from '@/components/tipologia-carousel'
@@ -39,7 +39,7 @@ if(project.data.amenidadesGallery){
 
 ---
 
-<Layout title={project.data.title} whatsapp={project.data.whatsapp}>
+<BaseLayout title={project.data.title} whatsapp={project.data.whatsapp}>
   <section class="py-8 sm:py-16">
     <!-- Hero -->
     <section class="container"> 
@@ -148,7 +148,7 @@ if(project.data.amenidadesGallery){
  
   <MoreInfoProjects formName={projectName} projectTitle={project.data.title} />
 
-</Layout>
+</BaseLayout>
 
 
 

@@ -1,0 +1,27 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+const { blok } = Astro.props;
+
+let projects = blok.projects;
+---
+
+<section {...storyblokEditable(blok)} class="py-12 sm:pt-28 sm:pb-20">
+  <div class="container">
+    <h2 class="font-medium font-heading text-3xl sm:text-5xl leading-[1.1]">{blok.headline}</h2>
+    <ul class="mt-8 sm:mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+      {
+        projects.length &&
+          projects.map((project: any) => {
+            project.content.slug = project.slug;
+            return (
+              <li>
+                <ProjectCard project={project.content} small={true} badge={true} />
+              </li>
+            );
+          })
+      }
+      <!-- {projects.map((project: any) => <ProjectCard project={project} small={true} badge={true} />)} -->
+    </ul>
+  </div>
+</section>

@@ -21,30 +21,28 @@ const proyectos = [
   'Toscana Residencial'
 ];
 
-export function RecomiendaForm() {
+export function Form({ headlineLeft, headlineRight }: any) {
   return (
     <div>
-      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12">
+      <div className="grid sm:grid-cols-2 gap-x-20 gap-y-12">
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">Tus datos</h2>
-          <div className="mt-6 sm:mt-9 space-y-2 sm:space-y-4">
+          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">{headlineLeft}</h2>
+          <div className="mt-6 sm:mt-8 space-y-2">
             <Input type="text" placeholder="Nombre" className="h-12 sm:h-16" />
             <Input type="email" placeholder="Email" className="h-12 sm:h-16" />
             <Input type="phone" placeholder="Whatsapp" className="h-12 sm:h-16" />
           </div>
         </div>
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">
-            Datos de tu referencia
-          </h2>
-          <div className="mt-6 sm:mt-9 space-y-2 sm:space-y-4">
+          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">{headlineRight}</h2>
+          <div className="mt-6 sm:mt-8 space-y-2">
             <Input type="text" placeholder="Nombre" className="h-12 sm:h-16" />
             <Input type="email" placeholder="Email" className="h-12 sm:h-16" />
             <Input type="phone" placeholder="Whatsapp" className="h-12 sm:h-16" />
           </div>
         </div>
       </div>
-      <div className="mt-2 sm:mt-4 grid sm:grid-cols-[3fr_1fr] gap-x-8 gap-y-2">
+      <div className="mt-2 sm:mt-6 grid sm:grid-cols-[3fr_1fr] gap-x-6 gap-y-2">
         <Select>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Proyecto Recomendado" />
