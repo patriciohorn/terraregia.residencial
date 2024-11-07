@@ -13,12 +13,12 @@ export function PromotionCardd({ project }: any) {
   return (
     <a href={`/proyectos/${path}`}>
       <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-full ">
-        <div className="bg-[#BFDEE3] lg:group-hover:bg-black px-6 h-20 rounded-[4px] flex flex-col justify-center">
-          <p className="text-lg leading-6 font-medium group-hover:text-white">
+        <div className="h-[136px] bg-[#BFDEE3] lg:group-hover:bg-black p-6 rounded-[4px] flex flex-col gap-2 justify-center">
+          <p className="text-lg leading-6 font-medium group-hover:text-white text-balance text-[#192a33]">
             {project.mainPromo}
           </p>
           {project.mainPromoSmall && (
-            <p className="inline-flex items-center text-sm leading-6 tracking-[0.01em] text-neutral-700 font-medium lg:group-hover:text-white">
+            <p className="inline-flex items-center text-sm leading-4 tracking-[0.01em] text-[#345c6a] font-medium lg:group-hover:text-white max-w-[20em]">
               {project.mainPromoSmall}
               <span className="-mt-2">
                 <Asterisk className="w-2 h-2" />
