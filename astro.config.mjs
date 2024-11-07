@@ -32,7 +32,9 @@ export default defineConfig({
         'recomienda-step-card': 'storyblok/RecomiendaStepCard',
         'recomienda-form': 'storyblok/RecomiendaForm',
         'inversion-content': 'storyblok/InversionContent',
-        'politicas-content': 'storyblok/PoliticasContent'
+        'politicas-content': 'storyblok/PoliticasContent',
+        'promociones-del-mes': 'storyblok/PromocionesDelMes'
+        // 'promocion-card': 'storyblok/PromocionCard'
       },
       apiOptions: {
         region: 'us'

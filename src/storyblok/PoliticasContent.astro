@@ -4,7 +4,6 @@ import { renderRichText } from '@storyblok/astro';
 import { Asterisk } from 'lucide-react';
 const { blok } = Astro.props;
 const renderedRichText = renderRichText(blok.content);
-console.log(blok);
 ---
 
 <section {...storyblokEditable(blok)}>

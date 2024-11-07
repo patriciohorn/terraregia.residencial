@@ -32,7 +32,7 @@ export function PromocionesCarousel({ promotions }: PromocionesCarouselProps) {
       <CarouselContent className="-ml-8">
         {promotions.map((promotion: any) => (
           <CarouselItem key={promotion.title} className="pl-8 md:basis-1/2 lg:basis-1/3">
-            <PromotionCardd project={promotion} />
+            <PromotionCardd promotion={promotion} />
           </CarouselItem>
         ))}
       </CarouselContent>
