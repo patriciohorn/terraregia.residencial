@@ -65,7 +65,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Mensualidades desde $30mil'
+promotion: 'Financiamiento directo + Bono de $140 mil + Enganche diferido'
 amenidadesGallery:
   - Acceso Controlado
   - Casa Club

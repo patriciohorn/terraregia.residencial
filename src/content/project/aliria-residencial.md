@@ -57,7 +57,7 @@ services:
       - 'Hospital General de Juárez'
       - 'Hospital Central'
     icon: 'hospitals'
-promotion: 'Financiamiento directo de hasta 33MSI'
+promotion: 'Financiamiento directo de hasta 32 MSI'
 amenidadesGallery:
   - Acceso Controlado
   - Casa Club

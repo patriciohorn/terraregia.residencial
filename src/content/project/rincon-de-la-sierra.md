@@ -246,7 +246,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Bono de hasta $60mil + cocina con granito'
+promotion: 'Bono de $100 mil + 5 paneles solares + 1 minisplit + cocina con granito '
 amenidadesGallery:
   - Modelo 3 niveles
   - Alberca | Casa Club

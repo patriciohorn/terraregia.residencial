@@ -169,7 +169,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Bono de hasta $50mil ó páneles solares + minisplit'
+promotion: 'Bono de $50mil + 5 paneles solares + 1 minisplit + Cocina'
 amenidadesGallery:
   - Modelo Firenze Plus
   - Acceso Controlado

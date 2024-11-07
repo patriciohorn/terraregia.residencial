@@ -63,7 +63,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Mensualidades desde $13,500'
+promotion: 'Financiamiento directo + Bono de $80mil + Enganche diferido'
 amenidadesGallery:
   - Acceso controlado
   - Área de columpio o de juegos
