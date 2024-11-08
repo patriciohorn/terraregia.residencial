@@ -1,6 +1,7 @@
 import { PromoSpec } from './promo-spec';
 import { MapPin, Asterisk } from 'lucide-react';
 import { sluglify } from '@/lib/utils';
+import BuenFinSVG from '../assets/buen-fin.svg';
 
 export function PromotionCardd({ project }: any) {
   const path = sluglify(
@@ -12,9 +13,14 @@ export function PromotionCardd({ project }: any) {
 
   return (
     <a href={`/proyectos/${path}`}>
-      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-full ">
-        <div className="h-[136px] bg-[#BFDEE3] lg:group-hover:bg-black p-6 rounded-[4px] flex flex-col gap-2 justify-center">
-          <p className="text-lg leading-6 font-medium group-hover:text-white text-balance text-[#192a33]">
+      <article className="rounded-md  bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-full   ">
+        <div className="h-[142px] bg-[#BFDEE3] lg:group-hover:bg-black px-6 py-4 rounded-[4px] flex flex-col justify-center gap-1.5  relative ">
+          <img
+            src={BuenFinSVG.src}
+            alt="Buen Mes logo"
+            className="absolute -top-3.5 -right-3 h-12"
+          />
+          <p className=" text-lg leading-6 font-medium group-hover:text-white text-balance text-[#192a33]">
             {project.mainPromo}
           </p>
           {project.mainPromoSmall && (
@@ -26,8 +32,9 @@ export function PromotionCardd({ project }: any) {
             </p>
           )}
         </div>
+
         {/* Image Section  */}
-        <div className="mt-2 overflow-hidden aspect-[16/9] rounded-[4px]">
+        <div className="mt-2 overflow-hidden aspect-[16/9] rounded-[4px] relative z-0">
           <img
             src={project.images}
             alt={`Imagen de proyecto ${project.title}`}
@@ -36,7 +43,7 @@ export function PromotionCardd({ project }: any) {
         </div>
 
         <div>
-          {/* Header Section */}
+          {/*  Content */}
           <div className="mt-4">
             <h3 className="text-xl text-[#292828] font-heading tracking-[0.01em]">
               {project.title}

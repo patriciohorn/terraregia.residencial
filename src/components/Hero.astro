@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import heroImg from '@/assets/hero-image.png';
+import BuenFinSVG from '@/assets/buen-fin.svg';
 import { DropdownNav } from './dropdown-nav';
 import { DropdownNavMobile } from './dropdown-nav-mobile';
 ---
 
 <section>
   <div class="container pt-10 sm:pt-16">
-    <div class="">
+    <div class="relative">
       <h1
         class="font-heading text-4xl tracking-tight sm:text-[80px] sm:leading-none text-balance max-w-[50rem]">
         Conoce nuestros proyectos de casas y terrenos residenciales
@@ -17,25 +18,34 @@ import { DropdownNavMobile } from './dropdown-nav-mobile';
         Monterrey
       </p>
       <div
-        class="relative mt-4 sm:mt-12 rounded-[15px] sm:rounded-lg overflow-hidden shadow-sm sm:aspect-video">
+        class="relative mt-4 sm:mt-12 rounded-2xl sm:rounded-lg overflow-hidden shadow-sm sm:aspect-video">
         <Image
           src={heroImg}
           alt="Imagen de familia"
           format="webp"
           width="1300"
           height="629"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover rounded-2xl sm:rounded-none"
           loading="eager"
+        />
+        <Image
+          src={BuenFinSVG}
+          alt="Buen Mes logo"
+          class="sm:hidden absolute w-fit bottom-2 left-2 h-12"
         />
         <div
           class="hidden sm:absolute sm:top-6 sm:right-6 sm:flex sm:items-center sm:justify-center">
           <DropdownNav client:load />
         </div>
       </div>
-
-      <div class="sm:hidden mt-8">
-        <DropdownNavMobile client:load />
-      </div>
+      <Image
+        src={BuenFinSVG}
+        alt="Buen Mes logo"
+        class="hidden sm:flex sm:absolute sm:-bottom-8 sm:left-4 sm:h-40 sm:w-fit"
+      />
+    </div>
+    <div class="sm:hidden mt-8">
+      <DropdownNavMobile client:load />
     </div>
   </div>
 </section>

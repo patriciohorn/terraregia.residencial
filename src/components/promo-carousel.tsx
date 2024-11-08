@@ -29,9 +29,9 @@ export function PromocionesCarousel({ promotions }: PromocionesCarouselProps) {
         loop: true,
         align: 'start'
       }}>
-      <CarouselContent className="-ml-8">
+      <CarouselContent className="-ml-4 py-2">
         {promotions.map((promotion: any) => (
-          <CarouselItem key={promotion.title} className="pl-8 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={promotion.title} className="pl-4 pr-4 md:basis-1/2 lg:basis-1/3">
             <PromotionCardd project={promotion} />
           </CarouselItem>
         ))}

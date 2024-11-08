@@ -1,28 +1,36 @@
 ---
-import { BellRing} from "lucide-react"
-
+import { BellRing } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { Image } from "astro:assets"
+import BuenFinSVG from '@/assets/buen-fin.svg'
 const {project} = Astro.props
 const formatedCosto = project.data.costo.split(' ')
 const twoLevelProjects = ['Toscana Residencial', 'Rincón de la Sierra']
+const longText = project.data.title.includes('Rincón') || project.data.title.includes('Toscana') || project.data.title.includes('Alinka') || project.data.title.includes('Alboradas')
 ---
 
-<div class="flex flex-col space-y-4 relative bg-[#D9D9D9] rounded-md p-4 sm:p-6 shadow-sm ">
+<div class="flex flex-col space-y-6 relative bg-[#D9D9D9] rounded-md p-4 sm:p-6 shadow-sm ">
+  
   {project.data.promotion && (
-    <div class="sm:ml-auto sm:-mt-1 flex gap-2.5 items-center justify-center text-accent-dark font-medium bg-[#e9f5f5]  px-4 py-2 border border-accent-dark rounded-full ">
+    <div class={cn('grid sm:grid-cols-1', longText ? 'grid-cols-[1fr_4fr]': 'grid-cols-1')}>
+    <div></div>
+    <div class="sm:ml-auto ml-auto inline-flex gap-2.5 items-center justify-center text-accent-dark font-medium bg-[#e9f5f5]  px-4 py-2 border border-accent-dark rounded-full ">           
       <BellRing size="16" className="text-accent-dark shrink-0 h-3.5 w-3.5 fill-accent-dark"/>    
       <p class="text-xs sm:text-sm  font-medium">{project.data.promotion}</p>      
     </div>
+    </div>
   )}
 
+  <Image src={BuenFinSVG} alt="Buen fin logo" class="h-10 -top-8 -left-2  w-fit absolute sm:h-12 sm:-top-12 sm:-left-4"/> 
   <div class="relative">
     {project.data.title !== 'Reserva del Mezquital' ?   (    
-    <span class="absolute -top-1 left-0 text-sm sm:text-base font-medium text-[#363636]">{formatedCosto[0]}</span>
+    <span class="absolute top-0 sm:-top-1 left-0 text-sm sm:text-base font-medium text-[#363636]">{formatedCosto[0]}</span>
     <p class="mt-6 text-4xl sm:text-5xl font-heading">{`${formatedCosto[1]} ${formatedCosto[2] ? formatedCosto[2] : ''}`}</p>
    
   ) : <p class="text-4xl sm:text-5xl font-heading">Próximamente</p>}   
     
-  {twoLevelProjects.includes(project.data.title) ? <p class="mt-2 text-xl leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">Casas de 2 y 3 niveles con 3 recámaras y cocina de granito
-    </p> : project.data.tipo === 'Terrenos' ? <p class="mt-2 text-xl leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} Residenciales en ${project.data.location}` }</p> : <p class="mt-2 text-xl leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} en ${project.data.location}` }</p>}
+  {twoLevelProjects.includes(project.data.title) ? <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em]">Casas de 2 y 3 niveles con 3 recámaras y cocina de granito
+    </p> : project.data.tipo === 'Terrenos' ? <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} Residenciales en ${project.data.location}` }</p> : <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} en ${project.data.location}` }</p>}
 
   </div>  
    <p class="text-xs font-medium text-[#7b7b7b]">* Precios sujetos a cambio sin previo aviso. Sujetos a disponibilidad</p>
