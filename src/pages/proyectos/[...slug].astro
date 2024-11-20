@@ -1,154 +1,35 @@
 ---
-import { getProjects } from "@/lib/utils";
-import { removeAccents, sluglify } from "@/lib/utils";
-import ProjectInfo from "@/components/ProjectInfo.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Amenities from "@/components/Amenities.astro";
-import SecondaryImages from "@/components/SecondaryImages.astro"
-import {TipologiaCarousel} from '@/components/tipologia-carousel'
-import {ModelosSection} from '@/components/Modelos'
-import ServicesCard from '@/components/ServicesCards.astro'
-import Informes from '@/components/Informes.astro'
-import VideoCastilla from '@/components/VideoCastilla.astro'
-import { Image } from "astro:assets";
-// import { type CollectionEntry } from 'astro:content';
-import VariantFooter from "@/components/VariantFooter.astro";
-import { SecondaryImagesCarousel } from "@/components/secondaryImages-carousel";
-import ServicesCards from "@/components/ServicesCards.astro";
-import MoreInfoProjects from "@/components/MoreInfoProjects.astro";
-import { Badge } from '@/components/ui/badge';
-
+import { useStoryblokApi } from '@storyblok/astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 
 export async function getStaticPaths() {
-	const projects = await getProjects();
-	return projects.map((project:any) => ({
-		params: { slug: project.slug },
-		props: project,
-	}));
+  const storyblokApi = useStoryblokApi();
+
+  const links = await storyblokApi.getAll('cdn/links', {
+    version: 'draft',
+    starts_with: 'proyectos/'
+  });
+
+  return links
+    .filter((link: any) => !link.is_folder)
+    .map((link: any) => {
+      return {
+        params: { slug: link.slug }
+      };
+    });
 }
 
+const { slug } = Astro.params;
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get(`cdn/stories/proyectos/${slug}`, {
+  version: 'draft'
+});
 
-const project = Astro.props;
-const projectName = removeAccents(project.data.title.toLowerCase().split(' ').join(''))
-
-let amenidadCover, amenidadesSecondary = null
-if(project.data.amenidadesGallery){
-  amenidadCover = project.data.amenidadesGallery[0];
-  amenidadesSecondary = project.data.amenidadesGallery?.slice(1)
-}
-
+const story = data.story;
+console.log(story, slug);
 ---
 
-<BaseLayout title={project.data.title} whatsapp={project.data.whatsapp}>
-  <section class="py-8 sm:py-16">
-    <!-- Hero -->
-    <section class="container"> 
-      <h1 class="text-4xl sm:text-7xl text-black font-heading">{project.data.title}</h1>
-      <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">      
-          <div class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">         
-            <Image src={project.data.cover} alt="Image" class="w-full h-full object-cover" loading="eager" format="webp"/>
-            <Badge className="absolute bottom-3 left-2.5 text-sm sm:text-base" client:visible>
-              {amenidadCover}
-            </Badge>
-          </div>
-          <div class="flex flex-col gap-y-4">
-            <ProjectInfo project={project}/>
-            {project.data.title !== 'Reserva del Mezquital' && (
-            <Amenities amenities={project.data.amenities}/>
-            )}
-          </div>
-      </div> 
-      
-      {project.data.title !== 'Reserva del Mezquital' && (
-        <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
-          <SecondaryImages images={project.data.images} amenidades={amenidadesSecondary}/>
-        </div>
-      )}
-    </section>
-    <!-- Gallery -->
-    {project.data.title !== 'Reserva del Mezquital' && (
-      <section class="sm:hidden mt-4 pl-4 ml-auto">     
-        <SecondaryImagesCarousel images={project.data.images} amenidades={amenidadesSecondary} client:visible/>
-      </section> 
-    )}
-      
-
-    <!-- Lotification Section -->    
-    {(project.data.variant === 'Tipología' || project.data.variant === 'Lotificación') && (
-      <section>  
-        <div class="container">
-          <div class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md border border-neutral-200">
-            <!-- Tipologia  -->                  
-              <div>
-                <h2 class="text-2xl sm:text-[40px] text-black font-medium mb-8">{project.data.variant}</h2>            
-                <TipologiaCarousel images={project.data.variantImages} client:visible/>
-                <VariantFooter items={project.data.variantFooter} brochure={project.data.brochure}/>
-              </div>
-              <div class="flex flex-col justify-between px-4 py-6 sm:px-12 sm:pb-12 bg-[#E6E9E9] rounded-sm sm:rounded-md min-h-64 sm:min-h-[468px]">
-                <div class="sm:mt-8 sm:max-h-24 max-w-28 sm:max-w-32 mr-auto">
-                <Image src={project.data.logo} alt={`${project.data.title} logo`} class=" object-cover w-full h-full" format="webp"/>
-                </div>
-                <p class="text-xl sm:text-2xl font-mesdium">{project.data.variantDescription}</p>
-              </div>
-            </div>
-          </div>
-      </section>         
-     )}
-    
-    <!-- Modelos -->             
-    {project.data.variant === 'Modelos' && (
-      <section>
-        <div class="container">
-          <ModelosSection project={project.data} client:visible/>
-        </div>
-      </section>
-     )}  
-    
-    {project.data.services && (
-      <section class="py-8">
-        <div class="container">
-          <ServicesCards services={project.data.services}/>
-        </div>
-      </section>
-    )}
-    <!-- Virtual Tour -->    
-    {project.data.virtualTour && (  
-        <section>
-        <div class="container">
-          <div class="overflow-hidden rounded-md aspect-video">
-            <iframe width="100%" height="600" allowfullscreen="true"
-              src={project.data.virtualTour} class="w-full h-full object-cover">
-            </iframe>
-          </div>
-        </div>
-      </section> 
-    )}
-
-    {project.data.title === 'Castilla Diamante' && (
-    <VideoCastilla/>
-    )}
-
-    {project.data.mapQuery && (
-      <section class="py-8">
-        <div class="container">
-          <Informes mapQuery={project.data.mapQuery} googleMaps={project.data.googleMaps} waze={project.data.waze} telefonoCaseta={project.data.telefonoCaseta} projectName={project.data.title}/>
-        </div>
-      </section>
-    )}
-             
-  </section>
-
-  <!-- <form name={projectName} data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="text" name="nombre" />
-    <input type="text" name="apellidos" />
-    <input type="email" name="email" />
-    <input type="tel" name="whatsapp" /> 
-  </form> -->
-
- 
-  <MoreInfoProjects formName={projectName} projectTitle={project.data.title} />
-
+<BaseLayout title="Terra Regia Residencial">
+  <StoryblokComponent blok={story.content} />
 </BaseLayout>
-
-
-

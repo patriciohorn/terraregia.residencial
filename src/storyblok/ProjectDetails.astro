@@ -1,0 +1,17 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { BellRing } from 'lucide-react';
+
+const { details } = Astro.props;
+---
+
+<section {...storyblokEditable(details)}>
+  {
+    details.promocion && (
+      <div class="-mt-4 flex -mr-4 ml-auto gap-2  items-center text-accent-dark font-medium bg-[#e9f5f5] w-fit px-3 py-1.5 border border-accent-dark rounded-full">
+        <BellRing size="16" className="text-accent-dark h-3.5 w-3.5 fill-accent-dark" />
+        <p class="text-sm font-medium">{details.promocion}</p>
+      </div>
+    )
+  }
+</section>

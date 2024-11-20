@@ -1,0 +1,38 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+import { Badge } from '@/components/ui/badge';
+const { blok } = Astro.props;
+const coverImage = blok.cover_image[0];
+import ProjectDetails from '@/storyblok/ProjectDetails.astro';
+---
+
+<section {...storyblokEditable(blok)}>
+  <div class="container py-8 sm:py-16">
+    <h1 class="text-4xl sm:text-7xl text-black font-heading">{blok.titulo}</h1>
+    <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">
+      <div class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">
+        <Image
+          src={coverImage.image.filename}
+          alt={coverImage.image.alt}
+          class="w-full h-full object-cover"
+          loading="eager"
+          width="664"
+          height="562"
+          format="webp"
+        />
+        <Badge className="absolute bottom-3 left-2.5 text-sm sm:text-base" client:visible>
+          {coverImage.badge}
+        </Badge>
+      </div>
+      <div class="flex flex-col gap-y-4">
+        <ProjectDetails details={blok.project_info} />
+        <!-- {
+          project.data.title !== 'Reserva del Mezquital' && (
+            <Amenities amenities={project.data.amenities} />
+          )
+        } -->
+      </div>
+    </div>
+  </div>
+</section>

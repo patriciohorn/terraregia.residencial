@@ -33,7 +33,9 @@ export default defineConfig({
         'recomienda-form': 'storyblok/RecomiendaForm',
         'inversion-content': 'storyblok/InversionContent',
         'politicas-content': 'storyblok/PoliticasContent',
-        'promociones-del-mes': 'storyblok/PromocionesDelMes'
+        'promociones-del-mes': 'storyblok/PromocionesDelMes',
+        project: 'storyblok/Project',
+        'project-details': 'storyblok/ProjectDetails'
         // 'promocion-card': 'storyblok/PromocionCard'
       },
       apiOptions: {
