@@ -35,7 +35,9 @@ export default defineConfig({
         'politicas-content': 'storyblok/PoliticasContent',
         'promociones-del-mes': 'storyblok/PromocionesDelMes',
         project: 'storyblok/Project',
-        'project-details': 'storyblok/ProjectDetails'
+        'project-details': 'storyblok/ProjectDetails',
+        'project-hero': 'storyblok/ProjectHero',
+        'cover-image': 'storyblok/ProjectCover'
         // 'promocion-card': 'storyblok/PromocionCard'
       },
       apiOptions: {

@@ -1,17 +1,37 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
 import { BellRing } from 'lucide-react';
+import { isBlock } from 'typescript';
 
-const { details } = Astro.props;
+const { blok } = Astro.props;
+console.log(blok);
 ---
 
-<section {...storyblokEditable(details)}>
-  {
-    details.promocion && (
-      <div class="-mt-4 flex -mr-4 ml-auto gap-2  items-center text-accent-dark font-medium bg-[#e9f5f5] w-fit px-3 py-1.5 border border-accent-dark rounded-full">
-        <BellRing size="16" className="text-accent-dark h-3.5 w-3.5 fill-accent-dark" />
-        <p class="text-sm font-medium">{details.promocion}</p>
-      </div>
-    )
-  }
+<section {...storyblokEditable(blok)}>
+  <div class="flex flex-col space-y-6 relative bg-[#D9D9D9] rounded-md p-4 sm:p-6 shadow-sm">
+    <!-- Promo -->
+    {
+      blok.promocion && (
+        <div class="sm:ml-auto ml-auto inline-flex gap-2.5 items-center justify-center text-accent-dark font-medium bg-[#e9f5f5] px-4 py-2 border border-accent-dark rounded-full">
+          <BellRing size="16" className="text-accent-dark shrink-0 h-3.5 w-3.5 fill-accent-dark" />
+          <p class="text-xs sm:text-sm font-medium">{blok.promocion}</p>
+        </div>
+      )
+    }
+
+    <!-- Price -->
+    <div class="relative">
+      <span class="absolute -top-2.5 left-0 text-sm sm:text-base font-medium text-[#363636]"
+        >{blok.eyebrow}</span
+      >
+      <p class="mt-4 text-4xl sm:text-5xl font-heading">
+        {blok.precio}
+      </p>
+      <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em]">
+        {blok.descripcion}
+      </p>
+    </div>
+    <!-- Note -->
+    <p class="text-xs font-medium text-[#7b7b7b]">{blok.nota}</p>
+  </div>
 </section>
