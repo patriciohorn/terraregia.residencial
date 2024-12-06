@@ -15,11 +15,11 @@ export function PromotionCardd({ project }: any) {
     <a href={`/proyectos/${path}`}>
       <article className="rounded-md  bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-full   ">
         <div className="h-[142px] bg-[#BFDEE3] lg:group-hover:bg-black px-6 py-4 rounded-[4px] flex flex-col justify-center gap-1.5  relative ">
-          <img
+          {/* <img
             src={BuenFinSVG.src}
             alt="Buen Mes logo"
             className="absolute -top-3.5 -right-3 h-12"
-          />
+          /> */}
           <p className=" text-lg leading-6 font-medium group-hover:text-white text-balance text-[#192a33]">
             {project.mainPromo}
           </p>
