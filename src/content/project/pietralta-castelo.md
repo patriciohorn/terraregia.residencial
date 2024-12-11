@@ -59,7 +59,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Financiamiento directo + Bono de $100 mil'
+promotion: 'Financiamiento directo. 18 MSI y paga 50% al escriturar'
 amenidadesGallery:
   - Acceso Controlado
   - Área de columpios

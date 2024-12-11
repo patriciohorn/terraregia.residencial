@@ -63,7 +63,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Financiamiento directo + Bono de $80mil + Enganche diferido'
+promotion: 'Financiamiento directo. Bono de $40mil. 24 MSI + 3 meses enganche diferido'
 amenidadesGallery:
   - Acceso controlado
   - Área de columpio o de juegos

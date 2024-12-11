@@ -14,9 +14,9 @@ const longText = project.data.title.includes('Rincón') || project.data.title.in
   {project.data.promotion && (
     <div class={cn('grid sm:grid-cols-1', longText ? 'grid-cols-[1fr_4fr]': 'grid-cols-1')}>
     <div></div>
-    <div class="sm:ml-auto ml-auto inline-flex gap-2.5 items-center justify-center text-accent-dark font-medium bg-[#e9f5f5]  px-4 py-2 border border-accent-dark rounded-full ">           
+    <div class="sm:ml-auto ml-auto inline-flex gap-3 items-center justify-center text-accent-dark font-medium bg-[#e9f5f5]  px-4 py-2 border border-accent-dark rounded-full ">           
       <BellRing size="16" className="text-accent-dark shrink-0 h-3.5 w-3.5 fill-accent-dark"/>    
-      <p class="text-xs sm:text-sm  font-medium">{project.data.promotion}</p>      
+      <p class="text-xs sm:text-sm font-medium">{project.data.promotion}</p>      
     </div>
     </div>
   )}
@@ -28,7 +28,7 @@ const longText = project.data.title.includes('Rincón') || project.data.title.in
     <p class="mt-6 text-4xl sm:text-5xl font-heading">{`${formatedCosto[1]} ${formatedCosto[2] ? formatedCosto[2] : ''}`}</p>
    
   ) : <p class="text-4xl sm:text-5xl font-heading">Próximamente</p>}   
-    
+      
   {twoLevelProjects.includes(project.data.title) ? <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em]">Casas de 2 y 3 niveles con 3 recámaras y cocina de granito
     </p> : project.data.tipo === 'Terrenos' ? <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} Residenciales en ${project.data.location}` }</p> : <p class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em] text-balance">{ `${project.data.tipo} en ${project.data.location}` }</p>}
 

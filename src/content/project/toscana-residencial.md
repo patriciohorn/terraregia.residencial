@@ -17,7 +17,7 @@ images:
 logo: '../../assets/logos/logo-toscana.png'
 category: ''
 tipo: 'Casas'
-costo: 'Desde $2.75 MDP*'
+costo: 'Desde $2.7 MDP*'
 presupuesto: '$2,000,000'
 amenities:
   - icon: 'JuegosInfantiles'
@@ -169,7 +169,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Bono de $50mil + 5 paneles solares + 1 minisplit + Cocina'
+promotion: '5 paneles solares + 1 minisplit + cocina y seguro de casa'
 amenidadesGallery:
   - Modelo Firenze Plus
   - Acceso Controlado

@@ -45,7 +45,7 @@ variantFooter:
   - 'Frente: 7m'
   - 'Fondo: 14m'
   - 'Área: 98m2'
-promotion: 'Financiamiento directo de hasta 24 MSI'
+promotion: 'Financiamiento directo. 18 MSI + 3 meses de enganche diferido'
 amenidadesGallery:
   - Acceso Controlado
   - Juegos Infantiles

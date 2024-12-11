@@ -64,7 +64,7 @@ services:
     items:
       - 'Christus Muguerza Cumbres'
     icon: 'hospitals'
-promotion: 'Financiamiento directo + Bono de $80 mil'
+promotion: 'Financiamiento directo + Bono de $40 mil. Mensualidades desde $21 mil. 15 MSI y paga 65% al escriturar'
 amenidadesGallery:
   - Acceso Controlado
   - Cancha Deportiva

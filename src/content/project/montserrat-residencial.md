@@ -180,7 +180,7 @@ modelosImages:
   - '../../assets/montserrat/beniali.webp'
   - '../../assets/montserrat/eliana.webp'
 brochure: 'https://montserratresidencial.mx/wp-content/uploads/2024/06/Montserrat-Residencial-Brochure.pdf'
-promotion: 'Bono de hasta $150mil'
+promotion: 'Bono de hasta $100mil + seguro de casa'
 amenidadesGallery:
   - Modelo Benialí
   - Canchas Deportivas
