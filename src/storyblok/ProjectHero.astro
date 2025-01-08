@@ -4,17 +4,16 @@ import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 import { Badge } from '@/components/ui/badge';
 import { Image } from 'astro:assets';
 
-import ProjectCover from './ProjectCover.astro';
-import ProjectDetails from './ProjectDetails.astro';
+import Amenities from '@/components/Amenities.astro';
 const { blok } = Astro.props;
 const coverImage = blok.cover[0].image;
-console.log(blok);
 ---
 
 <section {...storyblokEditable(blok)}>
   <div class="container py-8 sm:py-16">
     <h1 class="text-4xl sm:text-7xl text-black font-heading">{blok.project_name}</h1>
     <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">
+      <!-- Project Cover Image -->
       <div class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">
         <Image
           src={coverImage.filename}
@@ -30,13 +29,18 @@ console.log(blok);
           {blok.cover[0].badge}
         </Badge>
       </div>
-      {
-        blok.details?.map((blok: any) => {
-          return <StoryblokComponent blok={blok} />;
-        })
-      }
-      <!-- <ProjectDetails details={blok.details} /> -->
-      <!-- {blok.detail} -->
+
+      <div class="flex flex-col gap-y-4">
+        <!-- Details -->
+        {
+          blok.details?.map((blok: any) => {
+            return <StoryblokComponent blok={blok} />;
+          })
+        }
+
+        <!-- Amenities will be here -->
+        {blok.amenities && <Amenities amenities={blok.amenities} />}
+      </div>
     </div>
   </div>
 </section>

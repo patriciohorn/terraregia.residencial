@@ -1,29 +1,25 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
-import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
-// import { Image } from 'astro:assets';
-// import { Badge } from '@/components/ui/badge';
+import { renderRichText } from '@storyblok/js';
+import { Image } from 'astro:assets';
+import { Badge } from '@/components/ui/badge';
 const { blok } = Astro.props;
-const coverImage = blok.cover_image[0];
-// import ProjectDetails from '@/storyblok/ProjectDetails.astro';
+
+import { BadgePercent } from 'lucide-react';
+import ProjectDetails from '@/storyblok/ProjectDetails.astro';
+import Amenities from '@/components/Amenities.astro';
+import SecondaryImages from '@/components/SecondaryImages.astro';
 ---
 
-<main {...storyblokEditable(blok)}>
-  {
-    blok.body?.map((blok: any) => {
-      return <StoryblokComponent blok={blok} />;
-    })
-  }
-</main>
-<!-- 
 <section {...storyblokEditable(blok)}>
   <div class="container py-8 sm:py-16">
-    <h1 class="text-4xl sm:text-7xl text-black font-heading">{blok.titulo}</h1>
-    <div class="mt-12 grid sm:grid-cols-[2fr_1.6fr] gap-x-8 gap-y-4">
+    <h1 class="text-4xl sm:text-7xl text-black font-heading">{blok.nombre_proyecto}</h1>
+    <div class="mt-12 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
+      <!-- Hero -->
       <div class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">
         <Image
-          src={coverImage.image.filename}
-          alt={coverImage.image.alt}
+          src={blok.imagen_portada.filename}
+          alt={blok.nombre_proyecto}
           class="w-full h-full object-cover"
           loading="eager"
           width="664"
@@ -31,12 +27,42 @@ const coverImage = blok.cover_image[0];
           format="webp"
         />
         <Badge className="absolute bottom-3 left-2.5 text-sm sm:text-base" client:visible>
-          {coverImage.badge}
+          {blok.tag_portada}
         </Badge>
       </div>
       <div class="flex flex-col gap-y-4">
-        <ProjectDetails details={blok.project_info} />
+        <!-- Promocion -->
+        {
+          blok.promocion && (
+            <div class="flex gap-2.5 items-center text-accent-dark font-medium bg-[#e9f5f5] p-4 border border-[#b1ddde] rounded-sm">
+              <div class="w-8 h-8 bg-[#d8efef] rounded-[0.5rem] inline-flex items-center justify-center">
+                <BadgePercent className="w-5 h-5 text-[#29545c]" strokeWidth={1.5} />
+              </div>
+              <p class="text-xs sm:text-sm font-medium text-[#29545c]">{blok.promocion}</p>
+            </div>
+          )
+        }
+
+        <ProjectDetails blok={blok} />
+        {blok.amenidades.length > 0 && <Amenities amenidades={blok.amenidades} />}
       </div>
     </div>
+    <!-- Gallery  -->
+    {
+      blok.galeria_proyecto.length > 0 && (
+        <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
+          <SecondaryImages data={blok.galeria_proyecto} />
+        </div>
+      )
+    }
   </div>
-</section> -->
+</section>
+
+<!-- 
+<main {...storyblokEditable(blok)}>
+  {
+    blok.body?.map((blok: any) => {
+      return <StoryblokComponent blok={blok} />;
+    })
+  }
+</main> -->

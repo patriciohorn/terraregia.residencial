@@ -2,13 +2,12 @@
 import { Image } from 'astro:assets';
 import { MapPin } from 'lucide-react';
 import { Badge } from './ui/badge';
-import { Asterisk } from 'lucide-react';
+
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 const { project, badge, showPreventaBadge, small } = Astro.props;
-console.log(project.cover_image[0].image.filename);
-const coverImage = project.cover_image[0].image;
+const coverImage = project.imagen_portada;
 ---
 
 <article
@@ -36,12 +35,13 @@ const coverImage = project.cover_image[0].image;
           <Badge
             variant="invertedOutline"
             className="absolute top-4 sm:top-6 h-8 left-2.5 sm:left-4 justify-center font-medium z-10 tracking-[0.01em] text-sm min-w-[106px]">
-            {project.tipo_badge}
+            {project.tipo}
           </Badge>
 
-          <Badge className="absolute top-4 sm:top-6 right-2.5 sm:right-4 h-8 justify-center font-medium z-10 tracking-[0.01em] text-sm lg:text-base">
+          <Badge className="absolute top-4 sm:top-6 right-2.5 sm:right-4 h-8 justify-center font-medium z-10 tracking-[0.01em] text-sm">
             {/* <span>Desde $</span> */}
-            {project.precio_badge}
+            {project.precio.includes('$') && 'Desde '}
+            {project.precio}
             {/* <Asterisk className="w-3 h-3 text-neutral-300 -mt-1.5" /> */}
           </Badge>
         </>
@@ -51,7 +51,7 @@ const coverImage = project.cover_image[0].image;
             variant="invertedOutline"
             className="absolute top-4 h-8 left-2.5 sm:left-4 justify-center font-medium z-10 tracking-[0.01em] text-sm min-w-[106px]"
             client:visible>
-            {project.tipo_badge}
+            {project.tipo}
           </Badge>
         </>
       )
@@ -61,7 +61,7 @@ const coverImage = project.cover_image[0].image;
     <div class={cn(small ? '' : 'flex flex-col gap-y-1')}>
       <h3
         class={cn(`text-xl font-heading tracking-[0.01em]`, small ? 'sm:text-xl' : 'sm:text-2xl')}>
-        {project.titulo}
+        {project.nombre_proyecto}
       </h3>
       <div class="flex gap-1 items-center text-[#827D7D]">
         <MapPin className={cn(`w-auto`, small ? 'h-3' : 'h-4')} />
@@ -88,7 +88,7 @@ const coverImage = project.cover_image[0].image;
   <!-- <a href={`/proyectos/${project.slug}`}>
     <span class="absolute z-10 -inset-4"></span>
   </a> -->
-  <a href={``}>
+  <a href={`/proyectos/${project.slug}`}>
     <span class="absolute z-10 -inset-4"></span>
   </a>
 </article>

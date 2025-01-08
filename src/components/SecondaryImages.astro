@@ -2,22 +2,24 @@
 import { Image } from 'astro:assets';
 import { Badge } from '@/components/ui/badge';
 
-const { images, amenidades } = Astro.props;
+const { data } = Astro.props;
+console.log(data);
 ---
 
 {
-  images &&
-    images.map((image: any, idx: any) => (
+  data &&
+    data.map((item: any) => (
       <div class="overflow-hidden shadow-sm rounded-md aspect-square relative">
         <Image
-          src={image}
-          alt="Foto de proyecto"
+          src={item.imagen.filename}
+          alt={`Foto de ${item.tag}`}
           class="w-full h-full object-cover"
           loading="eager"
           format="webp"
+          inferSize
         />
         <Badge className="absolute bottom-2.5 left-2.5" client:visible>
-          {amenidades[idx]}
+          {item.tag}
         </Badge>
       </div>
     ))

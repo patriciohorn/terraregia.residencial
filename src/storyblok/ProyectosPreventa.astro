@@ -2,7 +2,6 @@
 import { storyblokEditable } from '@storyblok/astro';
 import ProjectCard from '@/components/ProjectCard.astro';
 const { blok } = Astro.props;
-
 let projects = blok.projects;
 ---
 
@@ -17,7 +16,7 @@ let projects = blok.projects;
       {
         projects.length &&
           projects.map((project: any) => {
-            // project.content.slug = project.slug;
+            project.content.slug = project.slug;
             return (
               <li>
                 <ProjectCard project={project.content} badge={true} showPreventaBadge={true} />
