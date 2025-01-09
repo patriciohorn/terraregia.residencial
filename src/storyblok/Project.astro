@@ -1,14 +1,15 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
-import { renderRichText } from '@storyblok/js';
+
 import { Image } from 'astro:assets';
 import { Badge } from '@/components/ui/badge';
-const { blok } = Astro.props;
 
 import { BadgePercent } from 'lucide-react';
 import ProjectDetails from '@/storyblok/ProjectDetails.astro';
 import Amenities from '@/components/Amenities.astro';
 import SecondaryImages from '@/components/SecondaryImages.astro';
+import ServiciosCardsContainer from '@/components/ServiciosCardsContainer.astro';
+const { blok } = Astro.props;
 ---
 
 <section {...storyblokEditable(blok)}>
@@ -30,6 +31,7 @@ import SecondaryImages from '@/components/SecondaryImages.astro';
           {blok.tag_portada}
         </Badge>
       </div>
+      <!-- Project Info -->
       <div class="flex flex-col gap-y-4">
         <!-- Promocion -->
         {
@@ -50,19 +52,22 @@ import SecondaryImages from '@/components/SecondaryImages.astro';
     <!-- Gallery  -->
     {
       blok.galeria_proyecto.length > 0 && (
-        <div class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
+        <section class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
           <SecondaryImages data={blok.galeria_proyecto} />
-        </div>
+        </section>
       )
     }
+
+    <!-- Servicios -->
+    <section class="py-16 sm:py-28">
+      {
+        blok.blocks &&
+          blok.blocks.map((innerBlok: any) => {
+            if (innerBlok.component === 'serviciosCardsContainer') {
+              return <ServiciosCardsContainer blok={innerBlok} />;
+            }
+          })
+      }
+    </section>
   </div>
 </section>
-
-<!-- 
-<main {...storyblokEditable(blok)}>
-  {
-    blok.body?.map((blok: any) => {
-      return <StoryblokComponent blok={blok} />;
-    })
-  }
-</main> -->

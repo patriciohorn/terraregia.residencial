@@ -1,26 +1,41 @@
 ---
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Backpack, CircleCheck, ShoppingCart, HeartPulse } from 'lucide-react';
 
-const {service} = Astro.props
+const { blok } = Astro.props;
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 ---
 
-
-<Card>
-  <CardHeader>
-    <CardTitle>{service}</CardTitle>
-    <!-- <CardDescription>Card Description</CardDescription> -->
+<Card className="rounded-md bg-black text-white">
+  <CardHeader className="space-y-4">
+    <div class="inline-flex items-center justify-center rounded-sm w-12 h-12 bg-white/5">
+      {
+        blok.titulo.toLowerCase() === 'colegios' && (
+          <Backpack color="#fff" size={32} strokeWidth={1.5} />
+        )
+      }
+      {
+        blok.titulo.toLowerCase() === 'plazas comerciales' && (
+          <ShoppingCart size={32} color="#fff" strokeWidth={1.5} />
+        )
+      }
+      {
+        blok.titulo.toLowerCase() === 'centros médicos' && (
+          <HeartPulse size={32} color="#fff" strokeWidth={1.5} />
+        )
+      }
+    </div>
+    <CardTitle className="text-xl font-medium">{blok.titulo}</CardTitle>
   </CardHeader>
   <CardContent>
-    <p>Card Content</p>
+    <ul class="-mt-2">
+      {
+        blok.items.map((item: any) => (
+          <li class="text-neutral-300 leading-7 flex items-center gap-2.5">
+            <CircleCheck size={16} className="text-accent" />
+            {item.servicio}
+          </li>
+        ))
+      }
+    </ul>
   </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
 </Card>
