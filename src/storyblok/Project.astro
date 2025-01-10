@@ -9,6 +9,7 @@ import ProjectDetails from '@/storyblok/ProjectDetails.astro';
 import Amenities from '@/components/Amenities.astro';
 import SecondaryImages from '@/components/SecondaryImages.astro';
 import ServiciosCardsContainer from '@/components/ServiciosCardsContainer.astro';
+import DetallesTerrenos from '@/components/DetallesTerrenos.astro';
 const { blok } = Astro.props;
 ---
 
@@ -58,15 +59,22 @@ const { blok } = Astro.props;
       )
     }
 
+    {
+      blok.blocks?.map((innerBlok: any) => {
+        if (innerBlok.component === 'detalles_terrenos') {
+          return <DetallesTerrenos blok={innerBlok} />;
+        }
+      })
+    }
+
     <!-- Servicios -->
-    <section class="py-16 sm:py-28">
+    <section class="py-8">
       {
-        blok.blocks &&
-          blok.blocks.map((innerBlok: any) => {
-            if (innerBlok.component === 'serviciosCardsContainer') {
-              return <ServiciosCardsContainer blok={innerBlok} />;
-            }
-          })
+        blok.blocks?.map((innerBlok: any) => {
+          if (innerBlok.component === 'serviciosCardsContainer') {
+            return <ServiciosCardsContainer blok={innerBlok} />;
+          }
+        })
       }
     </section>
   </div>

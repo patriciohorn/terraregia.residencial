@@ -11,12 +11,12 @@ export function TipologiaCarousel({ images }) {
     <Carousel className="relative">
       <CarouselContent>
         {images.map((img, idx) => (
-          <CarouselItem key={idx} className="flex items-center justify-center h-52 sm:h-96">
-            <div className="flex items-center justify-center w-full h-full">
+          <CarouselItem key={idx} className="flex items-center justify-center">
+            <div className="flex items-center justify-center aspect-square">
               <img
-                src={img.src}
+                src={img.filename}
                 alt="Foto de tipologia"
-                className="w-full h-full object-contain px-10 sm:px-20"
+                className="w-full h-full object-contain"
               />
             </div>
           </CarouselItem>

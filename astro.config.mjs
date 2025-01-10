@@ -38,7 +38,6 @@ export default defineConfig({
         'project-hero': 'storyblok/ProjectHero',
         'cover-image': 'storyblok/ProjectCover',
         'project-details': 'storyblok/ProjectDetails'
-        // 'promocion-card': 'storyblok/PromocionCard'
       },
       apiOptions: {
         region: 'us'
