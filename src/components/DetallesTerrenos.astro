@@ -12,10 +12,10 @@ console.log(blok);
 <section>
   <div>
     <div
-      class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md border border-neutral-200">
+      class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md shadow-sm">
       <!-- Tipologia  -->
       <div class="flex flex-col justify-between">
-        <h2 class="text-2xl sm:text-[40px] text-black font-medium mb-8">{blok.titulo}</h2>
+        <h2 class="text-2xl sm:text-[40px] text-black font-medium">{blok.titulo}</h2>
         <TipologiaCarousel images={blok.imagenes_carrusel} client:visible />
 
         <!-- Especificaciones -->
