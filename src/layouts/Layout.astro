@@ -43,7 +43,11 @@ const currentPath = Astro.url.pathname;
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
-
+    <script
+      is:inline
+      defer
+      data-domain="terraregiaresidencial.com"
+      src="https://plausible.io/js/script.js"></script>
     <!-- ViewTransitions  -->
     <ViewTransitions />
   </head>
@@ -55,8 +59,3 @@ const currentPath = Astro.url.pathname;
     <Footer />
   </body>
 </html>
-
-<script
-  data-goatcounter="https://patohorn.goatcounter.com/count"
-  async
-  src="//gc.zgo.at/count.js"></script>
