@@ -1,8 +1,0 @@
----
-import ServiceCard from './ServiceCard.astro';
-const { blok } = Astro.props;
----
-
-<div class="grid sm:grid-cols-3 gap-x-8 gap-y-4">
-  {blok.servicios && blok.servicios.map((servicio: any) => <ServiceCard blok={servicio} />)}
-</div>

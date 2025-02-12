@@ -1,81 +1,44 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+// import Amenities from '@/components/Amenities.astro';
+// import SecondaryImages from '@/components/SecondaryImages.astro';
+// import ServiciosCardsContainer from '@/components/ServiciosCardsContainer.astro';
+// import DetallesTerrenos from '@/components/DetallesTerrenos.astro';
+// import Informes from '@/components/Informes.astro';
+import ProjectGallery from '@/storyblok/projects/ProjectGallery.astro';
+import ProjectHero from '@/storyblok/projects/ProjectHero.astro';
+import ServiciosCardsContainer from './projects/ServiciosCardsContainer.astro';
 
-import { Image } from 'astro:assets';
-import { Badge } from '@/components/ui/badge';
-
-import { BadgePercent } from 'lucide-react';
-import ProjectDetails from '@/storyblok/ProjectDetails.astro';
-import Amenities from '@/components/Amenities.astro';
-import SecondaryImages from '@/components/SecondaryImages.astro';
-import ServiciosCardsContainer from '@/components/ServiciosCardsContainer.astro';
-import DetallesTerrenos from '@/components/DetallesTerrenos.astro';
 const { blok } = Astro.props;
+
+const hero = blok.body.find(
+  (obj: any) => obj.component === 'info_general_proyecto'
+);
+const amenidades = blok.body.filter(
+  (obj: any) => obj.component === 'amenidades'
+);
+const gallery = blok.body.find(
+  (obj: any) => obj.component === 'galeria'
+);
+
+const serviciosContent = blok.body.find(
+  (obj: any) => obj.component === 'servicios'
+);
 ---
 
-<section {...storyblokEditable(blok)}>
-  <div class="container py-8 sm:py-16">
-    <h1 class="text-4xl sm:text-7xl text-black font-heading">{blok.nombre_proyecto}</h1>
-    <div class="mt-12 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
-      <!-- Hero -->
-      <div class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">
-        <Image
-          src={blok.imagen_portada.filename}
-          alt={blok.nombre_proyecto}
-          class="w-full h-full object-cover"
-          loading="eager"
-          width="664"
-          height="562"
-          format="webp"
-        />
-        <Badge className="absolute bottom-3 left-2.5 text-sm sm:text-base" client:visible>
-          {blok.tag_portada}
-        </Badge>
-      </div>
-      <!-- Project Info -->
-      <div class="flex flex-col gap-y-4">
-        <!-- Promocion -->
-        {
-          blok.promocion && (
-            <div class="flex gap-2.5 items-center text-accent-dark font-medium bg-[#e9f5f5] p-4 border border-[#b1ddde] rounded-sm">
-              <div class="w-8 h-8 bg-[#d8efef] rounded-[0.5rem] inline-flex items-center justify-center">
-                <BadgePercent className="w-5 h-5 text-[#29545c]" strokeWidth={1.5} />
-              </div>
-              <p class="text-xs sm:text-sm font-medium text-[#29545c]">{blok.promocion}</p>
-            </div>
-          )
-        }
+<section class="container py-8 sm:py-16">
+  <ProjectHero heroContent={hero} amenidadesContent={amenidades} />
+  {gallery && <ProjectGallery data={gallery} />}
 
-        <ProjectDetails blok={blok} />
-        {blok.amenidades.length > 0 && <Amenities amenidades={blok.amenidades} />}
-      </div>
-    </div>
-    <!-- Gallery  -->
-    {
-      blok.galeria_proyecto.length > 0 && (
-        <section class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
-          <SecondaryImages data={blok.galeria_proyecto} />
-        </section>
-      )
-    }
-
-    {
-      blok.blocks?.map((innerBlok: any) => {
-        if (innerBlok.component === 'detalles_terrenos') {
-          return <DetallesTerrenos blok={innerBlok} />;
-        }
-      })
-    }
-
-    <!-- Servicios -->
-    <section class="py-8">
-      {
-        blok.blocks?.map((innerBlok: any) => {
-          if (innerBlok.component === 'serviciosCardsContainer') {
-            return <ServiciosCardsContainer blok={innerBlok} />;
-          }
-        })
-      }
-    </section>
-  </div>
+  {
+    serviciosContent && serviciosContent.servicios.length > 0 && (
+      <ServiciosCardsContainer data={serviciosContent} />
+    )
+  }
+  <!-- {
+    blok.body?.map((blok: any) => {
+      return <StoryblokComponent blok={blok} />;
+    })
+  } -->
 </section>

@@ -1,0 +1,32 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+import { Badge } from '@/components/ui/badge';
+
+const { data } = Astro.props;
+const galeriaItems = data.galeria_items;
+---
+
+<section
+  {...storyblokEditable(data)}
+  class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
+  {
+    galeriaItems.map((item: any) => (
+      <div class="overflow-hidden shadow-sm rounded-md aspect-square relative">
+        <Image
+          src={item.imagen.filename}
+          alt={`Foto de ${item.tag}`}
+          class="w-full h-full object-cover"
+          loading="eager"
+          format="webp"
+          inferSize
+        />
+        <Badge
+          className="absolute bottom-2.5 left-2.5"
+          client:visible>
+          {item.tag}
+        </Badge>
+      </div>
+    ))
+  }
+</section>

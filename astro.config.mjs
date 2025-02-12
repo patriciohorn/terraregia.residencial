@@ -35,27 +35,34 @@ export default defineConfig({
         'politicas-content': 'storyblok/PoliticasContent',
         'promociones-del-mes': 'storyblok/PromocionesDelMes',
         project: 'storyblok/Project',
-        'project-hero': 'storyblok/ProjectHero',
+
         'cover-image': 'storyblok/ProjectCover',
-        'project-details': 'storyblok/ProjectDetails'
+
+        /// Projects
+        info_general_proyecto: 'storyblok/projects/ProjectHero',
+        amenidades: 'storyblok/projects/Amenities',
+        galeria: 'storyblok/projects/ProjectGallery',
+        'project-details': 'storyblok/projects/ProjectDetails',
+        servicios_card_container:
+          'storyblok/projects/ServiciosCardsContainer',
       },
       apiOptions: {
-        region: 'us'
-      }
+        region: 'us',
+      },
     }),
     react(),
     tailwind({
-      applyBaseStyles: false
+      applyBaseStyles: false,
     }),
-    icon()
+    icon(),
   ],
   vite: {
     plugins: [basicSsl()],
     server: {
-      https: true
-    }
+      https: true,
+    },
   },
   image: {
-    remotePatterns: [{ protocol: 'https' }]
-  }
+    remotePatterns: [{ protocol: 'https' }],
+  },
 });

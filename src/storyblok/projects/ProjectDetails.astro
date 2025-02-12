@@ -1,0 +1,27 @@
+---
+const { blok } = Astro.props;
+---
+
+<div
+  class="flex flex-col space-y-2 relative bg-[#D9D9D9] rounded-sm p-4 sm:p-6 shadow-sm">
+  <!-- Promo -->
+
+  <!-- Price -->
+  <div class="relative">
+    <span class="text-sm sm:text-base font-medium text-[#363636]"
+      >{blok.precio.includes('$') ? 'Desde' : ''}</span
+    >
+    <p class="mt-2 text-4xl sm:text-5xl font-heading">
+      {blok.precio}
+    </p>
+    <p
+      class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em]">
+      {blok.descripcion_proyecto}
+    </p>
+  </div>
+  <!-- Note -->
+  <p class="text-xs font-medium text-[#7b7b7b]">
+    * Precios sujetos a cambio sin previo aviso. Sujetos a
+    disponibilidad
+  </p>
+</div>
