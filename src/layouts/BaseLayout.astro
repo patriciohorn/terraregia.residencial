@@ -1,44 +1,62 @@
 ---
-import '../../styles/globals.css'
-import { ViewTransitions } from 'astro:transitions'
+import '../../styles/globals.css';
+import { ViewTransitions } from 'astro:transitions';
+import { useStoryblokApi } from '@storyblok/astro';
 
-import Header from '@/components/Header.astro';
+import Header from '@/storyblok/Header.astro';
 import Footer from '@/components/Footer.astro';
-interface Props {
-	title: string;
-	whatsapp?: string
-}
 
-const { title, whatsapp } = Astro.props;
-const currentPath = Astro.url.pathname
+const storyblokApi = useStoryblokApi();
 
+const { data } = await storyblokApi.get('cdn/stories/header', {
+  version: 'draft',
+  resolve_links: 'url',
+});
+
+const headerContent = data.story.content;
+
+const { title, content, slug } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es-MX">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Encuentra tu espacio ideal para vivir. En ubicaciones con plusvalía en Nuevo León" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Encuentra tu espacio ideal para vivir. En ubicaciones con plusvalía en Nuevo León"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
 
-		<title>{title}</title>
+    <title>{title}</title>
 
-		<!-- ViewTransitions  -->
-		<ViewTransitions />
-
-		
-	</head>
-	<body class="overflow-x-hidden bg-[#F5F5F5]">
-		<Header currentPath={currentPath} whatsapp={whatsapp}/>
-		<main>
-			<slot />
-		</main>
-		<Footer/>
-	</body>
+    <!-- ViewTransitions  -->
+    <ViewTransitions />
+  </head>
+  <body class="overflow-x-hidden bg-[#F5F5F5]">
+    <Header blok={headerContent} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
-

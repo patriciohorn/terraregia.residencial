@@ -1,0 +1,31 @@
+---
+import { useStoryblokApi } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import ProjectFilter from '@/components/project-filter';
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get('cdn/stories', {
+  version: import.meta.env.DEV ? 'draft' : 'published',
+  content_type: 'proyecto',
+});
+
+const proyectos = data.stories.map((story: any) => {
+  return {
+    nombre: story.content.nombre,
+    ubicacion: story.content.ubicacion,
+    precio: story.content.precio,
+    tipo: story.content.tipo,
+    imagen_portada: story.content.imagen_portada,
+    slug: story.slug,
+  };
+});
+
+console.log('POSTS', data.stories);
+---
+
+<BaseLayout>
+  <section class="max-w-7xl mx-auto">
+    <ProjectFilter proyectos={proyectos} client:visible />
+  </section>
+</BaseLayout>

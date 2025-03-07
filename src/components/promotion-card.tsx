@@ -1,74 +1,118 @@
 import { PromoSpec } from './promo-spec';
-import { Asterisk, LandPlot, House, CircleDollarSign, Grid2X2 } from 'lucide-react';
+import {
+  MapPin,
+  Expand,
+  BadgeDollarSign,
+  HandCoins,
+  House,
+  LandPlot,
+} from 'lucide-react';
 import { sluglify } from '@/lib/utils';
-
-export function PromotionCardd({ promotion }: any) {
-  const path = sluglify(
-    promotion.nombre_proyecto
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-  );
+import { cn } from '@/lib/utils';
+import PromotionBannerSm from './promotion-banner-sm';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+export function PromotionCardd({ proyecto, small }: any) {
+  // const path = sluglify(
+  //   promotion.nombre_proyecto
+  //     .toLowerCase()
+  //     .normalize('NFD')
+  //     .replace(/[\u0300-\u036f]/g, '')
+  // );
 
   return (
-    <a href={`/proyectos/${path}`}>
-      <article className="rounded-md overflow-hidden bg-card-foreground shadow-sm group transition-all lg:hover:bg-[#BFDEE3] duration-200 ease-out cursor-pointer p-6 h-full ">
-        <div className="h-[136px] bg-[#BFDEE3] lg:group-hover:bg-black p-6 rounded-[4px] flex flex-col gap-2 justify-center">
-          <p className="text-lg leading-6 font-medium group-hover:text-white text-balance text-[#192a33]">
-            {promotion.promocion}
-          </p>
-          {promotion.detalle_promocion && (
-            <p className="inline-flex items-center text-sm leading-4 tracking-[0.01em] text-[#345c6a] font-medium lg:group-hover:text-white max-w-[20em]">
-              {promotion.detalle_promocion}
-              <span className="-mt-2">
-                <Asterisk className="w-2 h-2" />
-              </span>
-            </p>
-          )}
-        </div>
-        {/* Image Section  */}
-        <div className="mt-2 overflow-hidden aspect-[16/9] rounded-[4px]">
-          <img
-            src={promotion.image.filename}
-            alt={`Imagen de proyecto ${promotion.nombre_proyecto}`}
-            className="w-full h-full object-cover transition-transform duration-500 ease-out lg:group-hover:transform lg:group-hover:translate3d(0, 0, 0) lg:group-hover:scale-105 lg:group-hover:rotateX(0deg) lg:group-hover:rotateY(0deg)"
-          />
-        </div>
-
-        <div>
-          {/* Header Section */}
-          <div className="mt-4">
-            <h3 className="text-xl text-[#292828] font-heading tracking-[0.01em]">
-              {promotion.nombre_proyecto}
-            </h3>
-            <span className="flex items-center text-[#827D7D] text-sm font-medium">
-              {/* <MapPin className="h-3 w-3 mr-1" /> */}
-              {promotion.ubicacion}
-            </span>
+    <a href={`/proyectos/${proyecto.slug}`}>
+      <article className=" group transition-all duration-200 ease-out cursor-pointer">
+        <div
+          className="relative overflow-hidden rounded-md aspect-[3/2] p-4 flex flex-col justify-between"
+          style={{
+            backgroundImage: `url(${proyecto.content.imagen_portada.filename})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}>
+          <div className="bg-gradient-to-t from-black/60 from-5% via-transparent to-transparent absolute w-full h-full inset-0"></div>
+          <div className="bg-gradient-to-bl from-black/40 from-5% via-transparent to-transparent absolute w-full h-full inset-0"></div>
+          <div className="flex justify-between gap-x-8">
+            <PromotionBannerSm
+              promocion={proyecto.content.promociones[0]}
+            />
+            {proyecto.content.promociones[0].area.length > 0 && (
+              <div className="flex flex-col items-center h-fit z-20">
+                <span className="text-xs text-neutral-100 mb-0.5">
+                  desde
+                </span>
+                <div className="flex gap-2">
+                  {' '}
+                  <Expand
+                    size={18}
+                    className="flex-shrink-0 text-white"
+                    strokeWidth={2}
+                  />
+                  <span className="leading-4 text-white font-heading">
+                    {proyecto.content.promociones[0].area}m²
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
-          <ul className="mt-6 space-y-2.5">
-            {promotion.tipo_propiedad && (
-              <li className="flex items-center gap-2">
-                <House size={16} className="w-5 h-5 text-[#676262]" />{' '}
-                <span className="text-sm font-medium text-[#676262]">
-                  {promotion.tipo_propiedad}
-                </span>
-              </li>
+          <div className="flex justify-between text-white mb-4 z-20">
+            {proyecto.content.promociones[0].mensualidades.length >
+              0 && (
+              <div className="flex items-center">
+                <div className="flex flex-col">
+                  <span className="text-neutral-100 text-sm">
+                    Mensualidades desde
+                  </span>
+                  <span className="leading-4 font-heading text-2xl">
+                    {proyecto.content.promociones[0].mensualidades}
+                  </span>
+                </div>
+              </div>
             )}
-            {promotion.area && (
-              <li className="flex items-center gap-2">
-                <Grid2X2 size={16} className="w-5 h-5 text-[#676262]" />{' '}
-                <span className="text-sm font-medium text-[#676262]">{promotion.area}</span>
-              </li>
-            )}
-            {promotion.precio && (
-              <li className="flex items-center gap-2">
-                <CircleDollarSign size={16} className="w-5 h-5 text-[#676262]" />{' '}
-                <span className="text-sm font-medium text-[#676262]">{promotion.precio}</span>
-              </li>
-            )}
-          </ul>
+            <div className="flex flex-col ml-auto">
+              <span className="text-neutral-100 text-sm">
+                Terrenos residenciales desde
+              </span>
+              <span className="leading-4 text-2xl font-heading text-right">
+                {proyecto.content.precio}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 flex flex-row justify-between items-center">
+          <div className={cn(small ? '' : 'flex flex-col gap-y-1')}>
+            <h3
+              className={cn(
+                `text-xl font-heading tracking-[0.01em] leading-4`,
+                small ? 'sm:text-xl' : 'sm:text-2xl'
+              )}>
+              {proyecto.content.nombre}
+            </h3>
+            <div className="flex gap-1 items-center text-[#827D7D]">
+              <MapPin
+                className={cn(`w-auto`, small ? 'h-3' : 'h-4')}
+              />
+              <p className="text-sm font-medium">
+                {proyecto.content.ubicacion}
+              </p>
+            </div>
+          </div>
+
+          {small ? (
+            <Button
+              variant="outline"
+              className="cursor-pointer text-sm h-10 sm:h-10 lg:group-hover:bg-black lg:group-hover:text-white transition-colors duration-300 ease-in-out">
+              Ver más
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              className="cursor-pointer h-10 sm:h-12 sm:w-[140px] lg:group-hover:bg-black lg:group-hover:text-white transition-colors duration-300 ease-in-out">
+              Ver más
+            </Button>
+          )}
         </div>
       </article>
     </a>

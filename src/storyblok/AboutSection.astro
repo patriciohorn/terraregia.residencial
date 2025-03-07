@@ -4,7 +4,7 @@ import { renderRichText } from '@storyblok/js';
 import { Button } from '@/components/ui/button';
 import { ArrowUpRight } from 'lucide-react';
 const { blok } = Astro.props;
-const renderedRichText = renderRichText(blok.description);
+const renderedRichText = renderRichText(blok.descripcion);
 ---
 
 <section {...storyblokEditable(blok)} class="py-12 sm:pt-24 sm:pb-28">
@@ -13,44 +13,61 @@ const renderedRichText = renderRichText(blok.description);
       <div>
         <div>
           <h2 class="relative text-3xl sm:text-5xl font-heading mb-6">
-            {blok.headline}
+            {blok.titulo}
           </h2>
           <div
             class="text-neutral-500 prose lg:prose-lg lg:leading-6"
             set:html={renderedRichText}
           />
         </div>
-        <a class="flex group mt-6 sm:hidden" href="https://terraregia.com/" target="_blank">
+        <a
+          class="flex group mt-6 sm:hidden"
+          href={blok.boton_link}
+          target="_blank">
           <Button
             className="bg-[#D9D9D9] text-black group-hover:text-white group-hover:bg-black text-base font-medium"
             client:visible>
-            Conoce más de Terra Regia
+            {blok.boton_texto}
           </Button>
-          <Button size={'icon'} className="bg-[#D9D9D9]  group-hover:bg-black" client:visible>
-            <ArrowUpRight className="text-black group-hover:text-white " />
+          <Button
+            size={'icon'}
+            className="bg-[#D9D9D9]  group-hover:bg-black"
+            client:visible>
+            <ArrowUpRight
+              className="text-black group-hover:text-white "
+            />
           </Button>
         </a>
       </div>
       <ul class="grid grid-cols-3 items-center gap-x-6 sm:gap-x-8">
         {
-          blok.stats.map((stat: any) => (
+          blok.stats.map((item: any) => (
             <li class="flex flex-col text-center gap-2">
-              <span class="text-5xl sm:text-7xl font-heading">{stat.number}</span>
+              <span class="text-5xl sm:text-7xl font-heading">
+                {item.stat}
+              </span>
               <span class="text-sm sm:text-base text-neutral-500 h-[60px] sm:h-8">
-                {stat.label}
+                {item.descripcion}
               </span>
             </li>
           ))
         }
       </ul>
     </div>
-    <a class="hidden sm:inline-flex group mt-8" href="https://terraregia.com/" target="_blank">
+    <a
+      class="hidden sm:inline-flex group mt-8"
+      href={blok.boton_link}
+      target="_blank">
       <Button
         className="bg-[#D9D9D9] text-black group-hover:text-white group-hover:bg-black text-base font-medium">
-        Conoce más de Terra Regia
+        {blok.boton_texto}
       </Button>
-      <Button size={'icon'} className="bg-[#D9D9D9]  group-hover:bg-black">
-        <ArrowUpRight className="text-black group-hover:text-white " />
+      <Button
+        size={'icon'}
+        className="bg-[#D9D9D9]  group-hover:bg-black">
+        <ArrowUpRight
+          className="text-black group-hover:text-white "
+        />
       </Button>
     </a>
   </div>

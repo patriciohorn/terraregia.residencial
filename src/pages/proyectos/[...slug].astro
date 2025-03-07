@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 
   const links = await storyblokApi.getAll('cdn/links', {
     version: 'draft',
-    starts_with: 'proyectos/',
+    starts_with: 'proyectos',
   });
 
   return links
@@ -21,6 +21,7 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+
 const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(
   `cdn/stories/proyectos/${slug}`,

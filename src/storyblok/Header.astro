@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import { cn } from '@/lib/utils';
+import { MobileNav } from '@/components/mobile-nav';
+import { Link } from '@/components/link';
+import { Icon } from 'astro-icon/components';
+const { blok } = Astro.props;
+---
+
+<header class="py-8">
+  <nav
+    class="container flex items-center justify-between h-14"
+    aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/">
+        <span class="sr-only">Logo Terra Regia</span>
+        <Image
+          src={blok.logo.filename}
+          alt={blok.logo.alt}
+          class="h-full w-full max-w-36"
+          inferSize
+          loading="eager"
+          format="webp"
+        />
+      </a>
+    </div>
+
+    <div class="lg:hidden flex">
+      <MobileNav blok={blok} whatsapp={blok.whatsapp} client:load />
+    </div>
+
+    <div class="hidden lg:flex lg:gap-x-10">
+      {
+        blok.navegacion.map((item: any) => (
+          <a href={item.path} class={cn(`font-medium relative`)}>
+            {item.texto}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4">
+      <div class="hidden sm:flex sm:gap-2">
+        {
+          blok.links_social_media.map((item: any) => (
+            <Link
+              href={item.link}
+              size="icon"
+              className="h-8 w-8 shadow-sm"
+              target="_blank">
+              <Image
+                src={item.icono}
+                alt={item.titulo}
+                width="16"
+                height="16"
+              />
+            </Link>
+          ))
+        }
+      </div>
+      <Link
+        href={`https://api.whatsapp.com/send/?phone=${blok.whatsapp}`}
+        size="sm"
+        className="group text-base bg-[hsl(142,70%,49%)] group-hover:bg-[#1c1e21] text-[hsl(142,71%,23%)]  hover:text-white shadow-sm"
+        target="_blank">
+        <Icon
+          name="whatsapp"
+          class="w-4 h-4 mr-2 text-[hsl(142,71%,23%)] group-hover:text-white"
+        />
+        Contacto
+      </Link>
+    </div>
+  </nav>
+</header>

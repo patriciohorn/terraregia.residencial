@@ -1,16 +1,24 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
 import { PromocionesCarousel } from '@/components/promo-carousel';
+import Proyecto from './Proyecto.astro';
 
 const { blok } = Astro.props;
-const promociones = blok.promociones;
+console.log(blok);
 ---
 
 <section {...storyblokEditable(blok)} class="py-12 sm:py-16">
   <div class="container py-12 sm:py-16">
-    <h2 class="font-medium font-heading text-3xl sm:text-5xl leading-[1.1]">{blok.headline}</h2>
+    <h2
+      class="font-heading text-3xl sm:text-6xl leading-4 tracking-tight">
+      {blok.titulo}
+    </h2>
+    <div></div>
     <div class="mt-6 sm:mt-16">
-      <PromocionesCarousel promotions={promociones} client:visible />
+      <PromocionesCarousel
+        proyectos={blok.proyectos}
+        client:visible
+      />
     </div>
   </div>
 </section>

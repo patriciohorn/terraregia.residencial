@@ -22,10 +22,15 @@ export default defineConfig({
         // components goes here
         page: 'storyblok/Page',
         hero: 'storyblok/Hero',
-        'about-section': 'storyblok/AboutSection',
-        'proyectos-destacados': 'storyblok/ProyectosDestacados',
-        'proyectos-preventa': 'storyblok/ProyectosPreventa',
-        'logo-cloud': 'storyblok/LogoCloud',
+        header: 'storyblok/Header',
+        barra_navegacion: 'storyblok/BarraNavegacion',
+        acerca: 'storyblok/AboutSection',
+        logos: 'storyblok/LogoCloud',
+        proyecto: 'storyblok/Proyecto',
+        proyectos_destacados: 'storyblok/ProyectosDestacados',
+        proyectos_preventa: 'storyblok/ProyectosPreventa',
+        promociones: 'storyblok/Promociones',
+
         'proyectos-presupuesto': 'storyblok/ProyectosPresupuesto',
         'hero-recomienda-y-gana': 'storyblok/Hero',
         'grid-3-cols': 'storyblok/Grid3Cols',
@@ -33,7 +38,7 @@ export default defineConfig({
         'recomienda-form': 'storyblok/RecomiendaForm',
         'inversion-content': 'storyblok/InversionContent',
         'politicas-content': 'storyblok/PoliticasContent',
-        'promociones-del-mes': 'storyblok/PromocionesDelMes',
+        // 'promociones-del-mes': 'storyblok/PromocionesDelMes',
         project: 'storyblok/Project',
 
         'cover-image': 'storyblok/ProjectCover',
