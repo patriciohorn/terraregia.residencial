@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import ProjectCard from './project-card';
 import { Button } from './ui/button';
-import { Search } from 'lucide-react';
 
-const ProjectFilter = ({ proyectos }: any) => {
+const ProjectFilter = ({ proyectos, imagenFiltro }: any) => {
   const [selectedUbicaciones, setSelectedUbicaciones] = useState([]);
   const [selectedTipos, setSelectedTipos] = useState([]);
   const [selectedPrecios, setSelectedPrecios] = useState([]);
-
+  console.log('BLOK');
   const ubicaciones = [
     ...new Set(proyectos.map((proyecto: any) => proyecto.ubicacion)),
   ];
@@ -25,6 +24,7 @@ const ProjectFilter = ({ proyectos }: any) => {
         : [...prev, value]
     );
   }
+
   function handleTipo(value: any) {
     setSelectedTipos((prev: any) =>
       prev.includes(value)
@@ -33,6 +33,16 @@ const ProjectFilter = ({ proyectos }: any) => {
     );
   }
 
+  function handlePrecio(value: any) {
+    setSelectedPrecios((prev: any) =>
+      prev.includes(value)
+        ? prev.filter((item: string) => item !== value)
+        : [...prev, value]
+    );
+  }
+
+  console.log(selectedPrecios);
+
   const filteredProyectos = proyectos.filter((proyecto: any) => {
     const ubicacionMatch =
       selectedUbicaciones.length === 0 ||
@@ -40,56 +50,83 @@ const ProjectFilter = ({ proyectos }: any) => {
     const tipoMatch =
       selectedTipos.length === 0 ||
       selectedTipos.includes(proyecto.tipo.toString());
-    return ubicacionMatch && tipoMatch;
+    const preciosMatch =
+      selectedPrecios.length === 0 ||
+      selectedPrecios.some((precio: string) => {
+        const precioFilter = Number(precio.replace(/[^0-9.]/g, ''));
+        const proyectoPrice = Number(
+          proyecto.precio.replace(/[^0-9.]/g, '')
+        );
+
+        const convertedProyectoPrice = proyecto.precio.includes('MDP')
+          ? Math.floor(proyectoPrice)
+          : Math.floor(proyectoPrice / 100000) * 100000;
+
+        return convertedProyectoPrice === precioFilter;
+      });
+
+    return ubicacionMatch && tipoMatch && preciosMatch;
   });
 
+  const backgroundUrl = imagenFiltro.filename;
+  console.log(`'${backgroundUrl}'`);
   return (
     <>
-      <div className="mb-6 flex flex-wrap justify-between p-6 border rounded-sm bg-gradient-to-b from-accent to-accent-dark">
-        <div>
-          <p className="mb-2">Ubicaciones</p>
-          <div className="flex gap-2">
-            {ubicaciones.map((ubicacion: any, id: number) => (
-              <Button
-                key={id}
-                size="sm"
-                variant={
-                  selectedUbicaciones.includes(ubicacion)
-                    ? 'selected'
-                    : 'unselected'
-                }
-                onClick={() => handleLocation(ubicacion)}>
-                {ubicacion}
-              </Button>
-            ))}
+      <div className={`mb-6  gap-y-4 border rounded-sm `}>
+        <div className="flex flex-wrap justify-between bg-[#e8eaeb] border border-[##f7f8f8] p-6 rounded">
+          <div>
+            <p className="mb-1 text-[#030405]">Ubicaciones</p>
+            <div className="flex gap-2 flex-wrap">
+              {ubicaciones.map((ubicacion: any, id: number) => (
+                <Button
+                  key={id}
+                  size="sm"
+                  variant={
+                    selectedUbicaciones.includes(ubicacion)
+                      ? 'selected'
+                      : 'unselected'
+                  }
+                  onClick={() => handleLocation(ubicacion)}>
+                  {ubicacion}
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <p className="mb-2">Tipo de propiedad</p>
-          <div className="flex gap-2">
-            {tipos.map((tipo, id) => (
-              <Button
-                key={id}
-                size="sm"
-                variant={
-                  selectedTipos.includes(tipo)
-                    ? 'selected'
-                    : 'unselected'
-                }
-                onClick={() => handleTipo(tipo)}>
-                {tipo as String}
-              </Button>
-            ))}
+          <div>
+            <p className="mb-1 text-[#030405]">Tipo de propiedad</p>
+            <div className="flex gap-2 flex-wrap">
+              {tipos.map((tipo, id) => (
+                <Button
+                  key={id}
+                  size="sm"
+                  variant={
+                    selectedTipos.includes(tipo)
+                      ? 'selected'
+                      : 'unselected'
+                  }
+                  onClick={() => handleTipo(tipo)}>
+                  {tipo as String}
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <p className="mb-2">Costo</p>
-          <div className="flex gap-2">
-            {precios.map((precio, id) => (
-              <Button key={id} size="sm" variant="secondary">
-                ${precio as String}
-              </Button>
-            ))}
+          <div>
+            <p className="mb-1 text-[#030405]">Costo</p>
+            <div className="flex gap-2 flex-wrap">
+              {precios.map((precio, id) => (
+                <Button
+                  key={id}
+                  size="sm"
+                  variant={
+                    selectedPrecios.includes(precio)
+                      ? 'selected'
+                      : 'unselected'
+                  }
+                  onClick={() => handlePrecio(precio)}>
+                  ${precio as String}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -101,9 +138,13 @@ const ProjectFilter = ({ proyectos }: any) => {
             ))}
           </ul>
         ) : (
-          <div className="flex flex-col justify-center max-w-5xl mx-auto text-center">
+          <div className="grid place-content-center min-h-[50vh] max-w-xl mx-auto text-center animate-fade-right">
             <span className="text-2xl">😯</span>
-            <p className="text-gray-700 max-w-prose">Parece que no hay resultados pero estamos seguros de que podemos ayudarte a encontrar el lugar perfecto. ¡Prueba con otros filtros!</p>
+            <p className="text-gray-600">
+              Parece que no hay resultados pero estamos seguros de que
+              podemos ayudarte a encontrar el lugar perfecto. ¡Prueba
+              con otros filtros!
+            </p>
           </div>
         )}
       </div>

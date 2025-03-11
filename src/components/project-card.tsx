@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 import { MapPin } from 'lucide-react';
+import { Badge } from './ui/badge';
 
 const ProjectCard = ({ proyecto, small }: any) => {
   return (
@@ -16,6 +17,18 @@ const ProjectCard = ({ proyecto, small }: any) => {
           className="w-full h-full object-cover transition-transform duration-500 ease-in-out lg:group-hover:transform lg:group-hover:translate3d(0, 0, 0) lg:group-hover:scale-105 lg:group-hover:rotateX(0deg) lg:group-hover:rotateY(0deg)"
           style={{ transformStyle: 'preserve-3d' }}
         />
+        <Badge
+          variant="invertedOutline"
+          className="absolute top-4 sm:top-6 h-8 left-2.5 sm:left-4 justify-center font-medium z-10 tracking-[0.01em] text-sm min-w-[106px]">
+          {proyecto.tipo}
+        </Badge>
+
+        <Badge className="absolute top-4 sm:top-6 right-2.5 sm:right-4 h-8 justify-center font-medium z-10 tracking-[0.01em] text-sm">
+          {/* <span>Desde $</span> */}
+          {proyecto.precio.includes('$') && 'Desde '}
+          {proyecto.precio}
+          {/* <Asterisk className="w-3 h-3 text-neutral-300 -mt-1.5" /> */}
+        </Badge>
       </div>
       <div className="mt-4 flex flex-row justify-between items-center">
         <div className={cn(small ? '' : 'flex flex-col gap-y-1')}>
