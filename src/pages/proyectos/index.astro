@@ -1,20 +1,29 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro';
-import ProyectoList from '@/components/ProyectoList.astro';
+
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProjectFilter from '@/components/project-filter';
 const storyblokApi = useStoryblokApi();
-const { data } = await storyblokApi.get('cdn/stories/proyectos', {
+
+const { data } = await storyblokApi.get('cdn/stories/', {
   version: 'draft',
+  content_type: 'proyecto',
 });
-console.log(data.story.content);
-// const imagenFiltro = data.story.content.imagen_filtro;
+
+const proyectos = data.stories.map((story: any) => {
+  return {
+    nombre: story.content.nombre,
+    ubicacion: story.content.ubicacion,
+    precio: story.content.precio,
+    tipo: story.content.tipo,
+    imagen_portada: story.content.imagen_portada,
+    slug: story.slug,
+  };
+});
 ---
 
-<BaseLayout>
+<BaseLayout title="Terra Regia Residencial | Proyectos">
   <section class="max-w-7xl mx-auto px-6 sm:px-0">
-    <ProyectoList
-      imagenFiltro={data.story.content.body[0].imagen_filtro}
-    />
+    <ProjectFilter proyectos={proyectos} client:visible />
   </section>
 </BaseLayout>

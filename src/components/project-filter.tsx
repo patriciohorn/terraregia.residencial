@@ -2,11 +2,11 @@ import { useState } from 'react';
 import ProjectCard from './project-card';
 import { Button } from './ui/button';
 
-const ProjectFilter = ({ proyectos, imagenFiltro }: any) => {
+const ProjectFilter = ({ proyectos }: any) => {
   const [selectedUbicaciones, setSelectedUbicaciones] = useState([]);
   const [selectedTipos, setSelectedTipos] = useState([]);
   const [selectedPrecios, setSelectedPrecios] = useState([]);
-  console.log('BLOK');
+
   const ubicaciones = [
     ...new Set(proyectos.map((proyecto: any) => proyecto.ubicacion)),
   ];
@@ -68,65 +68,61 @@ const ProjectFilter = ({ proyectos, imagenFiltro }: any) => {
     return ubicacionMatch && tipoMatch && preciosMatch;
   });
 
-  const backgroundUrl = imagenFiltro.filename;
-  console.log(`'${backgroundUrl}'`);
   return (
     <>
-      <div className={`mb-6  gap-y-4 border rounded-sm `}>
-        <div className="flex flex-wrap justify-between bg-[#e8eaeb] border border-[##f7f8f8] p-6 rounded">
-          <div>
-            <p className="mb-1 text-[#030405]">Ubicaciones</p>
-            <div className="flex gap-2 flex-wrap">
-              {ubicaciones.map((ubicacion: any, id: number) => (
-                <Button
-                  key={id}
-                  size="sm"
-                  variant={
-                    selectedUbicaciones.includes(ubicacion)
-                      ? 'selected'
-                      : 'unselected'
-                  }
-                  onClick={() => handleLocation(ubicacion)}>
-                  {ubicacion}
-                </Button>
-              ))}
-            </div>
+      <div className="mb-6 flex flex-wrap justify-between bg-[#e8eaeb] border border-[#d9dcde] p-6 rounded-md shadow-sm">
+        <div>
+          <p className="mb-1 text-[#030405]">Ubicaciones</p>
+          <div className="flex gap-2 flex-wrap">
+            {ubicaciones.map((ubicacion: any, id: number) => (
+              <Button
+                key={id}
+                size="sm"
+                variant={
+                  selectedUbicaciones.includes(ubicacion)
+                    ? 'selected'
+                    : 'unselected'
+                }
+                onClick={() => handleLocation(ubicacion)}>
+                {ubicacion}
+              </Button>
+            ))}
           </div>
-          <div>
-            <p className="mb-1 text-[#030405]">Tipo de propiedad</p>
-            <div className="flex gap-2 flex-wrap">
-              {tipos.map((tipo, id) => (
-                <Button
-                  key={id}
-                  size="sm"
-                  variant={
-                    selectedTipos.includes(tipo)
-                      ? 'selected'
-                      : 'unselected'
-                  }
-                  onClick={() => handleTipo(tipo)}>
-                  {tipo as String}
-                </Button>
-              ))}
-            </div>
+        </div>
+        <div>
+          <p className="mb-1 text-[#030405]">Tipo de propiedad</p>
+          <div className="flex gap-2 flex-wrap">
+            {tipos.map((tipo, id) => (
+              <Button
+                key={id}
+                size="sm"
+                variant={
+                  selectedTipos.includes(tipo)
+                    ? 'selected'
+                    : 'unselected'
+                }
+                onClick={() => handleTipo(tipo)}>
+                {tipo as String}
+              </Button>
+            ))}
           </div>
-          <div>
-            <p className="mb-1 text-[#030405]">Costo</p>
-            <div className="flex gap-2 flex-wrap">
-              {precios.map((precio, id) => (
-                <Button
-                  key={id}
-                  size="sm"
-                  variant={
-                    selectedPrecios.includes(precio)
-                      ? 'selected'
-                      : 'unselected'
-                  }
-                  onClick={() => handlePrecio(precio)}>
-                  ${precio as String}
-                </Button>
-              ))}
-            </div>
+        </div>
+        <div>
+          <p className="mb-1 text-[#030405]">Costo</p>
+          <div className="flex gap-2 flex-wrap">
+            {precios.map((precio, id) => (
+              <Button
+                key={id}
+                size="sm"
+                variant={
+                  selectedPrecios.includes(precio)
+                    ? 'selected'
+                    : 'unselected'
+                }
+                onClick={() => handlePrecio(precio)}>
+                ${precio as String}
+              </Button>
+            ))}
           </div>
         </div>
       </div>

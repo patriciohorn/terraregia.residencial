@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import { BadgePercent } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import ProjectDetails from '@/storyblok/projects/ProjectDetails.astro';
-import Amenities from '@/storyblok/projects/Amenities.astro';
+// import Amenities from '@/storyblok/Amenities.astro';
 const { heroContent, amenidadesContent } = Astro.props;
 ---
 
@@ -56,11 +56,11 @@ const { heroContent, amenidadesContent } = Astro.props;
         }
 
         <ProjectDetails blok={heroContent} />
-        {
+        <!-- {
           amenidadesContent.length > 0 && (
             <Amenities amenidadesContent={amenidadesContent} />
           )
-        }
+        } -->
       </div>
     </div>
   </div>

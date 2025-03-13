@@ -3,7 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
 } from '@/components/ui/carousel';
 
 export function TipologiaCarousel({ images }) {
@@ -11,7 +11,9 @@ export function TipologiaCarousel({ images }) {
     <Carousel className="relative">
       <CarouselContent>
         {images.map((img, idx) => (
-          <CarouselItem key={idx} className="flex items-center justify-center">
+          <CarouselItem
+            key={idx}
+            className="flex items-center justify-center">
             <div className="flex items-center justify-center aspect-square">
               <img
                 src={img.filename}
@@ -22,8 +24,14 @@ export function TipologiaCarousel({ images }) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious variant="default" className="left-0 -translate-y-5 " />
-      <CarouselNext variant="default" className="right-0 -translate-y-5 " />
+      <CarouselPrevious
+        variant="default"
+        className="left-0 -translate-y-5 "
+      />
+      <CarouselNext
+        variant="default"
+        className="right-0 -translate-y-5 "
+      />
     </Carousel>
   );
 }

@@ -1,0 +1,82 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import { Image } from 'astro:assets';
+import { Badge } from '@/components/ui/badge';
+import ProjectDetails from './projects/ProjectDetails.astro';
+import Amenidades from '@/components/Amenidades.astro';
+const { blok } = Astro.props;
+console.log('servicios', blok.servicios);
+---
+
+<main {...storyblokEditable(blok)} class="container">
+  <section class="py-8 sm:py-16">
+    <h1 class="text-4xl sm:text-7xl text-black font-heading">
+      {blok.nombre}
+    </h1>
+    <div class="mt-12 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
+      <div
+        class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">
+        <Image
+          src={blok.imagen_portada.filename}
+          alt="Image"
+          class="w-full h-full object-cover"
+          loading="eager"
+          inferSize
+          format="webp"
+        />
+        <Badge
+          className="absolute bottom-3 left-2.5 text-sm sm:text-base"
+          client:visible>
+          {blok.badge_imagen_portada}
+        </Badge>
+      </div>
+      <div class="flex flex-col gap-y-4">
+        {
+          blok.promociones?.map((blok: any) => (
+            <StoryblokComponent blok={blok} />
+          ))
+        }
+
+        <ProjectDetails
+          precio={blok.precio}
+          descripcion={blok.descripcion_proyecto}
+        />
+        {blok.amenidades && <Amenidades blok={blok.amenidades} />}
+      </div>
+    </div>
+  </section>
+  {
+    blok.galeria && (
+      <section class="hidden sm:grid sm:grid-cols-4 sm:mt-8 sm:gap-x-7">
+        {blok.galeria.map((blok: any) => {
+          return <StoryblokComponent blok={blok} />;
+        })}
+      </section>
+    )
+  }
+
+  {
+    blok.detalles_proyecto && (
+      <section>
+        <div>
+          {blok.detalles_proyecto.map((blok: any) => (
+            <StoryblokComponent blok={blok} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    blok.servicios && (
+      <section>
+        <div class="py-8 grid sm:grid-cols-3 gap-x-8 gap-y-4">
+          {blok.servicios?.map((blok: any) => (
+            <StoryblokComponent blok={blok} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+</main>

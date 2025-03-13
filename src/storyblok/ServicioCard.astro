@@ -1,0 +1,54 @@
+---
+import {
+  Backpack,
+  CircleCheck,
+  ShoppingCart,
+  HeartPulse,
+  ArrowRight,
+} from 'lucide-react';
+
+const { blok } = Astro.props;
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Image } from 'astro:assets';
+import { storyblokEditable } from '@storyblok/js';
+---
+
+<Card
+  {...storyblokEditable(blok)}
+  className="rounded-md bg-black text-white p-6 border-none shadow-sm">
+  <CardHeader className="space-y-4">
+    <div
+      class="inline-flex items-center justify-center rounded-sm w-12 h-12 bg-white/20">
+      <Image
+        src={blok.icono.filename}
+        alt=`icono ${blok.titulo}`
+        width="32"
+        height="32"
+        class="filter brightness-0 invert"
+      />
+    </div>
+    <CardTitle className="text-xl font-heading tracking-[0.01em]"
+      >{blok.titulo}</CardTitle
+    >
+  </CardHeader>
+  <CardContent className="mt-4 p-0">
+    <ul class="space-y-1">
+      {
+        blok.servicio_item.map((item: any) => (
+          <li class="text-neutral-100 leading-6 flex items-center gap-2">
+            <CircleCheck
+              size={18}
+              className="fill-accent text-black"
+            />
+            {item.servicio}
+          </li>
+        ))
+      }
+    </ul>
+  </CardContent>
+</Card>

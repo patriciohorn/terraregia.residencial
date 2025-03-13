@@ -1,0 +1,30 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+
+import { BadgePercent } from 'lucide-react';
+const { blok } = Astro.props;
+console.log(blok);
+---
+
+<div
+  {...storyblokEditable(blok)}
+  class="flex gap-2.5 items-center text-accent-dark font-medium bg-[#e9f5f5] p-4 border border-[#b1ddde] rounded-sm shadow-sm">
+  <div
+    class="flex-shrink-0 self-start w-8 h-8 bg-[#d8efef] rounded-[0.5rem] inline-flex items-center justify-center">
+    <BadgePercent
+      className="w-5 h-5 text-[#192a33]"
+      strokeWidth={1.5}
+    />
+  </div>
+  <div class="">
+    <p class="text-sm sm:text-sm font-medium text-[#29545c]">
+      {blok.titulo_promocion}
+    </p>
+    <p class="leading-6 text-[#192a33] font-medium max-w-prose">
+      {blok.descripcion_promocion}
+    </p>
+    <p class="text-sm font-medium text-balance text-[#345c6a]">
+      {blok.nota_promocion}
+    </p>
+  </div>
+</div>

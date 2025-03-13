@@ -1,0 +1,17 @@
+---
+import { storyblokEditable } from '@storyblok/js';
+import { Image } from 'astro:assets';
+const { blok } = Astro.props;
+---
+
+<li {...storyblokEditable(blok)} class="flex items-center gap-2">
+  <Image
+    class="w-8 h-8 text-white inline-flex items-center justify-center"
+    src={blok.icono.filename}
+    alt=""
+    inferSize
+  />
+  <span class="text-sm sm:text-base text-white">
+    {blok.amenidad}
+  </span>
+</li>

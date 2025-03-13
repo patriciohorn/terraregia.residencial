@@ -11,6 +11,7 @@ import netlify from '@astrojs/netlify';
 import storyblok from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
+
 const env = loadEnv('', process.cwd(), 'STORYBLOK');
 
 // https://astro.build/config
@@ -30,6 +31,9 @@ export default defineConfig({
         proyectos_destacados: 'storyblok/ProyectosDestacados',
         proyectos_preventa: 'storyblok/ProyectosPreventa',
         promociones: 'storyblok/Promociones',
+        promociones_proyecto: 'storyblok/PromoBanner',
+        amenidad: 'storyblok/Amenidad',
+        galeria_item: 'storyblok/GalleryItem',
 
         'proyectos-presupuesto': 'storyblok/ProyectosPresupuesto',
         'hero-recomienda-y-gana': 'storyblok/Hero',
@@ -40,12 +44,14 @@ export default defineConfig({
         'politicas-content': 'storyblok/PoliticasContent',
         // 'promociones-del-mes': 'storyblok/PromocionesDelMes',
         project: 'storyblok/Project',
+        detalles_terreno: 'storyblok/DetallesTerreno',
+        servicio_card: 'storyblok/ServicioCard',
 
-        'cover-image': 'storyblok/ProjectCover',
+        // 'cover-image': 'storyblok/ProjectCover',
 
         /// Projects
         info_general_proyecto: 'storyblok/projects/ProjectHero',
-        amenidades: 'storyblok/projects/Amenities',
+
         galeria: 'storyblok/projects/ProjectGallery',
         'project-details': 'storyblok/projects/ProjectDetails',
         servicios_card_container:

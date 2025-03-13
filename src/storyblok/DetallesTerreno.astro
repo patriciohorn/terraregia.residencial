@@ -1,0 +1,39 @@
+---
+import { storyblokEditable, renderRichText } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+import { TipologiaCarousel } from '@/components/tipologia-carousel';
+import VariantFooter from '@/components/VariantFooter.astro';
+const { blok } = Astro.props;
+const renderedRichText = renderRichText(blok.descripcion);
+const medidas = [blok.frente, blok.fondo, blok.area];
+---
+
+<div
+  {...storyblokEditable(blok)}
+  class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-12 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md border border-neutral-200">
+  <!-- Tipologia  -->
+  <div class="">
+    <h2 class="text-2xl sm:text-[40px] text-black font-medium mb-8">
+      {blok.titulo}
+    </h2>
+    <TipologiaCarousel images={blok.imagenes} client:visible />
+    <VariantFooter items={medidas} brochure={blok.brochure.url} />
+  </div>
+  <div
+    class="flex flex-col justify-between px-4 py-6 sm:px-12 sm:pb-12 bg-[#E6E9E9] rounded-sm sm:rounded-md min-h-64 sm:min-h-[468px]">
+    <div class="sm:mt-8 sm:max-h-24 max-w-28 sm:max-w-32 mr-auto">
+      <Image
+        src={blok.logo.filename}
+        alt={blok.logo.alt || 'Logo de proyecto'}
+        class="object-cover w-full h-full"
+        format="webp"
+        inferSize
+      />
+    </div>
+
+    <div
+      class="text-xl sm:text-2xl font-medium"
+      set:html={renderedRichText}
+    />
+  </div>
+</div>

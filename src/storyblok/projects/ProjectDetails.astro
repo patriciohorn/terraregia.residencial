@@ -1,5 +1,5 @@
 ---
-const { blok } = Astro.props;
+const { precio, descripcion } = Astro.props;
 ---
 
 <div
@@ -9,14 +9,14 @@ const { blok } = Astro.props;
   <!-- Price -->
   <div class="relative">
     <span class="text-sm sm:text-base font-medium text-[#363636]"
-      >{blok.precio.includes('$') ? 'Desde' : ''}</span
+      >{precio.includes('$') ? 'Desde' : ''}</span
     >
     <p class="mt-2 text-4xl sm:text-5xl font-heading">
-      {blok.precio}
+      {precio.includes('$') ? precio : 'Próximamente'}
     </p>
     <p
       class="mt-2 text-lg leading-6 font-medium text-[#363636] tracking-[0.01em]">
-      {blok.descripcion_proyecto}
+      {descripcion}
     </p>
   </div>
   <!-- Note -->
