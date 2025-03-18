@@ -4,7 +4,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select';
 
 import { Button } from './ui/button';
@@ -18,27 +18,55 @@ const proyectos = [
   'Montserrat Residencial',
   'Pietralta Castelo',
   'Rincón de la Sierra',
-  'Toscana Residencial'
+  'Toscana Residencial',
 ];
 
-export function Form({ headlineLeft, headlineRight }: any) {
+export function Form({ titulo1, titulo2 }: any) {
   return (
     <div>
       <div className="grid sm:grid-cols-2 gap-x-20 gap-y-12">
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">{headlineLeft}</h2>
+          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">
+            {titulo1}
+          </h2>
           <div className="mt-6 sm:mt-8 space-y-2">
-            <Input type="text" placeholder="Nombre" className="h-12 sm:h-16" />
-            <Input type="email" placeholder="Email" className="h-12 sm:h-16" />
-            <Input type="phone" placeholder="Whatsapp" className="h-12 sm:h-16" />
+            <Input
+              type="text"
+              placeholder="Nombre"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="phone"
+              placeholder="Whatsapp"
+              className="h-12 sm:h-16"
+            />
           </div>
         </div>
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">{headlineRight}</h2>
+          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">
+            {titulo2}
+          </h2>
           <div className="mt-6 sm:mt-8 space-y-2">
-            <Input type="text" placeholder="Nombre" className="h-12 sm:h-16" />
-            <Input type="email" placeholder="Email" className="h-12 sm:h-16" />
-            <Input type="phone" placeholder="Whatsapp" className="h-12 sm:h-16" />
+            <Input
+              type="text"
+              placeholder="Nombre"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="phone"
+              placeholder="Whatsapp"
+              className="h-12 sm:h-16"
+            />
           </div>
         </div>
       </div>

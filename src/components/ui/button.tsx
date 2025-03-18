@@ -18,9 +18,9 @@ const buttonVariants = cva(
           'bg-white text-black shadow-sm hover:bg-black hover:text-white',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
-        unselected: 'bg-white text-black shadow-sm border',
+        unselected: 'bg-background text-black shadow-sm border',
         selected:
-          'bg-[#bedee3] text-white shadow-sm text-[#1a2a33] border border-[#92c5ce]',
+          'bg-[#dceef1] text-white shadow-sm text-[#192b33] border border-[#5ca6b4]',
       },
       size: {
         default: 'h-12 px-6 py-3',

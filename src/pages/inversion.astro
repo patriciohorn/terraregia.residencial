@@ -1,0 +1,19 @@
+---
+import { useStoryblokApi } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get('cdn/stories/inversion', {
+  version: import.meta.env.DEV ? 'draft' : 'published',
+});
+const story = data.story;
+---
+
+<BaseLayout>
+  <section class="pt-10 pb-16">
+    <div class="container">
+      <StoryblokComponent blok={story.content} />
+    </div>
+  </section>
+</BaseLayout>

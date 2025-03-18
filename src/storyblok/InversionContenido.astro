@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import { InversionAccordion } from '@/components/inversion-accordion';
+const { blok } = Astro.props;
+console.log(blok.acordeon_inversion);
+---
+
+<section class="mt-16">
+  <div class="grid sm:grid-cols-[2fr_3fr] sm:gap-20">
+    <div>
+      <h2 class="font-heading text-3xl sm:text-[44px] leading-[1.1]">
+        {blok.titulo}
+      </h2>
+      <div
+        class="hidden sm:flex sm:mt-6 sm:rounded-md sm:overflow-hidden sm:shadow-sm">
+        <Image
+          src={blok.imagen_seccion.filename}
+          alt="Proyecto Terra Regia"
+          format="webp"
+          inferSize
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="mt-6 sm:mt-16">
+      <InversionAccordion
+        items={blok.acordeon_inversion}
+        client:load
+      />
+    </div>
+  </div>
+</section>

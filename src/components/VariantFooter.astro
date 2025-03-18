@@ -6,15 +6,17 @@ const titles = ['Frente', 'Fondo', 'Área'];
 ---
 
 <div
-  class="mt-4 flex flex-wrap items-center w-full justify-center sm:justify-center gap-y-6 gap-x-8 sm:max-w-sm sm:mx-auto">
+  class="mt-4 sm:mt-8 flex flex-wrap items-center w-full justify-center sm:justify-center gap-y-6 gap-x-12 sm:max-w-sm sm:mx-auto">
   <div class="flex items-center gap-x-8 justify-between">
     {
       items.map((item: string, idx: number) => (
-        <div class="flex flex-col gap-1 items-center">
-          <h3 class="text-xs text-center sm:text-base font-medium">
+        <div class="flex flex-col items-center">
+          <h3 class="text-sm text-neutral-600 text-center font-medium">
             {titles[idx]}
           </h3>
-          <p class="text-base text-neutral-600">{item}</p>
+          <p class="text-lg font-medium text-black tracking-[0.01em]">
+            {item}
+          </p>
         </div>
       ))
     }
@@ -26,7 +28,7 @@ const titles = ['Frente', 'Fondo', 'Área'];
         target="_blank"
         variant="default"
         className="flex items-center gap-2 text-sm w-fit ">
-        <CloudDownload className="w-4 h-4" />
+        <CloudDownload className="w-5 h-5" />
         <span>Brochure</span>
       </Link>
     )

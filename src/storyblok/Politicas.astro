@@ -1,0 +1,102 @@
+---
+import { storyblokEditable, renderRichText } from '@storyblok/js';
+const { blok } = Astro.props;
+const renderedRichText = renderRichText(blok.contenido);
+---
+
+<section {...storyblokEditable(blok)} class="py-16 flex flex-col">
+  <div class="container">
+    <h1
+      class="text-3xl sm:text-6xl leding-[1.1] text-black font-heading">
+      {blok.titulo}
+    </h1>
+    <div
+      class="mt-12 space-y-8 text-lg text-neutral-600"
+      set:html={renderedRichText}>
+      <!-- <p class="flex items-center gap-1">
+        <span><Asterisk className="text-neutral-600 w-3 h-3" /></span
+        ><span
+          >Aplican restricciones.<span></span>
+          <p>
+            La Promoción tendrá validez siempre y cuando la operación
+            de compra-venta entre el Recomendado y Terra Regia se
+            efectúe en un periodo no mayor a 60 días desde su
+            inscripción en el programa, si el Recomendado realiza su
+            compra después de este periodo la promoción perderá
+            validez y el Recomendante no podrá reclamar el beneficio o
+            incentivo.
+          </p>
+          <p>
+            El Incentivo se paga posterior a la firma de escritura
+            pública de compraventa del Recomendado. Solo pueden
+            participar personas mayores de edad. Cualquier omisión de
+            información en los formatos de registro invalida la
+            participación en la promoción. El formato de recomendación
+            debe presentarse firmado tanto por quien recomienda como
+            por su recomendado al menos 2 días hábiles después de la
+            separación de la vivienda.
+          </p>
+          <p>
+            Promoción no retroactiva. Esta promoción no aplica en caso
+            de tratarse de Recomendados (clientes o prospectos)
+            previamente registrados en nuestro sistema, en caso de
+            haber evidencia documental de que el cliente ya está
+            siendo atendido o fue registrado con anterioridad, no
+            podrá reclamarse el beneficio de esta promoción. Ante
+            cualquier duda, se respetará la información que esté dada
+            de alta en nuestro sistema y en caso de duplicación de
+            registros, se respetará el registro que fue primero en
+            tiempo. El incentivo se emitirá una vez finiquitado el
+            proceso de compra venta y recibido el 100% de los recursos
+            por parte de la institución financiera o directamente del
+            Recomendado. En caso de que el Recomendado llegara a
+            cancelar la compra de la vivienda quedará cancelada
+            también la promoción y el Recomendante no podrá reclamar
+            el incentivo.
+          </p>
+          <p>
+            Al participar en este programa, aceptas los términos y
+            condiciones del mismo.
+          </p>
+          <div class="space-y-1">
+            <p class="font-medium">Promoción base</p>
+            <p>
+              Recomiéndanos con un familiar o amigo y recibirás una
+              tarjeta de regalo de Liverpool con valor de $5,000*
+            </p>
+          </div>
+          <div class="space-y-1">
+            <p class="flex items-center gap-1">
+              <span
+                ><Asterisk
+                  className="text-neutral-600 w-3 h-3"
+                /></span
+              ><span
+                >Aplican términos y condiciones.<span></span>
+                <p class="flex items-center gap-1">
+                  <span
+                    ><Asterisk
+                      className="text-neutral-600 w-3 h-3"
+                    /></span
+                  ><span
+                    >Válido hasta la firma de la escritura del
+                    referido.<span></span>
+                  </span>
+                </p>
+              </span>
+            </p>
+          </div></span>
+      </p> -->
+    </div>
+  </div>
+</section>
+
+<style is:inline>
+  ul,
+  li {
+    list-style: '- ';
+  }
+  ul {
+    padding-left: 12px;
+  }
+</style>

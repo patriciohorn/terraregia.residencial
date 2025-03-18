@@ -5,6 +5,7 @@ import {
   ShoppingCart,
   HeartPulse,
   ArrowRight,
+  Dot,
 } from 'lucide-react';
 
 const { blok } = Astro.props;
@@ -18,37 +19,33 @@ import { Image } from 'astro:assets';
 import { storyblokEditable } from '@storyblok/js';
 ---
 
-<Card
+<div
   {...storyblokEditable(blok)}
-  className="rounded-md bg-black text-white p-6 border-none shadow-sm">
-  <CardHeader className="space-y-4">
-    <div
-      class="inline-flex items-center justify-center rounded-sm w-12 h-12 bg-white/20">
-      <Image
-        src={blok.icono.filename}
-        alt=`icono ${blok.titulo}`
-        width="32"
-        height="32"
-        class="filter brightness-0 invert"
-      />
-    </div>
-    <CardTitle className="text-xl font-heading tracking-[0.01em]"
-      >{blok.titulo}</CardTitle
-    >
-  </CardHeader>
-  <CardContent className="mt-4 p-0">
-    <ul class="space-y-1">
+  class="rounded-md text-white bg-black p-6 shadow-sm flex flex-col">
+  <div
+    class="inline-flex
+   justify-center items-center rounded-sm w-12 h-12 bg-neutral-700">
+    <Image
+      src={blok.icono.filename}
+      alt=`icono ${blok.titulo}`
+      width="36"
+      height="36"
+      class="w-9 h-9 filter brightness-0 invert"
+    />
+  </div>
+  <div class="mt-12">
+    <h3 class="text-xl font-heading">
+      {blok.titulo}
+    </h3>
+    <ul class="mt-2 space-y-1">
       {
         blok.servicio_item.map((item: any) => (
-          <li class="text-neutral-100 leading-6 flex items-center gap-2">
-            <CircleCheck
-              size={18}
-              className="fill-accent text-black"
-            />
+          <li class=" text-neutral-200 tracking-[0.01em] flex items-center gap-2">
+            <ArrowRight size={16} className="" />
             {item.servicio}
           </li>
         ))
       }
     </ul>
-  </CardContent>
-</Card>
+  </div>
+</div>

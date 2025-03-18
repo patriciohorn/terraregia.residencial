@@ -5,6 +5,7 @@ import { MobileNav } from '@/components/mobile-nav';
 import { Link } from '@/components/link';
 import { Icon } from 'astro-icon/components';
 const { blok } = Astro.props;
+console.log(blok);
 ---
 
 <header class="py-8">
@@ -32,7 +33,9 @@ const { blok } = Astro.props;
     <div class="hidden lg:flex lg:gap-x-10">
       {
         blok.navegacion.map((item: any) => (
-          <a href={item.path} class={cn(`font-medium relative`)}>
+          <a
+            href={`/${item.link.cached_url}`}
+            class={cn(`font-medium relative`)}>
             {item.texto}
           </a>
         ))

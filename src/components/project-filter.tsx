@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import ProjectCard from './project-card';
 import { Button } from './ui/button';
+import {
+  MapPin,
+  CircleDollarSign,
+  LandPlot,
+  CircleX,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const ProjectFilter = ({ proyectos }: any) => {
   const [selectedUbicaciones, setSelectedUbicaciones] = useState([]);
@@ -69,82 +76,95 @@ const ProjectFilter = ({ proyectos }: any) => {
   });
 
   return (
-    <>
-      <div className="mb-6 flex flex-wrap justify-between bg-[#e8eaeb] border border-[#d9dcde] p-6 rounded-md shadow-sm">
-        <div>
-          <p className="mb-1 text-[#030405]">Ubicaciones</p>
-          <div className="flex gap-2 flex-wrap">
-            {ubicaciones.map((ubicacion: any, id: number) => (
-              <Button
-                key={id}
-                size="sm"
-                variant={
-                  selectedUbicaciones.includes(ubicacion)
-                    ? 'selected'
-                    : 'unselected'
-                }
-                onClick={() => handleLocation(ubicacion)}>
-                {ubicacion}
-              </Button>
-            ))}
+    <aside className="pt-8 pb-16 grid grid-cols-[0.5fr_2fr] gap-x-10 gap-y-8">
+      <div className="">
+        <div className="flex flex-wrap sm:flex-row items-center justify-between gap-y-8 sm:gap-y-8 bg-card p-4 rounded-md shadow-sm border">
+          <div>
+            <p className="mb-2 text-neutral-600 flex items-center gap-2 text-sm font-medium ">
+              <MapPin size={16} />
+              <span>Ubicaciones</span>
+            </p>
+            <div className="flex gap-2 flex-wrap bg-[#efefef] border p-2 rounded-sm shadow-[inset_0_1px_1px_rgb(0_0_0/0.05)]">
+              {ubicaciones.map((ubicacion: any, id: number) => (
+                <Button
+                  key={id}
+                  size="sm"
+                  variant={
+                    selectedUbicaciones.includes(ubicacion)
+                      ? 'selected'
+                      : 'unselected'
+                  }
+                  onClick={() => handleLocation(ubicacion)}>
+                  {ubicacion}
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <p className="mb-1 text-[#030405]">Tipo de propiedad</p>
-          <div className="flex gap-2 flex-wrap">
-            {tipos.map((tipo, id) => (
-              <Button
-                key={id}
-                size="sm"
-                variant={
-                  selectedTipos.includes(tipo)
-                    ? 'selected'
-                    : 'unselected'
-                }
-                onClick={() => handleTipo(tipo)}>
-                {tipo as String}
-              </Button>
-            ))}
+          <div className="w-full">
+            <p className="mb-2 text-neutral-600 flex items-center gap-2 text-sm font-medium">
+              <LandPlot size={16} />
+              <span>Tipo de propiedad</span>
+            </p>
+            <div className="flex gap-2 flex-wrap bg-[#efefef] border p-2 rounded-sm shadow-[inset_0_1px_1px_rgb(0_0_0/0.05)]">
+              {tipos.map((tipo, id) => (
+                <Button
+                  key={id}
+                  size="sm"
+                  variant={
+                    selectedTipos.includes(tipo)
+                      ? 'selected'
+                      : 'unselected'
+                  }
+                  onClick={() => handleTipo(tipo)}>
+                  {tipo as String}
+                </Button>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <p className="mb-1 text-[#030405]">Costo</p>
-          <div className="flex gap-2 flex-wrap">
-            {precios.map((precio, id) => (
-              <Button
-                key={id}
-                size="sm"
-                variant={
-                  selectedPrecios.includes(precio)
-                    ? 'selected'
-                    : 'unselected'
-                }
-                onClick={() => handlePrecio(precio)}>
-                ${precio as String}
-              </Button>
-            ))}
+          <div>
+            <p className="mb-2 text-neutral-600 flex items-center gap-2 text-sm font-medium">
+              <CircleDollarSign size={16} />
+              <span>Costo</span>
+            </p>
+            <div className="flex gap-2 flex-wrap bg-[#efefef] border p-2 rounded-sm shadow-[inset_0_1px_1px_rgb(0_0_0/0.05)]">
+              {precios.map((precio, id) => (
+                <Button
+                  key={id}
+                  size="sm"
+                  variant={
+                    selectedPrecios.includes(precio)
+                      ? 'selected'
+                      : 'unselected'
+                  }
+                  onClick={() => handlePrecio(precio)}>
+                  {precio as String}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
       <div className="min-h-[80vh]">
         {filteredProyectos.length > 0 ? (
-          <ul className="grid md:grid-cols-2 gap-x-12 gap-y-8 sm:gap-y-12">
+          <ul className="grid sm:grid-cols-2 gap-x-12 gap-y-8 sm:gap-y-14">
             {filteredProyectos.map((proyecto: any) => (
               <ProjectCard key={proyecto.slug} proyecto={proyecto} />
             ))}
           </ul>
         ) : (
           <div className="grid place-content-center min-h-[50vh] max-w-xl mx-auto text-center animate-fade-right">
-            <span className="text-2xl">😯</span>
-            <p className="text-gray-600">
+            <span className="text-3xl mb-4">😯</span>
+            <p className="text-gray-600 text-lg">
               Parece que no hay resultados pero estamos seguros de que
-              podemos ayudarte a encontrar el lugar perfecto. ¡Prueba
-              con otros filtros!
+              podemos ayudarte a encontrar el lugar perfecto{' '}
+              <span className="font-medium">
+                ¡Prueba con otros filtros!
+              </span>
             </p>
           </div>
         )}
       </div>
-    </>
+    </aside>
   );
 };
 
