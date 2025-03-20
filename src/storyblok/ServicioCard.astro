@@ -21,19 +21,19 @@ import { storyblokEditable } from '@storyblok/js';
 
 <div
   {...storyblokEditable(blok)}
-  class="rounded-md text-white bg-black p-6 shadow-sm flex flex-col">
+  class="rounded-md text-white bg-black p-6 shadow-sm flex flex-col gap-6 min-h-64">
   <div
     class="inline-flex
-   justify-center items-center rounded-sm w-12 h-12 bg-neutral-700">
+   justify-center items-center rounded-sm w-16 h-16 bg-neutral-800">
     <Image
       src={blok.icono.filename}
       alt=`icono ${blok.titulo}`
-      width="36"
-      height="36"
-      class="w-9 h-9 filter brightness-0 invert"
+      width="48"
+      height="48"
+      class="w-12 h-12 filter brightness-0 invert"
     />
   </div>
-  <div class="mt-12">
+  <div class="">
     <h3 class="text-xl font-heading">
       {blok.titulo}
     </h3>
@@ -41,7 +41,7 @@ import { storyblokEditable } from '@storyblok/js';
       {
         blok.servicio_item.map((item: any) => (
           <li class=" text-neutral-200 tracking-[0.01em] flex items-center gap-2">
-            <ArrowRight size={16} className="" />
+            {/* <ArrowRight size={14} className="" /> */}
             {item.servicio}
           </li>
         ))
@@ -49,3 +49,33 @@ import { storyblokEditable } from '@storyblok/js';
     </ul>
   </div>
 </div>
+<!-- <div
+  {...storyblokEditable(blok)}
+  class="rounded-md text-black flex gap-6">
+  <div
+    class="inline-flex
+   justify-center items-center rounded-full shadow-sm h-16 w-16 bg-[#b1ddde]">
+    <Image
+      src={blok.icono.filename}
+      alt=`icono ${blok.titulo}`
+      width="48"
+      height="48"
+      class="w-12 h-12 filter brightness-0 invert"
+    />
+  </div>
+  <div class="">
+    <h3 class="text-xl font-heading mb-2">
+      {blok.titulo}
+    </h3>
+    <ul class="space-y-0.5">
+      {
+        blok.servicio_item.map((item: any) => (
+          <li class=" text-neutral-600 tracking-[0.01em] flex items-center gap-2">
+            {/* <ArrowRight size={16} className="" /> */}
+            {item.servicio}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div> -->

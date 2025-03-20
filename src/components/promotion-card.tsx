@@ -24,7 +24,7 @@ export function PromotionCardd({ proyecto, small }: any) {
     <a href={`/proyectos/${proyecto.slug}`}>
       <article className=" group transition-all duration-200 ease-out cursor-pointer">
         <div
-          className="relative overflow-hidden rounded-md aspect-[3/2] p-4 flex flex-col justify-between"
+          className="relative overflow-hidden rounded-md aspect-[3/2] p-6 flex flex-col justify-between"
           style={{
             backgroundImage: `url(${proyecto.content.imagen_portada.filename})`,
             backgroundSize: 'cover',
@@ -56,7 +56,7 @@ export function PromotionCardd({ proyecto, small }: any) {
             )}
           </div>
 
-          <div className="flex justify-between text-white mb-4 z-20">
+          <div className="flex justify-between text-white z-20">
             {proyecto.content.promociones[0].mensualidades.length >
               0 && (
               <div className="flex items-center">

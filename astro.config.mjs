@@ -42,6 +42,7 @@ export default defineConfig({
         formulario_recomienda: 'storyblok/FormularioRecomienda',
         contenido_politicas: 'storyblok/Politicas',
         detalles_casas: 'storyblok/DetallesCasas',
+        proyectos_por_presupuesto: 'storyblok/ProyectosPresupuesto',
 
         'proyectos-presupuesto': 'storyblok/ProyectosPresupuesto',
         'hero-recomienda-y-gana': 'storyblok/Hero',
@@ -55,6 +56,7 @@ export default defineConfig({
         detalles_terreno: 'storyblok/DetallesTerreno',
         servicio_card: 'storyblok/ServicioCard',
         info_ubicacion: 'storyblok/InfoUbicacion',
+        tour_virtual: 'storyblok/TourVirtual',
 
         // 'cover-image': 'storyblok/ProjectCover',
 

@@ -33,7 +33,7 @@ export function ModelosTabs({
   return (
     <div className="mt-6">
       <Tabs
-        defaultValue={activeTab.nombre}
+        defaultValue={activeTab}
         className="flex flex-col items-center gap-4 overflow-x-hidden"
         onValueChange={(value) => {
           const selectedModel = data.find(

@@ -29,20 +29,20 @@ export function PromocionesCarousel({ proyectos }: any) {
         loop: true,
         align: 'start',
       }}>
-      <CarouselContent className="-ml-8">
+      <CarouselContent className="md:-ml-10">
         {proyectos.map((proyecto: any) => {
           // proyecto.content.slug = proyecto.slug;
           return (
             <CarouselItem
               key={proyecto.id}
-              className="pl-8 md:basis-1/2 ">
+              className="md:basis-1/2 md:pl-10">
               <PromotionCardd proyecto={proyecto} />
             </CarouselItem>
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:flex" />
-      <CarouselNext className="hidden sm:flex" />
+      <CarouselPrevious className="hidden sm:flex sm:-top-[92px]" />
+      <CarouselNext className="hidden sm:flex sm:-top-[92px]" />
     </Carousel>
   );
 }

@@ -20,32 +20,36 @@ const locationDescription = renderRichText(blok.descripcion_location);
   </div>
   <div class="flex flex-col gap-y-6">
     <div
-      class="bg-white rounded-md p-6 flex flex-col shadow-sm flex-1">
-      <!-- <div
-        class="inline-flex
-      justify-center items-center rounded-sm w-12 h-12 bg-neutral-100 mb-12">
-        <CalendarCheck2 size={32} strokeWidth={1} />
-      </div> -->
-      <h3 class="mb-4 text-3xl font-heading font-bold">
-        {blok.titulo_cita}
-      </h3>
-      <div class="prose leading-6 mb-6" set:html={renderedRichText} />
+      class="bg-white rounded-md p-6 flex flex-col justify-between shadow-sm min-h-64">
+      <div class="">
+        <h3 class="text-3xl font-heading">
+          {blok.titulo_cita}
+        </h3>
+        <div
+          class="prose leading-6 mt-4"
+          set:html={renderedRichText}
+        />
+      </div>
+
       <Link
         href={`tel:${blok.telefono}`}
-        className=" justify-center inline-flex items-center">
+        className=" justify-center inline-flex items-center self-end ">
         <PhoneCall className="w-4 h-4 mr-2.5" />
         <span>Agenda tu visita</span>
       </Link>
     </div>
     <div
-      class="bg-[#e9f5f5] border border-[#b1ddde] rounded-md p-6 shadow-sm flex-1">
-      <h3 class="text-3xl font-heading text-[#192a33]">
-        {blok.titulo_location}
-      </h3>
-      <div
-        class="prose leading-6 mt-4 text-[#29545c]"
-        set:html={locationDescription}
-      />
+      class="bg-[#e9f5f5] border border-[#b1ddde] rounded-md p-6 flex flex-col justify-between shadow-sm min-h-64">
+      <div class="">
+        <h3 class="text-3xl font-heading text-[#192a33]">
+          {blok.titulo_location}
+        </h3>
+        <div
+          class="prose leading-6 mt-4 text-[#29545c]"
+          set:html={locationDescription}
+        />
+      </div>
+
       <div
         class="flex flex-col sm:flex-row justify-between gap-2 mt-6">
         <Link
