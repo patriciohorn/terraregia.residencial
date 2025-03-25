@@ -7,6 +7,7 @@ import ProjectDetails from './projects/ProjectDetails.astro';
 import Amenidades from '@/components/Amenidades.astro';
 import { removeAccents } from '@/lib/utils';
 import ProyectoBreadcrumb from '@/components/proyecto-breadcrumb';
+
 const { blok } = Astro.props;
 const formName = removeAccents(
   blok.nombre.toLowerCase().split(' ').join('')

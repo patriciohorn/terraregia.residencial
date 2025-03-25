@@ -2,11 +2,6 @@
 import { storyblokEditable } from '@storyblok/astro';
 import { Form } from '@/components/recomiendaform';
 const { blok } = Astro.props;
-// const politicasArray = blok.politicas.split(' ');
-// const politicasText = politicasArray
-//   .slice(0, politicasArray.length - 1)
-//   .join(' ');
-// const politicasLink = politicasArray[politicasArray.length - 1];
 ---
 
 <section {...storyblokEditable(blok)}>
@@ -17,16 +12,13 @@ const { blok } = Astro.props;
       titulo2={blok.titulo_2}
       client:visible
     />
-    <p class="mt-12 max-w-prose mx-auto text-center text-neutral-500">
+    <p class="mt-12 max-w-prose mx-auto text-center text-neutral-600">
       {blok.nota}
     </p>
-    <!-- <p class="mt-6 text-center text-neutral-500">
-      {politicasText}
-      <a
-        href="/recomienda-y-gana/politicas"
-        class="cursor-pointer text-accent-dark hover:underline transition-colors duration-200 ease-in-out"
-        >{politicasLink}</a
-      >
-    </p> -->
+    <a
+      href="/recomienda-y-gana/politicas"
+      class="mt-8 inline-flex justify-center w-full cursor-pointer text-neutral-600 hover:text-accent-dark transition-colors duration-200 ease-in-out"
+      >{blok.texto_link_politicas}</a
+    >
   </div>
 </section>

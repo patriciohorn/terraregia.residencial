@@ -10,10 +10,8 @@ const { data } = await storyblokApi.get('cdn/stories/inversion', {
 const story = data.story;
 ---
 
-<BaseLayout>
-  <section class="pt-10 pb-16">
-    <div class="container">
-      <StoryblokComponent blok={story.content} />
-    </div>
+<BaseLayout title="Terra Regia Residencial | Inversion">
+  <section>
+    <StoryblokComponent blok={story.content} />
   </section>
 </BaseLayout>

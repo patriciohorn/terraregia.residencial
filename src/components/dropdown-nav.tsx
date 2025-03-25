@@ -21,8 +21,8 @@ import {
 
 interface NavItem {
   label: string;
-  filterKey: string; // Added: Key to use for query parameter
-  items: { label: string; filterValue: string }[]; // Modified: filterValue instead of href
+  filterKey: string;
+  items: { label: string; filterValue: string }[]; //
 }
 
 const navItems: NavItem[] = [
@@ -98,12 +98,10 @@ export function DropdownNav() {
                 window.location.href = '/proyectos';
               };
               return (
-                <DropdownMenuItem key={subItem.filterValue}>
-                  <button
-                    className="font-medium text-sm"
-                    onClick={handleNavigation}>
-                    {subItem.label}
-                  </button>
+                <DropdownMenuItem
+                  key={subItem.filterValue}
+                  onClick={handleNavigation}>
+                  {subItem.label}
                 </DropdownMenuItem>
               );
             })}

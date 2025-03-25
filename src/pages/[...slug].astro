@@ -7,15 +7,15 @@ export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
 
   const links = await storyblokApi.getAll('cdn/links', {
-    version: 'draft'
+    version: 'draft',
   });
   return links
     .filter((link) => !link.is_folder)
     .map((link) => {
       return {
         params: {
-          slug: link.slug === 'home' ? undefined : link.slug
-        }
+          slug: link.slug === 'home' ? undefined : link.slug,
+        },
       };
     });
 }
@@ -24,15 +24,24 @@ const { slug } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi.get(`cdn/stories/${slug === undefined ? 'home' : slug}`, {
-  version: 'draft',
-  // Tell Storyblok to fetch the complete article objects for the IDs referenced in articles field of popular-articles
-  resolve_relations: ['proyectos-destacados.projects', 'proyectos-preventa.projects']
-});
+const { data } = await storyblokApi.get(
+  `cdn/stories/${slug === undefined ? 'home' : slug}`,
+  {
+    version: 'draft',
+  }
+);
 
 const story = data.story;
+const whatsapp = story.content.whatsapp
+  ? story.content.whatsapp
+  : story.content.info_ubicacion.length > 0
+    ? story.content.info_ubicacion[0].whatsapp
+    : '8131418886';
 ---
 
-<BaseLayout title="Terra Regia Residencial">
+<BaseLayout
+  title={`Terra Regia Residencial | ${story.content.nombre}`}
+  slug="proyecto"
+  whatsapp={whatsapp}>
   <StoryblokComponent blok={story.content} />
 </BaseLayout>

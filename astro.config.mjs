@@ -43,6 +43,7 @@ export default defineConfig({
         contenido_politicas: 'storyblok/Politicas',
         detalles_casas: 'storyblok/DetallesCasas',
         proyectos_por_presupuesto: 'storyblok/ProyectosPresupuesto',
+        formulario_general: 'storyblok/FormularioGeneral',
 
         'proyectos-presupuesto': 'storyblok/ProyectosPresupuesto',
         'hero-recomienda-y-gana': 'storyblok/Hero',
@@ -52,7 +53,7 @@ export default defineConfig({
         'inversion-content': 'storyblok/InversionContent',
         'politicas-content': 'storyblok/PoliticasContent',
         // 'promociones-del-mes': 'storyblok/PromocionesDelMes',
-        project: 'storyblok/Project',
+        // project: 'storyblok/Project',
         detalles_terreno: 'storyblok/DetallesTerreno',
         servicio_card: 'storyblok/ServicioCard',
         info_ubicacion: 'storyblok/InfoUbicacion',

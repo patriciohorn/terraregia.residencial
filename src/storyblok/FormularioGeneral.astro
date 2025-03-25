@@ -1,0 +1,118 @@
+---
+import { storyblokEditable } from '@storyblok/js';
+const { blok } = Astro.props;
+---
+
+<section
+  {...storyblokEditable(blok)}
+  class="bg-card-foreground py-8 sm:py-28">
+  <div class="container">
+    <div class="flex flex-col sm:gap-6">
+      <p class="text-3xl sm:text-[40px] font-heading sm:leading-6">
+        {blok.titulo}
+      </p>
+      <p class="text-3xl sm:text-[40px] sm:leading-6">
+        {blok.subtitulo}
+      </p>
+    </div>
+    <div class="mt-6 sm:mt-[52px]">
+      <form
+        id="contact-form"
+        method="POST"
+        action="/mensaje-recibido"
+        data-netlify="true"
+        name="contacto"
+        netlify-honeypot="bot-field"
+        class="grid sm:grid-cols-3 gap-x-6 gap-y-2 sm:gap-y-6">
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contacto" />
+        <input
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+        />
+        <input
+          type="text"
+          placeholder="Apellidos"
+          name="apellidos"
+          class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+        />
+        <input
+          type="tel"
+          placeholder="Whatsapp"
+          name="whatsapp"
+          class="flex h-12 sm:h-[68px] w-full rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-1 text-base sm:text-xl text-[#827D7D] shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50"
+        />
+        <div class="relative w-full">
+          <select
+            name="opcion-compra"
+            class="flex h-12 sm:h-[68px] w-full items-center justify-between whitespace-nowrap rounded-full border border-[#827D7D] bg-white px-4 sm:px-8 py-2 text-base sm:text-xl text-[#827D7D] shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-[#827D7D] disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1">
+            <option disabled selected class="hidden"
+              >¿Opción de compra?</option
+            >
+            <option value="vivir" class="py-2">Para vivir</option>
+            <option value="invertir" class="py-2"
+              >Para invertir</option
+            >
+          </select>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 opacity-50"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-full font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors duration-300 ease-in-out bg-primary text-white shadow hover:bg-primary/90 h-16 px-6 py-4 text-base sm:text-xl"
+          >Enviar</button
+        >
+      </form>
+      <!-- <MoreInfoForm client:visible /> -->
+    </div>
+  </div>
+</section>
+
+<script>
+  import { navigate } from 'astro:transitions/client';
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(
+        formData as unknown as Record<string, string>
+      ).toString(),
+    })
+      .then(() => navigate('/mensaje-recibido/'))
+      .catch((error) => alert(error));
+  };
+
+  document
+    .querySelector('#contact-form')
+    ?.addEventListener('submit', handleSubmit);
+</script>

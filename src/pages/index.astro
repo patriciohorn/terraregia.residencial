@@ -15,6 +15,6 @@ const { data } = await storyblokApi.get('cdn/stories/inicio', {
 const story = data.story;
 ---
 
-<BaseLayout>
+<BaseLayout title="Terra Regia Residencial">
   <StoryblokComponent blok={story.content} />
 </BaseLayout>

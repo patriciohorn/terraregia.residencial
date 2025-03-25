@@ -10,12 +10,13 @@ const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get('cdn/stories/header', {
   version: 'draft',
-  resolve_links: 'url',
 });
 
 const headerContent = data.story.content;
 
-const { title, content, slug } = Astro.props;
+const { title, content, slug, whatsapp } = Astro.props;
+
+const isProject = slug ? true : false;
 ---
 
 <!doctype html>
@@ -53,7 +54,11 @@ const { title, content, slug } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="overflow-x-hidden bg-[#F5F5F5]">
-    <Header blok={headerContent} />
+    <Header
+      blok={headerContent}
+      isProject={isProject}
+      whatsapp={whatsapp}
+    />
     <main>
       <slot />
     </main>
