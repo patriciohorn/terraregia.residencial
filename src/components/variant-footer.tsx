@@ -15,7 +15,7 @@ const VariantFooter = ({ modelo }: any) => {
             <h3 className="text-sm text-neutral-600 text-center font-medium">
               {titles[idx]}
             </h3>
-            <p className="text-lg font-medium text-black tracking-[0.01em]">
+            <p className="text-base sm:text-lg  text-black tracking-[0.01em]">
               {item}
             </p>
           </div>

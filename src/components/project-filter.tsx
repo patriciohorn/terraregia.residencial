@@ -97,7 +97,7 @@ const ProjectFilter = ({ proyectos }: any) => {
   return (
     <aside className="pt-8 pb-16 grid sm:grid-cols-[0.5fr_2fr] gap-x-10 gap-y-8">
       <div className="">
-        <div className="flex flex-wrap sm:flex-row items-center justify-between gap-y-8 sm:gap-y-8 bg-card p-4 rounded-md shadow-sm border">
+        <div className="flex flex-wrap sm:flex-row items-center justify-between gap-y-6 sm:gap-y-8 bg-card p-4 rounded-md shadow-sm border">
           <div>
             <p className="mb-2 text-neutral-600 flex items-center gap-2 text-sm font-medium ">
               <MapPin size={16} />

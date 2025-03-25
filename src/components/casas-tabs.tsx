@@ -22,11 +22,7 @@ import { useState } from 'react';
 const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
   const [selectedTab, setSelectedTab] = useState(modelos[0].nombre);
   const [plantas, setPlantas] = useState('2 plantas');
-
-  function handleTabChange(value: string) {
-    setSelectedTab(value);
-  }
-
+  console.log(selectedTab);
   function handlePlantaChange(value: string) {
     setPlantas(value);
   }
@@ -35,30 +31,66 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
   )[0].carousel_detalles_planta;
 
   return (
-    <div className="grid sm:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-20">
       <div>
-        <h2 className="mb-8 text-2xl sm:text-[40px] text-black font-heading">
+        <h2 className="mb-6 sm:mb-8 text-2xl sm:text-[40px] text-black font-heading">
           {titulo}
         </h2>
-        <Tabs defaultValue={selectedTab}>
-          <TabsList className="bg-transparent w-full gap-4">
+        <Tabs
+          defaultValue={selectedTab}
+          className="flex flex-col items-center gap-4 overflow-x-hidden">
+          <TabsList className=" bg-transparent w-full gap-4 ">
             {modelos.map((modelo: any) => (
               <TabsTrigger
                 key={modelo.nombre}
                 value={modelo.nombre}
                 className={cn(
-                  'bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base font-medium w-28',
+                  'hidden sm:flex bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base font-medium w-28 ',
                   selectedTab === modelo.nombre &&
                     'data-[state=active]:bg-black data-[state=active]:text-white'
                 )}
-                onClick={() => handleTabChange(modelo.nombre)}>
+                onClick={() => setSelectedTab(modelo.nombre)}>
                 {modelo.nombre}
               </TabsTrigger>
             ))}
+
+            <div className="sm:hidden relative w-full">
+              <Carousel
+                opts={{
+                  loop: false,
+                  align: 'start',
+                }}
+                className="w-full">
+                <CarouselContent>
+                  {modelos.map((modelo: any) => (
+                    <CarouselItem
+                      key={modelo.nombre}
+                      className={cn(
+                        `basis-1/1 sm:basis-1/4`,
+                        modelo.nombre === 'Castilla Diamante'
+                          ? 'sm:basis-1/2'
+                          : ''
+                      )}>
+                      <TabsTrigger
+                        key={modelo.nombre}
+                        value={modelo.nombre}
+                        className={cn(
+                          'bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base font-medium w-28',
+                          selectedTab === modelo.nombre &&
+                            'data-[state=active]:bg-black data-[state=active]:text-white'
+                        )}
+                        onClick={() => setSelectedTab(modelo.nombre)}>
+                        {modelo.nombre}
+                      </TabsTrigger>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+            </div>
           </TabsList>
 
           {nombreProyecto.includes('Rincón') && (
-            <div className="flex gap-2 justify-center mt-4">
+            <div className="flex gap-2 justify-center mt-2">
               {['2 plantas', '3 plantas'].map((option) => (
                 <Button
                   size="sm"
@@ -107,7 +139,7 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
           ))}
         </Tabs>
       </div>
-      <Carousel className="bg-[#E6E9E9] rounded-[12px] p-6">
+      <Carousel className="bg-[#E6E9E9] rounded-[12px] p-4 sm:p-6">
         <CarouselContent key={selectedTab}>
           {selectedModelo.map((planta: any) => (
             <CarouselItem
@@ -123,14 +155,14 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
                     }
                   />
                 </div>
-                <div className="bg-white rounded-sm p-6">
-                  <h3 className="text-xl font-heading mb-6">
+                <div className="bg-white rounded-sm p-4 sm:p-6">
+                  <h3 className="text-xl font-heading mb-4 sm:mb-6">
                     {planta.titulo}
                   </h3>
-                  <ul className="grid grid-cols-2 gap-y-2 gap-x-6">
+                  <ul className="grid sm:grid-cols-2 gap-y-2 gap-x-6">
                     {planta.detalles.map((item: any) => (
-                      <li className="text-sm text-neutral-600 flex items-center gap-2">
-                        <CircleCheck className="w-4 h-4 shrink-0" />
+                      <li className="text-xs sm:text-sm text-neutral-600 flex items-center gap-2">
+                        <CircleCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-neutral-600" />
                         {item.detalle}
                       </li>
                     ))}
@@ -140,8 +172,8 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2" />
-        <CarouselNext className="right-2" />
+        <CarouselPrevious className="-left-2 -translate-y-10 sm:left-2 sm:translate-y-0" />
+        <CarouselNext className=" -right-2 -translate-y-10 sm:right-2 sm:translate-y-0" />
       </Carousel>
     </div>
   );

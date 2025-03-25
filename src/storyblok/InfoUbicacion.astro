@@ -12,9 +12,9 @@ const locationDescription = renderRichText(blok.descripcion_location);
 
 <div
   {...storyblokEditable(blok)}
-  class="grid sm:grid-cols-3 gap-y-4 gap-x-6">
+  class="grid sm:grid-cols-3 gap-y-4 sm:gap-x-6">
   <div
-    class="map | overflow-hidden rounded-md shadow-sm col-span-2"
+    class="map | overflow-hidden rounded-md shadow-sm col-span-2 aspect-[4/3] sm:aspect-auto"
     set:html={blok.mapa}>
     <!-- Render iframe with Project Google Map -->
   </div>
@@ -33,13 +33,13 @@ const locationDescription = renderRichText(blok.descripcion_location);
 
       <Link
         href={`tel:${blok.telefono}`}
-        className=" justify-center inline-flex items-center self-end ">
+        className=" justify-center inline-flex items-center self-end w-full sm:w-fit ">
         <PhoneCall className="w-4 h-4 mr-2.5" />
         <span>Agenda tu visita</span>
       </Link>
     </div>
     <div
-      class="bg-[#e9f5f5] border border-[#b1ddde] rounded-md p-6 flex flex-col justify-between shadow-sm min-h-64">
+      class="bg-[#e9f5f5] border border-[#b1ddde] rounded-md p-6 flex flex-col justify-between shadow-sm sm:min-h-64">
       <div class="">
         <h3 class="text-3xl font-heading text-[#192a33]">
           {blok.titulo_location}

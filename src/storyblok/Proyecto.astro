@@ -7,6 +7,13 @@ import ProjectDetails from './projects/ProjectDetails.astro';
 import Amenidades from '@/components/Amenidades.astro';
 import { removeAccents } from '@/lib/utils';
 import ProyectoBreadcrumb from '@/components/proyecto-breadcrumb';
+import { SectionIcon } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
+import { SecondaryImagesCarousel } from '@/components/secondaryImages-carousel';
 
 const { blok } = Astro.props;
 const formName = removeAccents(
@@ -69,6 +76,36 @@ const nombreProyecto = blok.nombre;
       </section>
     )
   }
+
+  {
+    blok.galeria && (
+      <section class="sm:hidden pl-4 ml-auto">
+        <SecondaryImagesCarousel blok={blok.galeria} client:visible />
+      </section>
+    )
+  }
+
+  <!-- {
+    blok.galeria && (
+      <section class="sm:hidden mt-4 pl-4 ml-auto">
+        <Carousel
+          opts={{
+            align: 'start',
+            loop: true,
+          }}>
+          <CarouselContent>
+            {blok.galeria.map((blok: any, idx: number) => {
+              return (
+                <CarouselItem key={idx} className="basis-1/1">
+                  <StoryblokComponent blok={blok} />
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
+      </section>
+    )
+  } -->
 
   {
     blok.detalles_proyecto && (
