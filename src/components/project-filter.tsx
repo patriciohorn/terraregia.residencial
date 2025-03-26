@@ -18,9 +18,13 @@ import {
 } from '@/stores/filterStore';
 
 const ProjectFilter = ({ proyectos }: any) => {
-  const [selectedUbicaciones, setSelectedUbicaciones] = useState([]);
-  const [selectedTipos, setSelectedTipos] = useState([]);
-  const [selectedPrecios, setSelectedPrecios] = useState([]);
+  const [selectedUbicaciones, setSelectedUbicaciones] = useState<
+    string[]
+  >([]);
+  const [selectedTipos, setSelectedTipos] = useState<string[]>([]);
+  const [selectedPrecios, setSelectedPrecios] = useState<string[]>(
+    []
+  );
   const [isInitialized, setIsIntialized] = useState(false);
   const $ubicacionFilter = useStore(ubicacionFilter);
   const $tipoFilter = useStore(tipoFilter);
@@ -125,7 +129,7 @@ const ProjectFilter = ({ proyectos }: any) => {
               <span>Tipo de propiedad</span>
             </p>
             <div className="flex gap-2 flex-wrap bg-[#efefef] border p-2 rounded-sm shadow-[inset_0_1px_1px_rgb(0_0_0/0.05)]">
-              {tipos.map((tipo, id) => (
+              {tipos.map((tipo: any, id: number) => (
                 <Button
                   key={id}
                   size="sm"
@@ -135,7 +139,7 @@ const ProjectFilter = ({ proyectos }: any) => {
                       : 'unselected'
                   }
                   onClick={() => handleTipo(tipo)}>
-                  {tipo as String}
+                  {tipo}
                 </Button>
               ))}
             </div>

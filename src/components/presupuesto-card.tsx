@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { costoFilter } from '@/stores/filterStore';
 
 export function PresupuestoCard({ card }: any) {
-  function handleNavigation(value) {
+  function handleNavigation(value: any) {
     costoFilter.set(value);
   }
   return (
