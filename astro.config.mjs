@@ -81,9 +81,9 @@ export default defineConfig({
   ],
   vite: {
     plugins: [basicSsl()],
-    server: {
-      https: true,
-    },
+    // server: {
+    //   https: true,
+    // },
   },
   image: {
     remotePatterns: [{ protocol: 'https' }],
