@@ -9,16 +9,16 @@ import icon from 'astro-icon';
 import netlify from '@astrojs/netlify';
 
 import storyblok from '@storyblok/astro';
-import { loadEnv } from 'vite';
+// import { loadEnv } from 'vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
-const env = loadEnv('', process.cwd(), 'STORYBLOK');
+// const env = loadEnv('', process.cwd(), 'STORYBLOK');
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     storyblok({
-      accessToken: env.STORYBLOK_TOKEN,
+      accessToken: process.env.STORYBLOK_TOKEN || '',
       components: {
         // components goes here
         page: 'storyblok/Page',
@@ -70,7 +70,7 @@ export default defineConfig({
           'storyblok/projects/ServiciosCardsContainer',
       },
       apiOptions: {
-        region: 'us',
+        region: process.env.STORYBLOK_API_REGION || 'us',
       },
     }),
     react(),
