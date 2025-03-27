@@ -29,13 +29,13 @@ export function PromocionesCarousel({ proyectos }: any) {
         loop: true,
         align: 'start',
       }}>
-      <CarouselContent className="md:-ml-10">
+      <CarouselContent className="-ml-6 md:-ml-10">
         {proyectos.map((proyecto: any) => {
           // proyecto.content.slug = proyecto.slug;
           return (
             <CarouselItem
               key={proyecto.id}
-              className="md:basis-1/2 md:pl-10">
+              className="basis-10/12 md:basis-1/2 pl-6 md:pl-10">
               <PromotionCardd proyecto={proyecto} />
             </CarouselItem>
           );

@@ -4,9 +4,9 @@ function PromotionBannerSm({ promocion, small }: any) {
   return (
     <div
       className={` rounded-[18px] p-4 bg-[#bfdee3]/70 backdrop-blur-sm flex gap-2 sm:gap-3 items-center shadow-lg`}>
-      <div className="flex-shrink-0 self-start w-6 h-6 sm:w-8 sm:h-8  inline-flex items-center justify-center">
+      <div className="hidden sm:flex-shrink-0 self-start w-6 h-6 sm:w-8 sm:h-8  sm:inline-flex items-center justify-center">
         <BadgePercent
-          className="w-5 h-5 sm:w-6 sm:h-6 text-[#192a33]"
+          className="sm:w-6 sm:h-6 text-[#192a33]"
           strokeWidth={2}
         />
       </div>

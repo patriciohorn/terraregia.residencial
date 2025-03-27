@@ -20,7 +20,7 @@ export function PromotionCardd({ proyecto, small }: any) {
     <article className="group">
       <a href={`/proyectos/${proyecto.slug}`}>
         <div
-          className="relative aspect-[3/2] rounded-md overflow-hidden p-2 flex flex-col justify-between"
+          className="relative aspect-[4/5] sm:aspect-[3/2] rounded-md overflow-hidden p-2 flex flex-col justify-between"
           style={{
             backgroundImage: `url(${proyecto.content.imagen_portada.filename})`,
             backgroundSize: 'cover',
@@ -38,7 +38,7 @@ export function PromotionCardd({ proyecto, small }: any) {
                 <div className="flex gap-1 sm:gap-2 text-neutral-200 items-center">
                   <CalendarCheck2
                     size={16}
-                    className="w-4 h-4 sm:h-[18px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-[18px] sm:w-[18px]"
                   />
                   <span className="text-sm">Mens. desde</span>
                 </div>
@@ -52,7 +52,7 @@ export function PromotionCardd({ proyecto, small }: any) {
                 <div className="flex gap-2 text-neutral-200">
                   <Expand
                     size={16}
-                    className="w-4 h-4 sm:h-[18px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-[18px] sm:w-[18px]"
                   />
                   <span className="text-sm">desde</span>
                 </div>
@@ -77,7 +77,7 @@ export function PromotionCardd({ proyecto, small }: any) {
                 {proyecto.content.tipo[0].includes('Terrenos') ? (
                   <LandPlot
                     size={16}
-                    className="w-4 h-4 sm:h-[16px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-[18px] sm:w-[18px]"
                   />
                 ) : (
                   <House
