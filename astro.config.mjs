@@ -83,9 +83,9 @@ export default defineConfig({
   output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
   vite: {
     plugins: [basicSsl()],
-    server: {
-      https: true,
-    },
+    // server: {
+    //   https: true,
+    // },
   },
   image: {
     remotePatterns: [{ protocol: 'https' }],
