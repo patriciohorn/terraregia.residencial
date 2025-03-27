@@ -81,7 +81,6 @@ export default defineConfig({
     icon(),
   ],
   output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
-
   vite: {
     plugins: [basicSsl()],
     server: {
@@ -91,4 +90,5 @@ export default defineConfig({
   image: {
     remotePatterns: [{ protocol: 'https' }],
   },
+  adapter: netlify(),
 });
