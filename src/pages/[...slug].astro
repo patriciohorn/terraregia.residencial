@@ -2,6 +2,7 @@
 import { useStoryblokApi } from '@storyblok/astro';
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import isPreview from '@/lib/utils';
 
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
@@ -27,7 +28,7 @@ const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(
   `cdn/stories/${slug === undefined ? 'home' : slug}`,
   {
-    version: 'draft',
+    version: isPreview() ? 'draft' : 'published',
   }
 );
 

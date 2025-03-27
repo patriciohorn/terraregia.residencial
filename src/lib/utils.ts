@@ -23,19 +23,25 @@ export function removeAccents(str: string) {
 
 export const getTipos = async () => {
   const projects = await getCollection('project');
-  const tipos = new Set(projects.map((project: any) => project.data.tipo));
+  const tipos = new Set(
+    projects.map((project: any) => project.data.tipo)
+  );
   return Array.from(tipos);
 };
 
 export const getUbicaciones = async () => {
   const projects = await getCollection('project');
-  const ubicaciones = new Set(projects.map((project) => project.data.location));
+  const ubicaciones = new Set(
+    projects.map((project: any) => project.data.location)
+  );
   return Array.from(ubicaciones);
 };
 
 export const getCostos = async () => {
   const projects = await getCollection('project');
-  const costos = new Set(projects.map((project) => project.data.presupuesto));
+  const costos = new Set(
+    projects.map((project: any) => project.data.presupuesto)
+  );
   return Array.from(costos);
 };
 
@@ -43,3 +49,7 @@ export const getProjects = async () => {
   const projects = await getCollection('project');
   return projects;
 };
+
+export default function isPreview() {
+  return import.meta.env.STORYBLOK_IS_PREVIEW === 'yes';
+}

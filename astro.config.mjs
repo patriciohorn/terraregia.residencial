@@ -12,19 +12,14 @@ import storyblok from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
-const { PUBLIC_ENV, STORYBLOK_TOKEN } = loadEnv(
-  import.meta.env.MODE,
-  process.cwd(),
-  ''
-);
+const env = loadEnv('', process.cwd(), 'STORYBLOK');
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: netlify(),
   integrations: [
     storyblok({
-      accessToken: STORYBLOK_TOKEN,
+      accessToken: env.STORYBLOK_TOKEN,
+      bridge: env.STORYBLOK_IS_PREVIEW === 'yes',
       components: {
         // components goes here
         page: 'storyblok/Page',
@@ -85,11 +80,13 @@ export default defineConfig({
     }),
     icon(),
   ],
+  output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
+
   vite: {
     plugins: [basicSsl()],
-    // server: {
-    //   https: true,
-    // },
+    server: {
+      https: true,
+    },
   },
   image: {
     remotePatterns: [{ protocol: 'https' }],
