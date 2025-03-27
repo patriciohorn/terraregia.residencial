@@ -16,12 +16,15 @@ const presupuestoCards = blok.presupuesto_cards;
         class="font-medium font-heading text-3xl sm:text-5xl leading-[1.1]">
         {blok.titulo}
       </h2>
-      <div class="mt-6 sm:mt-16">
+      <div class="hidden sm:block mt-6 sm:mt-16">
         <PresupuestoCarousel
           cards={presupuestoCards}
           client:visible
         />
       </div>
+    </div>
+    <div class="pl-4 sm:hidden mt-6 sm:mt-16">
+      <PresupuestoCarousel cards={presupuestoCards} client:visible />
     </div>
   </div>
 </section>

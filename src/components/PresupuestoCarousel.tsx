@@ -4,7 +4,7 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
 } from '@/components/ui/carousel-top-btn';
 
 export function PresupuestoCarousel({ cards }: any) {
@@ -12,11 +12,13 @@ export function PresupuestoCarousel({ cards }: any) {
     <Carousel
       opts={{
         loop: true,
-        align: 'start'
+        align: 'start',
       }}>
-      <CarouselContent className="-ml-8">
+      <CarouselContent className="-ml-6">
         {cards.map((card: any, idx: number) => (
-          <CarouselItem key={idx} className="pl-8 md:basis-1/2 lg:basis-1/4">
+          <CarouselItem
+            key={idx}
+            className="pl-6 basis-10/12 md:basis-1/2 lg:basis-1/4">
             <PresupuestoCard card={card} />
           </CarouselItem>
         ))}

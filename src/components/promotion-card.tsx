@@ -38,11 +38,11 @@ export function PromotionCardd({ proyecto, small }: any) {
                 <div className="flex gap-1 sm:gap-2 text-neutral-200 items-center">
                   <CalendarCheck2
                     size={16}
-                    className="hidden sm:flex sm:h-[18px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-4 sm:w-4"
                   />
                   <span className="text-sm">Mens. desde</span>
                 </div>
-                <p className="font-heading tracking-[0.01em] text-base sm:text-xl">
+                <p className="font-heading tracking-[0.01em] text-base sm:text-lg">
                   {proyecto.content.promociones[0].mensualidades}
                 </p>
               </div>
@@ -52,11 +52,11 @@ export function PromotionCardd({ proyecto, small }: any) {
                 <div className="flex gap-2 text-neutral-200">
                   <Expand
                     size={16}
-                    className="hidden sm:flex sm:h-[18px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-4 sm:w-4"
                   />
                   <span className="text-sm">desde</span>
                 </div>
-                <p className="font-heading tracking-[0.01em] text-base sm:text-xl ">
+                <p className="font-heading tracking-[0.01em] text-base sm:text-lg ">
                   {proyecto.content.promociones[0].area}
                   <span className="relative after:content-['²'] after:absolute after:-right-1.5 sm:after:-right-2 after:-top-0.5">
                     m
@@ -67,7 +67,7 @@ export function PromotionCardd({ proyecto, small }: any) {
 
             <div
               className={cn(
-                'flex flex-col',
+                'flex flex-col items-end',
                 !proyecto.content.promociones[0].area.length &&
                   !proyecto.content.promociones[0].mensualidades
                   ? 'ml-auto'
@@ -77,12 +77,12 @@ export function PromotionCardd({ proyecto, small }: any) {
                 {proyecto.content.tipo[0].includes('Terrenos') ? (
                   <LandPlot
                     size={16}
-                    className="hidden sm:flex sm:h-[18px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-4 sm:w-4"
                   />
                 ) : (
                   <House
                     size={16}
-                    className="w-4 h-4 sm:h-[16px] sm:w-[18px]"
+                    className="hidden sm:flex sm:h-4 sm:w-4"
                   />
                 )}
 
@@ -90,7 +90,7 @@ export function PromotionCardd({ proyecto, small }: any) {
                   {proyecto.content.tipo[0]} desde
                 </span>
               </div>
-              <p className="font-heading tracking-[0.01em] text-base sm:text-xl">
+              <p className="font-heading tracking-[0.01em] text-base sm:text-lg">
                 {proyecto.content.precio}
               </p>
             </div>

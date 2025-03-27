@@ -10,7 +10,7 @@ export function PresupuestoCard({ card }: any) {
     <a
       href="/proyectos"
       onClick={() => handleNavigation(card.precio.slice(1))}>
-      <div className="flex flex-col justify-between px-6 py-4 h-48 bg-card-foreground shadow-sm border-none rounded-md group lg:hover:bg-[#BFDEE3] cursor-pointer transition-colors duration-200 ease-in-out">
+      <div className="flex flex-col justify-between px-6 py-4 h-48 bg-card-foreground shadow-sm border-none rounded-md group lg:hover:bg-[#BFDEE3]  cursor-pointer transition-colors duration-200 ease-in-out">
         <div>
           <h3 className="font-light text-2xl text-black">
             {card.titulo}
