@@ -17,6 +17,7 @@ const { blok, badge, showPreventaBadge, small } = Astro.props;
       src={blok.imagen_portada.filename}
       alt={blok.text_alt ? blok.text_alt : 'Imagen de proyecto'}
       inferSize={true}
+      format="webp"
       class="w-full h-full object-cover transition-transform duration-500 ease-in-out lg:group-hover:transform lg:group-hover:translate3d(0, 0, 0) lg:group-hover:scale-105 lg:group-hover:rotateX(0deg) lg:group-hover:rotateY(0deg)"
       style={{ transformStyle: 'preserve-3d' }}
     />
