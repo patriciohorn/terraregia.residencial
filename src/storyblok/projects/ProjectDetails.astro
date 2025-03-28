@@ -11,7 +11,8 @@ const { precio, descripcion } = Astro.props;
     <span class="text-sm sm:text-base font-medium text-[#363636]"
       >{precio.includes('$') ? 'Desde' : ''}</span
     >
-    <p class="mt-2 text-4xl sm:text-5xl font-heading">
+    <p
+      class="mt-2 text-4xl sm:text-5xl font-heading text-neutral-950">
       {precio.includes('$') ? precio : 'Próximamente'}
     </p>
     <p

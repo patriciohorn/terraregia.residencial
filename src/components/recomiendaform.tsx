@@ -26,7 +26,7 @@ export function Form({ titulo1, titulo2 }: any) {
     <div>
       <div className="grid sm:grid-cols-2 gap-x-20 gap-y-12">
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">
+          <h2 className="font-heading text-2xl sm:text-[40px] leading-[1.1] text-neutral-950">
             {titulo1}
           </h2>
           <div className="mt-6 sm:mt-8 space-y-2">
@@ -48,7 +48,7 @@ export function Form({ titulo1, titulo2 }: any) {
           </div>
         </div>
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">
+          <h2 className="font-heading text-2xl sm:text-[40px] leading-[1.1] text-neutral-950">
             {titulo2}
           </h2>
           <div className="mt-6 sm:mt-8 space-y-2">

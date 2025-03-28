@@ -6,7 +6,7 @@ const { blok } = Astro.props;
 
 <section {...storyblokEditable(blok)}>
   <div
-    class="my-16 container bg-white rounded-md px-8 py-10 sm:px-14 sm:py-16 shadow-sm border border-neutral-100">
+    class="my-16 container bg-white rounded-md p-6 sm:px-14 sm:py-16 shadow-sm border border-neutral-100">
     <Form
       titulo1={blok.titulo_1}
       titulo2={blok.titulo_2}
@@ -17,7 +17,7 @@ const { blok } = Astro.props;
     </p>
     <a
       href="/recomienda-y-gana/politicas"
-      class="mt-8 inline-flex justify-center w-full cursor-pointer text-neutral-600 hover:text-accent-dark transition-colors duration-200 ease-in-out"
+      class="mt-8 text-center inline-flex justify-center w-full cursor-pointer text-neutral-600 hover:text-accent-dark transition-colors duration-200 ease-in-out"
       >{blok.texto_link_politicas}</a
     >
   </div>

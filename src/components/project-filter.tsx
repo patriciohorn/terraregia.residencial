@@ -99,7 +99,7 @@ const ProjectFilter = ({ proyectos }: any) => {
   });
 
   return (
-    <aside className="pt-8 pb-16 grid sm:grid-cols-[0.5fr_2fr] gap-x-10 gap-y-8">
+    <aside className="grid sm:grid-cols-[0.5fr_2fr] gap-x-12 gap-y-12">
       <div className="">
         <div className="flex flex-wrap sm:flex-row items-center justify-between gap-y-6 sm:gap-y-8 bg-card p-4 rounded-md shadow-sm border">
           <div>
@@ -170,7 +170,7 @@ const ProjectFilter = ({ proyectos }: any) => {
       <div className="min-h-[80vh]">
         {isInitialized ? (
           filteredProyectos.length > 0 ? (
-            <ul className="grid sm:grid-cols-2 gap-x-12 gap-y-8 sm:gap-y-14">
+            <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-12">
               {filteredProyectos.map((proyecto: any) => (
                 <ProjectCard
                   key={proyecto.slug}

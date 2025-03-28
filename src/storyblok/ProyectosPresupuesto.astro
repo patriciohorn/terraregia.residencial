@@ -7,7 +7,9 @@ const { blok } = Astro.props;
 const presupuestoCards = blok.presupuesto_cards;
 ---
 
-<section {...storyblokEditable(blok)} class="py-16 sm:py-28">
+<section
+  {...storyblokEditable(blok)}
+  class="py-14 pb-28 sm:pt-24 sm:pb-48">
   <div class="w-full max-w-none overflow-hidden">
     <div class="container">
       <h2

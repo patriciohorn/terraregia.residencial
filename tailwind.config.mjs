@@ -9,7 +9,7 @@ export default {
       center: 'true',
       padding: '1.25rem',
       screens: {
-        '2xl': '1260px',
+        '2xl': '1280px',
       },
     },
     extend: {
@@ -70,7 +70,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'loop-scroll': 'loop-scroll 10s linear infinte',
-        slideSlow: 'slide 45s linear infinite',
+        slideSlow: 'slide 100s linear infinite',
         slideFast: 'slide 25s linear infinite',
       },
       keyframes: {

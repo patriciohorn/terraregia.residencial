@@ -27,7 +27,7 @@ export function SecondaryImagesCarousel({ blok }: any) {
       <CarouselContent>
         {blok.map((item: any, idx: number) => (
           <CarouselItem key={idx} className="basis-1/1">
-            <div className="overflow-hidden shadow-sm rounded-md w-60 h-56 relative">
+            <div className="overflow-hidden shadow-sm rounded-md aspect-square max-w-60 relative">
               <img
                 src={item.imagen_galeria.filename}
                 alt="Foto de proyecto"

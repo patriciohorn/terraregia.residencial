@@ -23,8 +23,8 @@ export function PresupuestoCarousel({ cards }: any) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:flex" />
-      <CarouselNext className="hidden sm:flex" />
+      <CarouselPrevious className="hidden sm:flex sm:-top-[82px] sm:w-10 sm:h-10" />
+      <CarouselNext className="hidden sm:flex sm:-top-[82px] sm:w-10 sm:h-10" />
     </Carousel>
   );
 }

@@ -31,12 +31,14 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
       <MobileNav blok={blok} whatsapp={whatsappHeader} client:load />
     </div>
 
-    <div class="hidden lg:flex lg:gap-x-10">
+    <div class="hidden lg:flex lg:gap-x-12">
       {
         blok.navegacion.map((item: any) => (
           <a
             href={`/${item.link.cached_url}`}
-            class={cn(`font-medium relative`)}>
+            class={cn(
+              `font-medium hover:text-neutral-950 transition-colors duration-200 ease-in-out`
+            )}>
             {item.texto}
           </a>
         ))
@@ -49,7 +51,7 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
           blok.links_social_media.map((item: any) => (
             <Link
               href={item.link}
-              size="icon"
+              size="iconsm"
               className="h-8 w-8 shadow-sm hover:opacity-90"
               target="_blank">
               <Image

@@ -51,7 +51,7 @@ export default defineConfig({
         'grid-3-cols': 'storyblok/Grid3Cols',
 
         // 'recomienda-form': 'storyblok/RecomiendaForm',
-        'inversion-content': 'storyblok/InversionContent',
+
         'politicas-content': 'storyblok/PoliticasContent',
         // 'promociones-del-mes': 'storyblok/PromocionesDelMes',
         // project: 'storyblok/Project',

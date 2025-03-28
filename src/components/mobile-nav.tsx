@@ -33,17 +33,17 @@ export function MobileNav({ blok, whatsapp }: any) {
         <img
           src={whatsappIcon.src}
           alt="Logo Whatsapp"
-          className="w-7 h-7"
+          className="w-6 h-6"
         />
       </Link>
       <Sheet>
         <SheetTrigger asChild>
           <Button size="icon">
-            <Menu className="w-7 h-7" />
+            <Menu className="w-6 h-6" />
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <div className="py-5">
+          <div className="py-4">
             <a href="/">
               <span className="sr-only">Logo Terra Regia</span>
               <img

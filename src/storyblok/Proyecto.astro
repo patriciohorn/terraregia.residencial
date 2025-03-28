@@ -28,12 +28,13 @@ const nombreProyecto = blok.nombre;
       nombreProyecto={nombreProyecto}
       client:visible
     />
-    <h1 class="text-4xl sm:text-7xl text-black font-heading">
+    <h1 class="text-4xl sm:text-7xl text-neutral-950 font-heading">
       {blok.nombre}
     </h1>
-    <div class="mt-8 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
+    <div
+      class="mt-6 sm:mt-8 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
       <div
-        class="overflow-hidden rounded-md shadow-sm relative aspect-[4/3] h-full w-full">
+        class="overflow-hidden rounded-md shadow-sm relative aspect-[5/4] sm:aspect-auto">
         <Image
           src={blok.imagen_portada.filename}
           alt="Image"
@@ -79,33 +80,11 @@ const nombreProyecto = blok.nombre;
 
   {
     blok.galeria && (
-      <section class="sm:hidden pl-4 ml-auto">
+      <section class="sm:hidden pl-5 ml-auto">
         <SecondaryImagesCarousel blok={blok.galeria} client:visible />
       </section>
     )
   }
-
-  <!-- {
-    blok.galeria && (
-      <section class="sm:hidden mt-4 pl-4 ml-auto">
-        <Carousel
-          opts={{
-            align: 'start',
-            loop: true,
-          }}>
-          <CarouselContent>
-            {blok.galeria.map((blok: any, idx: number) => {
-              return (
-                <CarouselItem key={idx} className="basis-1/1">
-                  <StoryblokComponent blok={blok} />
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-        </Carousel>
-      </section>
-    )
-  } -->
 
   {
     blok.detalles_proyecto && (

@@ -5,31 +5,28 @@ import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
 ---
 
-<section {...storyblokEditable(blok)} class="py-10">
-  <div class="container">
-    <section class="flex flex-col gap-4">
-      <h1
-        class="text-4xl sm:text-[82px] text-black font-heading leading-[1.1]">
-        {blok.titulo}
-      </h1>
-      <p class="text-lg sm:text-3xl max-w-4xl text-neutral-700">
-        {blok.subtitulo}
-      </p>
-    </section>
-    <section
-      class="mt-16 sm:mt-12 grid sm:grid-cols-3 gap-x-8 gap-y-4">
-      {
-        blok.recomienda_cards?.map((blok: any) => (
-          <StoryblokComponent blok={blok} />
-        ))
-      }
-    </section>
-    <section>
-      {
-        blok.formulario_recomienda.map((blok: any) => (
-          <StoryblokComponent blok={blok} />
-        ))
-      }
-    </section>
-  </div>
-</section>
+<div {...storyblokEditable(blok)}>
+  <section class="flex flex-col gap-4">
+    <h1
+      class="text-4xl sm:text-[82px] text-black font-heading leading-[1.1]">
+      {blok.titulo}
+    </h1>
+    <p class="text-lg sm:text-3xl max-w-4xl text-neutral-600">
+      {blok.subtitulo}
+    </p>
+  </section>
+  <section class="mt-16 sm:mt-12 grid sm:grid-cols-3 gap-x-8 gap-y-4">
+    {
+      blok.recomienda_cards?.map((blok: any) => (
+        <StoryblokComponent blok={blok} />
+      ))
+    }
+  </section>
+  <section>
+    {
+      blok.formulario_recomienda.map((blok: any) => (
+        <StoryblokComponent blok={blok} />
+      ))
+    }
+  </section>
+</div>

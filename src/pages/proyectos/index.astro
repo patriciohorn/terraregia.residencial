@@ -23,7 +23,9 @@ const proyectos = data.stories.map((story: any) => {
 ---
 
 <BaseLayout title="Terra Regia Residencial | Proyectos">
-  <section class="container">
-    <ProjectFilter proyectos={proyectos} client:visible />
+  <section class="py-12 sm:py-16">
+    <div class="container">
+      <ProjectFilter proyectos={proyectos} client:visible />
+    </div>
   </section>
 </BaseLayout>

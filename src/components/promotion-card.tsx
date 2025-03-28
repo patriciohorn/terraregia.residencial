@@ -31,7 +31,7 @@ export function PromotionCardd({ proyecto, small }: any) {
             promocion={proyecto.content.promociones[0]}
           />
 
-          <div className="p-2 text-white flex justify-between z-10">
+          <div className="p-2 text-neutral-100 flex justify-between z-10">
             {proyecto.content.promociones[0].mensualidades.length >
               0 && (
               <div>
