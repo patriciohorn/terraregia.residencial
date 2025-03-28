@@ -28,7 +28,7 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
     </div>
 
     <div class="lg:hidden flex">
-      <MobileNav blok={blok} whatsapp={blok.whatsapp} client:load />
+      <MobileNav blok={blok} whatsapp={whatsappHeader} client:load />
     </div>
 
     <div class="hidden lg:flex lg:gap-x-10">
@@ -50,7 +50,7 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
             <Link
               href={item.link}
               size="icon"
-              className="h-8 w-8 shadow-sm"
+              className="h-8 w-8 shadow-sm hover:opacity-90"
               target="_blank">
               <Image
                 src={item.icono}

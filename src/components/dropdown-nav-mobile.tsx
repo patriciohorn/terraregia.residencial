@@ -13,6 +13,8 @@ import {
   costoFilter,
 } from '@/stores/filterStore';
 
+import { cn } from '@/lib/utils';
+
 import {
   MapPin,
   CircleDollarSign,
@@ -62,27 +64,30 @@ const navItems: NavItem[] = [
 
 export function DropdownNavMobile() {
   return (
-    <nav className="flex flex-col items-start gap-2 w-full rounded-md shadow-sm py-4 text-black bg-white border border-black">
+    <nav className="flex flex-row items-center justify-between gap-2 w-full rounded-[12px] shadow-sm p-3 text-[#404040] bg-white border">
       {navItems.map((item) => (
         <DropdownMenu key={item.label}>
           <DropdownMenuTrigger>
-            <Button variant="ghost" size="sm" className="text-sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-sm py-2 px-0 focus-visible:ring-0">
               {item.label === 'Ubicación' && (
-                <MapPin className="w-4 h-4 mr-1" />
+                <MapPin className="hidden w-4 h-4 mr-1" />
               )}
               {item.label === 'Tipo de Propiedad' && (
-                <Home className="w-4 h-4 mr-1" />
+                <Home className="hidden w-4 h-4 mr-1" />
               )}
               {item.label === 'Costo' && (
-                <CircleDollarSign className="w-4 h-4 mr-1" />
+                <CircleDollarSign className="hidden w-4 h-4 mr-1" />
               )}
               {item.label}
               <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            align="start"
-            className="w-full min-w-80 mt-1 border border-black p-3 rounded-sm">
+            align={item.label === 'Costo' ? 'end' : 'start'}
+            className={cn('border p-3 rounded-[7px]')}>
             {item.items.map((subItem) => {
               const filterValue = subItem.filterValue;
               const handleNavigation = () => {
