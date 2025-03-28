@@ -62,12 +62,12 @@ const { blok, badge, showPreventaBadge, small } = Astro.props;
     <div class={cn(small ? '' : 'flex flex-col gap-y-1')}>
       <h3
         class={cn(
-          `text-xl font-heading tracking-[0.01em]`,
+          `text-xl font-heading tracking-[0.01em] text-neutral-950`,
           small ? 'sm:text-xl' : 'sm:text-2xl'
         )}>
         {blok.nombre}
       </h3>
-      <div class="flex gap-1 items-center text-[#827D7D]">
+      <div class="flex gap-1 items-center">
         <MapPin className={cn(`w-auto`, small ? 'h-3' : 'h-4')} />
         <p class="text-sm font-medium">{blok.ubicacion}</p>
       </div>

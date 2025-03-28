@@ -7,25 +7,23 @@ const { blok } = Astro.props;
 const renderedRichText = renderRichText(blok.descripcion);
 ---
 
-<section {...storyblokEditable(blok)} class="py-12 sm:pt-24 sm:pb-28">
+<section {...storyblokEditable(blok)} class="py-16 sm:py-28">
   <div class="container">
-    <div class="grid sm:grid-cols-2 gap-y-12 gap-x-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-20">
       <div>
         <div>
-          <h2 class="relative text-3xl sm:text-5xl font-heading mb-6">
+          <h2
+            class="mb-4 sm:mb-6 relative text-3xl sm:text-5xl font-heading text-neutral-950">
             {blok.titulo}
           </h2>
-          <div
-            class="text-neutral-600 text-lg"
-            set:html={renderedRichText}
-          />
+          <div class="text-lg" set:html={renderedRichText} />
         </div>
         <a
           class="flex group mt-6 sm:hidden"
           href={blok.boton_link}
           target="_blank">
           <Button
-            className="bg-[#D9D9D9] text-black group-hover:text-white group-hover:bg-black text-base font-medium"
+            className="bg-[#D9D9D9] text-neutral-950 group-hover:text-white group-hover:bg-black text-base font-medium"
             client:visible>
             {blok.boton_texto}
           </Button>
@@ -43,10 +41,10 @@ const renderedRichText = renderRichText(blok.descripcion);
         {
           blok.stats.map((item: any) => (
             <li class="flex flex-col text-center gap-2">
-              <span class="text-5xl sm:text-7xl font-heading">
+              <span class="text-5xl sm:text-7xl font-heading text-neutral-950">
                 {item.stat}
               </span>
-              <span class="text-sm sm:text-base text-neutral-500 h-[60px] sm:h-8">
+              <span class="text-base sm:text-base text-neutral-600 h-[72px] sm:h-8">
                 {item.descripcion}
               </span>
             </li>

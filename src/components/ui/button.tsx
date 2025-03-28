@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-white shadow hover:bg-primary/90',
         outline:
-          'border border-input bg-background shadow-sm hover:bg-black hover:text-white',
+          'border border-neutral-300 bg-background shadow-sm hover:bg-black hover:text-white',
         invertedOutline:
           'bg-foreground shadow-sm hover:bg-white hover:text-foreground',
         secondary:

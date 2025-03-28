@@ -7,23 +7,21 @@ const { blok } = Astro.props;
 const presupuestoCards = blok.presupuesto_cards;
 ---
 
-<section
-  {...storyblokEditable(blok)}
-  class="pt-8 pb-16 sm:py-16 sm:pb-24">
+<section {...storyblokEditable(blok)} class="py-16 sm:py-28">
   <div class="w-full max-w-none overflow-hidden">
     <div class="container">
       <h2
-        class="font-medium font-heading text-3xl sm:text-5xl leading-[1.1]">
+        class="mb-8 sm:mb-10 font-medium font-heading text-3xl sm:text-5xl leading-[1.1] text-neutral-950">
         {blok.titulo}
       </h2>
-      <div class="hidden sm:block mt-6 sm:mt-16">
+      <div class="hidden sm:block">
         <PresupuestoCarousel
           cards={presupuestoCards}
           client:visible
         />
       </div>
     </div>
-    <div class="pl-4 sm:hidden mt-6 sm:mt-16">
+    <div class="pl-4 sm:hidden">
       <PresupuestoCarousel cards={presupuestoCards} client:visible />
     </div>
   </div>

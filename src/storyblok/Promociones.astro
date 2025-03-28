@@ -9,18 +9,18 @@ const { blok } = Astro.props;
 <section {...storyblokEditable(blok)} class="py-16 sm:py-24">
   <div class="container">
     <h2
-      class="font-heading text-3xl sm:text-5xl leading-4 tracking-[0.01em]">
+      class="mb-8 sm:mb-10 font-heading text-3xl sm:text-5xl leading-4 tracking-[0.01em] text-neutral-950">
       {blok.titulo}
     </h2>
 
-    <div class="hidden sm:block mt-8 sm:mt-12">
+    <div class="hidden sm:block">
       <PromocionesCarousel
         proyectos={blok.proyectos}
         client:visible
       />
     </div>
   </div>
-  <div class="sm:hidden mt-8 sm:mt-12 pl-4">
+  <div class="sm:hidden mt-8 pl-5">
     <PromocionesCarousel proyectos={blok.proyectos} client:visible />
   </div>
 </section>

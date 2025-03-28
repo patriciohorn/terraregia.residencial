@@ -34,12 +34,12 @@ const ProjectCard = ({ proyecto, small }: any) => {
         <div className={cn(small ? '' : 'flex flex-col gap-y-1')}>
           <h3
             className={cn(
-              `text-xl font-heading tracking-[0.01em]`,
+              `text-xl font-heading tracking-[0.01em] text-neutral-950`,
               small ? 'sm:text-xl' : 'sm:text-2xl'
             )}>
             {proyecto.nombre}
           </h3>
-          <div className="flex gap-1 items-center text-[#827D7D]">
+          <div className="flex gap-1 items-center ">
             <MapPin className={cn(`w-auto`, small ? 'h-3' : 'h-4')} />
             <p className="text-sm font-medium">
               {proyecto.ubicacion}
