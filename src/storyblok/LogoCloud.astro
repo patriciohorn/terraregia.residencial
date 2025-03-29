@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/astro';
 import { Image } from 'astro:assets';
 const { blok } = Astro.props;
 
-const repeatCount = 5;
+const repeatCount = 3;
 ---
 
 <section {...storyblokEditable(blok)}>
@@ -31,10 +31,10 @@ const repeatCount = 5;
       }
     </div>
     <div
-      class="hidden sm:pointer-events-none sm:absolute sm:inset-y-0 sm:left-0 sm:w-1/4 sm:bg-gradient-to-r sm:from-[#f5f5f5]">
+      class="hidden sm:block sm:pointer-events-none sm:absolute sm:inset-y-0 sm:left-0 sm:w-1/4 sm:bg-gradient-to-r sm:from-[#f5f5f5]">
     </div>
     <div
-      class="hidden sm:pointer-events-none sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/4 sm:bg-gradient-to-l sm:from-[#f5f5f5]">
+      class="hidden sm:block sm:pointer-events-none sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/4 sm:bg-gradient-to-l sm:from-[#f5f5f5]">
     </div>
   </div>
 </section>

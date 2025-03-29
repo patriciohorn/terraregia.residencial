@@ -19,11 +19,11 @@ const renderedRichText = renderRichText(blok.descripcion);
           <div class="text-lg" set:html={renderedRichText} />
         </div>
         <a
-          class="flex justify-center items-center sm:justify-left group mt-6 sm:hidden"
+          class="flex justify-center items-center sm:justify-left group mt-8 sm:hidden"
           href={blok.boton_link}
           target="_blank">
           <Button
-            className="bg-[#D9D9D9] w-full text-neutral-950 group-hover:text-white group-hover:bg-black text-base font-medium"
+            className="bg-[#D9D9D9] w-[80%] text-neutral-950 group-hover:text-white group-hover:bg-black text-base font-medium"
             client:visible>
             {blok.boton_texto}
           </Button>
