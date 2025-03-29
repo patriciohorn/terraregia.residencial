@@ -23,7 +23,7 @@ const nombreProyecto = blok.nombre;
 ---
 
 <main {...storyblokEditable(blok)}>
-  <section class="py-8 sm:pt-12 sm:pb-8 container">
+  <section class="pt-14 pb-4 sm:pt-14 sm:pb-8 container">
     <ProyectoBreadcrumb
       nombreProyecto={nombreProyecto}
       client:visible
@@ -34,7 +34,7 @@ const nombreProyecto = blok.nombre;
     <div
       class="mt-6 sm:mt-8 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
       <div
-        class="overflow-hidden rounded-md shadow-sm relative aspect-[5/4] sm:aspect-auto">
+        class="overflow-hidden rounded-md shasdow-sm relative aspect-[5/4] sm:aspect-auto">
         <Image
           src={blok.imagen_portada.filename}
           alt="Image"
@@ -134,7 +134,7 @@ const nombreProyecto = blok.nombre;
 
   {
     blok.contacto && (
-      <section class="py-8 sm:py-16">
+      <section>
         {blok.contacto?.map((blok: any) => (
           <StoryblokComponent blok={blok} formName={formName} />
         ))}

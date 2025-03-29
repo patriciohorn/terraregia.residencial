@@ -14,7 +14,7 @@ const locationDescription = renderRichText(blok.descripcion_location);
   {...storyblokEditable(blok)}
   class="grid sm:grid-cols-3 gap-y-4 sm:gap-x-6">
   <div
-    class="map | overflow-hidden rounded-md shadow-sm col-span-2 aspect-[4/3] sm:aspect-auto"
+    class="map | overflow-hidden rounded-md shadow-sm col-span-2 aspect-[4/5] sm:aspect-auto"
     set:html={blok.mapa}>
     <!-- Render iframe with Project Google Map -->
   </div>
@@ -22,7 +22,7 @@ const locationDescription = renderRichText(blok.descripcion_location);
     <div
       class="bg-white rounded-md p-6 flex flex-col justify-between shadow-sm min-h-64">
       <div class="">
-        <h3 class="text-3xl font-heading">
+        <h3 class="text-3xl font-heading text-neutral-950">
           {blok.titulo_cita}
         </h3>
         <div
@@ -74,5 +74,6 @@ const locationDescription = renderRichText(blok.descripcion_location);
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 1.25rem;
   }
 </style>
