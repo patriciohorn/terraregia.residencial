@@ -170,7 +170,7 @@ const ProjectFilter = ({ proyectos }: any) => {
       <div className="min-h-[80vh]">
         {isInitialized ? (
           filteredProyectos.length > 0 ? (
-            <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-12">
+            <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-10">
               {filteredProyectos.map((proyecto: any) => (
                 <ProjectCard
                   key={proyecto.slug}

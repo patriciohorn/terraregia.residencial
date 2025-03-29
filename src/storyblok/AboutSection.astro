@@ -7,7 +7,7 @@ const { blok } = Astro.props;
 const renderedRichText = renderRichText(blok.descripcion);
 ---
 
-<section {...storyblokEditable(blok)} class="py-14 sm:py-24">
+<section {...storyblokEditable(blok)} class="py-12 sm:py-20">
   <div class="container">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-20">
       <div>
@@ -19,11 +19,11 @@ const renderedRichText = renderRichText(blok.descripcion);
           <div class="text-lg" set:html={renderedRichText} />
         </div>
         <a
-          class="flex group mt-6 sm:hidden"
+          class="flex justify-center items-center sm:justify-left group mt-6 sm:hidden"
           href={blok.boton_link}
           target="_blank">
           <Button
-            className="bg-[#D9D9D9] text-neutral-950 group-hover:text-white group-hover:bg-black text-base font-medium"
+            className="bg-[#D9D9D9] w-full text-neutral-950 group-hover:text-white group-hover:bg-black text-base font-medium"
             client:visible>
             {blok.boton_texto}
           </Button>
@@ -37,7 +37,8 @@ const renderedRichText = renderRichText(blok.descripcion);
           </Button>
         </a>
       </div>
-      <ul class="grid grid-cols-3 items-center gap-x-6 sm:gap-x-8">
+      <ul
+        class="grid grid-cols-3 items-center gap-x-6 sm:gap-x-8 py-4 sm:py-0">
         {
           blok.stats.map((item: any) => (
             <li class="flex flex-col text-center gap-2">
