@@ -20,7 +20,10 @@ export function PresupuestoCard({ card }: any) {
           </p>
         </div>
         <span className="self-end inline-flex items-center justify-center transition-colors duration-300 ease-in-out">
-          <ExternalLink className="opacity-0 group-hover:opacity-100 lg:group-hover:text-white" />
+          <ExternalLink
+            size={32}
+            className="opacity-1 sm:opacity-0 sm:group-hover:opacity-100 sm:group-hover:text-white"
+          />
         </span>
       </div>
     </a>
