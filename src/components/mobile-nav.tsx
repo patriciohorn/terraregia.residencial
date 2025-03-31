@@ -29,6 +29,8 @@ export function MobileNav({ blok, whatsapp }: any) {
         <img
           src={whatsappIcon.src}
           alt="Logo Whatsapp"
+          width={24}
+          height={24}
           className="w-6 h-6"
         />
       </Link>
