@@ -62,8 +62,9 @@ const nombreProyecto = blok.nombre;
       </div>
     </div>
   </section>
+
   {
-    blok.galeria && (
+    blok.galeria && blok.galeria.length > 0 && (
       <section class="hidden sm:grid sm:grid-cols-4 sm:gap-x-7 container">
         {blok.galeria.map((blok: any) => {
           return <StoryblokComponent blok={blok} />;
@@ -73,7 +74,7 @@ const nombreProyecto = blok.nombre;
   }
 
   {
-    blok.galeria && (
+    blok.galeria && blok.galeria.length > 0 && (
       <section class="sm:hidden pl-5 ml-auto">
         <SecondaryImagesCarousel blok={blok.galeria} client:visible />
       </section>
@@ -81,7 +82,7 @@ const nombreProyecto = blok.nombre;
   }
 
   {
-    blok.detalles_proyecto && (
+    blok.detalles_proyecto && blok.detalles_proyecto > 0 && (
       <section class="pt-12">
         <div class="container">
           {blok.detalles_proyecto.map((blok: any) => (
@@ -97,13 +98,14 @@ const nombreProyecto = blok.nombre;
 
   {
     blok.tour_virtual &&
+      blok.tour_virtual.length > 0 &&
       blok.tour_virtual?.map((blok: any) => (
         <StoryblokComponent blok={blok} />
       ))
   }
 
   {
-    blok.servicios && (
+    blok.servicios && blok.servicios.length > 0 && (
       <section class="pt-12">
         <div class="container pb-6 grid sm:grid-cols-3 gap-x-6 gap-y-4">
           {blok.servicios?.map((blok: any) => (
@@ -115,7 +117,7 @@ const nombreProyecto = blok.nombre;
   }
 
   {
-    blok.info_ubicacion && (
+    blok.info_ubicacion && blok.info_ubicacion.length > 0 && (
       <section class="pb-12">
         <div class="container">
           {blok.info_ubicacion?.map((blok: any) => (
@@ -127,7 +129,7 @@ const nombreProyecto = blok.nombre;
   }
 
   {
-    blok.contacto && (
+    blok.contacto && blok.contacto.length > 0 && (
       <section>
         {blok.contacto?.map((blok: any) => (
           <StoryblokComponent blok={blok} formName={formName} />
