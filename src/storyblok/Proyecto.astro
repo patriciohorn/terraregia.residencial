@@ -82,7 +82,7 @@ const nombreProyecto = blok.nombre;
   }
 
   {
-    blok.detalles_proyecto && blok.detalles_proyecto > 0 && (
+    blok.detalles_proyecto && blok.detalles_proyecto.length > 0 && (
       <section class="pt-12">
         <div class="container">
           {blok.detalles_proyecto.map((blok: any) => (

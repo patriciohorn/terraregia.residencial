@@ -11,27 +11,23 @@ export async function getStaticPaths() {
   const links = await storyblokApi.getAll('cdn/links', {
     version: isPreview() ? 'draft' : 'published',
   });
-  return links
-    .filter((link) => !link.is_folder)
-    .map((link) => {
-      return {
-        params: {
-          slug: link.slug === 'home' ? undefined : link.slug,
-        },
-      };
-    });
+
+  return links.map((link) => {
+    return {
+      params: {
+        slug: link.slug,
+      },
+    };
+  });
 }
 
 const { slug } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi.get(
-  `cdn/stories/${slug === undefined ? 'home' : slug}`,
-  {
-    version: isPreview() ? 'draft' : 'published',
-  }
-);
+const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+  version: isPreview() ? 'draft' : 'published',
+});
 
 const story = data.story;
 const whatsapp = story.content.whatsapp
