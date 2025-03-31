@@ -36,9 +36,7 @@ const { data } = await storyblokApi.get(
 const story = data.story;
 const whatsapp = story.content.whatsapp
   ? story.content.whatsapp
-  : story.content.info_ubicacion.length > 0
-    ? story.content.info_ubicacion[0].whatsapp
-    : '8131418886';
+  : '8131418886';
 ---
 
 <BaseLayout
