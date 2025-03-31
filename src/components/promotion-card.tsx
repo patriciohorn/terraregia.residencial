@@ -15,7 +15,6 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 
 export function PromotionCardd({ proyecto, small }: any) {
-  console.log(proyecto);
   return (
     <article className="group">
       <a href={`/proyectos/${proyecto.slug}`}>

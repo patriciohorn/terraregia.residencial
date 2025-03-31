@@ -45,30 +45,11 @@ export default defineConfig({
         detalles_casas: 'storyblok/DetallesCasas',
         proyectos_por_presupuesto: 'storyblok/ProyectosPresupuesto',
         formulario_general: 'storyblok/FormularioGeneral',
-
-        'proyectos-presupuesto': 'storyblok/ProyectosPresupuesto',
-        'hero-recomienda-y-gana': 'storyblok/Hero',
-        'grid-3-cols': 'storyblok/Grid3Cols',
-
-        // 'recomienda-form': 'storyblok/RecomiendaForm',
-
-        'politicas-content': 'storyblok/PoliticasContent',
-        // 'promociones-del-mes': 'storyblok/PromocionesDelMes',
-        // project: 'storyblok/Project',
+        'project-details': 'storyblok/ProjectDetails',
         detalles_terreno: 'storyblok/DetallesTerreno',
         servicio_card: 'storyblok/ServicioCard',
         info_ubicacion: 'storyblok/InfoUbicacion',
         tour_virtual: 'storyblok/TourVirtual',
-
-        // 'cover-image': 'storyblok/ProjectCover',
-
-        /// Projects
-        info_general_proyecto: 'storyblok/projects/ProjectHero',
-
-        galeria: 'storyblok/projects/ProjectGallery',
-        'project-details': 'storyblok/projects/ProjectDetails',
-        servicios_card_container:
-          'storyblok/projects/ServiciosCardsContainer',
       },
       apiOptions: {
         region: 'us',

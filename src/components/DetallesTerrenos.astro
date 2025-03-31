@@ -2,11 +2,9 @@
 import { Image } from 'astro:assets';
 import { Link } from './link';
 import { CloudDownload } from 'lucide-react';
-
 import { TipologiaCarousel } from './tipologia-carousel';
-// import VariantFooter from './VariantFooter.astro';
+
 const { blok } = Astro.props;
-console.log(blok);
 ---
 
 <section>
@@ -15,23 +13,34 @@ console.log(blok);
       class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md shadow-sm">
       <!-- Tipologia  -->
       <div class="flex flex-col justify-between">
-        <h2 class="text-2xl sm:text-[40px] text-black font-medium">{blok.titulo}</h2>
-        <TipologiaCarousel images={blok.imagenes_carrusel} client:visible />
+        <h2 class="text-2xl sm:text-[40px] text-black font-medium">
+          {blok.titulo}
+        </h2>
+        <TipologiaCarousel
+          images={blok.imagenes_carrusel}
+          client:visible
+        />
 
         <!-- Especificaciones -->
         <div
           class="flex flex-wrap items-center w-full justify-center sm:justify-center gap-y-6 gap-x-8 sm:max-w-sm sm:mx-auto">
           <div class="flex items-center gap-x-8 justify-between">
             <div class="flex flex-col gap-1 items-center">
-              <p class="text-xs text-center sm:text-base font-medium">Frente</p>
+              <p class="text-xs text-center sm:text-base font-medium">
+                Frente
+              </p>
               <p class="text-base text-neutral-600">{blok.frente}</p>
             </div>
             <div class="flex flex-col gap-1 items-center">
-              <p class="text-xs text-center sm:text-base font-medium">Fondo</p>
+              <p class="text-xs text-center sm:text-base font-medium">
+                Fondo
+              </p>
               <p class="text-base text-neutral-600">{blok.fondo}</p>
             </div>
             <div class="flex flex-col gap-1 items-center">
-              <p class="text-xs text-center sm:text-base font-medium">Área</p>
+              <p class="text-xs text-center sm:text-base font-medium">
+                Área
+              </p>
               <p class="text-base text-neutral-600">{blok.area}</p>
             </div>
           </div>
@@ -60,7 +69,9 @@ console.log(blok);
             inferSize
           />
         </div>
-        <p class="text-xl sm:text-2xl font-medium">{blok.descripcion_proyecto}</p>
+        <p class="text-xl sm:text-2xl font-medium">
+          {blok.descripcion_proyecto}
+        </p>
       </div>
     </div>
   </div>

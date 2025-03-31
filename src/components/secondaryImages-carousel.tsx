@@ -17,7 +17,6 @@ import { Badge } from '@/components/ui/badge';
 // }
 
 export function SecondaryImagesCarousel({ blok }: any) {
-  console.log(blok);
   return (
     <Carousel
       opts={{

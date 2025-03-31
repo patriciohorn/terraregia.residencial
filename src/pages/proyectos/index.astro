@@ -1,12 +1,12 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro';
-
+import isPreview from '@/lib/utils';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProjectFilter from '@/components/project-filter';
 const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get('cdn/stories/', {
-  version: 'draft',
+  version: isPreview() ? 'draft' : 'published',
   content_type: 'proyecto',
 });
 

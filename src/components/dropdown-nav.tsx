@@ -86,7 +86,6 @@ export function DropdownNav() {
               const filterValue = subItem.filterValue;
               const handleNavigation = () => {
                 let filter = filterValue === '' ? '' : filterValue;
-                console.log(filter, item.filterKey);
 
                 if (item.filterKey === 'ubicacion') {
                   ubicacionFilter.set(filter);

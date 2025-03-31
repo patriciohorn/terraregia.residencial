@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
-// import { PushSpinner } from 'react-spinners-kit';
+
 import ProjectCard from './project-card';
 import { Button } from './ui/button';
-import {
-  MapPin,
-  CircleDollarSign,
-  House,
-  CircleX,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { MapPin, CircleDollarSign, House } from 'lucide-react';
 
 import { useStore } from '@nanostores/react';
 import {

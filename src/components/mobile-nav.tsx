@@ -1,16 +1,12 @@
-import { useState } from 'react';
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from './ui/button';
 import { Menu } from 'lucide-react';
 import whatsappIcon from '@/icons/whatsapp.svg';
-import logo from '@/assets/logo-terra-regia.svg';
+
 import { Link } from './link';
 
 // type MenuItem = {
@@ -70,6 +66,7 @@ export function MobileNav({ blok, whatsapp }: any) {
           <div className="mt-[52px] flex gap-2">
             {blok.links_social_media.map((item: any) => (
               <Link
+                key={item.titulo}
                 href={item.link}
                 size="icon"
                 className="h-10 w-10 shadow-sm hover:opacity-90"

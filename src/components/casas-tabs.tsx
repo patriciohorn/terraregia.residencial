@@ -22,7 +22,7 @@ import { useState } from 'react';
 const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
   const [selectedTab, setSelectedTab] = useState(modelos[0].nombre);
   const [plantas, setPlantas] = useState('2 plantas');
-  console.log(selectedTab);
+
   function handlePlantaChange(value: string) {
     setPlantas(value);
   }

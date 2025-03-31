@@ -1,22 +1,7 @@
 ---
-import {
-  Backpack,
-  CircleCheck,
-  ShoppingCart,
-  HeartPulse,
-  ArrowRight,
-  Dot,
-} from 'lucide-react';
-
-const { blok } = Astro.props;
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Image } from 'astro:assets';
 import { storyblokEditable } from '@storyblok/js';
+const { blok } = Astro.props;
 ---
 
 <div
@@ -49,33 +34,3 @@ import { storyblokEditable } from '@storyblok/js';
     </ul>
   </div>
 </div>
-<!-- <div
-  {...storyblokEditable(blok)}
-  class="rounded-md text-black flex gap-6">
-  <div
-    class="inline-flex
-   justify-center items-center rounded-full shadow-sm h-16 w-16 bg-[#b1ddde]">
-    <Image
-      src={blok.icono.filename}
-      alt=`icono ${blok.titulo}`
-      width="48"
-      height="48"
-      class="w-12 h-12 filter brightness-0 invert"
-    />
-  </div>
-  <div class="">
-    <h3 class="text-xl font-heading mb-2">
-      {blok.titulo}
-    </h3>
-    <ul class="space-y-0.5">
-      {
-        blok.servicio_item.map((item: any) => (
-          <li class=" text-neutral-600 tracking-[0.01em] flex items-center gap-2">
-            {/* <ArrowRight size={16} className="" /> */}
-            {item.servicio}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</div> -->
