@@ -1,18 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
+// import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import { sluglify, removeAccents } from '@/lib/utils';
-const allProjectPosts = await getCollection('project');
+// const allProjectPosts = await getCollection('project');
 
-const dominioCumbres = allProjectPosts.filter(
-  (project: any) => project.data.location === 'Dominio Cumbres'
-);
-const valleCondesa = allProjectPosts.filter(
-  (project: any) => project.data.location === 'Valle Condesa'
-);
-const apodaca = allProjectPosts.filter(
-  (project: any) => project.data.location === 'Apodaca'
-);
+// const dominioCumbres = allProjectPosts.filter(
+//   (project: any) => project.data.location === 'Dominio Cumbres'
+// );
+// const valleCondesa = allProjectPosts.filter(
+//   (project: any) => project.data.location === 'Valle Condesa'
+// );
+// const apodaca = allProjectPosts.filter(
+//   (project: any) => project.data.location === 'Apodaca'
+// );
 
 const socialMediaIcons = [
   {
@@ -45,7 +45,7 @@ const socialMediaIcons = [
           Proyectos en venta en Dominio Cumbres
         </h3>
         <ul class="mt-4 space-y-2">
-          {
+          <!-- {
             dominioCumbres.map((project: any) => (
               <li class="text-sm">
                 <a
@@ -55,7 +55,7 @@ const socialMediaIcons = [
                 </a>
               </li>
             ))
-          }
+          } -->
         </ul>
       </div>
 
@@ -66,7 +66,7 @@ const socialMediaIcons = [
           Proyectos en venta en Valle Condesa
         </h3>
         <ul class="mt-4 space-y-2">
-          {
+          <!-- {
             valleCondesa.map((project: any) => (
               <li class="text-sm">
                 <a
@@ -76,7 +76,7 @@ const socialMediaIcons = [
                 </a>
               </li>
             ))
-          }
+          } -->
         </ul>
       </div>
 
@@ -87,7 +87,7 @@ const socialMediaIcons = [
           Proyectos en venta en Apodaca
         </h3>
         <ul class="mt-4 space-y-2">
-          {
+          <!-- {
             apodaca.map((project: any) => (
               <li class="text-sm">
                 <a
@@ -97,7 +97,7 @@ const socialMediaIcons = [
                 </a>
               </li>
             ))
-          }
+          } -->
         </ul>
       </div>
 
@@ -133,6 +133,8 @@ const socialMediaIcons = [
               <a href={plataform.path}>
                 <span class="sr-only">Facebook Terra Regia</span>
                 <Icon
+                  width="16"
+                  height="16"
                   name={plataform.name}
                   class="text-neutral-950 w-6 h-6 group-hover:text-[#E6E9E9]"
                 />
