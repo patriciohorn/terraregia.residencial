@@ -21,7 +21,7 @@ const footerContent = data.story.content.body.find(
 
 const { title, content, slug, whatsapp } = Astro.props;
 
-const isProject = slug ? true : false;
+// const isProject = slug ? true : false;
 ---
 
 <!doctype html>
@@ -54,6 +54,11 @@ const isProject = slug ? true : false;
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
+    <script
+      is:inline
+      defer
+      data-domain="terraregiaresidencial.com"
+      src="https://plausible.io/js/script.js"></script>
 
     <!-- ViewTransitions  -->
     <ViewTransitions />
