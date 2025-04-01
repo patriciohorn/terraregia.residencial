@@ -7,11 +7,6 @@ import { CircleCheck } from 'lucide-react';
 export function ProjectForm({ webhook, project }: any) {
   const [successMessage, setSuccessMessage] = useState('');
 
-  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   setSuccessMessage('Tus datos han sido enviados');
-  // };
-
   return (
     <form
       method="post"
@@ -24,13 +19,33 @@ export function ProjectForm({ webhook, project }: any) {
       <input type="hidden" name="form-name" value={project} />
 
       <div className="grid sm:grid-cols-2 gap-4">
-        <Input type="text" placeholder="Nombre" name="nombre" required />
-        <Input type="text" placeholder="Apellidos" name="apellidos" required />
+        <Input
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          required
+        />
+        <Input
+          type="text"
+          placeholder="Apellidos"
+          name="apellidos"
+          required
+        />
       </div>
 
       <div className="grid sm:grid-cols-3 gap-4">
-        <Input type="email" placeholder="Email" name="email" required />
-        <Input type="tel" placeholder="Whatsapp" name="whatsapp" required />
+        <Input
+          type="email"
+          placeholder="Email"
+          name="email"
+          required
+        />
+        <Input
+          type="tel"
+          placeholder="Whatsapp"
+          name="whatsapp"
+          required
+        />
         {/* <Button
           size="lg"
           type="submit"
@@ -49,7 +64,11 @@ export function ProjectForm({ webhook, project }: any) {
         <button type="submit">Send</button>
       </div>
 
-      {successMessage && <p className="mt-4 text-green-600 text-center">{successMessage}</p>}
+      {successMessage && (
+        <p className="mt-4 text-green-600 text-center">
+          {successMessage}
+        </p>
+      )}
     </form>
   );
 }

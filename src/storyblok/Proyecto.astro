@@ -11,8 +11,11 @@ import { SecondaryImagesCarousel } from '@/components/secondaryImages-carousel';
 
 const { blok } = Astro.props;
 const formName = removeAccents(
-  blok.nombre.toLowerCase().split(' ').join('')
+  blok.nombre.toLowerCase().trim().split(' ').join('')
 );
+
+console.log(formName);
+
 const nombreProyecto = blok.nombre;
 ---
 
