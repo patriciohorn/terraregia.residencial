@@ -8,11 +8,16 @@ import Footer from '@/components/Footer.astro';
 
 const storyblokApi = useStoryblokApi();
 
-const { data } = await storyblokApi.get('cdn/stories/header', {
+const { data } = await storyblokApi.get('cdn/stories/layout', {
   version: 'draft',
 });
 
-const headerContent = data.story.content;
+const headerContent = data.story.content.body.find(
+  (blok: any) => blok.component === 'header'
+);
+const footerContent = data.story.content.body.find(
+  (blok: any) => blok.component === 'footer'
+);
 
 const { title, content, slug, whatsapp } = Astro.props;
 
@@ -54,14 +59,10 @@ const isProject = slug ? true : false;
     <ViewTransitions />
   </head>
   <body class="overflow-x-hidden bg-[#F5F5F5] text-neutral-600">
-    <Header
-      blok={headerContent}
-      isProject={isProject}
-      whatsapp={whatsapp}
-    />
+    <Header blok={headerContent} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer blok={footerContent} />
   </body>
 </html>

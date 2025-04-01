@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils';
 import { MobileNav } from '@/components/mobile-nav';
 import { Link } from '@/components/link';
 import { Icon } from 'astro-icon/components';
-const { blok, isProject, whatsapp } = Astro.props;
+const { blok } = Astro.props;
 
-const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
+// const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
 ---
 
 <header>
@@ -18,9 +18,9 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
         <span class="sr-only">Logo Terra Regia</span>
         <Image
           src={blok.logo.filename}
-          alt={blok.logo.alt}
+          alt={blok.logo.alt || 'logo Terra Regia'}
           class="h-full w-full max-w-36"
-          inferSize
+          inferSize={true}
           loading="eager"
           format="webp"
         />
@@ -28,12 +28,12 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
     </div>
 
     <div class="lg:hidden flex">
-      <MobileNav blok={blok} whatsapp={whatsappHeader} client:load />
+      <MobileNav blok={blok} client:load />
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
       {
-        blok.navegacion.map((item: any) => (
+        blok.links_navegacion.map((item: any) => (
           <a
             href={`/${item.link.cached_url}`}
             class={cn(
@@ -65,7 +65,7 @@ const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
         }
       </div>
       <Link
-        href={`https://api.whatsapp.com/send/?phone=${whatsappHeader}`}
+        href={`https://api.whatsapp.com/send/?phone=${blok.whatsapp}`}
         size="sm"
         className="group text-base bg-[hsl(142,70%,49%)] hover:bg-[#1c1e21] text-[#052e16]  shadow-sm transition-colors ease-in duration-200 flex items-center"
         target="_blank">

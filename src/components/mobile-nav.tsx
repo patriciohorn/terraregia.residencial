@@ -23,7 +23,7 @@ export function MobileNav({ blok, whatsapp }: any) {
   return (
     <div className="flex gap-2">
       <Link
-        href={`https://api.whatsapp.com/send/?phone=${whatsapp}`}
+        href={`https://api.whatsapp.com/send/?phone=${blok.whatsapp}`}
         size="icon"
         className="bg-[#25D366]">
         <img
@@ -55,9 +55,9 @@ export function MobileNav({ blok, whatsapp }: any) {
             </a>
           </div>
           <div className="mt-8 flex flex-col items-start gap-2">
-            {blok.navegacion.map((item: any) => (
+            {blok.links_navegacion.map((item: any) => (
               <Link
-                key={item.texto}
+                key={item.id}
                 variant={'link'}
                 href={`/${item.link.cached_url}`}
                 className="pl-0 text-lg">
