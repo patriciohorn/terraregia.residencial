@@ -1,0 +1,44 @@
+---
+// export const prerender = true;
+import { useStoryblokApi } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import isPreview from '@/lib/utils';
+
+export async function getStaticPaths() {
+  const storyblokApi = useStoryblokApi();
+
+  const links = await storyblokApi.getAll('cdn/links', {
+    version: isPreview() ? 'draft' : 'published',
+  });
+
+  return links.map((link) => {
+    return {
+      params: {
+        slug: link.slug === 'home' ? undefined : link.slug,
+      },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+console.log(slug);
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+  version: isPreview() ? 'draft' : 'published',
+});
+
+const story = data.story;
+const whatsapp = story.content.whatsapp
+  ? story.content.whatsapp
+  : '8131418886';
+---
+
+<BaseLayout
+  title={`Terra Regia Residencial | ${story.content.nombre}`}
+  slug="proyecto"
+  whatsapp={whatsapp}>
+  <StoryblokComponent blok={story.content} />
+</BaseLayout>

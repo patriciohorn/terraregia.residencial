@@ -1,35 +1,43 @@
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 
-type Image = {
-  src: string;
-};
+// type Image = {
+//   src: string;
+// };
 
-type Amenidad = string;
+// type Amenidad = string;
 
-interface SecondaryImagesCarouselProps {
-  images: Image[];
-  amenidades: Amenidad[];
-}
+// interface SecondaryImagesCarouselProps {
+//   images: Image[];
+//   amenidades: Amenidad[];
+// }
 
-export function SecondaryImagesCarousel({ images, amenidades }: SecondaryImagesCarouselProps) {
+export function SecondaryImagesCarousel({ blok }: any) {
   return (
     <Carousel
       opts={{
         align: 'start',
-        loop: true
+        loop: true,
       }}>
       <CarouselContent>
-        {images.map((image, idx) => (
+        {blok.map((item: any, idx: number) => (
           <CarouselItem key={idx} className="basis-1/1">
-            <div className="overflow-hidden shadow-sm rounded-md w-60 h-56 relative">
+            <div className="overflow-hidden shadow-sm rounded-md aspect-square max-w-60 relative">
               <img
-                src={image.src}
+                src={item.imagen_galeria.filename}
                 alt="Foto de proyecto"
+                width={240}
+                height={224}
                 className="w-full h-full object-cover"
                 loading="eager"
               />
-              <Badge className="absolute bottom-2 left-2 text-sm">{amenidades[idx]}</Badge>
+              <Badge className="absolute bottom-2 left-2 text-sm">
+                {item.texto_badge}
+              </Badge>
             </div>
           </CarouselItem>
         ))}

@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+import { Link } from './link';
+import { CloudDownload } from 'lucide-react';
+import { TipologiaCarousel } from './tipologia-carousel';
+
+const { blok } = Astro.props;
+---
+
+<section>
+  <div>
+    <div
+      class="grid sm:grid-cols-2 mt-[72px] sm:gap-x-20 gap-y-12 bg-white px-4 py-6 sm:px-12 sm:py-16 rounded-md shadow-sm">
+      <!-- Tipologia  -->
+      <div class="flex flex-col justify-between">
+        <h2 class="text-2xl sm:text-[40px] text-black font-medium">
+          {blok.titulo}
+        </h2>
+        <TipologiaCarousel
+          images={blok.imagenes_carrusel}
+          client:visible
+        />
+
+        <!-- Especificaciones -->
+        <div
+          class="flex flex-wrap items-center w-full justify-center sm:justify-center gap-y-6 gap-x-8 sm:max-w-sm sm:mx-auto">
+          <div class="flex items-center gap-x-8 justify-between">
+            <div class="flex flex-col gap-1 items-center">
+              <p class="text-xs text-center sm:text-base font-medium">
+                Frente
+              </p>
+              <p class="text-base text-neutral-600">{blok.frente}</p>
+            </div>
+            <div class="flex flex-col gap-1 items-center">
+              <p class="text-xs text-center sm:text-base font-medium">
+                Fondo
+              </p>
+              <p class="text-base text-neutral-600">{blok.fondo}</p>
+            </div>
+            <div class="flex flex-col gap-1 items-center">
+              <p class="text-xs text-center sm:text-base font-medium">
+                Área
+              </p>
+              <p class="text-base text-neutral-600">{blok.area}</p>
+            </div>
+          </div>
+          {
+            blok.brochure.url.length > 0 && (
+              <Link
+                href={blok.brochure.url}
+                target="_blank"
+                variant="default"
+                className="flex items-center gap-2 text-sm w-fit ">
+                <CloudDownload className="w-4 h-4" />
+                <span>Brochure</span>
+              </Link>
+            )
+          }
+        </div>
+      </div>
+      <div
+        class="flex flex-col justify-between px-4 py-6 sm:px-12 sm:pb-12 bg-[#E6E9E9] rounded-sm sm:rounded-md min-h-64 sm:min-h-[468px]">
+        <div class="sm:mt-8 sm:max-h-24 max-w-28 sm:max-w-32 mr-auto">
+          <Image
+            src={blok.logo_proyecto.filename}
+            alt={blok.logo_proyecto.alt}
+            class="object-cover w-full h-full"
+            format="webp"
+            inferSize
+          />
+        </div>
+        <p class="text-xl sm:text-2xl font-medium">
+          {blok.descripcion_proyecto}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

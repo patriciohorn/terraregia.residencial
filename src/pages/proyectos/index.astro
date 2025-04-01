@@ -1,0 +1,31 @@
+---
+import { useStoryblokApi } from '@storyblok/astro';
+import isPreview from '@/lib/utils';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectFilter from '@/components/project-filter';
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get('cdn/stories/', {
+  version: isPreview() ? 'draft' : 'published',
+  content_type: 'proyecto',
+});
+
+const proyectos = data.stories.map((story: any) => {
+  return {
+    nombre: story.content.nombre,
+    ubicacion: story.content.ubicacion,
+    precio: story.content.precio,
+    tipo: story.content.tipo,
+    imagen_portada: story.content.imagen_portada,
+    slug: story.slug,
+  };
+});
+---
+
+<BaseLayout title="Terra Regia Residencial | Proyectos">
+  <section class="py-12 sm:py-16">
+    <div class="container">
+      <ProjectFilter proyectos={proyectos} client:visible />
+    </div>
+  </section>
+</BaseLayout>

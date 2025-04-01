@@ -2,65 +2,49 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
+  AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from './ui/button';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-// Images
-import accordionImg1 from '@/assets/inversion-accordion1.png';
-import accordionImg2 from '@/assets/inversion-accordion2.png';
-import accordionImg3 from '@/assets/inversion-accordion3.png';
-
-const accordionItems = [
-  {
-    title: 'Para alquilar',
-    description:
-      'Al comprar una casa y ponerla en el mercado de alquiler, tienes la oportunidad de multiplicar tu inversión de manera constante. Haz que tu dinero trabaje por ti y genera ingresos pasivos mes a mes. ¡Invierte en bienes raíces y asegura tu futuro financiero!',
-    path: accordionImg1.src,
-    alt: 'Foto de proyecto Terra Regia'
-  },
-  {
-    title: 'Patrimonio',
-    description:
-      'Invertir en bienes raíces no solo es una apuesta a largo plazo, es una forma de crear patrimonio sólido. Las propiedades tienden a aumentar de valor con el tiempo, lo que significa que, al vender en el futuro, podrías obtener una ganancia considerable. Este crecimiento en el valor se debe a la plusvalía, el aumento continuo en el precio de las propiedades con el paso de los años. Tu inversión hoy puede ser tu ganancia mañana.',
-    path: accordionImg2.src,
-    alt: 'Foto de proyecto Terra Regia'
-  },
-  {
-    title: 'Precio de preventa',
-    description:
-      'Comprar en preventa ofrece precios más bajos y opciones de financiamiento atractivas, además de mayor plusvalía a medida que el proyecto avanza. También permite elegir las mejores ubicaciones. ¡Una inversión sin riesgos y con retorno en crecimiento',
-    path: accordionImg3.src,
-    alt: 'Foto de proyecto Terra Regia'
-  }
-];
-
-export function InversionAccordion() {
+export function InversionAccordion({ items }: any) {
   return (
     <Accordion type="single" collapsible className="w-full">
-      {accordionItems.map((item, idx) => (
+      {items.map((item: any, idx: number) => (
         <AccordionItem
-          value={item.title}
-          className={cn('border-neutral-400', idx === 0 ? 'border-t' : '')}
-          key={item.title}>
-          <AccordionTrigger className="text-2xl sm:text-[28px]">{item.title}</AccordionTrigger>
+          value={item.titulo}
+          className={cn(
+            'border-neutral-400',
+            idx === 0 ? 'border-t' : ''
+          )}
+          key={item._uid}>
+          <AccordionTrigger className="text-2xl sm:text-[28px] text-neutral-950">
+            {item.titulo}
+          </AccordionTrigger>
           <AccordionContent className="text-[#827D7D] text-base pt-4 pb-8">
             <div className="grid sm:grid-cols-[2fr_1.5fr] gap-x-12 gap-y-8">
               <div className="order-2 sm:order-1 flex flex-col gap-6">
-                <p>{item.description}</p>
-                <a className="flex group" href="/tipo-de-propiedad">
+                <p className="text-neutral-600">{item.descripcion}</p>
+                <a className="flex group" href={item.link_boton}>
                   <Button className="bg-[#D9D9D9] text-black group-hover:text-white group-hover:bg-black text-base font-medium">
-                    Ver Propiedades
+                    {item.texto_boton}
                   </Button>
-                  <Button size={'icon'} className="bg-[#D9D9D9]  group-hover:bg-black">
+                  <Button
+                    size={'icon'}
+                    className="bg-[#D9D9D9]  group-hover:bg-black">
                     <ArrowUpRight className="text-black group-hover:text-white " />
                   </Button>
                 </a>
               </div>
-              <div className="order-1 sm:order-2 rounded-md overflow-hidden h-56 shadow-sm">
-                <img src={item.path} alt={item.alt} className="w-full h-full object-cover" />
+              <div className="order-1 sm:order-2 rounded-md overflow-hidden aspect-video sm:aspect-square shadow-sm">
+                <img
+                  src={`${item.imagen.filename}`}
+                  alt={item.imagen.alt || 'Imagen acordeon'}
+                  className="w-full h-full object-cover"
+                  width={390}
+                  height={220}
+                />
               </div>
             </div>
           </AccordionContent>

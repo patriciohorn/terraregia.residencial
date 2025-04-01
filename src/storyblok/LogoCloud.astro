@@ -1,0 +1,40 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { Image } from 'astro:assets';
+const { blok } = Astro.props;
+
+const repeatCount = 3;
+---
+
+<section {...storyblokEditable(blok)}>
+  <div
+    class="max-w-7xl mx-auto relative py-12 sm:py-20 group overflow-hidden flex items-center bg-[#f5f5f5]">
+    <div
+      class="animate-slideSlow flex items-center gap-10 md:gap-20 whitespace-nowrap">
+      {
+        Array.from({ length: repeatCount }).map((_, index) =>
+          blok.logos.map((item: any) => (
+            <a
+              href={`/${item.link.cached_url}`}
+              class="shrink-0 cursor-pointer inline-flex max-w-24 sm:max-w-28">
+              <Image
+                src={item.logo.filename}
+                alt={item.texto_alt}
+                inferSize
+                format="webp"
+                class="w-full h-full object-contain"
+                loading="lazy"
+              />
+            </a>
+          ))
+        )
+      }
+    </div>
+    <div
+      class="hidden sm:block sm:pointer-events-none sm:absolute sm:inset-y-0 sm:left-0 sm:w-1/4 sm:bg-gradient-to-r sm:from-[#f5f5f5]">
+    </div>
+    <div
+      class="hidden sm:block sm:pointer-events-none sm:absolute sm:inset-y-0 sm:right-0 sm:w-1/4 sm:bg-gradient-to-l sm:from-[#f5f5f5]">
+    </div>
+  </div>
+</section>

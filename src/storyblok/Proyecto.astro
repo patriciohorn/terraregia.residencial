@@ -1,0 +1,143 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro';
+import { Image } from 'astro:assets';
+import { Badge } from '@/components/ui/badge';
+import ProjectDetails from '@/storyblok/ProjectDetails.astro';
+import Amenidades from '@/components/Amenidades.astro';
+import { removeAccents } from '@/lib/utils';
+import ProyectoBreadcrumb from '@/components/proyecto-breadcrumb';
+import { SecondaryImagesCarousel } from '@/components/secondaryImages-carousel';
+
+const { blok } = Astro.props;
+const formName = removeAccents(
+  blok.nombre.toLowerCase().trim().split(' ').join('')
+);
+
+console.log(formName);
+
+const nombreProyecto = blok.nombre;
+---
+
+<main {...storyblokEditable(blok)}>
+  <section class="pt-14 pb-4 sm:pt-14 sm:pb-8 container">
+    <ProyectoBreadcrumb
+      nombreProyecto={nombreProyecto}
+      client:visible
+    />
+    <h1 class="text-4xl sm:text-7xl text-neutral-950 font-heading">
+      {blok.nombre}
+    </h1>
+    <div
+      class="mt-6 sm:mt-8 grid sm:grid-cols-[2fr_1.5fr] gap-x-8 gap-y-4">
+      <div
+        class="overflow-hidden rounded-md shasdow-sm relative aspect-[5/4] sm:aspect-auto">
+        <Image
+          src={blok.imagen_portada.filename}
+          alt="Image"
+          class="w-full h-full object-cover"
+          loading="eager"
+          inferSize
+          format="webp"
+        />
+        <Badge
+          className="absolute bottom-3 left-2.5 text-sm sm:text-base"
+          client:visible>
+          {blok.badge_imagen_portada}
+        </Badge>
+      </div>
+      <div class="flex flex-col gap-y-4">
+        {
+          blok.promociones?.map((blok: any) => (
+            <StoryblokComponent blok={blok} />
+          ))
+        }
+
+        <ProjectDetails
+          precio={blok.precio}
+          descripcion={blok.descripcion_proyecto}
+        />
+        {
+          blok.amenidades.length > 0 && (
+            <Amenidades blok={blok.amenidades} />
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  {
+    blok.galeria && blok.galeria.length > 0 && (
+      <section class="hidden sm:grid sm:grid-cols-4 sm:gap-x-7 container">
+        {blok.galeria.map((blok: any) => {
+          return <StoryblokComponent blok={blok} />;
+        })}
+      </section>
+    )
+  }
+
+  {
+    blok.galeria && blok.galeria.length > 0 && (
+      <section class="sm:hidden pl-5 ml-auto">
+        <SecondaryImagesCarousel blok={blok.galeria} client:visible />
+      </section>
+    )
+  }
+
+  {
+    blok.detalles_proyecto && blok.detalles_proyecto.length > 0 && (
+      <section class="pt-12">
+        <div class="container">
+          {blok.detalles_proyecto.map((blok: any) => (
+            <StoryblokComponent
+              blok={blok}
+              nombreProyecto={nombreProyecto}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    blok.tour_virtual &&
+      blok.tour_virtual.length > 0 &&
+      blok.tour_virtual?.map((blok: any) => (
+        <StoryblokComponent blok={blok} />
+      ))
+  }
+
+  {
+    blok.servicios && blok.servicios.length > 0 && (
+      <section class="pt-12">
+        <div class="container pb-6 grid sm:grid-cols-3 gap-x-6 gap-y-4">
+          {blok.servicios?.map((blok: any) => (
+            <StoryblokComponent blok={blok} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    blok.info_ubicacion && blok.info_ubicacion.length > 0 && (
+      <section class="pb-12">
+        <div class="container">
+          {blok.info_ubicacion?.map((blok: any) => (
+            <StoryblokComponent blok={blok} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    blok.contacto && blok.contacto.length > 0 && (
+      <section>
+        {blok.contacto?.map((blok: any) => (
+          <StoryblokComponent blok={blok} formName={formName} />
+        ))}
+      </section>
+    )
+  }
+</main>

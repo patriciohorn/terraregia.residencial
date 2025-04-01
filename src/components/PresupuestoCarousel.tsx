@@ -1,53 +1,30 @@
-import { ChevronRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { PresupuestoCard } from '@/components/presupuesto-card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
+  CarouselPrevious,
 } from '@/components/ui/carousel-top-btn';
 
-const projects = [
-  // { title: 'Casas Infonavit', budget: '$3 MDP', path: '/costo' },
-  { title: 'Proyectos desde', budget: '$500,000', path: '/costo/500000' },
-  { title: 'Proyectos desde', budget: '$1 MDP', path: '/costo/1000000' },
-  { title: 'Proyectos desde', budget: '$2 MDP', path: '/costo/2000000' },
-  { title: 'Proyectos desde', budget: '$3 MDP', path: '/costo/3000000' },
-  { title: 'Proyectos desde', budget: '$5 MDP', path: '/costo/5000000' }
-];
-
-export function PresupuestoCarousel() {
+export function PresupuestoCarousel({ cards }: any) {
   return (
     <Carousel
       opts={{
         loop: true,
-        align: 'start'
+        align: 'start',
       }}>
-      <CarouselContent className="-ml-8">
-        {projects.map((project, idx) => (
-          <CarouselItem key={idx} className="pl-8 md:basis-1/2 lg:basis-1/4">
-            <a href={project.path}>
-              <Card className=" h-48 bg-card-foreground shadow-sm border-none rounded-md group lg:hover:bg-[#BFDEE3] cursor-pointer transition-colors duration-200 ease-in-out">
-                <CardContent className="flex flex-col justify-between px-6 py-4 h-full">
-                  <div>
-                    <h3 className="font-light text-2xl text-black">{project.title}</h3>
-                    <p className="text-4xl font-heading text-black">{project.budget}</p>
-                  </div>
-                  <Button
-                    size="iconsm"
-                    className="self-end bg-transparent border border-black lg:group-hover:bg-black ">
-                    <ChevronRight className=" text-black lg:group-hover:text-white" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </a>
+      <CarouselContent className="-ml-6">
+        {cards.map((card: any, idx: number) => (
+          <CarouselItem
+            key={idx}
+            className="pl-6 basis-10/12 md:basis-1/2 lg:basis-1/4">
+            <PresupuestoCard card={card} />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="hidden sm:flex" />
-      <CarouselNext className="hidden sm:flex" />
+      <CarouselPrevious className="hidden sm:flex sm:-top-[82px] sm:w-10 sm:h-10" />
+      <CarouselNext className="hidden sm:flex sm:-top-[82px] sm:w-10 sm:h-10" />
     </Carousel>
   );
 }

@@ -1,15 +1,29 @@
 import { useState } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/components/ui/tabs';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
 import { ModelFooter } from './model-footer';
 
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 
-export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
-  const [activeTab, setActiveTab] = useState(data.modelos[0]);
+export function ModelosTabs({
+  data,
+  onModelChange,
+  plantas,
+  onPlantasChange,
+}) {
+  const [activeTab, setActiveTab] = useState('Liria');
 
-  const modelosNames = data.modelos.map((item) => item.model);
+  const modelosNames = data.map((item) => item.nombre);
 
   const handleTabChange = (model) => {
     setActiveTab(model);
@@ -19,10 +33,12 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
   return (
     <div className="mt-6">
       <Tabs
-        defaultValue={activeTab.model}
+        defaultValue={activeTab}
         className="flex flex-col items-center gap-4 overflow-x-hidden"
         onValueChange={(value) => {
-          const selectedModel = data.modelos.find((model) => model.model === value);
+          const selectedModel = data.find(
+            (model) => model.nombre === value
+          );
           if (selectedModel) {
             handleTabChange(selectedModel);
           }
@@ -32,7 +48,7 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
             <Carousel
               opts={{
                 loop: 'true',
-                align: 'start'
+                align: 'start',
               }}
               className="w-full">
               <CarouselContent>
@@ -41,7 +57,9 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
                     key={item}
                     className={cn(
                       `basis-1/1 sm:basis-1/4`,
-                      data.title === 'Castilla Diamante' ? 'sm:basis-1/2' : ''
+                      data.title === 'Castilla Diamante'
+                        ? 'sm:basis-1/2'
+                        : ''
                     )}>
                     <TabsTrigger
                       value={item}
@@ -73,26 +91,40 @@ export function ModelosTabs({ data, onModelChange, plantas, onPlantasChange }) {
               ))}
           </div>
         </TabsList>
-
-        {data.modelos.map((model) => (
-          <TabsContent value={model.model}>
-            <div className="rounded-md h-48 sm:h-72 overflow-hidden aspect-video" key={model.model}>
+        {/* 
+        {data.map((modelo) => (
+          <TabsContent value={modelo.nombre}>
+            <div
+              className="rounded-md h-48 sm:h-72 overflow-hidden aspect-video"
+              key={modelo.nombre}>
               <img
-                src={plantas === '2 plantas' ? model.modeloImage[0].src : model.modeloImage[1].src}
+                src={
+                  plantas === '2 plantas'
+                    ? modelo.modeloImage[0].src
+                    : modelo.modeloImage[1].src
+                }
                 alt={model.model}
                 className={cn(
                   `rounded-sm w-full h-full animate-fade-right`,
-                  data.title === 'Montserrat Residencial' ? `object-cover` : `object-contain`
+                  data.title === 'Montserrat Residencial'
+                    ? `object-cover`
+                    : `object-contain`
                 )}
               />
             </div>
             {plantas === '2 plantas' ? (
-              <ModelFooter items={model.specs} brochure={data.brochure} />
+              <ModelFooter
+                items={model.specs}
+                brochure={data.brochure}
+              />
             ) : (
-              <ModelFooter items={data.variantFooter} brochure={data.brochure} />
+              <ModelFooter
+                items={data.variantFooter}
+                brochure={data.brochure}
+              />
             )}
           </TabsContent>
-        ))}
+        ))} */}
       </Tabs>
     </div>
   );

@@ -1,0 +1,22 @@
+---
+import { storyblokEditable } from '@storyblok/js';
+import Image from 'astro/components/Image.astro';
+import { Badge } from '@/components/ui/badge';
+const { blok } = Astro.props;
+---
+
+<div
+  {...storyblokEditable(blok)}
+  class="overflow-hidden shadow-sm rounded-md aspect-square relative">
+  <Image
+    src={blok.imagen_galeria.filename}
+    alt={blok.imagen_galeria.alt || 'Amenidad de proyecto'}
+    class="w-full h-full object-cover"
+    loading="eager"
+    format="webp"
+    inferSize
+  />
+  <Badge className="absolute bottom-2.5 left-2.5" client:visible>
+    {blok.texto_badge}
+  </Badge>
+</div>

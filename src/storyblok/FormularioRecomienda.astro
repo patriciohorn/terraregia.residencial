@@ -1,0 +1,24 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import { Form } from '@/components/recomiendaform';
+const { blok } = Astro.props;
+---
+
+<section {...storyblokEditable(blok)}>
+  <div
+    class="my-16 container bg-white rounded-md p-4 py-6 sm:p-6 sm:px-14 sm:py-16 shadow-sm border border-neutral-100">
+    <Form
+      titulo1={blok.titulo_1}
+      titulo2={blok.titulo_2}
+      client:visible
+    />
+    <p class="mt-12 max-w-prose mx-auto text-center text-neutral-600">
+      {blok.nota}
+    </p>
+    <a
+      href="/recomienda-y-gana/politicas"
+      class="mt-8 text-center inline-flex justify-center w-full cursor-pointer text-neutral-600 hover:text-accent-dark transition-colors duration-200 ease-in-out"
+      >{blok.texto_link_politicas}</a
+    >
+  </div>
+</section>

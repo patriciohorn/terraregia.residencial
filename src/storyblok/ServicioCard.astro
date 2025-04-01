@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+import { storyblokEditable } from '@storyblok/js';
+const { blok } = Astro.props;
+---
+
+<div
+  {...storyblokEditable(blok)}
+  class="rounded-md text-white bg-black p-6 shadow-sm flex flex-col gap-6 min-h-64">
+  <div
+    class="inline-flex
+   justify-center items-center rounded-sm w-16 h-16 bg-neutral-800">
+    <Image
+      src={blok.icono.filename}
+      alt=`icono ${blok.titulo}`
+      width="48"
+      height="48"
+      class="w-12 h-12 filter brightness-0 invert"
+    />
+  </div>
+  <div class="">
+    <h3 class="text-lg sm:text-xl font-heading">
+      {blok.titulo}
+    </h3>
+    <ul class="mt-2 space-y-1">
+      {
+        blok.servicio_item.map((item: any) => (
+          <li class=" text-neutral-200 tracking-[0.01em] flex items-center gap-2">
+            {/* <ArrowRight size={14} className="" /> */}
+            {item.servicio}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

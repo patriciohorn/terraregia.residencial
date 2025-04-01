@@ -1,0 +1,18 @@
+---
+import { storyblokEditable } from '@storyblok/astro';
+import CasasTabs from '@/components/casas-tabs';
+const { blok, nombreProyecto } = Astro.props;
+---
+
+<div
+  {...storyblokEditable(blok)}
+  class="sm:gap-x-12 gap-y-12 bg-white p-4 sm:py-12 sm:px-8 rounded-md shadow-sm">
+  <!-- Tipologia  -->
+
+  <CasasTabs
+    nombreProyecto={nombreProyecto}
+    titulo={blok.titulo}
+    modelos={blok.modelos_casas}
+    client:visible
+  />
+</div>

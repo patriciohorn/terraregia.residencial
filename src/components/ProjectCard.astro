@@ -2,21 +2,22 @@
 import { Image } from 'astro:assets';
 import { MapPin } from 'lucide-react';
 import { Badge } from './ui/badge';
-import { Asterisk } from 'lucide-react';
+
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
-const { project, badge, showPreventaBadge, small } = Astro.props;
+const { blok, badge, showPreventaBadge, small } = Astro.props;
 ---
 
 <article
-  id={project.slug}
   class="group relative sm:before:absolute sm:before:-inset-4 sm:before:-z-10 sm:before:shadow-sm sm:before:rounded-[36px] sm:before:bg-card-foreground/45 sm:before:opacity-0 lg:hover:before:opacity-100 transition-all duration-200 ease-in-out">
-  <div class="aspect-[3/2] rounded-md overflow-hidden shadow-sm relative group">
+  <div
+    class="aspect-[3/2] rounded-md overflow-hidden shadow-sm relative group">
     <Image
-      src={project.data.cover}
-      alt={project.data.title}
+      src={blok.imagen_portada.filename}
+      alt={blok.text_alt ? blok.text_alt : 'Imagen de proyecto'}
       inferSize={true}
+      format="webp"
       class="w-full h-full object-cover transition-transform duration-500 ease-in-out lg:group-hover:transform lg:group-hover:translate3d(0, 0, 0) lg:group-hover:scale-105 lg:group-hover:rotateX(0deg) lg:group-hover:rotateY(0deg)"
       style={{ transformStyle: 'preserve-3d' }}
     />
@@ -35,12 +36,13 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
           <Badge
             variant="invertedOutline"
             className="absolute top-4 sm:top-6 h-8 left-2.5 sm:left-4 justify-center font-medium z-10 tracking-[0.01em] text-sm min-w-[106px]">
-            {project.data.tipo}
+            {blok.tipo}
           </Badge>
 
-          <Badge className="absolute top-4 sm:top-6 right-2.5 sm:right-4 h-8 justify-center font-medium z-10 tracking-[0.01em] text-sm lg:text-base">
+          <Badge className="absolute top-4 sm:top-6 right-2.5 sm:right-4 h-8 justify-center font-medium z-10 tracking-[0.01em] text-sm">
             {/* <span>Desde $</span> */}
-            {project.data.costo}
+            {blok.precio.includes('$') && 'Desde '}
+            {blok.precio}
             {/* <Asterisk className="w-3 h-3 text-neutral-300 -mt-1.5" /> */}
           </Badge>
         </>
@@ -50,7 +52,7 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
             variant="invertedOutline"
             className="absolute top-4 h-8 left-2.5 sm:left-4 justify-center font-medium z-10 tracking-[0.01em] text-sm min-w-[106px]"
             client:visible>
-            {project.data.tipo}
+            {blok.tipo}
           </Badge>
         </>
       )
@@ -59,12 +61,15 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
   <div class="mt-4 flex flex-row justify-between items-center">
     <div class={cn(small ? '' : 'flex flex-col gap-y-1')}>
       <h3
-        class={cn(`text-xl font-heading tracking-[0.01em]`, small ? 'sm:text-xl' : 'sm:text-2xl')}>
-        {project.data.title}
+        class={cn(
+          `text-xl font-heading tracking-[0.01em] text-neutral-950`,
+          small ? 'sm:text-xl' : 'sm:text-2xl'
+        )}>
+        {blok.nombre}
       </h3>
-      <div class="flex gap-1 items-center text-[#827D7D]">
+      <div class="flex gap-1 items-center">
         <MapPin className={cn(`w-auto`, small ? 'h-3' : 'h-4')} />
-        <p class="text-sm font-medium">{project.data.location}</p>
+        <p class="text-sm font-medium">{blok.ubicacion}</p>
       </div>
     </div>
 
@@ -84,7 +89,10 @@ const { project, badge, showPreventaBadge, small } = Astro.props;
       )
     }
   </div>
-  <a href={`/proyectos/${project.slug}`}>
+  <!-- <a href={`/proyectos/${project.slug}`}>
+    <span class="absolute z-10 -inset-4"></span>
+  </a> -->
+  <a href={`/proyectos/${blok.slug}`}>
     <span class="absolute z-10 -inset-4"></span>
   </a>
 </article>

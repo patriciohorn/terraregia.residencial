@@ -4,7 +4,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from '@/components/ui/select';
 
 import { Button } from './ui/button';
@@ -18,33 +18,59 @@ const proyectos = [
   'Montserrat Residencial',
   'Pietralta Castelo',
   'Rincón de la Sierra',
-  'Toscana Residencial'
+  'Toscana Residencial',
 ];
 
-export function RecomiendaForm() {
+export function Form({ titulo1, titulo2 }: any) {
   return (
     <div>
-      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12">
+      <div className="grid sm:grid-cols-2 gap-x-20 gap-y-12">
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">Tus datos</h2>
-          <div className="mt-6 sm:mt-9 space-y-2 sm:space-y-4">
-            <Input type="text" placeholder="Nombre" className="h-12 sm:h-16" />
-            <Input type="email" placeholder="Email" className="h-12 sm:h-16" />
-            <Input type="phone" placeholder="Whatsapp" className="h-12 sm:h-16" />
+          <h2 className="font-heading text-2xl sm:text-[40px] leading-[1.1] text-neutral-950">
+            {titulo1}
+          </h2>
+          <div className="mt-6 sm:mt-8 space-y-2">
+            <Input
+              type="text"
+              placeholder="Nombre"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="phone"
+              placeholder="Whatsapp"
+              className="h-12 sm:h-16"
+            />
           </div>
         </div>
         <div>
-          <h2 className="font-medium text-2xl sm:text-[40px] leading-[1.1]">
-            Datos de tu referencia
+          <h2 className="font-heading text-2xl sm:text-[40px] leading-[1.1] text-neutral-950">
+            {titulo2}
           </h2>
-          <div className="mt-6 sm:mt-9 space-y-2 sm:space-y-4">
-            <Input type="text" placeholder="Nombre" className="h-12 sm:h-16" />
-            <Input type="email" placeholder="Email" className="h-12 sm:h-16" />
-            <Input type="phone" placeholder="Whatsapp" className="h-12 sm:h-16" />
+          <div className="mt-6 sm:mt-8 space-y-2">
+            <Input
+              type="text"
+              placeholder="Nombre"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="email"
+              placeholder="Email"
+              className="h-12 sm:h-16"
+            />
+            <Input
+              type="phone"
+              placeholder="Whatsapp"
+              className="h-12 sm:h-16"
+            />
           </div>
         </div>
       </div>
-      <div className="mt-2 sm:mt-4 grid sm:grid-cols-[3fr_1fr] gap-x-8 gap-y-2">
+      <div className="mt-2 sm:mt-6 grid sm:grid-cols-[3fr_1fr] gap-x-6 gap-y-2">
         <Select>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Proyecto Recomendado" />
