@@ -7,21 +7,6 @@ import {
 } from '@/components/ui/carousel-top-btn';
 import { PromotionCardd } from '@/components/promotion-card';
 
-interface Promotion {
-  title: string;
-  location: string;
-  details: string;
-  mainPromo: string;
-  secondaryPromo: string;
-  images: string;
-  specs: string[];
-  icons: string[];
-}
-
-interface PromocionesCarouselProps {
-  promotions: Promotion[];
-}
-
 export function PromocionesCarousel({ proyectos }: any) {
   return (
     <Carousel
@@ -31,7 +16,6 @@ export function PromocionesCarousel({ proyectos }: any) {
       }}>
       <CarouselContent className="-ml-6 md:-ml-10">
         {proyectos.map((proyecto: any) => {
-          // proyecto.content.slug = proyecto.slug;
           return (
             <CarouselItem
               key={proyecto.id}

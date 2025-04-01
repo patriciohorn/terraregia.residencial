@@ -26,9 +26,11 @@ export function PromotionCardd({ proyecto, small }: any) {
             backgroundPosition: 'center',
           }}>
           <div className="absolute bg-gradient-to-t from-black/50 from-20% to-transparent inset-0"></div>
-          <PromotionBannerSm
-            promocion={proyecto.content.promociones[0]}
-          />
+          {proyecto.content.promociones.length > 0 && (
+            <PromotionBannerSm
+              promocion={proyecto.content.promociones[0]}
+            />
+          )}
 
           <div className="p-2 text-neutral-100 flex justify-between z-10">
             {proyecto.content.promociones[0].mensualidades.length >
