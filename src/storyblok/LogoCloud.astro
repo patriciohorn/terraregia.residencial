@@ -13,20 +13,27 @@ const repeatCount = 3;
       class="animate-slideSlow flex items-center gap-10 md:gap-20 whitespace-nowrap">
       {
         Array.from({ length: repeatCount }).map((_, index) =>
-          blok.logos.map((item: any) => (
-            <a
-              href={`/${item.link.cached_url}`}
-              class="shrink-0 cursor-pointer inline-flex max-w-24 sm:max-w-28">
-              <Image
-                src={item.logo.filename}
-                alt={item.texto_alt}
-                inferSize
-                format="webp"
-                class="w-full h-full object-contain"
-                loading="lazy"
-              />
-            </a>
-          ))
+          blok.logos.map((item: any) => {
+            return (
+              <a
+                href={`/${item.link.cached_url}`}
+                class="shrink-0 cursor-pointer inline-flex max-w-24 sm:max-w-28">
+                <div class="sr-only">
+                  Ir a{' '}
+                  {item.texto_alt ||
+                    item.link.cached_url.split('/')[1]}
+                </div>
+                <Image
+                  src={item.logo.filename}
+                  alt={item.texto_alt}
+                  inferSize
+                  format="webp"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </a>
+            );
+          })
         )
       }
     </div>

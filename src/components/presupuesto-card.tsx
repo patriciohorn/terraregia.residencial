@@ -4,6 +4,7 @@ import { costoFilter } from '@/stores/filterStore';
 
 export function PresupuestoCard({ card }: any) {
   function handleNavigation(value: any) {
+    console.log(value);
     costoFilter.set(value);
   }
   return (

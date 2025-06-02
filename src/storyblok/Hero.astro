@@ -8,17 +8,28 @@ const { blok } = Astro.props;
 ---
 
 <section {...storyblokEditable(blok)}>
-  <div class="container pt-16 pb-12 sm:pt-28 sm:pb-20">
+  <div class="container pt-16 pb-12 sm:pt-24 sm:pb-20">
     <div>
-      <h1
-        class="font-heading tracking-tight text-balance max-w-[50rem] text-[40px] sm:text-[80px] leading-[1.1] sm:leading-[1] text-neutral-950">
-        {blok.titulo}
-      </h1>
-      <p class="mt-5 sm:mt-6 text-lg sm:text-xl max-w-[35em]">
-        {blok.subtitulo}
-      </p>
-      <div
-        class="relative mt-12 sm:mt-20 rounded-md sm:rounded-lg overflow-hidden shadow-sm aspect-[3/2] sm:aspect-video">
+      <section
+        class="grid grid-grid-cols-1 sm:grid-cols-[2fr_1fr] gap-8 sm:gap-20 items-center">
+        <h1
+          class="font-heading tracking-tight text-balance max-w-[50rem] text-[40px] sm:text-[80px] leading-[1.1] sm:leading-[1] text-neutral-950">
+          {blok.titulo}
+        </h1>
+        <div class="sm:self-end flex flex-col gap-6">
+          <p class="sm:mt-6 text-lg sm:text-xl">
+            {blok.subtitulo}
+          </p>
+          <a
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-lg font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors duration-300 ease-in-out bg-primary text-white shadow hover:bg-primary/90 px-8 py-4 h-14"
+            target="_blank"
+            href="https://calendly.com/terraregiacomercial/cita_showroom?month=2025-06"
+            >Agenda tu cita</a
+          >
+        </div>
+      </section>
+      <section
+        class="relative mt-12 sm:mt-24 rounded-md sm:rounded-lg overflow-hidden shadow-sm aspect-[3/2] sm:aspect-video">
         <Image
           src={blok.imagen_hero.filename}
           alt={blok.imagen_hero.alt}
@@ -36,7 +47,7 @@ const { blok } = Astro.props;
         <div class="sm:hidden absolute top-2 left-2 right-2">
           <DropdownNavMobile client:visible />
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </section>
