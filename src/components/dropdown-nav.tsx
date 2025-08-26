@@ -34,6 +34,7 @@ const navItems: NavItem[] = [
       { label: 'Dominio Cumbres', filterValue: 'Dominio Cumbres' },
       { label: 'Valle Condesa', filterValue: 'Valle Condesa' },
       { label: 'Apodaca', filterValue: 'Apodaca' },
+      { label: 'Santa Catarina', filterValue: 'Santa Catarina' },
     ],
   },
   {
