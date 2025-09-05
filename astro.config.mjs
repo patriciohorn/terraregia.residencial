@@ -70,7 +70,7 @@ export default defineConfig({
   },
   image: {
     remotePatterns: [
-      { protocol: 'https', hostname: 'a.storyblok.com' },
+      { protocol: 'https', hostname: 'terraresidencial' },
     ],
   },
   adapter: netlify(),

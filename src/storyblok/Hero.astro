@@ -32,9 +32,7 @@ const { blok } = Astro.props;
         <Image
           src={blok.imagen_hero.filename}
           alt={blok.imagen_hero.alt}
-          format="webp"
-          width="1228"
-          height="691"
+          inferSize
           class="w-full h-full object-cover"
           loading="eager"
         />
