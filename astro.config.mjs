@@ -61,7 +61,7 @@ export default defineConfig({
     }),
     icon(),
   ],
-  output: 'static',
+  output: 'server',
   vite: {
     plugins: [basicSsl()],
     // server: {
@@ -69,8 +69,7 @@ export default defineConfig({
     // },
   },
   image: {
-    remotePatterns: [
-      { protocol: 'https', hostname: 'a.storyblok.com' },
-    ],
+    domains: ['a.storyblok.com', 'a-us.storyblok.com'],
   },
+  adapter: netlify(),
 });
