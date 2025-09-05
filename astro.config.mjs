@@ -69,7 +69,9 @@ export default defineConfig({
     // },
   },
   image: {
-    remotePatterns: [{ protocol: 'https' }],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'a.storyblok.com' },
+    ],
   },
   adapter: netlify(),
 });

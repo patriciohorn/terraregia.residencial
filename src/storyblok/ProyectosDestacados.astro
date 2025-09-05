@@ -12,7 +12,7 @@ const { blok } = Astro.props;
     </h2>
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
       {
-        blok.proyectos.map((proyecto: any) => {
+        blok.proyectos?.map((proyecto: any) => {
           proyecto.content.slug = proyecto.slug;
           return (
             <li>

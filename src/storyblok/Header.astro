@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils';
 import { MobileNav } from '@/components/mobile-nav';
 import { Link } from '@/components/link';
 import { Icon } from 'astro-icon/components';
+import SocialMediaButton from '@/components/SocialMediaButton.astro';
 const { blok } = Astro.props;
-
-// const whatsappHeader = isProject ? whatsapp : blok.whatsapp;
+console.log(blok);
 ---
 
 <header>
@@ -28,7 +28,7 @@ const { blok } = Astro.props;
     </div>
 
     <div class="lg:hidden flex">
-      <MobileNav blok={blok} client:load />
+      <MobileNav blok={blok} client:visible />
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
@@ -48,19 +48,11 @@ const { blok } = Astro.props;
     <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-5">
       <div class="hidden sm:flex sm:gap-2">
         {
-          blok.links_social_media.map((item: any) => (
-            <Link
-              href={item.link}
-              size="iconsm"
-              className="h-8 w-8 shadow-sm hover:opacity-90"
-              target="_blank">
-              <Image
-                src={item.icono}
-                alt={item.titulo}
-                width="16"
-                height="16"
-              />
-            </Link>
+          blok.links_social_media?.map((item: any) => (
+            <SocialMediaButton
+              url={item.link}
+              platform={item.red_social}
+            />
           ))
         }
       </div>

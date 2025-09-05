@@ -66,7 +66,7 @@ export function MobileNav({ blok, whatsapp }: any) {
             ))}
           </div>
           <div className="mt-[52px] flex gap-2">
-            {blok.links_social_media.map((item: any) => (
+            {/* {blok.links_social_media.map((item: any) => (
               <Link
                 key={item.titulo}
                 href={item.link}
@@ -81,7 +81,7 @@ export function MobileNav({ blok, whatsapp }: any) {
                   className="w-6 h-6"
                 />
               </Link>
-            ))}
+            ))} */}
           </div>
         </SheetContent>
       </Sheet>
