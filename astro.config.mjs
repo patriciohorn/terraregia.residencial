@@ -61,7 +61,7 @@ export default defineConfig({
     }),
     icon(),
   ],
-  output: 'server',
+  output: 'static',
   vite: {
     plugins: [basicSsl()],
     // server: {
@@ -73,4 +73,5 @@ export default defineConfig({
       { protocol: 'https', hostname: 'a.storyblok.com' },
     ],
   },
+  adapter: netlify(),
 });
