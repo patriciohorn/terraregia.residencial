@@ -70,7 +70,7 @@ export default defineConfig({
   },
   image: {
     remotePatterns: [
-      { protocol: 'https', hostname: 'terraregiaresidencial' },
+      { protocol: 'https', hostname: 'terraregiaresidencial.com' },
     ],
   },
   adapter: netlify(),
