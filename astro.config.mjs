@@ -73,5 +73,4 @@ export default defineConfig({
       { protocol: 'https', hostname: 'a.storyblok.com' },
     ],
   },
-  adapter: netlify(),
 });
