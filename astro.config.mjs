@@ -69,12 +69,7 @@ export default defineConfig({
     // },
   },
   image: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '*.terraregiaresidencial.com',
-      },
-    ],
+    domains: ['terraregiaresidencial.com'],
   },
   adapter: netlify(),
 });
