@@ -69,7 +69,9 @@ export default defineConfig({
     // },
   },
   image: {
-    domains: ['terraregiaresidencial.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'a.storyblok.com' },
+    ],
   },
   adapter: netlify(),
 });
