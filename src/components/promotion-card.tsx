@@ -21,7 +21,7 @@ export function PromotionCardd({ proyecto, small }: any) {
         <div
           className="relative aspect-[4/5] sm:aspect-[3/2] rounded-md overflow-hidden p-2 flex flex-col justify-between"
           style={{
-            backgroundImage: `url(${proyecto.content.imagen_portada.filename}/m/)`,
+            backgroundImage: `url(${proyecto.content.imagen_portada.filename})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}>
