@@ -1,13 +1,14 @@
 ---
 import { storyblokEditable, renderRichText } from '@storyblok/astro';
 import { Link } from '@/components/link';
-import { PhoneCall, CalendarCheck2 } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 
 const { blok } = Astro.props;
 
-const renderedRichText = renderRichText(blok.descripcion_cita);
-const locationDescription = renderRichText(blok.descripcion_location);
+const renderedRichText = renderRichText(blok.descripcion_cita) || '';
+const locationDescription =
+  renderRichText(blok.descripcion_location) || '';
 console.log(renderedRichText, locationDescription);
 ---
 
