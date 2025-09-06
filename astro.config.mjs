@@ -61,7 +61,7 @@ export default defineConfig({
     }),
     icon(),
   ],
-  output: 'server',
+  output: 'hybrid',
   vite: {
     plugins: [basicSsl()],
     // server: {
