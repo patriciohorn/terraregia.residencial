@@ -2,8 +2,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
@@ -61,11 +59,29 @@ const navItems: NavItem[] = [
 ];
 
 export function DropdownNav() {
+  const handleNavigation = (
+    filterKey: string,
+    filterValue: string
+  ) => {
+    const filter = filterValue === '' ? '' : filterValue;
+
+    if (filterKey === 'ubicacion') {
+      ubicacionFilter.set(filter);
+    } else if (filterKey === 'tipo') {
+      tipoFilter.set(filter);
+    } else if (filterKey === 'costo') {
+      costoFilter.set(filter);
+    }
+
+    // Consider using navigate() if you have routing
+    window.location.assign('/proyectos');
+  };
+
   return (
     <nav className="flex items-center justify-between gap-x-5 w-full rounded-full shadow-md p-3 text-black bg-white">
       {navItems.map((item) => (
         <DropdownMenu key={item.label}>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="sm" className="text-sm">
               {item.label === 'Ubicación' && (
                 <MapPin className="w-4 h-4 mr-1" />
@@ -83,28 +99,18 @@ export function DropdownNav() {
           <DropdownMenuContent
             align="center"
             className="w-42 mt-3 border border-black p-3 rounded-sm">
-            {item.items.map((subItem) => {
-              const filterValue = subItem.filterValue;
-              const handleNavigation = () => {
-                let filter = filterValue === '' ? '' : filterValue;
-
-                if (item.filterKey === 'ubicacion') {
-                  ubicacionFilter.set(filter);
-                } else if (item.filterKey === 'tipo') {
-                  tipoFilter.set(filter);
-                } else if (item.filterKey === 'costo') {
-                  costoFilter.set(filter);
-                }
-                window.location.href = '/proyectos';
-              };
-              return (
-                <DropdownMenuItem
-                  key={subItem.filterValue}
-                  onClick={handleNavigation}>
-                  {subItem.label}
-                </DropdownMenuItem>
-              );
-            })}
+            {item.items.map((subItem) => (
+              <DropdownMenuItem
+                key={subItem.filterValue || 'all'} // Better key for empty values
+                onClick={() =>
+                  handleNavigation(
+                    item.filterKey,
+                    subItem.filterValue
+                  )
+                }>
+                {subItem.label}
+              </DropdownMenuItem>
+            ))}
           </DropdownMenuContent>
         </DropdownMenu>
       ))}

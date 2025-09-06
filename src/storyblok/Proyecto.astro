@@ -14,8 +14,6 @@ const formName = removeAccents(
   blok.nombre.toLowerCase().trim().split(' ').join('')
 );
 
-console.log(formName);
-
 const nombreProyecto = blok.nombre;
 ---
 
@@ -37,8 +35,8 @@ const nombreProyecto = blok.nombre;
           alt="Image"
           class="w-full h-full object-cover"
           loading="eager"
-          inferSize
-          format="webp"
+          width={1200}
+          height={1200}
         />
         <Badge
           className="absolute bottom-3 left-2.5 text-sm sm:text-base"
