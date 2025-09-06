@@ -5,11 +5,12 @@ import { useStoryblokApi } from '@storyblok/astro';
 
 import Header from '@/storyblok/Header.astro';
 import Footer from '@/components/Footer.astro';
+import isPreview from '@/lib/utils';
 
 const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get('cdn/stories/layout', {
-  version: 'draft',
+  version: isPreview() ? 'draft' : 'published',
 });
 
 const headerContent = data.story.content.body.find(
@@ -19,7 +20,7 @@ const footerContent = data.story.content.body.find(
   (blok: any) => blok.component === 'footer'
 );
 
-const { title, content, slug, whatsapp } = Astro.props;
+const { title } = Astro.props;
 
 // const isProject = slug ? true : false;
 ---
