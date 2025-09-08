@@ -5,6 +5,7 @@ import { PhoneCall } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 
 const { blok } = Astro.props;
+console.log(blok);
 ---
 
 <div
@@ -35,8 +36,7 @@ const { blok } = Astro.props;
           <Link
             href={`tel:${blok.telefono}`}
             aria-label={`Call ${blok.telefono} to schedule a visit`}
-            className="
-          justify-center
+            className="justify-center
           inline-flex
           items-center
           self-end
