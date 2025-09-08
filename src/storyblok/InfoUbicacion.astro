@@ -5,12 +5,9 @@ import { PhoneCall } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 
 const { blok } = Astro.props;
-console.log(blok);
-// const descripcionCita = renderRichText(blok.descripcion_cita);
 
-// const descripcionLocation = renderRichText(blok.descripcion_location);
-
-// console.log(descripcionCita);
+const descripcionCita = renderRichText(blok.descripcion_cita);
+const descripcionLocation = renderRichText(blok.descripcion_location);
 ---
 
 <div
@@ -34,17 +31,10 @@ console.log(blok);
         <h3 class="text-3xl font-heading text-neutral-950">
           {blok.titulo_cita}
         </h3>
-        <p class="prose leading-6 mt-4">
-          {blok.descripcion_cita}
-        </p>
-        <!-- {
-          blok.descripcion_cita.length && renderedRichText && (
-            <div
-              class="prose leading-6 mt-4"
-              set:html={renderedRichText}
-            />
-          )
-        } -->
+        <div
+          class="prose leading-6 mt-4"
+          set:html={renderRichText(blok.descripcion_cita)}
+        />
       </div>
 
       {
@@ -67,17 +57,10 @@ console.log(blok);
         <h3 class="text-3xl font-heading text-[#192a33]">
           {blok.titulo_location}
         </h3>
-        <p class="prose leading-6 mt-4 text-[#29545c]">
-          {blok.descripcion_location}
-        </p>
-        <!-- {
-          blok.descripcion_location && locationDescription && (
-            <div
-              class="prose leading-6 mt-4 text-[#29545c]"
-              set:html={locationDescription}
-            />
-          )
-        } -->
+        <div
+          class="prose leading-6 mt-4 text-[#29545c]"
+          set:html={renderRichText(blok.descripcion_location)}
+        />
       </div>
 
       <div
