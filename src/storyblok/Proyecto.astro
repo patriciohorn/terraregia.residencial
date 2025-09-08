@@ -5,9 +5,11 @@ import { Image } from 'astro:assets';
 import { Badge } from '@/components/ui/badge';
 import ProjectDetails from '@/storyblok/ProjectDetails.astro';
 import Amenidades from '@/components/Amenidades.astro';
-import { removeAccents } from '@/lib/utils';
 import ProyectoBreadcrumb from '@/components/proyecto-breadcrumb';
+
 import { SecondaryImagesCarousel } from '@/components/secondaryImages-carousel';
+
+import { removeAccents } from '@/lib/utils';
 
 const { blok } = Astro.props;
 const formName = removeAccents(
