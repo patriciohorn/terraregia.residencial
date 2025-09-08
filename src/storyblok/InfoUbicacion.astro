@@ -1,13 +1,10 @@
 ---
-import { storyblokEditable, renderRichText } from '@storyblok/astro';
+import { storyblokEditable } from '@storyblok/astro';
 import { Link } from '@/components/link';
 import { PhoneCall } from 'lucide-react';
 import { Icon } from 'astro-icon/components';
 
 const { blok } = Astro.props;
-
-const descripcionCita = renderRichText(blok.descripcion_cita);
-const descripcionLocation = renderRichText(blok.descripcion_location);
 ---
 
 <div
@@ -31,18 +28,20 @@ const descripcionLocation = renderRichText(blok.descripcion_location);
         <h3 class="text-3xl font-heading text-neutral-950">
           {blok.titulo_cita}
         </h3>
-        <div
-          class="prose leading-6 mt-4"
-          set:html={renderRichText(blok.descripcion_cita)}
-        />
+        <p class="prose leading-6 mt-4">{blok.descripcion_cita}</p>
       </div>
-
       {
         blok.telefono && (
           <Link
             href={`tel:${blok.telefono}`}
             aria-label={`Call ${blok.telefono} to schedule a visit`}
-            className="justify-center inline-flex items-center self-end w-full sm:w-fit">
+            className="
+          justify-center
+          inline-flex
+          items-center
+          self-end
+          w-full
+          sm:w-fit">
             <PhoneCall className="w-4 h-4 mr-2.5" />
             <span>Agenda tu visita</span>
           </Link>
@@ -57,10 +56,13 @@ const descripcionLocation = renderRichText(blok.descripcion_location);
         <h3 class="text-3xl font-heading text-[#192a33]">
           {blok.titulo_location}
         </h3>
-        <div
+        <p class="prose leading-6 mt-4 text-[#29545c]">
+          {blok.descripcion_location}
+        </p>
+        <!-- <div
           class="prose leading-6 mt-4 text-[#29545c]"
           set:html={renderRichText(blok.descripcion_location)}
-        />
+        /> -->
       </div>
 
       <div
