@@ -15,18 +15,16 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 const env = loadEnv('', process.cwd(), 'STORYBLOK');
 
 let is_preview;
-let output = 'static';
 let adapter = undefined;
 
 if (env.STORYBLOK_IS_PREVIEW === 'yes') {
   is_preview = true;
-  output = 'server';
   adapter = netlify();
 }
 
 // https://astro.build/config
 export default defineConfig({
-  output: output,
+  output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
   adapter: adapter,
   integrations: [
     storyblok({
