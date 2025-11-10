@@ -25,6 +25,7 @@ if (env.STORYBLOK_IS_PREVIEW === 'yes') {
 // https://astro.build/config
 export default defineConfig({
   output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
+  // output: 'static',
   adapter: adapter,
   integrations: [
     storyblok({
@@ -75,9 +76,9 @@ export default defineConfig({
   vite: {
     plugins: [basicSsl()],
   },
-  // server: {
-  //   https: true,
-  // },
+  server: {
+    https: false,
+  },
   image: {
     domains: ['a.storyblok.com', 'a-us.storyblok.com'],
   },

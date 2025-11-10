@@ -6,7 +6,7 @@ dist/
 
 # dependencies
 node_modules/
-
+node_modules/.vite
 # logs
 npm-debug.log*
 yarn-debug.log*
@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Local Netlify folder
+.netlify
