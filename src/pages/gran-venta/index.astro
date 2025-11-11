@@ -5,6 +5,7 @@ import '../../../styles/globals.css';
 import { EventForm } from '@/components/EventForm';
 import { Clock, MapPin } from 'lucide-react';
 import { GranVentaCarousel } from '@/components/GranVentaCarousel';
+import LogoMarquee from '@/components/LogoMarquee.astro';
 ---
 
 <!doctype html>
@@ -59,12 +60,12 @@ import { GranVentaCarousel } from '@/components/GranVentaCarousel';
           <div
             class="flex flex-col gap-y-6 items-center justify-center text-center">
             <h1
-              class="text-3xl lg:text-6xl lg:leading-[1.1] text-neutral-900 font-semibold">
+              class="text-3xl lg:text-6xl lg:leading-[1.1] tracking-wide text-neutral-900 font-semibold">
               Te esperamos este 21 y 22 de Noviembre
             </h1>
-            <p class="text-xl">
+            <!-- <p class="text-xl">
               Pendiente de tener promocion especial
-            </p>
+            </p> -->
           </div>
         </div>
       </section>
@@ -75,82 +76,86 @@ import { GranVentaCarousel } from '@/components/GranVentaCarousel';
         </div>
       </section>
       <!-- CTA -->
-      <section class="py-8">
-        <div class="">
-          <div
-            class="max-w-7xl mx-auto bg-neutral-900 flex flex-col items-center justify-center text-center rounded-md py-28">
-            <h2
-              class="text-3xl lg:text-6xl text-white mb-6 font-medium">
-              Conoce Nuestros Desarrollos
-            </h2>
-            <p class="text-xl text-neutral-100">
-              Encuentra el lugar ideal para vivir o invertir
-            </p>
-          </div>
+      <section class="px-5 lg:px-10 mx-auto">
+        <div
+          class="bg-neutral-900 flex flex-col items-center justify-center text-center rounded-md py-28">
+          <h2
+            class="text-3xl lg:text-6xl text-white mb-6 font-medium">
+            Conoce Nuestros Desarrollos
+          </h2>
+          <p class="text-xl text-neutral-100 mb-12">
+            Encuentra el lugar ideal para vivir o invertir
+          </p>
+          <LogoMarquee />
         </div>
       </section>
+      <!-- Showroom -->
       <section class="py-8 lg:py-16">
-        <div
-          class="max-w-7xl mx-auto rounded-md overflow-hidden shadow-md">
-          <div class="grid grid-cols-3 text-neutral-700">
-            <!-- Card -->
-            <div>
-              <!-- Image -->
-              <div class="aspect-video">
-                <Image
-                  src={showroomImage.src}
-                  alt="Showroom de Terra Regia"
-                  inferSize
-                  class="object-cover object-center h-full w-full"
-                />
-              </div>
-              <!-- Content -->
-              <div class="px-6 py-6">
-                <h2 class="text-neutral-900 text-xl mb-8">
-                  Showroom | Experiencia Terra Regia
-                </h2>
-                <!-- Location -->
-                <div class="flex gap-x-4 group mb-6">
-                  <MapPin
-                    className="w-4 h-4 shrink-0 mt-1.5 text-black"
-                    size={16}
-                    strokeWidth={1}
+        <div class="max-w-7xl mx-auto px-5 lg:px-0">
+          <div class="rounded-md overflow-hidden shadow-md">
+            <div class="grid grid-cols-3 text-neutral-700">
+              <!-- Card -->
+              <div class="">
+                <!-- Image -->
+                <div class="aspect-video">
+                  <Image
+                    src={showroomImage}
+                    alt="Showroom de Terra Regia"
+                    inferSize
+                    class="object-cover object-center h-full w-full"
                   />
-                  <a
-                    class="group-hover:text-neutral-900 group-hover:underline transition-all duration-300 ease-in"
-                    href="https://maps.app.goo.gl/rHhAi439YHX4BkPZ7 "
-                    target="_blank">
-                    Blvd. Rogelio Cantú Gómez 201, Colinas de San
-                    Jerónimo, 64630 Monterrey, N.L
-                  </a>
                 </div>
-
-                <div class="flex gap-x-4">
-                  <Clock
-                    size={16}
-                    strokeWidth={1}
-                    className="w-4 h-4 shrink-0 mt-1.5 text-black">
-                    <div class="space-y-1">
-                      <p class="font-medium">Horario</p>
-                      <p>06:00 AM - 08:00 PM</p>
-                      <p>Viernes - Sábado</p>
+                <!-- Content -->
+                <div class="px-6 py-6 flex flex-col items-stretch">
+                  <h2 class="text-neutral-900 text-xl mb-8">
+                    Showroom | Experiencia Terra Regia
+                  </h2>
+                  <div>
+                    <!-- Location -->
+                    <div class="flex gap-x-4 group py-4">
+                      <MapPin
+                        className="w-4 h-4 shrink-0 mt-1.5 text-black"
+                        size={16}
+                        strokeWidth={1}
+                      />
+                      <a
+                        class="group-hover:text-neutral-900 group-hover:underline transition-all duration-300 ease-in"
+                        href="https://maps.app.goo.gl/rHhAi439YHX4BkPZ7 "
+                        target="_blank">
+                        Blvd. Rogelio Cantú Gómez 201, Colinas de San
+                        Jerónimo, 64630 Monterrey, N.L
+                      </a>
                     </div>
-                  </Clock>
+
+                    <div class="flex gap-x-4 py-4">
+                      <Clock
+                        size={16}
+                        strokeWidth={1}
+                        className="w-4 h-4 shrink-0 mt-1.5 text-black">
+                        <div class="space-y-1">
+                          <p class="font-medium">Horario</p>
+                          <p>06:00 AM - 08:00 PM</p>
+                          <p>Viernes - Sábado</p>
+                        </div>
+                      </Clock>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Map -->
-            <div class="col-span-2">
-              <iframe
-                class="object-cover object-center w-full h-full"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4423.853181034737!2d-100.3788637!3d25.695865299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629700739b7f49%3A0x6c2ade5dbfbd94bb!2sShowroom%20%7C%20Experiencia%20Terra%20Regia!5e1!3m2!1ses-419!2smx!4v1762754306598!5m2!1ses-419!2smx"
-                width="600"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- Map -->
+              <div class="col-span-2 aspect-[4/3]">
+                <iframe
+                  class="object-cover object-center w-full h-full"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4423.853181034737!2d-100.3788637!3d25.695865299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629700739b7f49%3A0x6c2ade5dbfbd94bb!2sShowroom%20%7C%20Experiencia%20Terra%20Regia!5e1!3m2!1ses-419!2smx!4v1762754306598!5m2!1ses-419!2smx"
+                  width="600"
+                  height="450"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

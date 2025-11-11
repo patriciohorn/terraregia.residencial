@@ -14,121 +14,169 @@ import {
   Select,
   SelectContent,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { CircleCheck } from 'lucide-react';
+import { useState } from 'react';
 
 export function EventForm() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const hours = [
+    '6:00 AM',
+    '7:00 AM',
+    '8:00 AM',
+    '9:00 AM',
+    '10:00 AM',
+    '11:00 AM',
+    '12:00 PM',
+    '1:00 PM',
+    '2:00 PM',
+    '3:00 PM',
+    '4:00 PM',
+    '5:00 PM',
+    '6:00 PM',
+    '7:00 PM',
+    '8:00 PM',
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
     <div className="w-full max-w-3xl mx-auto">
-      <form>
-        <FieldGroup>
-          <FieldSet>
-            <FieldLegend>Déjanos tus datos</FieldLegend>
-            {/* <FieldDescription>
-              All transactions are secure and encrypted
-            </FieldDescription> */}
-            <FieldGroup>
-              {/* Nombre */}
-              <Field>
-                <FieldLabel htmlFor="nombre">Nombre</FieldLabel>
-                <Input id="nombre" placeholder="Nombre" required />
-              </Field>
-              {/* Correo Electronico */}
-              <Field>
-                <FieldLabel htmlFor="correo">
-                  Correo Electrónico
-                </FieldLabel>
-                <Input
-                  id="correo"
-                  placeholder="Correo Electrónico"
-                  required
-                />
-              </Field>
-              {/* Telefono */}
-              <Field>
-                <FieldLabel htmlFor="telefono">Teléfono</FieldLabel>
-                <Input
-                  id="telefono"
-                  placeholder="Teléfono"
-                  required
-                />
-              </Field>
-
-              <div className="grid grid-cols-3 gap-4">
-                {/* Zona de Interes */}
+      {isSubmitted ? (
+        <div className="min-h-[694px] py-10 flex flex-col justify-center items-center text-center">
+          <CircleCheck
+            size={64}
+            className="fill-green-600 text-white"
+          />
+          <p className="text-3xl font-medium mb-6 text-neutral-900">
+            ¡Gracias por registrarte!
+          </p>
+          <p className="text-lg max-w-2xl">
+            Te esperamos en el showroom de Terra Regia para vivir una
+            experiencia única y conocer nuestros desarrollos
+          </p>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <FieldGroup>
+            <FieldSet>
+              <FieldLegend className="mb-8">
+                Déjanos tus datos
+              </FieldLegend>
+              <FieldDescription className="sr-only">
+                All transactions are secure and encrypted
+              </FieldDescription>
+              <FieldGroup>
+                {/* Nombre */}
                 <Field>
-                  <FieldLabel htmlFor="desarrollo">
-                    Zona de interés
+                  <FieldLabel htmlFor="nombre">Nombre</FieldLabel>
+                  <Input id="nombre" placeholder="Nombre" required />
+                </Field>
+                {/* Correo Electronico */}
+                <Field>
+                  <FieldLabel htmlFor="correo">
+                    Correo Electrónico
                   </FieldLabel>
-                  <Select defaultValue="">
-                    <SelectTrigger id="desarrollo">
-                      <SelectValue placeholder="Desarrollo" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Dominio Cumbres">
-                        Dominio Cumbres
-                      </SelectItem>
-                      <SelectItem value="Valle Condesa">
-                        Valle Condesa
-                      </SelectItem>
-                      <SelectItem value="Santa Catarina">
-                        Santa Catarina
-                      </SelectItem>
-                      <SelectItem value="Apodaca">Apodaca</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Input
+                    id="correo"
+                    placeholder="Correo Electrónico"
+                    required
+                  />
                 </Field>
+                {/* Telefono */}
                 <Field>
-                  <FieldLabel htmlFor="dia">Día de Visita</FieldLabel>
-                  <Select defaultValue="Día de visita">
-                    <SelectTrigger id="dia">
-                      <SelectValue placeholder="Día de Visita" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="21 Noviembre">
-                        21 Noviembre
-                      </SelectItem>
-                      <SelectItem value="22 Noviembre">
-                        22 Noviembre
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <FieldLabel htmlFor="telefono">Teléfono</FieldLabel>
+                  <Input
+                    id="telefono"
+                    placeholder="Teléfono"
+                    required
+                  />
                 </Field>
-                <Field>
-                  <FieldLabel htmlFor="horario">Horario</FieldLabel>
-                  <Select defaultValue="Día de visita">
-                    <SelectTrigger id="horario">
-                      <SelectValue placeholder="Horario" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="9:00 a.m.">
-                        9:00 am
-                      </SelectItem>
-                      <SelectItem value="10 a.m.">
-                        10:00 a.m
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </Field>
-              </div>
-            </FieldGroup>
-          </FieldSet>
-          <FieldSeparator />
-          <FieldSet>
-            <FieldGroup>
-              <Field orientation="horizontal">
-                <Checkbox id="aviso" defaultChecked />
-                <FieldLabel htmlFor="aviso" className="font-normal">
-                  Aviso de Privacidad
-                </FieldLabel>
-              </Field>
-            </FieldGroup>
-          </FieldSet>
 
-          <Button type="submit">Aparta tu lugar</Button>
-        </FieldGroup>
-      </form>
+                <div className="grid grid-cols-3 gap-4">
+                  {/* Zona de Interes */}
+                  <Field>
+                    <FieldLabel htmlFor="desarrollo">
+                      Zona de interés
+                    </FieldLabel>
+                    <Select defaultValue="">
+                      <SelectTrigger id="desarrollo">
+                        <SelectValue placeholder="Desarrollo" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="Dominio Cumbres">
+                          Dominio Cumbres
+                        </SelectItem>
+                        <SelectItem value="Valle Condesa">
+                          Valle Condesa
+                        </SelectItem>
+                        <SelectItem value="Santa Catarina">
+                          Santa Catarina
+                        </SelectItem>
+                        <SelectItem value="Apodaca">
+                          Apodaca
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </Field>
+                  {/* Dia de Visita */}
+                  <Field>
+                    <FieldLabel htmlFor="dia">
+                      Día de Visita
+                    </FieldLabel>
+                    <Select defaultValue="">
+                      <SelectTrigger id="dia">
+                        <SelectValue placeholder="Día de Visita" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="21 de Noviembre">
+                          21 de Noviembre
+                        </SelectItem>
+                        <SelectItem value="22 de Noviembre">
+                          22 de Noviembre
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </Field>
+                  {/* Horario */}
+                  <Field>
+                    <FieldLabel htmlFor="horario">Horario</FieldLabel>
+                    <Select defaultValue="">
+                      <SelectTrigger id="horario">
+                        <SelectValue placeholder="Horario" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {hours.map((hour) => (
+                          <SelectItem value={hour}>{hour}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </Field>
+                </div>
+              </FieldGroup>
+            </FieldSet>
+            <FieldSeparator />
+            <FieldSet>
+              <FieldGroup>
+                <Field orientation="horizontal">
+                  <Checkbox id="aviso" defaultChecked />
+                  <FieldLabel htmlFor="aviso" className="font-normal">
+                    Aviso de Privacidad
+                  </FieldLabel>
+                </Field>
+              </FieldGroup>
+            </FieldSet>
+
+            <Button>Aparta tu lugar</Button>
+          </FieldGroup>
+        </form>
+      )}
     </div>
   );
 }

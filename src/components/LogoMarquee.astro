@@ -1,0 +1,66 @@
+---
+import pietralta from '@/assets/pietralta.png';
+import montserrat from '@/assets/montserrat.png';
+import miria from '@/assets/miria.png';
+import aliria from '@/assets/aliria.png';
+import alinka from '@/assets/alinka.png';
+import alboradas from '@/assets/alboradas.png';
+import montessa from '@/assets/montessa.png';
+import rincon from '@/assets/rincon.png';
+import toscana from '@/assets/toscana.png';
+
+const proyectos = [
+  { src: pietralta, label: 'pietraltaresidencial' },
+  { src: montserrat, label: 'montserratresidencial' },
+  { src: miria, label: 'miriaresidencial' },
+  { src: aliria, label: 'aliriaresidencial' },
+  { src: alinka, label: 'alinkaresidencial' },
+  { src: alboradas, label: 'alboradasresidencial' },
+  { src: montessa, label: 'montessaresidencial' },
+  { src: rincon, label: 'rincondelasierra' },
+  { src: toscana, label: 'toscanaresidencial' },
+  { src: pietralta, label: 'pietraltaresidencial' },
+  { src: montserrat, label: 'montserratresidencial' },
+  { src: miria, label: 'miriaresidencial' },
+  { src: aliria, label: 'aliriaresidencial' },
+  { src: alinka, label: 'alinkaresidencial' },
+  { src: alboradas, label: 'alboradasresidencial' },
+  { src: montessa, label: 'montessaresidencial' },
+  { src: rincon, label: 'rincondelasierra' },
+  { src: toscana, label: 'toscanaresidencial' },
+  { src: pietralta, label: 'pietraltaresidencial' },
+  { src: montserrat, label: 'montserratresidencial' },
+  { src: miria, label: 'miriaresidencial' },
+  { src: aliria, label: 'aliriaresidencial' },
+  { src: alinka, label: 'alinkaresidencial' },
+  { src: alboradas, label: 'alboradasresidencial' },
+  { src: montessa, label: 'montessaresidencial' },
+  { src: rincon, label: 'rincondelasierra' },
+  { src: toscana, label: 'toscanaresidencial' },
+];
+import Image from 'astro/components/Image.astro';
+---
+
+<div
+  class="animate-slideMedium flex items-center gap-10 md:gap-8 whitespace-nowrap w-full">
+  {
+    proyectos.map(({ src, label }) => {
+      return (
+        <a
+          href={`${label}.mx`}
+          class="shrink-0 cursor-pointer inline-flex max-w-24 sm:max-w-48">
+          <div class="sr-only">Ir a sitio web de {label}</div>
+          <Image
+            src={src}
+            alt={label}
+            width={800}
+            height={800}
+            format="webp"
+            class="w-full h-full object- filter invert"
+            loading="lazy"
+          />
+        </a>
+      );
+    })
+  }
+</div>
