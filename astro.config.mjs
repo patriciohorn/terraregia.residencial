@@ -32,7 +32,6 @@ export default defineConfig({
       accessToken: env.STORYBLOK_TOKEN,
       bridge: env.STORYBLOK_IS_PREVIEW === 'yes',
       components: {
-        // components goes here
         page: 'storyblok/Page',
         hero: 'storyblok/Hero',
         header: 'storyblok/Header',
