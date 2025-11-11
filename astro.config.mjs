@@ -75,9 +75,9 @@ export default defineConfig({
   vite: {
     plugins: [basicSsl()],
   },
-  server: {
-    https: false,
-  },
+  // server: {
+  //   https: false,
+  // },
   image: {
     domains: ['a.storyblok.com', 'a-us.storyblok.com'],
   },
