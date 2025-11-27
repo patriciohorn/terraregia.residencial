@@ -121,11 +121,13 @@ export function EventForm() {
                         <SelectValue placeholder="Desarrollo" />
                       </SelectTrigger>
                       <SelectContent>
-                        {proyectos.map((proyecto) => {
-                          <SelectItem value={proyecto}>
-                            {proyecto}
-                          </SelectItem>;
-                        })}
+                        {proyectos
+                          .sort((a, b) => a.localeCompare(b))
+                          .map((proyecto) => (
+                            <SelectItem value={proyecto}>
+                              {proyecto}
+                            </SelectItem>
+                          ))}
                       </SelectContent>
                     </Select>
                   </Field>
