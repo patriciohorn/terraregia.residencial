@@ -72,7 +72,7 @@ export function EventForm() {
   return (
     <div className="w-full max-w-3xl mx-auto">
       {isSubmitted ? (
-        <div className="min-h-[694px] py-10 flex flex-col justify-center items-center text-center">
+        <div className="min-h-80 py-10 flex flex-col justify-center items-center text-center">
           <CircleCheck
             size={64}
             className="fill-green-600 text-white"
