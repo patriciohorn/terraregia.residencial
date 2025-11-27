@@ -45,6 +45,18 @@ export function EventForm() {
     setIsSubmitted(true);
   };
 
+  const proyectos = [
+    'Pietralta Castelo',
+    'Alinka',
+    'Alboradas Residencial',
+    'Montessa',
+    'Aliria',
+    'Miria',
+    'Privada Amaral',
+    'Reserva Mezquital',
+    'Veralia',
+  ];
+
   return (
     <div className="w-full max-w-3xl mx-auto">
       {isSubmitted ? (
@@ -102,58 +114,20 @@ export function EventForm() {
                   {/* Zona de Interes */}
                   <Field>
                     <FieldLabel htmlFor="desarrollo">
-                      Zona de interés
+                      Proyecto de interés
                     </FieldLabel>
                     <Select defaultValue="">
                       <SelectTrigger id="desarrollo">
                         <SelectValue placeholder="Desarrollo" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Dominio Cumbres">
-                          Dominio Cumbres
-                        </SelectItem>
-                        <SelectItem value="Valle Condesa">
-                          Valle Condesa
-                        </SelectItem>
-                        <SelectItem value="Santa Catarina">
-                          Santa Catarina
-                        </SelectItem>
-                        <SelectItem value="Apodaca">
-                          Apodaca
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </Field>
-                  {/* Dia de Visita */}
-                  <Field>
-                    <FieldLabel htmlFor="dia">
-                      Día de Visita
-                    </FieldLabel>
-                    <Select defaultValue="">
-                      <SelectTrigger id="dia">
-                        <SelectValue placeholder="Día de Visita" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="21 de Noviembre">
-                          21 de Noviembre
-                        </SelectItem>
-                        <SelectItem value="22 de Noviembre">
-                          22 de Noviembre
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </Field>
-                  {/* Horario */}
-                  <Field>
-                    <FieldLabel htmlFor="horario">Horario</FieldLabel>
-                    <Select defaultValue="">
-                      <SelectTrigger id="horario">
-                        <SelectValue placeholder="Horario" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {hours.map((hour) => (
-                          <SelectItem value={hour}>{hour}</SelectItem>
-                        ))}
+                        {proyectos
+                          .sort((a, b) => a.localeCompare(b))
+                          .map((proyecto) => {
+                            <SelectItem value="Dominio Cumbres">
+                              {proyecto}
+                            </SelectItem>;
+                          })}
                       </SelectContent>
                     </Select>
                   </Field>
