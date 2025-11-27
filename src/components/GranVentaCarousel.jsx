@@ -50,7 +50,7 @@ export const GranVentaCarousel = () => {
                 <img
                   src={image.src.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-400 ease-in"
+                  className="w-full h-full object-cover object-center lg:hover:scale-105 lg:transition-all lg:duration-400 lg:ease-in"
                 />
               </div>
             </CarouselItem>
