@@ -34,7 +34,7 @@ const images = [
 
 export const GranVentaCarousel = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-5 lg:px-10">
+    <div className="w-full px-5 lg:px-0">
       <Carousel
         opts={{
           loop: true,
@@ -46,7 +46,7 @@ export const GranVentaCarousel = () => {
             <CarouselItem
               key={index}
               className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-              <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-md">
+              <div className="aspect-[4/3] overflow-hidden rounded-sm shadow-md">
                 <img
                   src={image.src.src}
                   alt={image.alt}
