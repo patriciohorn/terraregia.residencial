@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import { cn } from '@/lib/utils';
 import { MobileNav } from '@/components/mobile-nav';
+import { ExternalLink } from 'lucide-react';
+
 import { Link } from '@/components/link';
 import { Icon } from 'astro-icon/components';
 import SocialMediaButton from '@/components/SocialMediaButton.astro';
@@ -43,8 +45,19 @@ const { blok } = Astro.props;
       }
     </div>
 
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-5">
+    <div
+      class="hidden lg:flex lg:flex-1 lg:justify-end items-center lg:gap-5">
       <div class="hidden sm:flex sm:gap-2">
+        <a
+          class="h-8 w-8 shadow-sm hover:bg-gray-800 flex items-center justify-center bg-black text-white rounded-full transition-colors duration-200 ease-in-out"
+          href="https://terraregia.com/">
+          <img
+            src="/tr.png"
+            alt="Logo Terra Regia"
+            class="filter invert w-5"
+          />
+          <!-- <ExternalLink /> -->
+        </a>
         {
           blok.links_social_media?.map((item: any) => (
             <SocialMediaButton

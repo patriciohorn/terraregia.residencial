@@ -5,7 +5,7 @@ const { url, platform } = Astro.props;
 ---
 
 <a
-  class="h-8 w-8 shadow-sm hover:opacity-90 flex items-center justify-center bg-black rounded-full"
+  class="h-8 w-8 shadow-sm hover:bg-gray-800 flex items-center justify-center bg-black rounded-full transition-colors duration-200 ease-in-out"
   href={url}>
   <Icon name={platform} class="text-white" />
 </a>
