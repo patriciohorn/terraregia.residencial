@@ -24,9 +24,9 @@ if (env.STORYBLOK_IS_PREVIEW === 'yes') {
 
 // https://astro.build/config
 export default defineConfig({
-  output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
-  // output: 'static',
-  adapter: adapter,
+  // output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
+  output: 'static',
+  // adapter: adapter,
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,

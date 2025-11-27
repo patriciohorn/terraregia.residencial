@@ -47,7 +47,7 @@ export function EventForm() {
 
     formData.append(
       'access_key',
-      'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
+      '7bfad7ec-0948-4046-af2d-b97dd1ef69b3'
     );
 
     const response = await fetch('https://api.web3forms.com/submit', {
@@ -89,6 +89,12 @@ export function EventForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
+          <input
+            type="hidden"
+            name="subject"
+            value="Nuevo Registro Gran Venta"
+          />
+
           <FieldGroup>
             <FieldSet>
               <FieldLegend className="mb-8">
