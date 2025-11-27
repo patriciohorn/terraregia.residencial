@@ -46,41 +46,20 @@ export function EventForm() {
     setIsSubmitting(true);
     const formData = new FormData(event.target);
 
-    const data = {
-      nombre: formData.get('nombre'),
-      correo: formData.get('correo'),
-      telefono: formData.get('telefono'),
-      desarrollo: formData.get('desarrollo'),
-    };
-    try {
-      const response = await fetch(
-        'https://hooks.zapier.com/hooks/catch/11239048/ukt8brt/',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        }
-      );
+    formData.append(
+      'access_key',
+      'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
+    );
 
-      if (response.ok) {
-        setIsSubmitted(true);
-      }
-    } catch (error) {
-      console.error('Error', error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
 
-    // formData.append(
-    //   'access_key',
-    //   'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
-    // );
-
-    // const data = await response.json();
+    const data = await response.json();
+    setIsSubmitted(data.success ? true : false);
+    setIsSubmitting(false);
   };
-
   const proyectos = [
     'Pietralta Castelo',
     'Alinka',
