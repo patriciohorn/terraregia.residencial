@@ -47,7 +47,7 @@ export function EventForm() {
 
     formData.append(
       'access_key',
-      '7bfad7ec-0948-4046-af2d-b97dd1ef69b3'
+      'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
     );
 
     const response = await fetch('https://api.web3forms.com/submit', {
