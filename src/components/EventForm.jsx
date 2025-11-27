@@ -40,9 +40,21 @@ export function EventForm() {
     '8:00 PM',
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitted(true);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append(
+      'access_key',
+      'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
+    );
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await response.json();
+    setIsSubmitted(data.success ? true : false);
   };
 
   const proyectos = [
@@ -110,7 +122,7 @@ export function EventForm() {
                   />
                 </Field>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="">
                   {/* Zona de Interes */}
                   <Field>
                     <FieldLabel htmlFor="desarrollo">
