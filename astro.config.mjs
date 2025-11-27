@@ -26,7 +26,7 @@ if (env.STORYBLOK_IS_PREVIEW === 'yes') {
 export default defineConfig({
   output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'static',
   // output: 'static',
-  // adapter: adapter,
+  adapter: adapter,
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
