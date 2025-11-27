@@ -56,6 +56,7 @@ export function EventForm() {
       const response = await fetch(
         'https://hooks.zapier.com/hooks/catch/11239048/ukt8brt/',
         {
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
