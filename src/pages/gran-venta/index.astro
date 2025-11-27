@@ -51,8 +51,9 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
           muted
           loop
           playsinline
-          preload="metadata">
-          <source src="./gran-venta-nuevo.mp4" type="video/mp4" />
+          poster="/gran-venta-poster/png"
+          preload="auto">
+          <source src="/gran-venta-nuevo.mp4" type="video/mp4" />
           Tu navegador no soporta videos
         </video>
       </section>
@@ -75,7 +76,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
       <!-- Form -->
       <section class="mb-16 lg:mb-28 px-0">
         <div class="container mx-auto">
-          <EventForm client:visible />
+          <EventForm client:load />
         </div>
       </section>
       <!-- CTA -->
@@ -107,7 +108,9 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
                   <Image
                     src={showroomImage.src}
                     alt="Showroom de Terra Regia"
-                    inferSize
+                    loading="lazy"
+                    width={800}
+                    height={800}
                     class="object-cover object-center h-full w-full"
                   />
                 </div>
@@ -171,7 +174,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
         </div>
       </section>
       <section class="py-16 lg:py-28 px-5 lg:px-0">
-        <GranVentaCarousel client:visible />
+        <GranVentaCarousel client:idle />
       </section>
     </main>
   </body>
