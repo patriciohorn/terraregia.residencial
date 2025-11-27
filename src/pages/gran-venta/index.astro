@@ -39,12 +39,13 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
 
     <title>Terra Regia Residencial | Gran Venta</title>
   </head>
-  <body class="bg-[#F5F5F5] text-neutral-600 font-sans">
+  <body
+    class="bg-[#F5F5F5] text-neutral-600 font-sans overflow-x-hidden">
     <main>
       <!-- Hero -->
-      <section class="relative h-dvh w-full overflow-hidden">
+      <section class="relative lg:h-dvh w-full overflow-hidden">
         <video
-          class="absolute w-full h-full top-0 left-0 object-cover md:object-center object-[center_20%]"
+          class="absolute w-full h-full top-0 left-0 object-fit lg:object-cover"
           autoplay
           muted
           loop
