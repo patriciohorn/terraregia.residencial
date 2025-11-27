@@ -18,79 +18,49 @@ import porticoMontessa from '@/assets/portico-montessa.jpg';
 import rdsl from '@/assets/rdsl.jpg';
 import residencialToscana from '@/assets/residencial-toscana.jpg';
 
+const images = [
+  { src: alboradasPicnic, alt: 'Alboradas Mesas Picnic' },
+  { src: parqueAcceso, alt: 'Parque Acceso' },
+  { src: casaClub, alt: 'Casa Club' },
+  { src: corredorDominio, alt: 'Corredor Dominio' },
+  { src: dominioCumbres, alt: 'Dominio Cumbres' },
+  { src: dominioHuasteca, alt: 'Dominio Huasteca' },
+  { src: miriaAereo, alt: 'Miria Parque Aéreo' },
+  { src: parqueGrande, alt: 'Parque Grande' },
+  { src: porticoMontessa, alt: 'Pórtico Montessa' },
+  { src: rdsl, alt: 'RDSL' },
+  { src: residencialToscana, alt: 'Residencial Toscana' },
+];
+
 export const GranVentaCarousel = () => {
   return (
-    <Carousel opts={{ loop: true }}>
-      <CarouselContent>
-        <CarouselItem className=" md:basis-1/3 lg:basis-1/4">
-          <img
-            src={alboradasPicnic.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="b md:basis-1/2 lg:basis-1/3">
-          <img
-            src={parqueAcceso.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={casaClub.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={corredorDominio.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={dominioCumbres.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={dominioHuasteca.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={miriaAereo.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={parqueGrande.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={porticoMontessa.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={rdsl.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-        <CarouselItem className="bg- md:basis-1/2 lg:basis-1/3">
-          <img
-            src={residencialToscana.src}
-            class="w-full h-full object-cover object-center"
-          />
-        </CarouselItem>
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div className="w-full max-w-7xl mx-auto px-5 lg:px-10">
+      <Carousel
+        opts={{
+          loop: true,
+          align: 'start',
+        }}
+        className="w-full">
+        <CarouselContent className="-ml-2 md:-ml-4">
+          {images.map((image, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-md">
+                <img
+                  src={image.src.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="hidden md:block">
+          <CarouselPrevious className="left-0 -translate-x-1/2" />
+          <CarouselNext className="right-0 translate-x-1/2" />
+        </div>
+      </Carousel>
+    </div>
   );
 };

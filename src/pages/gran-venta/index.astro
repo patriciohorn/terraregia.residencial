@@ -42,9 +42,9 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
   <body class="bg-[#F5F5F5] text-neutral-600 font-sans">
     <main>
       <!-- Hero -->
-      <section class="relative h-dvh w-full">
+      <section class="relative h-dvh w-full overflow-hidden">
         <video
-          class="absolute w-full h-full top-0 left-0 object-cover object-center"
+          class="absolute w-full h-full top-0 left-0 object-cover md:object-center object-[center_20%]"
           autoplay
           muted
           loop
@@ -55,7 +55,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
         </video>
       </section>
       <!-- Intro -->
-      <section class="py-8 lg:pt-28 mb-12">
+      <section class="py-8 lg:pt-28 mb-12 px-5">
         <div class="max-w-3xl mx-auto">
           <div
             class="flex flex-col gap-y-6 items-center justify-center text-center">
@@ -63,7 +63,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
               class="text-3xl lg:text-6xl lg:leading-[1.1] tracking-wide text-neutral-900 font-semibold">
               Regístrate antes del 28 Noviembre y separa tu lote
             </h1>
-            <p class="text-xl">
+            <p class="text-lg lg:text-xl">
               Descubre nuestros desarrollos residenciales ideales para
               vivir o invertir
             </p>
@@ -71,20 +71,20 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
         </div>
       </section>
       <!-- Form -->
-      <section class="mb-28">
+      <section class="mb-16 lg:mb-28 px-5">
         <div class="container mx-auto">
           <EventForm client:visible />
         </div>
       </section>
       <!-- CTA -->
-      <section class="px-5 lg:px-10 mx-auto">
+      <section class="px-5 lg:px-10 mx-auto mb-16">
         <div
           class="bg-neutral-900 flex flex-col items-center justify-center text-center rounded-md py-28">
           <h2
             class="text-3xl lg:text-6xl text-white mb-6 font-medium">
             Conoce Nuestros Desarrollos
           </h2>
-          <p class="text-xl text-neutral-100 mb-12">
+          <p class="text-lg lg:text-xl text-neutral-100 mb-12">
             Encuentra el lugar ideal para vivir o invertir
           </p>
           <LogoMarquee />
@@ -94,9 +94,9 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
       <section class="py-8 lg:py-16">
         <div class="max-w-7xl mx-auto px-5 lg:px-0">
           <div class="rounded-md overflow-hidden shadow-md">
-            <div class="grid grid-cols-3 text-neutral-700">
+            <div class="grid lg:grid-cols-3 text-neutral-700">
               <!-- Card -->
-              <div class="">
+              <div class="order-2 lg:order-1">
                 <!-- Image -->
                 <div class="aspect-video">
                   <Image
@@ -107,7 +107,8 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
                   />
                 </div>
                 <!-- Content -->
-                <div class="px-6 py-6 flex flex-col items-stretch">
+                <div
+                  class="px-6 py-6 flex flex-col items-stretch bg-white">
                   <h2 class="text-neutral-900 text-xl mb-4">
                     Showroom | Experiencia Terra Regia
                   </h2>
@@ -145,7 +146,8 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
               </div>
 
               <!-- Map -->
-              <div class="col-span-2 aspect-[4/3]">
+              <div
+                class="col-span-1 lg:col-span-2 aspect-[4/3] order-1 lg:order-2">
                 <iframe
                   class="object-cover object-center w-full h-full"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4423.853181034737!2d-100.3788637!3d25.695865299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629700739b7f49%3A0x6c2ade5dbfbd94bb!2sShowroom%20%7C%20Experiencia%20Terra%20Regia!5e1!3m2!1ses-419!2smx!4v1762754306598!5m2!1ses-419!2smx"
@@ -161,7 +163,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
           </div>
         </div>
       </section>
-      <section class="py-28">
+      <section class="py-16 lg:py-28 px-5 lg:px-0">
         <GranVentaCarousel client:visible />
       </section>
     </main>
