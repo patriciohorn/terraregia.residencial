@@ -43,7 +43,7 @@ const { blok } = Astro.props;
         {
           blok.columna_social_media.map((item: any) => (
             <li class="bg-[#E6E9E9] w-12 h-12 inline-flex items-center justify-center rounded-full group hover:bg-black transition-colors duration-200 ease-in-out cursor-pointer">
-              <a href={item.link}>
+              <a href={item.link} target="_blank">
                 <span class="sr-only">{item.titulo}</span>
                 <Icon
                   name={item.red_social}
