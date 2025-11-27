@@ -13,17 +13,16 @@ import toscana from '@/assets/toscana.png';
 
 const baseProyectos = [
   { image: pietralta, label: 'pietraltaresidencial' },
-  // { image: montserrat, label: 'montserratresidencial' },
   { image: miria, label: 'miriaresidencial' },
   { image: aliria, label: 'aliriaresidencial' },
   { image: alinka, label: 'alinkaresidencial' },
   { image: alboradas, label: 'alboradasresidencial' },
   { image: montessa, label: 'montessaresidencial' },
-  // { image: rincon, label: 'rincondelasierra' },
-  // { image: toscana, label: 'toscanaresidencial' },
 ];
 
 const proyectos = [
+  ...baseProyectos,
+  ...baseProyectos,
   ...baseProyectos,
   ...baseProyectos,
   ...baseProyectos,
@@ -32,14 +31,14 @@ const proyectos = [
 ---
 
 <div
-  class="animate-slideMedium flex items-center gap-10 md:gap-8 whitespace-nowrap w-full">
+  class="animate-slideFast lg:animate-slideMedium flex items-center gap-6 md:gap-8 whitespace-nowrap">
   {
     proyectos.map(({ image, label }) => {
       return (
         <a
           href={`https://${label}.mx`}
           aria-label={`Ir a sitio web de ${label}`}
-          class="shrink-0 cursor-pointer inline-flex max-w-24 sm:max-w-48">
+          class="shrink-0 cursor-pointer inline-flex max-w-28 sm:max-w-48">
           <Image
             src={image.src}
             alt={label}

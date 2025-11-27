@@ -57,7 +57,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
         </video>
       </section>
       <!-- Intro -->
-      <section class="py-8 lg:pt-28 mb-12 px-5">
+      <section class="pt-8 lg:pt-28 mb-12 px-5">
         <div class="max-w-3xl mx-auto">
           <div
             class="flex flex-col gap-y-6 items-center justify-center text-center">
@@ -73,22 +73,25 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
         </div>
       </section>
       <!-- Form -->
-      <section class="mb-16 lg:mb-28 px-5">
+      <section class="mb-16 lg:mb-28 px-0">
         <div class="container mx-auto">
           <EventForm client:visible />
         </div>
       </section>
       <!-- CTA -->
-      <section class="px-5 lg:px-10 mx-auto mb-16">
+      <section
+        class="px-5 lg:px-10 mx-auto mb-10 lg:mb-16 overflow-x-hidden">
         <div
-          class="bg-neutral-900 flex flex-col items-center justify-center text-center rounded-md py-28">
+          class="bg-neutral-900 flex flex-col items-center justify-center text-center rounded-md lg:py-28 px-6 py-8">
           <h2
-            class="text-3xl lg:text-6xl text-white mb-6 font-medium">
+            class="text-3xl lg:text-6xl text-white mb-4 lg:mb-6 font-medium">
             Conoce Nuestros Desarrollos
           </h2>
-          <p class="text-lg lg:text-xl text-neutral-100 mb-12">
+          <p
+            class="text-lg lg:text-xl text-neutral-100 mb-6 lg:mb-12">
             Encuentra el lugar ideal para vivir o invertir
           </p>
+
           <LogoMarquee />
         </div>
       </section>
@@ -98,9 +101,9 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
           <div class="rounded-md overflow-hidden shadow-md">
             <div class="grid lg:grid-cols-3 text-neutral-700">
               <!-- Card -->
-              <div class="order-2 lg:order-1">
+              <div class="order-2 lg:order-1 bg-white">
                 <!-- Image -->
-                <div class="aspect-video">
+                <div class="hidden lg:block lg:aspect-video">
                   <Image
                     src={showroomImage.src}
                     alt="Showroom de Terra Regia"
@@ -111,12 +114,14 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
                 <!-- Content -->
                 <div
                   class="px-6 py-6 flex flex-col items-stretch bg-white">
-                  <h2 class="text-neutral-900 text-xl mb-4">
+                  <h2
+                    class="text-neutral-900 text-lg lg:text-xl mb-4">
                     Showroom | Experiencia Terra Regia
                   </h2>
                   <div>
                     <!-- Location -->
-                    <div class="flex gap-x-4 group py-4">
+                    <div
+                      class="flex gap-x-2 lg:gap-x-4 group lg:py-4">
                       <MapPin
                         className="w-4 h-4 shrink-0 mt-1.5 text-black"
                         size={16}

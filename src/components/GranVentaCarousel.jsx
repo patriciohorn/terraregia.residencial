@@ -34,7 +34,7 @@ const images = [
 
 export const GranVentaCarousel = () => {
   return (
-    <div className="w-full px-5 lg:px-0">
+    <div className="w-full px-0 lg:px-0">
       <Carousel
         opts={{
           loop: true,
@@ -45,21 +45,21 @@ export const GranVentaCarousel = () => {
           {images.map((image, index) => (
             <CarouselItem
               key={index}
-              className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+              className="pl-2 md:pl-4 basis-full md:basis-1/3 lg:basis-1/4">
               <div className="aspect-[4/3] overflow-hidden rounded-sm shadow-md">
                 <img
                   src={image.src.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-400 ease-in"
                 />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <CarouselPrevious className="left-0 -translate-x-1/2" />
           <CarouselNext className="right-0 translate-x-1/2" />
-        </div>
+        </div> */}
       </Carousel>
     </div>
   );

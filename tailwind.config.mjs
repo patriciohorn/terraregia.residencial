@@ -73,6 +73,7 @@ export default {
         slideSlow: 'slide 60s linear infinite',
         slideMedium: 'slide 40s linear infinite',
         slideFast: 'slide 25s linear infinite',
+        slideSuperFast: 'slide 15s linear infinite',
       },
       keyframes: {
         'accordion-down': {
