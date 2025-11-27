@@ -22,6 +22,7 @@ import { useState } from 'react';
 
 export function EventForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+
   const hours = [
     '6:00 AM',
     '7:00 AM',
@@ -43,6 +44,7 @@ export function EventForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    console.log(formData);
     formData.append(
       'access_key',
       '7bfad7ec-0948-4046-af2d-b97dd1ef69b3'
@@ -100,7 +102,12 @@ export function EventForm() {
                 {/* Nombre */}
                 <Field>
                   <FieldLabel htmlFor="nombre">Nombre</FieldLabel>
-                  <Input id="nombre" placeholder="Nombre" required />
+                  <Input
+                    id="nombre"
+                    placeholder="Nombre"
+                    name="nombre"
+                    required
+                  />
                 </Field>
                 {/* Correo Electronico */}
                 <Field>
@@ -110,6 +117,7 @@ export function EventForm() {
                   <Input
                     id="correo"
                     placeholder="Correo Electrónico"
+                    name="correo"
                     required
                   />
                 </Field>
@@ -118,6 +126,7 @@ export function EventForm() {
                   <FieldLabel htmlFor="telefono">Teléfono</FieldLabel>
                   <Input
                     id="telefono"
+                    name="telefono"
                     placeholder="Teléfono"
                     required
                   />
@@ -129,7 +138,7 @@ export function EventForm() {
                     <FieldLabel htmlFor="desarrollo">
                       Proyecto de interés
                     </FieldLabel>
-                    <Select defaultValue="">
+                    <Select defaultValue="" name="desarrollo">
                       <SelectTrigger id="desarrollo">
                         <SelectValue placeholder="Desarrollo" />
                       </SelectTrigger>
