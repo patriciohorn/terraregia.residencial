@@ -22,7 +22,7 @@ import { useState } from 'react';
 
 export function EventForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const hours = [
     '6:00 AM',
     '7:00 AM',
@@ -43,20 +43,41 @@ export function EventForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(event.target);
 
-    formData.append(
-      'access_key',
-      'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
-    );
+    const data = {
+      nombre: formData.get('nombre'),
+      correo: formData.get('correo'),
+      telefono: formData.get('telefono'),
+      desarrollo: formData.get('desarrollo'),
+    };
+    try {
+      const response = await fetch(
+        'https://hooks.zapier.com/hooks/catch/11239048/ukt8brt/',
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    });
+      if (response.ok) {
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      console.error('Error', error);
+    } finally {
+      setIsSubmitting(false);
+    }
 
-    const data = await response.json();
-    setIsSubmitted(data.success ? true : false);
+    // formData.append(
+    //   'access_key',
+    //   'b5ecb36d-3df5-4df0-a4a3-456e2b5f7fea'
+    // );
+
+    // const data = await response.json();
   };
 
   const proyectos = [
@@ -89,11 +110,11 @@ export function EventForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <input
+          {/* <input
             type="hidden"
             name="subject"
             value="Nuevo Registro Gran Venta"
-          />
+          /> */}
 
           <FieldGroup>
             <FieldSet>
@@ -121,6 +142,7 @@ export function EventForm() {
                   </FieldLabel>
                   <Input
                     id="correo"
+                    type="email"
                     placeholder="Correo Electrónico"
                     name="correo"
                     required
@@ -165,7 +187,7 @@ export function EventForm() {
             <FieldSet>
               <FieldGroup>
                 <Field orientation="horizontal">
-                  <Checkbox id="aviso" defaultChecked />
+                  <Checkbox id="aviso" name="aviso" defaultChecked />
                   <FieldLabel htmlFor="aviso" className="font-normal">
                     Aviso de Privacidad
                   </FieldLabel>
@@ -173,7 +195,9 @@ export function EventForm() {
               </FieldGroup>
             </FieldSet>
 
-            <Button>Aparta tu lugar</Button>
+            <Button>
+              {isSubmitting ? 'Enviando...' : 'Aparta tu lugar'}
+            </Button>
           </FieldGroup>
         </form>
       )}
