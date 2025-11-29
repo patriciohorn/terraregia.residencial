@@ -64,23 +64,20 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
             class="flex flex-col gap-y-6 items-center justify-center text-center">
             <h1
               class="text-[28px] leading-[1] lg:text-6xl lg:leading-[1.1] tracking-wide text-neutral-900 font-semibold">
-              Regístrate antes del 28 Noviembre y separa tu lote
+              ¡Gracias por registrarte a la Gran Venta!
             </h1>
-            <p class="text-lg lg:text-xl">
-              Descubre nuestros desarrollos residenciales ideales para
-              vivir o invertir
-            </p>
+            <p class="text-lg lg:text-xl">Nos vemos en el 2026</p>
           </div>
         </div>
       </section>
       <!-- Form -->
-      <section class="mb-16 lg:mb-28 px-0">
+      <!-- <section class="mb-16 lg:mb-28 px-0">
         <div class="container mx-auto">
           <EventForm client:load />
         </div>
-      </section>
+      </section> -->
       <!-- CTA -->
-      <section
+      <!-- <section
         class="px-4 lg:px-10 mx-auto mb-10 lg:mb-16 overflow-x-hidden">
         <div
           class="bg-neutral-900 flex flex-col items-center justify-center text-center rounded-md lg:py-28 px-6 py-8">
@@ -95,15 +92,13 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
 
           <LogoMarquee />
         </div>
-      </section>
+      </section> -->
       <!-- Showroom -->
-      <section class="py-8 lg:py-16">
+      <!-- <section class="py-8 lg:py-16">
         <div class="max-w-7xl mx-auto px-5 lg:px-0">
           <div class="rounded-md overflow-hidden shadow-md">
             <div class="grid lg:grid-cols-3 text-neutral-700">
-              <!-- Card -->
               <div class="order-2 lg:order-1 bg-white">
-                <!-- Image -->
                 <div class="hidden lg:block lg:aspect-video">
                   <Image
                     src={showroomImage.src}
@@ -114,7 +109,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
                     class="object-cover object-center h-full w-full"
                   />
                 </div>
-                <!-- Content -->
+
                 <div
                   class="px-6 py-6 flex flex-col items-stretch bg-white">
                   <h2
@@ -122,7 +117,6 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
                     Showroom | Experiencia Terra Regia
                   </h2>
                   <div>
-                    <!-- Location -->
                     <div
                       class="flex gap-x-2 lg:gap-x-4 group lg:py-4">
                       <MapPin
@@ -138,24 +132,10 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
                         Jerónimo, 64630 Monterrey, N.L
                       </a>
                     </div>
-
-                    <!-- <div class="flex gap-x-4 py-4">
-                      <Clock
-                        size={16}
-                        strokeWidth={1}
-                        className="w-4 h-4 shrink-0 mt-1.5 text-black">
-                        <div class="space-y-1">
-                          <p class="font-medium">Horario</p>
-                          <p>06:00 AM - 08:00 PM</p>
-                          <p>Viernes - Sábado</p>
-                        </div>
-                      </Clock>
-                    </div> -->
                   </div>
                 </div>
               </div>
 
-              <!-- Map -->
               <div
                 class="col-span-1 lg:col-span-2 aspect-[4/3] order-1 lg:order-2">
                 <iframe
@@ -172,7 +152,7 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="py-16 lg:py-28 px-5 lg:px-0">
         <GranVentaCarousel client:idle />
       </section>
