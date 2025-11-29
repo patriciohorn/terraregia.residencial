@@ -6,6 +6,7 @@ import { EventForm } from '@/components/EventForm';
 import { Clock, MapPin } from 'lucide-react';
 import { GranVentaCarousel } from '@/components/GranVentaCarousel';
 import LogoMarquee from '@/components/LogoMarquee.astro';
+import { Button } from '@/components/ui/button';
 ---
 
 <!doctype html>
@@ -66,9 +67,14 @@ import LogoMarquee from '@/components/LogoMarquee.astro';
               class="text-[28px] leading-[1] lg:text-6xl lg:leading-[1.1] tracking-wide text-neutral-900 font-semibold">
               ¡Gracias por registrarte a la Gran Venta!
             </h1>
-            <p class="text-lg lg:text-2xl">
+            <p class="text-lg lg:text-2xl lg:mb-8">
               Nos vemos en el siguiente evento en el 2026
             </p>
+            <a
+              href="/proyectos"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-lg font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors duration-300 ease-in-out bg-primary text-white shadow hover:bg-primary/90 px-8 py-4 h-14"
+              >Explora Nuestros Proyectos</a
+            >
           </div>
         </div>
       </section>
