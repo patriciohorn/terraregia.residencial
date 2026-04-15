@@ -74,24 +74,28 @@ const { title, proyecto } = Astro.props;
 </html>
 
 <script>
-  document.addEventListener('click', (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    const el = target.closest<HTMLElement>('[data-track]');
-    if (!el || !window.plausible) return;
+  const handleSubmit = (event: SubmitEvent) => {
+    event.preventDefault();
 
-    const event = el.dataset.track;
-    if (!event) return;
+    const myForm = event.target as HTMLFormElement;
+    const formData = new FormData(myForm);
 
-    const proyecto =
-      el.dataset.trackProyecto ||
-      document.body.dataset.proyecto ||
-      'unknown';
+    fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(
+        formData as unknown as Record<string, string>
+      ).toString(),
+    })
+      .then(() => {
+        window.location.href = '/proyectos/mensaje-recibido/';
+      })
+      .catch((error) => alert(error));
+  };
 
-    const props: Record<string, string> = { proyecto };
-
-    if (el.dataset.trackUbicacion) props.ubicacion = el.dataset.trackUbicacion;
-    if (el.dataset.trackTipo) props.tipo = el.dataset.trackTipo;
-
-    window.plausible(event, { props });
-  });
+  document
+    .querySelector('form')
+    ?.addEventListener('submit', handleSubmit);
 </script>
