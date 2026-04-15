@@ -30,7 +30,7 @@ const { formName, blok } = Astro.props;
         class="space-y-2 sm:space-y-4"
         data-netlify="true"
         name={formName}
-        netlify-honeypot="bot-field" data-track="form_submit">
+        netlify-honeypot="bot-field" >
         {/* Hidden input for Netlify's bot field */}
         <input type="hidden" name="bot-field" class="" />
         <input type="hidden" name="form-name" value={formName} />
@@ -70,7 +70,7 @@ const { formName, blok } = Astro.props;
           <button
             type="submit"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-full font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 transition-colors duration-300 ease-in-out bg-primary text-white shadow hover:bg-primary/90 h-12 sm:h-16 px-6 py-4 text-base sm:text-xl"
-            >Enviar</button
+            data-track="form_submit">Enviar</button
           >
         </div>
       </form>
