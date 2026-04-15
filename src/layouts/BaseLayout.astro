@@ -7,6 +7,7 @@ import Header from '@/storyblok/Header.astro';
 import Footer from '@/components/Footer.astro';
 import isPreview from '@/lib/utils';
 
+
 const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get('cdn/stories/layout', {
@@ -20,7 +21,7 @@ const footerContent = data.story.content.body.find(
   (blok: any) => blok.component === 'footer'
 );
 
-const { title } = Astro.props;
+const { title, proyecto } = Astro.props;
 
 // const isProject = slug ? true : false;
 ---
@@ -63,7 +64,7 @@ const { title } = Astro.props;
 
     <!-- ViewTransitions  -->
   </head>
-  <body class="overflow-x-hidden bg-[#F5F5F5] text-neutral-600">
+  <body class="overflow-x-hidden bg-[#F5F5F5] text-neutral-600" data-proyecto={proyecto || ''}>
     <Header blok={headerContent} />
     <main>
       <slot />
@@ -71,3 +72,26 @@ const { title } = Astro.props;
     <Footer blok={footerContent} />
   </body>
 </html>
+
+<script>
+  document.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    const el = target.closest<HTMLElement>('[data-track]');
+    if (!el || !window.plausible) return;
+
+    const event = el.dataset.track;
+    if (!event) return;
+
+    const proyecto =
+      el.dataset.trackProyecto ||
+      document.body.dataset.proyecto ||
+      'unknown';
+
+    const props: Record<string, string> = { proyecto };
+
+    if (el.dataset.trackUbicacion) props.ubicacion = el.dataset.trackUbicacion;
+    if (el.dataset.trackTipo) props.tipo = el.dataset.trackTipo;
+
+    window.plausible(event, { props });
+  });
+</script>

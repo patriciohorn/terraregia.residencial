@@ -12,7 +12,7 @@ export async function getStaticPaths() {
     version: isPreview() ? 'draft' : 'published',
   });
 
-  return links.map((link) => {
+  return links.map((link : any) => {
     return {
       params: {
         slug: link.slug === 'home' ? undefined : link.slug,
@@ -38,6 +38,7 @@ const whatsapp = story.content.whatsapp
 <BaseLayout
   title={`Terra Regia Residencial | ${story.content.nombre}`}
   slug="proyecto"
-  whatsapp={whatsapp}>
+  whatsapp={whatsapp}
+  proyecto={story.content.nombre}>
   <StoryblokComponent blok={story.content} />
 </BaseLayout>

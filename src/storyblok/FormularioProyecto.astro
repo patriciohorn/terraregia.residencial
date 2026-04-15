@@ -30,7 +30,7 @@ const { formName, blok } = Astro.props;
         class="space-y-2 sm:space-y-4"
         data-netlify="true"
         name={formName}
-        netlify-honeypot="bot-field">
+        netlify-honeypot="bot-field" data-track="form_submit">
         {/* Hidden input for Netlify's bot field */}
         <input type="hidden" name="bot-field" class="" />
         <input type="hidden" name="form-name" value={formName} />
