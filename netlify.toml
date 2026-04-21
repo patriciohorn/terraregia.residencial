@@ -1,0 +1,6 @@
+# netlify.toml
+[[redirects]]
+  from = "/nuevosprospectos"
+  to = "https://terraregia-nuevosprospectos.vercel.app/"
+  status = 200  # 200 = proxy silencioso, no cambia la URL
+  force = true
