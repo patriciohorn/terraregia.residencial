@@ -10,34 +10,35 @@ import {
 import { CircleCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-
 import VariantFooter from "./variant-footer";
 import { useState } from "react";
-// selectedModeloPlantas = [{titulo: 'Primer Nivel, detalles: , imagen_planta:}, {titulo: 'Primer Nivel, detalles: , imagen_planta:}, {titulo: 'Primer Nivel, detalles: , imagen_planta:}]
+import fachadaSevilla from "../assets/miria/sevilla/fachada.webp";
+import fachadaJacaranda from "../assets/miria/jacaranda/fachada.webp";
+import fachadaOrquidea from "../assets/miria/orquidea/fachada.webp";
 
-const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
-  const [selectedTab, setSelectedTab] = useState(modelos[0].nombre);
-  const [plantas, setPlantas] = useState("2 plantas");
+const HybridCasas = ({ modelos, titulo, nombreProyecto }) => {
+  const [selectedTab, setSelectedTab] = useState("sevilla");
 
-  function handlePlantaChange(value: string) {
-    setPlantas(value);
-  }
+  const fachadaImages = {
+    sevilla: fachadaSevilla.src,
+    jacaranda: fachadaJacaranda.src,
+    orquidea: fachadaOrquidea.src,
+  };
+
   const selectedModelo = modelos.filter(
-    (modelo: any) => modelo.nombre === selectedTab,
-  )[0].carousel_detalles_planta;
-  console.log("SELECTED MODELO:", selectedModelo[0].detalles);
+    (modelo) => modelo.nombre === selectedTab,
+  );
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-20">
-      <div>
-        <h2 className="mb-6 sm:mb-8 text-2xl sm:text-[40px] text-black font-heading">
-          {titulo}
-        </h2>
+    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-20">
+      <div className="flex flex-col justify-center">
         <Tabs
           defaultValue={selectedTab}
-          className="flex flex-col items-center gap-4 overflow-x-hidden"
+          onValueChange={setSelectedTab}
+          className="flex flex-col items-center overflow-x-hidden"
         >
           <TabsList className=" bg-transparent w-full gap-4 ">
-            {modelos.map((modelo: any) => (
+            {modelos.map((modelo) => (
               <TabsTrigger
                 key={modelo.nombre}
                 value={modelo.nombre}
@@ -46,12 +47,11 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
                   selectedTab === modelo.nombre &&
                     "data-[state=active]:bg-black data-[state=active]:text-white",
                 )}
-                onClick={() => setSelectedTab(modelo.nombre)}
               >
-                {modelo.nombre}
+                {modelo.nombre[0].toUpperCase() + modelo.nombre.slice(1)}
               </TabsTrigger>
             ))}
-
+            {/* Mobile */}
             <div className="sm:hidden relative w-full">
               <Carousel
                 opts={{
@@ -61,15 +61,10 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
                 className="w-full"
               >
                 <CarouselContent>
-                  {modelos.map((modelo: any) => (
+                  {modelos.map((modelo) => (
                     <CarouselItem
                       key={modelo.nombre}
-                      className={cn(
-                        `basis-1/1 sm:basis-1/4`,
-                        modelo.nombre === "Castilla Diamante"
-                          ? "sm:basis-1/2"
-                          : "",
-                      )}
+                      className="basis-1/1 sm:basis-1/4"
                     >
                       <TabsTrigger
                         key={modelo.nombre}
@@ -79,7 +74,6 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
                           selectedTab === modelo.nombre &&
                             "data-[state=active]:bg-black data-[state=active]:text-white",
                         )}
-                        onClick={() => setSelectedTab(modelo.nombre)}
                       >
                         {modelo.nombre}
                       </TabsTrigger>
@@ -90,81 +84,61 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
             </div>
           </TabsList>
 
-          {nombreProyecto.includes("Rincón") && (
-            <div className="flex gap-2 justify-center mt-2">
-              {["2 plantas", "3 plantas"].map((option) => (
-                <Button
-                  size="sm"
-                  key={option}
-                  onClick={() => setPlantas(option)}
-                  className={cn(
-                    "bg-[#D9D9D9] text-black hover:text-white hover:bg-black text-base min-w-24 font-medium w-28",
-                    plantas === option && "bg-black text-white",
-                  )}
-                >
-                  {option}
-                </Button>
-              ))}
-            </div>
-          )}
-
-          {modelos.map((modelo: any) => (
+          {/* {modelos.map((modelo) => (
             <TabsContent
               value={modelo.nombre}
               key={modelo.nombre}
-              className={cn(
-                "mt-6 flex flex-col justify-between items-center",
-                selectedTab === modelo.nombre ? "" : "hidden",
-              )}
+              className="mt-6 flex flex-col justify-between items-center"
             >
               <div className="mb-4 overflow-hidden aspect-video h-48 sm:h-72 rounded-md animate-fade-right">
                 <img
-                  src={
-                    plantas === "2 plantas"
-                      ? modelo.imagen_modelo[0].filename
-                      : modelo.imagen_modelo[1].filename
-                  }
-                  alt={
-                    plantas === "2 plantas"
-                      ? modelo.imagen_modelo[0].alt
-                      : modelo.imagen_modelo[1].alt || `Modelo ${modelo.nombre}`
-                  }
-                  className={cn(
-                    "w-full h-full",
-                    nombreProyecto.includes("Montserrat")
-                      ? "object-cover"
-                      : "object-contain",
-                  )}
+                  src={fachadaImages[selectedTab]}
+                  alt={`Modelo ${selectedTab}`}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <VariantFooter modelo={modelo} />
             </TabsContent>
-          ))}
+          ))} */}
+          <div className="mt-6 flex flex-col justify-between items-center w-full">
+            <div className=" overflow-hidden aspect-video h-48 sm:h-72 rounded-md animate-fade-right ">
+              <img
+                src={fachadaImages[selectedTab]}
+                alt={`Modelo ${selectedTab}`}
+                className="w-full h-full object-cover animate-fade-right"
+              />
+            </div>
+            <VariantFooter modelo={selectedModelo[0]} />
+          </div>
         </Tabs>
       </div>
       <Carousel className="bg-[#E6E9E9] rounded-[12px] p-4 sm:p-6">
         <CarouselContent key={selectedTab}>
-          {selectedModelo.map((planta: any) => (
-            <CarouselItem key={planta.titulo} className="animate-fade-right">
+          {selectedModelo[0].detallesPlanta.map((modelo, i) => (
+            <CarouselItem
+              key={`${selectedTab}-${i}`}
+              className="animate-fade-right"
+            >
               <div className="flex flex-col gap-4">
                 <div className="overflow-hidden aspect-video flex items-center justify-center">
                   <img
-                    src={planta.imagen_planta.filename}
-                    alt={
-                      planta.imagen_planta.alt ||
-                      `${planta.titulo} ${selectedTab}`
-                    }
+                    src={modelo.image}
+                    alt="planta"
+                    className="rotate-90 scale-75 w-full object-cover"
                   />
                 </div>
                 <div className="bg-white rounded-sm p-4 sm:p-6">
                   <h3 className="text-xl font-heading mb-4 sm:mb-6">
-                    {planta.titulo}
+                    {modelo.titulo}
                   </h3>
                   <ul className="grid sm:grid-cols-2 gap-y-2 gap-x-6">
-                    {planta.detalles.map((item: any) => (
-                      <li className="text-xs sm:text-sm text-neutral-600 flex items-center gap-2">
+                    {modelo.detalles?.map((item) => (
+                      <li
+                        key={item}
+                        className="text-xs sm:text-sm text-neutral-600 flex items-center gap-2"
+                      >
                         <CircleCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-neutral-600" />
-                        {item.detalle}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -180,4 +154,4 @@ const CasasTabs = ({ modelos, titulo, nombreProyecto }: any) => {
   );
 };
 
-export default CasasTabs;
+export default HybridCasas;

@@ -10,11 +10,14 @@ import ProyectoBreadcrumb from '@/components/proyecto-breadcrumb';
 import { SecondaryImagesCarousel } from '@/components/secondaryImages-carousel';
 
 import { removeAccents } from '@/lib/utils';
+import CasasTabs from '@/components/casas-tabs';
+import HybridDetails from '@/components/HybridDetails';
 
 const { blok } = Astro.props;
 const formName = removeAccents(
   blok.nombre.toLowerCase().trim().split(' ').join('')
 );
+
 
 const nombreProyecto = blok.nombre;
 ---
@@ -84,8 +87,17 @@ const nombreProyecto = blok.nombre;
     )
   }
 
+  {blok.nombre === 'Miria Residencial' && (
+      <section class="pt-12">
+        <div class="container">
+         <HybridDetails blok={blok.detalles_proyecto} client:visible/>
+        </div>
+      </section>
+  )}
+
+
   {
-    blok.detalles_proyecto && blok.detalles_proyecto.length > 0 && (
+    blok.detalles_proyecto && blok.detalles_proyecto.length > 0 && blok.nombre !== 'Miria Residencial' && (
       <section class="pt-12">
         <div class="container">
           {blok.detalles_proyecto.map((blok: any) => (
@@ -98,6 +110,10 @@ const nombreProyecto = blok.nombre;
       </section>
     )
   }
+
+
+
+  
 
   {
     blok.tour_virtual &&
